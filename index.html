@@ -1,84 +1,56 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Laurent Hoessen - Syndic</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laurent Hoessen — Gestion Immobilière</title>
+  <meta name="description" content="Gestion Immobilière — Syndic BILH & DUHO. Une gestion transparente, réactive et durable de votre copropriété.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Laurent Hoessen — Gestion Immobilière">
+  <meta property="og:description" content="Syndic BILH & DUHO. Une gestion transparente, réactive et durable de votre copropriété.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/cover.jpg">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Laurent Hoessen</h1>
-      <p>Syndic de copropriété</p>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Navigation principale">
+    <a class="brand" href="index.html" aria-label="Accueil">
+      <img src="img/logo.svg" alt="Logo LH" width="34" height="34">
+      <span>Laurent&nbsp;Hoessen</span>
+    </a>
+    <div class="menu">
+      <a href="index.html" class="ativo" aria-current="page">Accueil</a>
+      <a href="types.html">Types de gestion</a>
+      <a href="contacts.html">Contacts</a>
+      <a href="offre.html">Demande d’Offre</a>
     </div>
-  </header>
+  </nav>
+</header>
 
-  <main class="container">
-    <section class="intro">
-      <h2>Bienvenue</h2>
-      <p>
-        Bienvenue sur le site officiel du syndic Laurent Hoessen. Nous gérons vos copropriétés avec sérieux, transparence et efficacité.
-      </p>
-    </section>
-
-    <!-- Section avec les trois cartes -->
-    <section class="info-grid">
-      <!-- Card 1: Horaires -->
-      <div class="card">
-        <h3>Horaires</h3>
-        <p>Lun–Ven : <strong>09:00–13:00</strong></p>
-      </div>
-
-      <!-- Card 2: Coordonnées -->
-      <div class="card">
-        <h3>Coordonnées</h3>
-        <p><strong>Adresse :</strong> Avenue Heydenberg 14, 1200 Bruxelles</p>
-        <p><strong>Tél. :</strong> <a href="tel:027725175">0277 25 175</a></p>
-        <p><strong>Email :</strong> <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></p>
-      </div>
-
-      <!-- Card 3: Urgence -->
-      <div class="card">
-        <h3>Urgence</h3>
-        <p>Problème technique (fuite d’eau, panne d’ascenseur, etc.).</p>
-        <p><strong>Tél. :</strong> <a href="tel:027725175">0277 25 175</a></p>
-        <p class="muted">Hors horaires, laissez un message — nous rappelons rapidement.</p>
-      </div>
-    </section>
-
-    <!-- Autres sections du site -->
-    <section class="services">
-      <h2>Nos services</h2>
-      <ul>
-        <li>Gestion administrative</li>
-        <li>Gestion financière</li>
-        <li>Gestion technique</li>
-        <li>Suivi des travaux</li>
-      </ul>
-    </section>
-
-    <section class="contact-form">
-      <h2>Contactez-nous</h2>
-      <form action="https://formspree.io/f/xxxxxx" method="POST">
-        <label for="name">Nom</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="_replyto" required />
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <button type="submit">Envoyer</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Laurent Hoessen - Tous droits réservés</p>
+<section class="hero" role="banner" aria-label="Photo de couverture">
+  <div class="hero-inner">
+    <h1>Laurent&nbsp;Hoessen</h1>
+    <p class="sub">Gestion Immobilière — Syndic BILH &amp; DUHO</p>
+    <p class="tagline">Une gestion <strong>transparente</strong>, <strong>réactive</strong> et <strong>durable</strong> de votre copropriété.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="offre.html">Demander une offre</a>
+      <a class="btn btn-outline" href="contacts.html">Nous contacter</a>
     </div>
-  </footer>
-</body>
-</html>
+  </div>
+</section>
+
+<main>
+  <section class="section grid-3">
+    <div class="card">
+      <h3>Horaires</h3>
+      <p>Lun–Ven : <b>09:00–13:00</b></p>
+    </div>
+
+    <div class="card">
+      <h3>Coordonnées</h3>
+      <p><b>Tél. :</b> <a href="tel:027725175">027725175</a></p>

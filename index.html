@@ -1,23 +1,84 @@
-<section class="info-grid">
-  <!-- Card 1: Horaires -->
-  <div class="card">
-    <h3>Horaires</h3>
-    <p>Lun–Ven : <strong>09:00–13:00</strong></p>
-  </div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laurent Hoessen - Syndic</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Laurent Hoessen</h1>
+      <p>Syndic de copropriété</p>
+    </div>
+  </header>
 
-  <!-- Card 2: Coordonnées -->
-  <div class="card">
-    <h3>Coordonnées</h3>
-    <p><strong>Tél. :</strong> <a href="tel:027725175">0277 25 175</a></p>
-    <p><strong>Email :</strong> <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></p>
-  </div>
+  <main class="container">
+    <section class="intro">
+      <h2>Bienvenue</h2>
+      <p>
+        Bienvenue sur le site officiel du syndic Laurent Hoessen. Nous gérons vos copropriétés avec sérieux, transparence et efficacité.
+      </p>
+    </section>
 
-  <!-- Card 3: Urgence -->
-  <div class="card">
-    <h3>Urgence</h3>
-    <p>Problème technique (fuite d’eau, panne d’ascenseur, etc.).</p>
-    <p><strong>Tél. :</strong> <a href="tel:027725175">0277 25 175</a></p>
-    <p class="muted">Hors horaires, laissez un message — nous rappelons rapidement.</p>
-  </div>
-</section>
+    <!-- Section avec les trois cartes -->
+    <section class="info-grid">
+      <!-- Card 1: Horaires -->
+      <div class="card">
+        <h3>Horaires</h3>
+        <p>Lun–Ven : <strong>09:00–13:00</strong></p>
+      </div>
 
+      <!-- Card 2: Coordonnées -->
+      <div class="card">
+        <h3>Coordonnées</h3>
+        <p><strong>Adresse :</strong> Avenue Heydenberg 14, 1200 Bruxelles</p>
+        <p><strong>Tél. :</strong> <a href="tel:027725175">0277 25 175</a></p>
+        <p><strong>Email :</strong> <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></p>
+      </div>
+
+      <!-- Card 3: Urgence -->
+      <div class="card">
+        <h3>Urgence</h3>
+        <p>Problème technique (fuite d’eau, panne d’ascenseur, etc.).</p>
+        <p><strong>Tél. :</strong> <a href="tel:027725175">0277 25 175</a></p>
+        <p class="muted">Hors horaires, laissez un message — nous rappelons rapidement.</p>
+      </div>
+    </section>
+
+    <!-- Autres sections du site -->
+    <section class="services">
+      <h2>Nos services</h2>
+      <ul>
+        <li>Gestion administrative</li>
+        <li>Gestion financière</li>
+        <li>Gestion technique</li>
+        <li>Suivi des travaux</li>
+      </ul>
+    </section>
+
+    <section class="contact-form">
+      <h2>Contactez-nous</h2>
+      <form action="https://formspree.io/f/xxxxxx" method="POST">
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="_replyto" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Laurent Hoessen - Tous droits réservés</p>
+    </div>
+  </footer>
+</body>
+</html>

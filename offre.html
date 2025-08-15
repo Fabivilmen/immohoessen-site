@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demande d’Offre — Laurent Hoessen</title>
+  <meta name="description" content="Demandez une offre personnalisée pour la gestion de votre copropriété.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav" aria-label="Navigation principale">
+    <a class="brand" href="index.html"><img src="img/logo.svg" alt="" width="34" height="34"><span>Laurent&nbsp;Hoessen</span></a>
+    <div class="menu">
+      <a href="index.html">Accueil</a>
+      <a href="types.html">Types de gestion</a>
+      <a href="contacts.html">Contacts</a>
+      <a href="offre.html" class="ativo" aria-current="page">Demande d’Offre</a>
+    </div>
+  </nav>
+</header>
+
+<main class="section">
+  <h2 class="title">Demande d’Offre – Gestion Immobilière</h2>
+  <div class="card">
+    <p>Merci de remplir ce formulaire afin de recevoir une offre personnalisée pour la gestion de votre copropriété. Nous vous contacterons dans les plus brefs délais.</p>
+    <form id="offreForm" action="ACTION_AQUI" method="POST">
+      <div class="row">
+        <div>
+          <label for="nom">Nom complet *</label>
+          <input id="nom" name="nom" required>
+        </div>
+        <div>
+          <label for="email">E-mail *</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="tel">Téléphone *</label>
+          <input id="tel" name="telephone" required>
+        </div>
+        <div>
+          <label for="adresse">Adresse de la copropriété *</label>
+          <input id="adresse" name="adresse" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="etages">Nombre d’étages *</label>
+          <input id="etages" name="etages" type="number" min="0" required>
+        </div>
+        <div>
+          <label for="apps">Nombre d’appartements (optionnel)</label>
+          <input id="apps" name="appartements" type="number" min="0">
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="syndic">Avez-vous déjà un syndic ? *</label>
+          <select id="syndic" name="syndic" required>
+            <option value="">Sélectionner…</option>
+            <option>Oui</option>
+            <option>Non</option>
+            <option>Je ne sais pas</option>
+          </select>
+        </div>
+        <div>
+          <label for="garage">Dispose-t-on d’un box/parking ? *</label>
+          <select id="garage" name="garage" required>
+            <option value="">Sélectionner…</option>
+            <option>Oui</option>
+            <option>Non</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label for="urgence">Téléphone d’urgence (24/24)</label>
+        <input id="urgence" name="telephone_urgence" placeholder="ex.: 027725175">
+      </div>
+
+      <div>
+        <label for="commentaires">Commentaires ou demandes spécifiques</label>
+        <textarea id="commentaires" name="commentaires" rows="4" placeholder="Précisez ici vos besoins…"></textarea>
+      </div>
+
+      <p class="note">
+        En envoyant ce formulaire, j’accepte d’être contacté(e) par e-mail ou téléphone. 
+        Horaires du bureau : Lun–Ven, 09:00–13:00. 
+        <a href="privacite.html" target="_blank" rel="noopener">Politique de confidentialité</a>.
+      </p>
+
+      <button class="btn btn-primary" type="submit">Envoyer la demande</button>
+      <div id="status" class="alert" style="display:none"></div>
+    </form>
+  </div>
+</main>
+
+<footer>© <span id="ano"></span> Laurent Hoessen · Gestion Immobilière — Syndic BILH &amp; DUHO</footer>
+
+<script src="scripts.js"></script>
+<script>
+  // Retorno amigável (Formspree)
+  const form = document.getElementById("offreForm");
+  const statusBox = document.getElementById("status");
+  form.addEventListener("submit", async (e)=>{
+    if(form.action.includes("ACTION_AQUI")) return; // permite testar layout sem endpoint
+    e.preventDefault();
+    const fd = new FormData(form);
+    try{
+      const res = await fetch(form.action, { method:"POST", body:fd, headers:{Accept:"application/json"} });
+      if(res.ok){ form.reset(); show("Demande envoyée avec succès. Merci ! ✅", true); }
+      else{ show("Impossible d’envoyer pour le moment. Réessayez. ❌", false); }
+    }catch(err){ show("Erreur de connexion. Vérifiez votre internet. ⚠️", false); }
+  });
+  function show(msg, ok){
+    statusBox.textContent = msg;
+    statusBox.className = "alert "+(ok?"success":"error");
+    statusBox.style.display = "block";
+    setTimeout(()=>statusBox.style.display="none", 6000);
+  }
+</script>
+</body>
+</html>

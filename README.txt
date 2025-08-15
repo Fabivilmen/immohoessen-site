@@ -1,4 +1,3 @@
-primeiro upload
 IMMOHOESSEN-SITE — Como publicar (resumo)
 
 1) Suba TODOS os arquivos desta pasta para seu repositório no GitHub (raiz).

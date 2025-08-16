@@ -3,33 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Types de gestion — Laurent Hoessen</title>
-  <link rel="stylesheet" href="styles.css?v=4">
+  <title>Types de gestion - Laurent Hoessen</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Ajuste só para os títulos dos cards */
+    .service-card .title {
+      font-size: 1.1rem;   /* menor para caber em uma linha */
+      line-height: 1.3;
+      font-weight: 600;
+      color: #0d47a1;
+    }
+
+    /* Mantém o layout em cards */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 40px 20px;
+    }
+
+    .service-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .service-card ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .service-card ul li {
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .service-card ul li::marker {
+      content: "✔ ";
+      color: #0d47a1;
+      font-weight: bold;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-top: 30px;
+      color: #1565c0;
+    }
+  </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <nav class="nav" aria-label="Navigation principale">
-      <a class="brand" href="index.html" aria-label="Accueil">
-        <img src="img/logo.svg" alt="Logo LH" width="28" height="28">
-        <span>Laurent&nbsp;Hoessen</span>
-      </a>
-      <div class="menu">
-        <a href="index.html">Accueil</a>
-        <a href="types.html" class="ativo" aria-current="page">Types de gestion</a>
-        <a href="contacts.html">Contacts</a>
-        <a href="offre.html">Demande d’Offre</a>
-      </div>
+  <header>
+    <nav>
+      <div class="logo">LH</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="types.html" class="active">Types de gestion</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+        <li><a href="offre.html">Demande d’Offre</a></li>
+      </ul>
     </nav>
   </header>
 
-  <main class="section">
-    <h1 class="page-title">Types de gestion</h1>
+  <main>
+    <h1>Types de gestion</h1>
+    <div class="services">
 
-    <!-- Cards em grade -->
-    <div class="grid-2">
-      <!-- Card 1 -->
-      <article class="service-card card">
+      <div class="service-card">
         <h2 class="title">Syndic de copropriété — pilotage global</h2>
         <ul>
           <li>Exécution des décisions d’AG et suivi des prestataires</li>
@@ -37,10 +84,9 @@
           <li>Communication claire aux copropriétaires (courriels, avis, PV)</li>
           <li>Reporting régulier : dépenses, travaux, incidents</li>
         </ul>
-      </article>
+      </div>
 
-      <!-- Card 2 -->
-      <article class="service-card card">
+      <div class="service-card">
         <h2 class="title">Gestion administrative — sérénité au quotidien</h2>
         <ul>
           <li>Contrats et appels d’offres avec clauses protectrices</li>
@@ -48,10 +94,9 @@
           <li>Suivi des fournisseurs et délais d’intervention</li>
           <li>Courriers types, modèles d’affichage et procédures</li>
         </ul>
-      </article>
+      </div>
 
-      <!-- Card 3 -->
-      <article class="service-card card">
+      <div class="service-card">
         <h2 class="title">Gestion technique — sécurité & conformité</h2>
         <ul>
           <li>Plan d’entretien préventif des installations</li>
@@ -59,28 +104,23 @@
           <li>Suivi de chantiers, réceptions et garanties</li>
           <li>Contrôles périodiques (ascenseurs, extincteurs, électricité)</li>
         </ul>
-      </article>
+      </div>
 
-      <!-- Card 4 -->
-      <article class="service-card card">
-        <h2 class="title">Comptabilité & AG — transparence financière</h2>
+      <div class="service-card">
+        <h2 class="title">Comptabilité & Assemblées Générales</h2>
         <ul>
-          <li>Comptabilité conforme à la législation belge</li>
-          <li>Budgets, décomptes, appels de fonds</li>
-          <li>Préparation et présidence des Assemblées Générales</li>
-          <li>Documents et PV disponibles à la demande</li>
+          <li>Comptabilité claire et rapports financiers réguliers</li>
+          <li>Préparation et organisation des Assemblées Générales</li>
+          <li>Convocations, procès-verbaux et suivi des décisions</li>
+          <li>Transparence dans la gestion budgétaire</li>
         </ul>
-      </article>
-    </div>
+      </div>
 
-    <!-- CTA -->
-    <div style="text-align:center; margin-top:22px;">
-      <a class="btn btn-primary" href="offre.html">Demander une offre</a>
     </div>
   </main>
 
   <footer>
-    © 2025 Laurent Hoessen · Gestion Immobilière — Syndic BILH & DUHO
+    <p>© 2025 Laurent Hoessen - Gestion Immobilière — Syndic BILH & DUHO</p>
   </footer>
 </body>
 </html>

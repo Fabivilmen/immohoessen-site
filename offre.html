@@ -4,15 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Demande d’Offre — Laurent Hoessen</title>
-  <meta name="description" content="Formulaire de demande d’offre pour la gestion immobilière par Laurent Hoessen.">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 
 <header class="site-header">
-  <nav class="nav" aria-label="Navigation principale">
-    <a class="brand" href="index.html" aria-label="Accueil">
+  <nav class="nav">
+    <a class="brand" href="index.html">
       <img src="img/logo.svg" alt="Logo LH" width="34" height="34">
       <span>Laurent&nbsp;Hoessen</span>
     </a>
@@ -20,87 +18,84 @@
       <a href="index.html">Accueil</a>
       <a href="types.html">Types de gestion</a>
       <a href="contacts.html">Contacts</a>
-      <a href="offre.html" class="ativo" aria-current="page">Demande d’Offre</a>
+      <a href="offre.html" class="ativo">Demande d’Offre</a>
     </div>
   </nav>
 </header>
 
-<main class="container">
-  <h1>Demande d’Offre</h1>
+<h1 class="page-title">Demande d’Offre</h1>
+
+<div class="container">
   <p>Veuillez remplir le formulaire ci-dessous pour obtenir une offre personnalisée.</p>
-
-  <form action="https://formspree.io/f/mzzpkkpy" method="POST">
+  <form action="https://formspree.io/f/xxxxxx" method="POST">
     <div class="row">
       <div>
-        <label for="nom">Nom complet *</label>
-        <input type="text" id="nom" name="nom" required>
+        <label>Nom complet *</label>
+        <input type="text" name="nom" required>
       </div>
       <div>
-        <label for="email">Email *</label>
-        <input type="email" id="email" name="email" required>
+        <label>Email *</label>
+        <input type="email" name="email" required>
       </div>
     </div>
 
     <div class="row">
       <div>
-        <label for="telephone">Téléphone *</label>
-        <input type="tel" id="telephone" name="telephone" required>
+        <label>Téléphone *</label>
+        <input type="tel" name="telephone" required>
       </div>
       <div>
-        <label for="adresse">Adresse de la copropriété *</label>
-        <input type="text" id="adresse" name="adresse" required>
-      </div>
-    </div>
-
-    <div class="row">
-      <div>
-        <label for="etages">Nombre d’étages *</label>
-        <input type="number" id="etages" name="etages" required>
-      </div>
-      <div>
-        <label for="appartements">Nombre d’appartements (optionnel)</label>
-        <input type="number" id="appartements" name="appartements">
+        <label>Adresse de la copropriété *</label>
+        <input type="text" name="adresse" required>
       </div>
     </div>
 
     <div class="row">
       <div>
-        <label for="syndic">Avez-vous déjà un syndic ? *</label>
-        <select id="syndic" name="syndic" required>
+        <label>Nombre d’étages *</label>
+        <input type="number" name="etages" required>
+      </div>
+      <div>
+        <label>Nombre d’appartements (optionnel)</label>
+        <input type="number" name="appartements">
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>Avez-vous déjà un syndic ?</label>
+        <select name="syndic">
           <option value="">Sélectionner…</option>
           <option value="oui">Oui</option>
           <option value="non">Non</option>
         </select>
       </div>
       <div>
-        <label for="parking">Dispose-t-on d’un box/parking ? *</label>
-        <select id="parking" name="parking" required>
+        <label>Dispose-t-on d’un box/parking ? *</label>
+        <select name="parking" required>
           <option value="">Sélectionner…</option>
           <option value="oui">Oui</option>
           <option value="non">Non</option>
         </select>
       </div>
     </div>
-
-    <!-- Champ Téléphone d’urgence retiré -->
 
     <div>
-      <label for="commentaires">Commentaires ou demandes spécifiques</label>
-      <textarea id="commentaires" name="commentaires" placeholder="Précisez ici vos besoins…"></textarea>
+      <label>Commentaires ou demandes spécifiques</label>
+      <textarea name="commentaires" placeholder="Précisez ici vos besoins…"></textarea>
     </div>
 
     <p class="note">
       En envoyant ce formulaire, j’accepte d’être contacté(e) par e-mail ou téléphone.  
-      Horaires du bureau : Lun–Ven, 09:00–13:00.  
-      <a href="politique.html">Politique de confidentialité</a>.
+      Horaires du bureau : Lun–Ven, 09:00–13:00. <a href="#">Politique de confidentialité</a>.
     </p>
 
-    <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+    <button type="submit">Envoyer la demande</button>
   </form>
-</main>
+</div>
 
-<footer class="site-footer">
-  <p>&copy; 2025 Laurent Hoessen — Gestion Immobilière</p>
+<footer>
+  <p>© 2025 Laurent Hoessen — Gestion Immobilière</p>
 </footer>
 
 </body>

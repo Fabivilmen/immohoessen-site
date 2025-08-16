@@ -1,3 +1,43 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #0a3d91;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #0a3d91;
+}
+
 /* Hero */
 .hero {
   position: relative;
@@ -17,13 +57,15 @@
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* para melhor leitura */
+  color: white;
+  text-shadow: none; /* sem sombra */
 }
 
 .hero p {
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  color: white;
+  text-shadow: none; /* sem sombra */
 }
 
 .hero-buttons {
@@ -61,4 +103,13 @@
 .btn-outline:hover {
   background: white;
   color: #0a3d91;
+}
+
+/* Footer */
+footer {
+  background: #0a3d91;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }

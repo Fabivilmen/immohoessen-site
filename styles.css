@@ -1,4 +1,3 @@
-
 /* ============================
    THEME
 ============================ */
@@ -52,7 +51,7 @@ strong,b{font-weight:700}
 ============================ */
 .hero{
   position:relative;
-  min-height:80vh;                     /* 80% da tela */
+  min-height:80vh;                          /* 80% da tela */
   display:flex;align-items:center;justify-content:center;
   text-align:center;color:#fff;
   background:url("img/cover2.jpg") center/cover no-repeat;
@@ -60,16 +59,16 @@ strong,b{font-weight:700}
   overflow:hidden;
 }
 
-/* remove QUALQUER faixa/overlay que possa ficar por cima */
+/* GARANTE que não exista overlay/linha translúcida */
 .hero::before,
 .hero::after{content:none !important;display:none !important}
 .hero .hero-strip{display:none !important}
 
 .hero-inner{
   position:relative;
-  z-index:2;                           /* garante cliques nos botões */
+  z-index:2;                                /* cliques nos botões 100% */
   width:min(100%,1000px);
-  padding-top:8vh;                     /* empurra o bloco um pouco para baixo */
+  padding-top:8vh;                          /* puxa o bloco um pouco para baixo */
 }
 
 .hero h1{
@@ -89,11 +88,11 @@ strong,b{font-weight:700}
 /* botões menores e mais abaixo */
 .cta{
   display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
-  margin-top:34px;                     /* mais abaixo */
+  margin-top:34px;                          /* mais abaixo */
 }
 .btn{
   display:inline-block;border-radius:999px;
-  padding:10px 18px;                   /* menor */
+  padding:10px 18px;                        /* menor */
   font-weight:700;
   transition:transform .12s ease, opacity .15s ease;
 }
@@ -109,12 +108,7 @@ strong,b{font-weight:700}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
-.title {
-  font-size: 1rem;   /* menor */
-  color: var(--brand-2);
-  margin-bottom: 6px;
-}
-
+.title{font-size:1.05rem;color:var(--brand-2);margin-bottom:6px}
 
 /* ============================
    LISTAS CHECADAS (Types)

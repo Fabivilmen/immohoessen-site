@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Types de gestion — Laurent Hoessen</title>
-  <link rel="stylesheet" href="styles.css?v=4">
+  <meta name="description" content="Nos offres de gestion de copropriété : administrative, technique, comptabilité & AG, sinistres. Conformité IPI, transparence, réactivité.">
+  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
 </head>
 <body>
 
 <header class="site-header">
-  <nav class="nav">
+  <nav class="nav" aria-label="Navigation principale">
     <a class="brand" href="index.html">
-      <img src="img/logo.svg" alt="Logo LH" width="34" height="34">
+      <img src="img/logo.svg" alt="Logo LH" width="34" height="34" />
       <span>Laurent&nbsp;Hoessen</span>
     </a>
     <div class="menu">
       <a href="index.html">Accueil</a>
-      <a href="types.html" class="ativo">Types de gestion</a>
+      <a href="types.html" class="ativo" aria-current="page">Types de gestion</a>
       <a href="contacts.html">Contacts</a>
       <a href="offre.html">Demande d’Offre</a>
     </div>
@@ -26,26 +28,90 @@
 <h1 class="page-title">Types de gestion</h1>
 
 <div class="container">
-  <div class="list">
-    <div class="item">
-      <h4>Syndic de copropriété</h4>
-      <p>Gestion complète des parties communes, exécution des décisions d’AG, tenue des registres et conformité.</p>
+  <!-- Intro + CTA -->
+  <div class="contact-summary" style="display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+    <p style="margin:0">
+      Nous prenons en charge la <b>gestion complète</b> de votre copropriété : administrative, financière, technique et sinistres —
+      avec <b>transparence</b>, <b>réactivité</b> et <b>conformité IPI</b>.
+    </p>
+    <p style="margin:0">
+      <a class="btn btn-primary" href="offre.html">Demander une offre</a>
+    </p>
+  </div>
+
+  <!-- Mini sommaire (ancres) -->
+  <div class="list" style="margin-top:12px">
+    <div class="item" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+      <a href="#syndic" class="btn btn-outline" style="border-color:#2563eb;color:#2563eb">Syndic de copropriété</a>
+      <a href="#admin" class="btn btn-outline" style="border-color:#2563eb;color:#2563eb">Gestion administrative</a>
+      <a href="#tech" class="btn btn-outline" style="border-color:#2563eb;color:#2563eb">Gestion technique</a>
+      <a href="#ag" class="btn btn-outline" style="border-color:#2563eb;color:#2563eb">Comptabilité &amp; AG</a>
+      <a href="#sinistres" class="btn btn-outline" style="border-color:#2563eb;color:#2563eb">Sinistres &amp; assurances</a>
     </div>
-    <div class="item">
-      <h4>Gestion administrative</h4>
-      <p>Contrats, assurances, appels de fonds, suivi des fournisseurs, communication aux copropriétaires.</p>
+  </div>
+
+  <!-- Cartes -->
+  <div class="list" style="margin-top:10px">
+    <div id="syndic" class="item">
+      <h2 style="margin:0 0 .35rem">Syndic de copropriété — pilotage global</h2>
+      <ul style="margin-left:1rem">
+        <li>Exécution des décisions d’AG et suivi des prestataires</li>
+        <li>Tenue des registres, affichages et conformité (ascenseurs, incendie…)</li>
+        <li>Communication claire aux copropriétaires (courriels, avis, PV)</li>
+        <li>Reporting régulier : dépenses, travaux, incidents</li>
+      </ul>
     </div>
-    <div class="item">
-      <h4>Gestion technique</h4>
-      <p>Entretien préventif, interventions, devis comparatifs, suivi de chantiers, sécurité et conformité.</p>
+
+    <div id="admin" class="item">
+      <h2 style="margin:0 0 .35rem">Gestion administrative — sérénité au quotidien</h2>
+      <ul style="margin-left:1rem">
+        <li>Contrats et appels d’offres avec clauses protectrices</li>
+        <li>Assurances, sinistres et dossiers réglementaires</li>
+        <li>Suivi des fournisseurs et SLA (délais d’intervention)</li>
+        <li>Courriers types, modèles d’affichage et procédures</li>
+      </ul>
     </div>
-    <div class="item">
-      <h4>Comptabilité & AG</h4>
-      <p>Comptabilité claire, budgets, décomptes, préparation et présidence des assemblées générales.</p>
+
+    <div id="tech" class="item">
+      <h2 style="margin:0 0 .35rem">Gestion technique — sécurité & conformité</h2>
+      <ul style="margin-left:1rem">
+        <li>Plan d’entretien préventif des installations</li>
+        <li>Devis comparatifs sous 72h pour travaux & interventions</li>
+        <li>Suivi de chantiers, réceptions et garanties</li>
+        <li>Contrôles périodiques (ascenseurs, extincteurs, électricité)</li>
+      </ul>
     </div>
-    <div class="item">
-      <h4>Sinistres & assurances</h4>
-      <p>Gestion complète des sinistres, suivi des dossiers, expertise et communication avec les assurances.</p>
+
+    <div id="ag" class="item">
+      <h2 style="margin:0 0 .35rem">Comptabilité & Assemblée Générale</h2>
+      <ul style="margin-left:1rem">
+        <li>Budgets, appels de fonds, décomptes individuels</li>
+        <li>Préparation d’AG sous 10 jours ouvrables</li>
+        <li>Présidence/Secrétariat d’AG et procès-verbaux</li>
+        <li>Comptes annuels, pièces justificatives et archivage</li>
+      </ul>
+    </div>
+
+    <div id="sinistres" class="item">
+      <h2 style="margin:0 0 .35rem">Sinistres & assurances</h2>
+      <ul style="margin-left:1rem">
+        <li>Déclaration rapide et coordination avec l’expert</li>
+        <li>Suivi des indemnisations jusqu’à clôture</li>
+        <li>Tableau de suivi partagé avec le conseil</li>
+        <li>Réponse moyenne &lt; 24h ouvrées</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bloco de confiança + CTA final -->
+  <div class="list" style="margin-top:14px">
+    <div class="item" style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+      <p style="margin:0">
+        <b>Conformité IPI</b> · Procédures documentées · Transparence budgétaire · Tableaux de bord partagés.
+      </p>
+      <p style="margin:0">
+        <a class="btn btn-primary" href="offre.html">Demander une offre personnalisée</a>
+      </p>
     </div>
   </div>
 </div>

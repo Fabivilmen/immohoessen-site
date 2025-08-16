@@ -1,24 +1,24 @@
+
 /* ============================
    THEME
 ============================ */
 :root{
-  --brand:#1f3b73;      /* azul escuro */
-  --brand-2:#2563eb;    /* azul primário */
-  --text:#1e293b;       /* texto principal */
-  --muted:#64748b;      /* texto secundário */
-  --bg:#f8fafc;         /* fundo */
-  --card:#ffffff;       /* fundo dos cards */
+  --brand:#1f3b73;
+  --brand-2:#2563eb;
+  --text:#1e293b;
+  --muted:#64748b;
+  --bg:#f8fafc;
+  --card:#ffffff;
   --radius:14px;
   --shadow:0 6px 18px rgba(0,0,0,.06);
-  --font-weight:600;    /* menos grosso */
+  --fw:600;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  margin:0;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  font-weight: var(--font-weight);
+  font-family:"Segoe UI", Roboto, Arial, sans-serif;
+  font-weight:var(--fw);
   color:var(--text);
   background:var(--bg);
   line-height:1.6;
@@ -38,14 +38,12 @@ strong,b{font-weight:700}
 }
 .nav{
   max-width:1100px;margin:0 auto;padding:10px 16px;
-  display:flex;align-items:center;justify-content:space-between;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
 }
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700}
+.brand{display:flex;align-items:center;gap:10px;color:var(--text);font-weight:700}
 .brand span{font-size:18px}
 .menu{display:flex;gap:12px;flex-wrap:wrap}
-.menu a{
-  padding:8px 14px;border-radius:999px;
-}
+.menu a{padding:8px 14px;border-radius:999px}
 .menu a:hover{background:#eef2ff}
 .menu a.ativo,[aria-current="page"]{background:var(--brand-2);color:#fff}
 
@@ -54,49 +52,70 @@ strong,b{font-weight:700}
 ============================ */
 .hero{
   position:relative;
-  min-height:70vh;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:80vh;                     /* 80% da tela */
+  display:flex;align-items:center;justify-content:center;
   text-align:center;color:#fff;
   background:url("img/cover2.jpg") center/cover no-repeat;
-  padding:24px 16px;
+  padding:20px 16px;
+  overflow:hidden;
 }
-.hero::before{content:"";position:absolute;inset:0; /* 🔹 REMOVE overlay translucido */}
-.hero h1{font-size:clamp(34px,5vw,52px);margin:0 0 8px;font-weight:700;letter-spacing:.3px;text-shadow:0 2px 6px rgba(0,0,0,.35)}
-.hero .sub{font-size:clamp(18px,2.6vw,24px);opacity:.95;margin:6px 0 8px;text-shadow:0 1px 4px rgba(0,0,0,.3)}
-.hero .tagline{font-size:clamp(16px,2vw,20px);opacity:.95;margin:8px 0 28px;text-shadow:0 1px 4px rgba(0,0,0,.3)}
 
+/* remove QUALQUER faixa/overlay que possa ficar por cima */
+.hero::before,
+.hero::after{content:none !important;display:none !important}
+.hero .hero-strip{display:none !important}
+
+.hero-inner{
+  position:relative;
+  z-index:2;                           /* garante cliques nos botões */
+  width:min(100%,1000px);
+  padding-top:8vh;                     /* empurra o bloco um pouco para baixo */
+}
+
+.hero h1{
+  font-size:clamp(34px,5vw,52px);
+  margin:0 0 8px;font-weight:700;letter-spacing:.3px;
+  text-shadow:0 2px 6px rgba(0,0,0,.35);
+}
+.hero .sub{
+  font-size:clamp(18px,2.6vw,24px);margin:6px 0 6px;
+  text-shadow:0 1px 4px rgba(0,0,0,.3)
+}
+.hero .tagline{
+  font-size:clamp(16px,2vw,20px);margin:8px 0 24px;
+  text-shadow:0 1px 4px rgba(0,0,0,.3)
+}
+
+/* botões menores e mais abaixo */
 .cta{
-  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
-  margin-top:30px; /* 🔹 empurra os botões mais para baixo */
+  display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
+  margin-top:34px;                     /* mais abaixo */
 }
 .btn{
-  display:inline-block;padding:12px 22px;border-radius:999px;
-  font-weight:700;text-decoration:none;transition:.15s;
+  display:inline-block;border-radius:999px;
+  padding:10px 18px;                   /* menor */
+  font-weight:700;
+  transition:transform .12s ease, opacity .15s ease;
 }
 .btn-primary{background:var(--brand-2);color:#fff}
 .btn-outline{background:transparent;color:#fff;border:2px solid #fff}
-.btn:hover{opacity:.9;transform:translateY(-2px)}
+.btn:hover{opacity:.92;transform:translateY(-2px)}
 
 /* ============================
-   SEÇÕES / GRID / CARDS
+   SECTION / CARDS
 ============================ */
-.section{max-width:1100px;margin:30px auto;padding:0 16px}
-.card{
-  background:var(--card);border-radius:var(--radius);
-  box-shadow:var(--shadow);padding:22px;margin-bottom:18px
-}
+.section{max-width:1100px;margin:28px auto;padding:0 16px}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
-h1.page-title{font-size:clamp(28px,3.6vw,36px);margin:10px 0;color:var(--brand-2)}
-h2.title{margin:8px 0 12px;font-size:26px;color:var(--brand-2)}
-h3{margin:8px 0 8px}
+.title{font-size:1.15rem;color:var(--brand-2);margin-bottom:6px}
 
 /* ============================
-   LISTAS DOS TIPOS (check azul)
+   LISTAS CHECADAS (Types)
 ============================ */
 .service-card ul{margin:8px 0 0;padding-left:0;list-style:none}
-.service-card li{position:relative;padding-left:26px;margin:.4rem 0}
+.service-card li{position:relative;padding-left:26px;margin:.45rem 0}
 .service-card li::before{
   content:"";position:absolute;left:0;top:.25rem;width:18px;height:18px;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%232563eb' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
@@ -104,7 +123,7 @@ h3{margin:8px 0 8px}
 }
 
 /* ============================
-   FORM (offre) letras azuis
+   FORM (offre)
 ============================ */
 label{font-weight:600;display:block;margin:6px 0;color:var(--brand-2)}
 input,textarea,select{
@@ -112,14 +131,12 @@ input,textarea,select{
   font-size:1rem;background:#fff
 }
 textarea{min-height:110px;resize:vertical}
-button,.btn[type=submit]{cursor:pointer}
-.note{font-size:.95rem;color:var(--muted)}
 
 /* ============================
-   CONTACTS / ICONS
+   CONTACTS
 ============================ */
 .contact-card p{margin:6px 0}
-.contact-card .icon{margin-right:8px;vertical-align:middle}
+.icon{margin-right:8px;vertical-align:middle}
 .icon-blue{color:var(--brand-2)}
 
 /* ============================

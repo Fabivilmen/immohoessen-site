@@ -1,108 +1,87 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+:root{
+  --brand:#1f3b73;
+  --brand-2:#2563eb;
+  --text:#0f172a;
+  --muted:#475569;
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --radius:16px;
+  --shadow:0 10px 24px rgba(0,0,0,.08);
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 3rem;
-  background: white;
-  border-bottom: 1px solid #ddd;
-}
+/* Header / nav */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb}
+.nav{max-width:1100px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:16px;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:800}
+.brand span{font-size:18px;letter-spacing:.2px}
+.menu{display:flex;gap:12px;flex-wrap:wrap}
+.menu a{text-decoration:none;color:var(--text);padding:8px 14px;border-radius:999px;font-weight:700}
+.menu a:hover{background:#eef2ff}
+.menu a.ativo{background:var(--brand-2);color:#fff}
 
-.logo {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #0a3d91;
-}
-
-.navbar ul {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
-
-.navbar a:hover {
-  color: #0a3d91;
-}
-
-/* Hero */
-.hero {
+/* Hero (sem barras nem overlay) */
+.hero{
+  position:relative;
+  min-height:70vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
   background: url("img/cover2.jpg") center/cover no-repeat;
-  height: 70vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 2rem;
+  padding:24px 16px;
+}
+.hero h1{font-size:clamp(36px,5vw,56px);margin:0 0 8px;font-weight:800;letter-spacing:.5px}
+.hero .sub{font-size:clamp(18px,2.6vw,26px);opacity:.98;margin:6px 0 10px}
+.hero .tagline{font-size:clamp(16px,2vw,20px);opacity:.98;margin:10px 0 20px}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* Buttons */
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:800;text-decoration:none;transition:transform .05s ease,opacity .2s ease}
+.btn-primary{background:var(--brand-2);color:#fff}
+.btn-outline{background:transparent;color:#fff;border:2px solid #fff}
+.btn:hover{opacity:.9}.btn:active{transform:scale(.98)}
+
+/* Sections / cards */
+.section{max-width:1100px;margin:28px auto;padding:0 16px}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin-bottom:18px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
+h1.page-title{font-size:clamp(28px,3.6vw,36px);margin:6px 0 6px}
+h2.title{margin:6px 0 12px;font-size:28px}
+h3{margin:8px 0 8px}
+
+/* Form */
+label{font-weight:700;display:block;margin:6px 0 6px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;background:#fff}
+textarea{min-height:110px;resize:vertical}
+button, .btn[type=submit]{cursor:pointer}
+.note{font-size:.95rem;color:var(--muted)}
+.card form .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (max-width:900px){.card form .grid-2{grid-template-columns:1fr}}
+
+/* Service cards (Types) com check azul */
+.service-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin:16px 0}
+.service-card h2{margin:0 0 10px}
+.service-card ul{margin:8px 0 0 0;padding-left:0;list-style:none}
+.service-card li{position:relative;padding-left:26px;margin:.45rem 0;color:var(--text)}
+.service-card li::before{
+  content:"";position:absolute;left:0;top:.25rem;width:18px;height:18px;background-repeat:no-repeat;background-size:contain;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-}
-
-.hero-buttons {
-  margin-top: 1.5rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-/* Botões */
-.btn-primary {
-  background: #0a3d91;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn-primary:hover {
-  background: #082f6b;
-}
-
-.btn-outline {
-  border: 2px solid white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
-  transition: 0.3s;
-}
-
-.btn-outline:hover {
-  background: white;
-  color: #0a3d91;
-}
+/* Contacts (só individuais) */
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (max-width:900px){.card-grid{grid-template-columns:1fr}}
+.contact-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+.contact-label{font-weight:800;color:#000}
+.ic-mail a{color:var(--brand-2);text-decoration:none}
+.ic-mail a:hover{text-decoration:underline}
 
 /* Footer */
-footer {
-  background: #0a3d91;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-}
+footer{text-align:center;color:#fff;padding:18px 10px;background:var(--brand-2);margin-top:28px}

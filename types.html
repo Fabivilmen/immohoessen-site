@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Types de gestion — Laurent Hoessen</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Nos offres de gestion de copropriété : administrative, technique, comptabilité & AG, sinistres. Conformité IPI, transparence, réactivité.">
+  <!-- importante: deixe o styles.css na raiz do repositório -->
+  <link rel="stylesheet" href="styles.css?v=17" />
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
 </head>
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">
-      <div class="logo-circle">LH</div>
-      <span>Laurent Hoessen</span>
-    </div>
-    <nav>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Navigation principale">
+    <a class="brand" href="index.html">
+      <img src="img/logo.svg" alt="Logo LH" width="34" height="34" />
+      <span>Laurent&nbsp;Hoessen</span>
+    </a>
+    <div class="menu">
       <a href="index.html">Accueil</a>
-      <a href="types.html" class="active">Types de gestion</a>
+      <a href="types.html" class="ativo" aria-current="page">Types de gestion</a>
       <a href="contacts.html">Contacts</a>
-      <a href="offer.html">Demande d’Offre</a>
-    </nav>
-  </header>
-
-  <main class="container">
-    <!-- Pills -->
-    <div class="toc">
-      <a href="#syndic" class="pill">Syndic de copropriété</a>
-      <a href="#admin" class="pill">Gestion administrative</a>
-      <a href="#technique" class="pill">Gestion technique</a>
-      <a href="#compta" class="pill">Comptabilité & AG</a>
-      <a href="#assurance" class="pill">Sinistres & assurances</a>
+      <a href="offre.html">Demande d’Offre</a>
     </div>
+  </nav>
+</header>
 
-    <!-- Blocos -->
+<h1 class="page-title">Types de gestion</h1>
+
+<div class="container">
+  <!-- intro + cta -->
+  <div class="item service-intro">
+    <p>
+      Nous prenons en charge la <b>gestion complète</b> de votre copropriété : administrative, financière, technique et sinistres —
+      avec <b>transparence</b>, <b>réactivité</b> et <b>conformité IPI</b>.
+    </p>
+    <a class="btn btn-primary" href="offre.html">Demander une offre</a>
+  </div>
+
+  <!-- TOC (atalhos) -->
+  <div class="toc">
+    <a href="#syndic" class="pill">Syndic de copropriété</a>
+    <a href="#admin" class="pill">Gestion administrative</a>
+    <a href="#tech" class="pill">Gestion technique</a>
+    <a href="#ag" class="pill">Comptabilité &amp; AG</a>
+    <a href="#sinistres" class="pill">Sinistres &amp; assurances</a>
+  </div>
+
+  <!-- cartões -->
+  <div class="service-list">
     <section id="syndic" class="service-card">
       <h2>Syndic de copropriété — pilotage global</h2>
       <ul>
@@ -52,8 +69,8 @@
       </ul>
     </section>
 
-    <section id="technique" class="service-card">
-      <h2>Gestion technique — sécurité & conformité</h2>
+    <section id="tech" class="service-card">
+      <h2>Gestion technique — sécurité &amp; conformité</h2>
       <ul>
         <li>Plan d’entretien préventif des installations</li>
         <li>Devis comparatifs sous 72h pour travaux & interventions</li>
@@ -62,25 +79,37 @@
       </ul>
     </section>
 
-    <section id="compta" class="service-card">
-      <h2>Comptabilité & Assemblées générales</h2>
+    <section id="ag" class="service-card">
+      <h2>Comptabilité &amp; Assemblée Générale</h2>
       <ul>
-        <li>Comptabilité transparente et rapports trimestriels</li>
-        <li>Préparation & organisation des assemblées générales</li>
-        <li>Conseil sur budgets et plan pluriannuel d’entretien</li>
-        <li>Accès en ligne sécurisé aux documents comptables</li>
+        <li>Budgets, appels de fonds, décomptes individuels</li>
+        <li>Préparation d’AG sous 10 jours ouvrables</li>
+        <li>Présidence/Secrétariat d’AG et procès-verbaux</li>
+        <li>Comptes annuels, pièces justificatives et archivage</li>
       </ul>
     </section>
 
-    <section id="assurance" class="service-card">
-      <h2>Sinistres & assurances — réactivité 24/7</h2>
+    <section id="sinistres" class="service-card">
+      <h2>Sinistres &amp; assurances</h2>
       <ul>
-        <li>Déclaration rapide des sinistres</li>
-        <li>Négociation avec compagnies d’assurances</li>
-        <li>Suivi des indemnisations</li>
-        <li>Assistance technique & juridique en cas de litige</li>
+        <li>Déclaration rapide et coordination avec l’expert</li>
+        <li>Suivi des indemnisations jusqu’à clôture</li>
+        <li>Tableau de suivi partagé avec le conseil</li>
+        <li>Réponse moyenne &lt; 24h ouvrées</li>
       </ul>
     </section>
-  </main>
+  </div>
+
+  <!-- cta final -->
+  <div class="item service-intro" style="margin-top:14px">
+    <p><b>Conformité IPI</b> · Procédures documentées · Transparence budgétaire · Tableaux de bord partagés.</p>
+    <a class="btn btn-primary" href="offre.html">Demander une offre personnalisée</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Laurent Hoessen — Gestion Immobilière</p>
+</footer>
+
 </body>
 </html>

@@ -1,56 +1,181 @@
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  color:#111827;background:#f9fafb;line-height:1.6;
-  display:flex;flex-direction:column;min-height:100vh;
+/* ------------------ RESET ------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Header */
-.site-header{background:#f3f4f6;padding:12px 24px;border-bottom:1px solid #e5e7eb}
-.nav{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
-.brand{display:flex;align-items:center;font-weight:600;font-size:18px;color:#111827;text-decoration:none}
-.brand img{margin-right:8px}
-.menu a{margin-left:20px;text-decoration:none;color:#111827;font-weight:500}
-.menu a:hover{color:#1d4ed8}
-.menu a.ativo{background:#1d4ed8;color:#fff;padding:6px 14px;border-radius:999px}
-
-/* HERO — 70% da tela, usando sua imagem cover2.jpg */
-.hero{
-  flex:0 0 70vh;position:relative;display:grid;place-items:center;
-  background-image:
-    linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.35)),
-    url("img/cover2.jpg");  /* <= AQUI! */
-  background-size:cover;background-position:center;
-  color:#fff;text-align:center;
-}
-.hero-inner{max-width:800px;padding:20px}
-.hero h1{font-size:48px;font-weight:700;margin-bottom:10px}
-.hero .sub{font-size:20px;margin-bottom:10px}
-.hero .tagline{font-size:18px;margin-bottom:20px}
-.cta{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
-.btn{padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;transition:.2s}
-.btn-primary{background:#2563eb;color:#fff}.btn-primary:hover{background:#1d4ed8}
-.btn-outline{border:2px solid #fff;color:#fff}.btn-outline:hover{background:#fff;color:#2563eb}
-
-/* Cards info */
-.section{padding:40px 20px}
-.info-row{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;max-width:1200px;margin:0 auto}
-.card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 6px rgba(0,0,0,.08);flex:1;min-width:260px}
-.card-title-sm{font-size:18px;margin-bottom:10px;font-weight:600}
-.card p{margin-bottom:6px}
-.card a{color:#2563eb;text-decoration:none}.card a:hover{text-decoration:underline}
-.muted{font-size:14px;color:#6b7280}
-
-/* Footer — 30% da tela */
-footer{
-  flex:0 0 30vh;background:#111827;color:#fff;
-  display:grid;place-items:center;text-align:center;padding:20px
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #222;
+  background: #f9fafb;
+  line-height: 1.6;
 }
 
-/* Responsivo */
-@media (max-width:900px){
-  .hero{flex:0 0 60vh}
-  .info-row{gap:16px}
+/* ------------------ HEADER ------------------ */
+.site-header {
+  background: #f3f3f3;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav .brand {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #111;
+  text-decoration: none;
+  gap: 0.5rem;
+}
+
+.nav .menu a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+}
+
+.nav .menu a:hover,
+.nav .menu a.ativo {
+  color: #fff;
+  background: #0050ff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+/* ------------------ HERO ------------------ */
+.hero {
+  background: url("img/cover2.jpg") center/cover no-repeat;
+  height: 70vh; /* ocupa 70% da tela */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* escurece a imagem */
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 1rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero .sub {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero .tagline {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #0050ff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #003fcc;
+}
+
+.btn-outline {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #111;
+}
+
+/* ------------------ INFO ROW ------------------ */
+.section {
+  padding: 3rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.info-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  flex: 1;
+  min-width: 280px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card p {
+  margin-bottom: 0.5rem;
+}
+
+.card .muted {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ------------------ FOOTER ------------------ */
+footer {
+  background: #0a0a23;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  height: 30vh; /* ocupa 30% da tela */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  font-size: 0.95rem;
 }

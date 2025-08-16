@@ -1,3 +1,4 @@
+
 :root {
   --brand: #1f3b73;
   --brand-2: #2563eb;
@@ -10,13 +11,14 @@
 }
 
 * { box-sizing: border-box }
-html { scroll-behavior: smooth }
+html, body { margin: 0; padding: 0; height: 100%; }
 body {
-  margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   color: var(--text);
   background: var(--bg);
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header */
@@ -44,15 +46,8 @@ body {
   color: var(--text);
   font-weight: 700;
 }
-.brand span {
-  font-size: 18px;
-  letter-spacing: .2px;
-}
-.menu {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
+.brand span { font-size: 18px; letter-spacing: .2px }
+.menu { display: flex; gap: 12px; flex-wrap: wrap }
 .menu a {
   text-decoration: none;
   color: var(--text);
@@ -63,10 +58,9 @@ body {
 .menu a:hover { background: #eef2ff }
 .menu a.ativo { background: var(--brand); color: #fff }
 
-/* Hero */
+/* Hero = 70% da tela */
 .hero {
-  position: relative;
-  min-height: 62vh;
+  height: 70vh;
   display: grid;
   place-items: center;
   background-image: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.35)), url("img/cover.jpg");
@@ -77,30 +71,16 @@ body {
 }
 .hero-inner {
   max-width: 1000px;
-  padding: 80px 16px;
+  padding: 40px 16px;
 }
 .hero h1 {
   font-size: clamp(36px,5vw,56px);
   margin: 0 0 8px;
   font-weight: 800;
-  letter-spacing: .5px;
 }
-.hero .sub {
-  font-size: clamp(18px,2.6vw,26px);
-  opacity: .95;
-  margin: 6px 0 14px;
-}
-.hero .tagline {
-  font-size: clamp(16px,2vw,20px);
-  opacity: .95;
-  margin: 10px 0 22px;
-}
-.cta {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+.hero .sub { font-size: clamp(18px,2.6vw,26px); opacity: .95; margin: 6px 0 14px }
+.hero .tagline { font-size: clamp(16px,2vw,20px); opacity: .95; margin: 10px 0 22px }
+.cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap }
 .btn {
   display: inline-block;
   padding: 12px 20px;
@@ -114,6 +94,15 @@ body {
 .btn:hover { opacity: .9 }
 .btn:active { transform: scale(.98) }
 
+/* Main (30% da tela) */
+main {
+  flex: 1;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 /* Section & Cards */
 .section {
   max-width: 1100px;
@@ -125,9 +114,7 @@ body {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 22px;
-  margin-bottom: 18px;
 }
-h2.title { margin: 6px 0 12px; font-size: 28px }
 h3 { margin: 8px 0 }
 
 /* Info row (3 blocos lado a lado) */

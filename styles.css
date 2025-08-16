@@ -1,107 +1,162 @@
-/* ------------------ RESET ------------------ */
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family:"Segoe UI", Roboto, Arial, sans-serif;
-  color:#222; background:#f9fafb; line-height:1.6;
+  font-family: Arial, sans-serif;
+  color: #111827;
+  line-height: 1.6;
+  background: #f9fafb;
 }
 
-/* ------------------ HEADER ------------------ */
-.site-header { background:#f3f3f3; border-bottom:1px solid #ddd; }
+/* HEADER */
+.site-header {
+  background: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  padding: 0.8rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 .nav {
-  max-width:1100px; margin:0 auto; padding:.8rem 1rem;
-  display:flex; align-items:center; justify-content:space-between;
-}
-.nav .brand { display:flex; align-items:center; gap:.5rem; font-weight:600; color:#111; text-decoration:none; }
-.nav .menu a { margin-left:1rem; text-decoration:none; color:#222; font-weight:500; }
-.nav .menu a:hover, .nav .menu a.ativo {
-  color:#fff; background:#0050ff; padding:.4rem .8rem; border-radius:20px; transition:.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* ------------------ HERO (capa da home) ------------------ */
-.hero{
-  background:
-    linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.35)),
-    url("img/cover2.jpg") center/cover no-repeat;
-  height:70vh; display:flex; align-items:center; justify-content:center;
-  text-align:center; color:#fff; position:relative;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: #111827;
 }
-.hero-inner{ position:relative; z-index:1; max-width:700px; padding:1rem; }
-.hero h1{ font-size:2.8rem; margin-bottom:.5rem; font-weight:800; }
-.hero .sub{ font-size:1.25rem; margin-bottom:.4rem; }
-.hero .tagline{ font-size:1.05rem; margin-bottom:1.2rem; }
-.cta{ display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; }
-.btn{ padding:.65rem 1.2rem; border-radius:8px; font-weight:600; text-decoration:none; }
-.btn-primary{ background:#2563eb; color:#fff; }
-.btn-primary:hover{ background:#1d4ed8; }
-.btn-outline{ border:2px solid #fff; color:#fff; }
-.btn-outline:hover{ background:#fff; color:#2563eb; }
 
-/* ------------------ SEÇÕES GENÉRICAS ------------------ */
-.section{ padding:2.2rem 1rem; max-width:1100px; margin:0 auto; }
-.page-title{ font-size:2rem; font-weight:800; margin:1rem auto 1rem; max-width:1100px; padding:0 1rem; }
-
-/* ------------------ CARDS (Home) ------------------ */
-.info-row{
-  display:flex; gap:1.2rem; flex-wrap:wrap; justify-content:center;
+.menu a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #111827;
+  font-weight: 500;
 }
-.card{
-  flex:1; min-width:280px; background:#fff; border-radius:12px;
-  padding:1.25rem; box-shadow:0 2px 8px rgba(0,0,0,.06);
+
+.menu a:hover,
+.menu a.ativo {
+  color: #2563eb;
+  font-weight: 600;
 }
-.card h3{ font-size:1.2rem; margin-bottom:.6rem; font-weight:700; }
-.card p{ margin:.4rem 0; }
-.card .muted{ color:#6b7280; font-size:.95rem; }
-.card a{ color:#2563eb; text-decoration:none; }
-.card a:hover{ text-decoration:underline; }
 
-/* =======================================================
-   PÁGINAS INTERNAS (contacts.html, types.html, offre.html)
-   ======================================================= */
-
-/* Contêiner padrão */
-.container { max-width:1100px; margin:0 auto; padding:2rem 1rem; }
-
-/* Listas de itens em cartão (Types, Contacts) */
-.list { display:grid; gap:14px; }
-.item, .contact-item {
-  background:#fff; border-radius:14px; padding:18px 20px;
-  box-shadow:0 2px 8px rgba(0,0,0,.06);
+/* HERO */
+.hero {
+  height: 70vh;
+  background: url('img/hero.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
 }
-.item h4 { margin:0 0 .35rem; font-size:1.1rem; }
 
-/* Bloco superior de contatos (endereço/horários/tel) */
-.contact-summary{
-  background:#fff; border-radius:14px; padding:18px 20px; margin-bottom:16px;
-  box-shadow:0 2px 8px rgba(0,0,0,.06);
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45); /* overlay escuro */
 }
-.contact-summary p{ margin:.35rem 0; }
-.contact-summary a{ color:#2563eb; text-decoration:none; }
-.contact-summary a:hover{ text-decoration:underline; }
 
-/* Grid de pessoas de contato (se quiser dividir 2 colunas) */
-.contacts-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
-@media (min-width:800px){ .contacts-grid{ grid-template-columns:1fr 1fr; } }
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
 
-/* Formulário (offre.html) */
-form .row{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-@media (max-width:800px){ form .row{ grid-template-columns:1fr; } }
-label{ font-weight:600; }
-input, textarea, select{
-  width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:10px;
-  font-size:1rem; background:#fff;
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
 }
-textarea{ min-height:110px; resize:vertical; }
-.note{ font-size:.95rem; color:#6b7280; }
-button[type=submit], .btn-submit{
-  background:#2563eb; color:#fff; border:none; border-radius:12px;
-  padding:12px 16px; font-weight:700; cursor:pointer;
-}
-button[type=submit]:hover, .btn-submit:hover{ opacity:.9; }
 
-/* ------------------ FOOTER ------------------ */
-footer{
-  background:#0a0a23; color:#fff; text-align:center;
-  padding:2rem 1rem; margin-top:2rem;
+.hero .sub {
+  font-size: 1.3rem;
 }
-footer p{ font-size:.95rem; }
+
+.hero .tagline {
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.hero-buttons {
+  margin-top: 2.5rem; /* move botões para baixo */
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.hero-buttons a {
+  padding: 0.6rem 1.4rem; /* botões menores */
+  font-size: 0.95rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-outline {
+  border: 2px solid white;
+  color: white;
+  background: transparent;
+}
+
+.hero-buttons a:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* INFO CARDS */
+.section {
+  padding: 2rem;
+}
+
+.info-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  flex: 1;
+  min-width: 260px;
+}
+
+.card-title-sm {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.muted {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* FOOTER */
+footer {
+  background: #111827;
+  color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}

@@ -1,84 +1,86 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Types de gestion — Laurent Hoessen</title>
   <link rel="stylesheet" href="styles.css?v=4">
-
-  <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
 </head>
 <body>
-<header class="site-header">
-  <nav class="nav" aria-label="Navigation principale">
-    <a class="brand" href="index.html" aria-label="Accueil">
-      <img src="img/logo.svg" alt="Logo LH" width="34" height="34" />
-      <span>Laurent&nbsp;Hoessen</span>
-    </a>
-    <div class="menu">
-      <a href="index.html">Accueil</a>
-      <a href="types.html" class="ativo" aria-current="page">Types de gestion</a>
-      <a href="contacts.html">Contacts</a>
-      <a href="offre.html">Demande d’Offre</a>
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="index.html" aria-label="Accueil">
+        <img src="img/logo.svg" alt="Logo LH" width="28" height="28">
+        <span>Laurent&nbsp;Hoessen</span>
+      </a>
+      <div class="menu">
+        <a href="index.html">Accueil</a>
+        <a href="types.html" class="ativo" aria-current="page">Types de gestion</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="offre.html">Demande d’Offre</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="section">
+    <h1 class="page-title">Types de gestion</h1>
+
+    <!-- Cards em grade -->
+    <div class="grid-2">
+      <!-- Card 1 -->
+      <article class="service-card card">
+        <h2 class="title">Syndic de copropriété — pilotage global</h2>
+        <ul>
+          <li>Exécution des décisions d’AG et suivi des prestataires</li>
+          <li>Tenue des registres, affichages et conformité (ascenseurs, incendie…)</li>
+          <li>Communication claire aux copropriétaires (courriels, avis, PV)</li>
+          <li>Reporting régulier : dépenses, travaux, incidents</li>
+        </ul>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="service-card card">
+        <h2 class="title">Gestion administrative — sérénité au quotidien</h2>
+        <ul>
+          <li>Contrats et appels d’offres avec clauses protectrices</li>
+          <li>Assurances, sinistres et dossiers réglementaires</li>
+          <li>Suivi des fournisseurs et délais d’intervention</li>
+          <li>Courriers types, modèles d’affichage et procédures</li>
+        </ul>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="service-card card">
+        <h2 class="title">Gestion technique — sécurité & conformité</h2>
+        <ul>
+          <li>Plan d’entretien préventif des installations</li>
+          <li>Devis comparatifs pour travaux & interventions</li>
+          <li>Suivi de chantiers, réceptions et garanties</li>
+          <li>Contrôles périodiques (ascenseurs, extincteurs, électricité)</li>
+        </ul>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="service-card card">
+        <h2 class="title">Comptabilité & AG — transparence financière</h2>
+        <ul>
+          <li>Comptabilité conforme à la législation belge</li>
+          <li>Budgets, décomptes, appels de fonds</li>
+          <li>Préparation et présidence des Assemblées Générales</li>
+          <li>Documents et PV disponibles à la demande</li>
+        </ul>
+      </article>
     </div>
-  </nav>
-</header>
-<h1 class="page-title">Types de gestion</h1>
 
+    <!-- CTA -->
+    <div style="text-align:center; margin-top:22px;">
+      <a class="btn btn-primary" href="offre.html">Demander une offre</a>
+    </div>
+  </main>
 
-<main class="section">
-  <section class="service-card">
-    <h2>Syndic de copropriété — pilotage global</h2>
-    <ul>
-      <li>Exécution des décisions d’AG et suivi des prestataires</li>
-      <li>Tenue des registres, affichages et conformité (ascenseurs, incendie…)</li>
-      <li>Communication claire aux copropriétaires (courriels, avis, PV)</li>
-      <li>Reporting régulier : dépenses, travaux, incidents</li>
-    </ul>
-  </section>
-
-  <section class="service-card">
-    <h2>Gestion administrative — sérénité au quotidien</h2>
-    <ul>
-      <li>Contrats et appels d’offres avec clauses protectrices</li>
-      <li>Assurances, sinistres et dossiers réglementaires</li>
-      <li>Suivi des fournisseurs et délais d’intervention</li>
-      <li>Courriers types, modèles d’affichage et procédures</li>
-    </ul>
-  </section>
-
-  <section class="service-card">
-    <h2>Gestion technique — sécurité &amp; conformité</h2>
-    <ul>
-      <li>Plan d’entretien préventif des installations</li>
-      <li>Devis comparatifs pour travaux & interventions</li>
-      <li>Suivi de chantiers, réceptions et garanties</li>
-      <li>Contrôles périodiques (ascenseurs, extincteurs, électricité)</li>
-    </ul>
-  </section>
-
-  <section class="service-card">
-    <h2>Comptabilité &amp; Assemblées Générales</h2>
-    <ul>
-      <li>Comptabilité transparente et lisible</li>
-      <li>Budgets clairs et prévisionnels</li>
-      <li>Convocations et organisation des AG</li>
-      <li>Procès-verbaux diffusés aux copropriétaires</li>
-    </ul>
-  </section>
-
-  <section class="service-card">
-    <h2>Sinistres &amp; assurances</h2>
-    <ul>
-      <li>Déclarations rapides et suivi complet</li>
-      <li>Négociations avec les assureurs</li>
-      <li>Suivi des réparations et indemnisations</li>
-    </ul>
-  </section>
-</main>
-
-<footer>
-  <p>© 2025 Laurent Hoessen · Gestion Immobilière — Syndic BILH &amp; DUHO</p>
-</footer>
+  <footer>
+    © 2025 Laurent Hoessen · Gestion Immobilière — Syndic BILH & DUHO
+  </footer>
 </body>
 </html>

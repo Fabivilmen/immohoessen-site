@@ -1,91 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacts — Laurent Hoessen</title>
-  <meta name="description" content="Contacts et coordonnées de Laurent Hoessen — Syndic BILH & DUHO. Téléphone, e-mails, adresses et urgences.">
-  <link rel="stylesheet" href="styles.css?v=13">
-  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
-<header class="site-header">
-  <nav class="nav" aria-label="Navigation principale">
-    <a class="brand" href="index.html">
-      <img src="img/logo.svg" alt="Logo LH" width="34" height="34">
-      <span>Laurent&nbsp;Hoessen</span>
-    </a>
-    <div class="menu">
+  <header>
+    <div class="logo">LH</div>
+    <h1>Laurent Hoessen</h1>
+    <nav>
       <a href="index.html">Accueil</a>
       <a href="types.html">Types de gestion</a>
-      <a href="contacts.html" class="ativo" aria-current="page">Contacts</a>
+      <a href="contacts.html" class="active">Contacts</a>
       <a href="offre.html">Demande d’Offre</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h2>Contacts</h2>
+
+    <div class="contact-info">
+      <p><i class="fas fa-map-marker-alt"></i> <strong>Adresse :</strong> Avenue Heydenberg 14, 1200 Bruxelles</p>
+      <p><i class="fas fa-phone"></i> <strong>Tél. :</strong> <a href="tel:+3227725175">0277 25 175</a></p>
+      <p><i class="fas fa-envelope"></i> <strong>Email :</strong> <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></p>
+      <p><i class="fas fa-clock"></i> <strong>Horaires :</strong> Lun–Ven : <b>09:00–13:00</b></p>
+      <p><i class="fas fa-exclamation-triangle"></i> <strong>Urgences 24/24 :</strong> <a href="tel:+32495261683">0495 26 16 83</a></p>
     </div>
-  </nav>
-</header>
+  </main>
 
-<h1 class="page-title">Contacts</h1>
-
-<!-- CONTAINER -->
-<div class="contacts-wrap">
-
-  <!-- Cartão geral -->
-  <div class="contact-card">
-    <p><span class="contact-label">Adresse :</span> <span class="contact-value">Av. Heydenberg 14 – 1200 Bruxelles</span></p>
-    <p><span class="contact-label">Horaires :</span> <span class="contact-value">Lun–Ven 09:00–13:00</span></p>
-    <p><span class="contact-label">Tél. :</span> <a href="tel:027755175" class="contact-value">0277 55 175</a></p>
-    <p><span class="contact-label">E-mail général :</span> <a href="mailto:syndic@immohoessen.be" class="contact-value">syndic@immohoessen.be</a></p>
-    <p><span class="contact-label">Urgences 24/24 :</span> <a href="tel:0495261683" class="contact-value">0495 26 16 83</a></p>
-  </div>
-
-  <!-- Grid Equipe -->
-  <div class="card-grid">
-    <div class="contact-card">
-      <p>
-        <span class="contact-label">Laurent Hoessen :</span>
-        <span class="contact-value">Gestionnaire IPI titulaire</span><br>
-        <a href="mailto:laurent@immohoessen.be" class="contact-value">laurent@immohoessen.be</a>
-      </p>
-    </div>
-
-    <div class="contact-card">
-      <p>
-        <span class="contact-label">André Hoessen :</span>
-        <span class="contact-value">Gestionnaire général</span><br>
-        <a href="mailto:andre@immohoessen.be" class="contact-value">andre@immohoessen.be</a>
-      </p>
-    </div>
-
-    <div class="contact-card">
-      <p>
-        <span class="contact-label">Bonifacio Patricia :</span>
-        <span class="contact-value">Gestion collaboratrice</span><br>
-        <a href="mailto:gestion@immohoessen.be" class="contact-value">gestion@immohoessen.be</a>
-      </p>
-    </div>
-
-    <div class="contact-card">
-      <p>
-        <span class="contact-label">Ledieu Viviane :</span>
-        <span class="contact-value">Gestion des sinistres</span><br>
-        <a href="mailto:admin@immohoessen.be" class="contact-value">admin@immohoessen.be</a>
-      </p>
-    </div>
-
-    <div class="contact-card">
-      <p>
-        <span class="contact-label">Factures :</span>
-        <a href="mailto:factures@immohoessen.be" class="contact-value">factures@immohoessen.be</a>
-      </p>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <p>© 2025 Laurent Hoessen — Gestion Immobilière</p>
-</footer>
-
+  <footer>
+    <p>© 2025 Laurent Hoessen · Gestion Immobilière · Syndic BILH & DUHO</p>
+  </footer>
 </body>
 </html>

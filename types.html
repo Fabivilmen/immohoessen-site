@@ -1,98 +1,86 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Types de gestion — Laurent Hoessen</title>
-  <link rel="stylesheet" href="styles.css?v=12" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<header class="site-header">
-  <nav class="nav">
-    <a class="brand" href="index.html">
-      <img src="img/logo.svg" alt="Logo LH" width="34" height="34" />
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <div class="logo-circle">LH</div>
       <span>Laurent Hoessen</span>
-    </a>
-    <div class="menu">
-      <a href="index.html">Accueil</a>
-      <a href="types.html" class="ativo">Types de gestion</a>
-      <a href="contacts.html">Contacts</a>
-      <a href="offre.html">Demande d’Offre</a>
     </div>
-  </nav>
-</header>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="types.html" class="active">Types de gestion</a>
+      <a href="contacts.html">Contacts</a>
+      <a href="offer.html">Demande d’Offre</a>
+    </nav>
+  </header>
 
-<h1 class="page-title">Types de gestion</h1>
+  <main class="container">
+    <!-- Pills -->
+    <div class="toc">
+      <a href="#syndic" class="pill">Syndic de copropriété</a>
+      <a href="#admin" class="pill">Gestion administrative</a>
+      <a href="#technique" class="pill">Gestion technique</a>
+      <a href="#compta" class="pill">Comptabilité & AG</a>
+      <a href="#assurance" class="pill">Sinistres & assurances</a>
+    </div>
 
-<div class="container">
+    <!-- Blocos -->
+    <section id="syndic" class="service-card">
+      <h2>Syndic de copropriété — pilotage global</h2>
+      <ul>
+        <li>Exécution des décisions d’AG et suivi des prestataires</li>
+        <li>Tenue des registres, affichages et conformité (ascenseurs, incendie…)</li>
+        <li>Communication claire aux copropriétaires (courriels, avis, PV)</li>
+        <li>Reporting régulier : dépenses, travaux, incidents</li>
+      </ul>
+    </section>
 
-  <!-- botões pills -->
-  <div class="toc">
-    <a href="#syndic" class="pill">Syndic de copropriété</a>
-    <a href="#admin" class="pill">Gestion administrative</a>
-    <a href="#tech" class="pill">Gestion technique</a>
-    <a href="#ag" class="pill">Comptabilité &amp; AG</a>
-    <a href="#sinistres" class="pill">Sinistres &amp; assurances</a>
-  </div>
+    <section id="admin" class="service-card">
+      <h2>Gestion administrative — sérénité au quotidien</h2>
+      <ul>
+        <li>Contrats et appels d’offres avec clauses protectrices</li>
+        <li>Assurances, sinistres et dossiers réglementaires</li>
+        <li>Suivi des fournisseurs et SLA (délais d’intervention)</li>
+        <li>Courriers types, modèles d’affichage et procédures</li>
+      </ul>
+    </section>
 
-  <!-- blocos -->
-  <section id="syndic" class="service-card">
-    <h2>Syndic de copropriété — pilotage global</h2>
-    <ul>
-      <li>Exécution des décisions d’AG et suivi des prestataires</li>
-      <li>Tenue des registres, affichages et conformité (ascenseurs, incendie…)</li>
-      <li>Communication claire aux copropriétaires (courriels, avis, PV)</li>
-      <li>Reporting régulier : dépenses, travaux, incidents</li>
-    </ul>
-  </section>
+    <section id="technique" class="service-card">
+      <h2>Gestion technique — sécurité & conformité</h2>
+      <ul>
+        <li>Plan d’entretien préventif des installations</li>
+        <li>Devis comparatifs sous 72h pour travaux & interventions</li>
+        <li>Suivi de chantiers, réceptions et garanties</li>
+        <li>Contrôles périodiques (ascenseurs, extincteurs, électricité)</li>
+      </ul>
+    </section>
 
-  <section id="admin" class="service-card">
-    <h2>Gestion administrative — sérénité au quotidien</h2>
-    <ul>
-      <li>Contrats et appels d’offres avec clauses protectrices</li>
-      <li>Assurances, sinistres et dossiers réglementaires</li>
-      <li>Suivi des fournisseurs et SLA (délais d’intervention)</li>
-      <li>Courriers types, modèles d’affichage et procédures</li>
-    </ul>
-  </section>
+    <section id="compta" class="service-card">
+      <h2>Comptabilité & Assemblées générales</h2>
+      <ul>
+        <li>Comptabilité transparente et rapports trimestriels</li>
+        <li>Préparation & organisation des assemblées générales</li>
+        <li>Conseil sur budgets et plan pluriannuel d’entretien</li>
+        <li>Accès en ligne sécurisé aux documents comptables</li>
+      </ul>
+    </section>
 
-  <section id="tech" class="service-card">
-    <h2>Gestion technique — sécurité &amp; conformité</h2>
-    <ul>
-      <li>Plan d’entretien préventif des installations</li>
-      <li>Devis comparatifs sous 72h pour travaux & interventions</li>
-      <li>Suivi de chantiers, réceptions et garanties</li>
-      <li>Contrôles périodiques (ascenseurs, extincteurs, électricité)</li>
-    </ul>
-  </section>
-
-  <section id="ag" class="service-card">
-    <h2>Comptabilité &amp; Assemblée Générale</h2>
-    <ul>
-      <li>Budgets, appels de fonds, décomptes individuels</li>
-      <li>Préparation d’AG sous 10 jours ouvrables</li>
-      <li>Présidence/Secrétariat d’AG et procès-verbaux</li>
-      <li>Comptes annuels, pièces justificatives et archivage</li>
-    </ul>
-  </section>
-
-  <section id="sinistres" class="service-card">
-    <h2>Sinistres &amp; assurances</h2>
-    <ul>
-      <li>Déclaration rapide et coordination avec l’expert</li>
-      <li>Suivi des indemnisations jusqu’à clôture</li>
-      <li>Tableau de suivi partagé avec le conseil</li>
-      <li>Réponse moyenne &lt; 24h ouvrées</li>
-    </ul>
-  </section>
-
-</div>
-
-<footer>
-  <p>© 2025 Laurent Hoessen — Gestion Immobilière</p>
-</footer>
-
+    <section id="assurance" class="service-card">
+      <h2>Sinistres & assurances — réactivité 24/7</h2>
+      <ul>
+        <li>Déclaration rapide des sinistres</li>
+        <li>Négociation avec compagnies d’assurances</li>
+        <li>Suivi des indemnisations</li>
+        <li>Assistance technique & juridique en cas de litige</li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>

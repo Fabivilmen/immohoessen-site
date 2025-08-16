@@ -1,3 +1,4 @@
+
 :root{
   --brand:#1f3b73;
   --brand-2:#2563eb;
@@ -12,7 +13,7 @@
 html{scroll-behavior:smooth}
 body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
 
-/* Header / nav */
+/* ===== Navbar ===== */
 .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb}
 .nav{max-width:1100px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:16px;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:800}
@@ -22,7 +23,7 @@ body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-s
 .menu a:hover{background:#eef2ff}
 .menu a.ativo{background:var(--brand-2);color:#fff}
 
-/* Hero (sem barras nem overlay) */
+/* ===== Hero (SEM overlay/SEM barra) ===== */
 .hero{
   position:relative;
   min-height:70vh;
@@ -40,32 +41,23 @@ body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-s
 .hero .tagline{font-size:clamp(16px,2vw,20px);opacity:.98;margin:10px 0 20px}
 .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
-/* Buttons */
+/* ===== Buttons ===== */
 .btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:800;text-decoration:none;transition:transform .05s ease,opacity .2s ease}
 .btn-primary{background:var(--brand-2);color:#fff}
 .btn-outline{background:transparent;color:#fff;border:2px solid #fff}
 .btn:hover{opacity:.9}.btn:active{transform:scale(.98)}
 
-/* Sections / cards */
+/* ===== Layout / Cards ===== */
 .section{max-width:1100px;margin:28px auto;padding:0 16px}
 .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin-bottom:18px}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
 h1.page-title{font-size:clamp(28px,3.6vw,36px);margin:6px 0 6px}
 h2.title{margin:6px 0 12px;font-size:28px}
 h3{margin:8px 0 8px}
 
-/* Form */
-label{font-weight:700;display:block;margin:6px 0 6px}
-input,textarea,select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;background:#fff}
-textarea{min-height:110px;resize:vertical}
-button, .btn[type=submit]{cursor:pointer}
-.note{font-size:.95rem;color:var(--muted)}
-.card form .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media (max-width:900px){.card form .grid-2{grid-template-columns:1fr}}
-
-/* Service cards (Types) com check azul */
+/* ===== Lists (Types) com check azul ===== */
 .service-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin:16px 0}
 .service-card h2{margin:0 0 10px}
 .service-card ul{margin:8px 0 0 0;padding-left:0;list-style:none}
@@ -75,7 +67,7 @@ button, .btn[type=submit]{cursor:pointer}
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
 }
 
-/* Contacts (só individuais) */
+/* ===== Contacts (individuais) ===== */
 .card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 @media (max-width:900px){.card-grid{grid-template-columns:1fr}}
 .contact-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
@@ -83,5 +75,12 @@ button, .btn[type=submit]{cursor:pointer}
 .ic-mail a{color:var(--brand-2);text-decoration:none}
 .ic-mail a:hover{text-decoration:underline}
 
-/* Footer */
+/* ===== Form ===== */
+label{font-weight:700;display:block;margin:6px 0 6px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem;background:#fff}
+textarea{min-height:110px;resize:vertical}
+button, .btn[type=submit]{cursor:pointer}
+.note{font-size:.95rem;color:var(--muted)}
+
+/* ===== Footer ===== */
 footer{text-align:center;color:#fff;padding:18px 10px;background:var(--brand-2);margin-top:28px}

@@ -57,9 +57,10 @@ nav a.active {
 
 h2 {
   color: #1e3a8a;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
+/* Listas com ícones (Types de gestion) */
 ul {
   list-style: none;
   margin-bottom: 25px;
@@ -72,9 +73,30 @@ ul li {
 }
 
 ul li i {
-  color: #1e3a8a !important; /* 🔵 força azul */
+  color: #1e3a8a !important;
   margin-right: 10px;
   font-size: 18px;
+}
+
+/* Contacts */
+.contact-info p {
+  margin: 12px 0;
+  font-size: 16px;
+}
+
+.contact-info i {
+  color: #1e3a8a;
+  margin-right: 10px;
+}
+
+.contact-info a {
+  color: #1e3a8a;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
 }
 
 /* Footer */

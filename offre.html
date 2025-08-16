@@ -4,87 +4,96 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Demande d’Offre — Laurent Hoessen</title>
-  <link rel="stylesheet" href="styles.css?v=4">
-
+  <link rel="stylesheet" href="styles.css?v=10" />
   <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
 </head>
 <body>
-<header class="site-header">
-  <nav class="nav" aria-label="Navigation principale">
-    <a class="brand" href="index.html" aria-label="Accueil">
-      <img src="img/logo.svg" alt="Logo LH" width="34" height="34" />
-      <span>Laurent&nbsp;Hoessen</span>
-    </a>
-    <div class="menu">
-      <a href="index.html">Accueil</a>
-      <a href="types.html">Types de gestion</a>
-      <a href="contacts.html">Contacts</a>
-      <a href="offre.html" class="ativo" aria-current="page">Demande d’Offre</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="index.html" aria-label="Accueil">
+        <img src="img/logo.svg" alt="Logo LH" width="28" height="28" />
+        <span>Laurent&nbsp;Hoessen</span>
+      </a>
+      <div class="menu">
+        <a href="index.html">Accueil</a>
+        <a href="types.html">Types de gestion</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="offre.html" class="ativo" aria-current="page">Demande d’Offre</a>
+        <a href="plateforme.html">Accès à la plateforme</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="section">
+    <h1 class="page-title">Demande d’Offre</h1>
+
+    <form class="card" action="#" method="POST">
+      <div class="grid-2">
+        <div>
+          <label>Nom complet *</label>
+          <input type="text" name="name" required />
+        </div>
+        <div>
+          <label>Email *</label>
+          <input type="email" name="email" required />
+        </div>
+
+        <div>
+          <label>Téléphone *</label>
+          <input type="tel" name="phone" required />
+        </div>
+        <div>
+          <label>Adresse de la copropriété *</label>
+          <input type="text" name="address" required />
+        </div>
+
+        <div>
+          <label>Nombre d’étages *</label>
+          <input type="number" name="floors" min="1" required />
+        </div>
+        <div>
+          <label>Nombre d’appartements (optionnel)</label>
+          <input type="number" name="units" min="1" />
+        </div>
+
+        <div>
+          <label>Avez-vous déjà un syndic ? *</label>
+          <select name="has_syndic" required>
+            <option value="">Sélectionner…</option>
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+          </select>
+        </div>
+        <div>
+          <label>Dispose-t-on d’un box/parking ? *</label>
+          <select name="has_parking" required>
+            <option value="">Sélectionner…</option>
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+          </select>
+        </div>
+
+        <div style="grid-column:1/-1">
+          <label>Commentaires ou demandes spécifiques</label>
+          <textarea name="message" rows="4" placeholder="Précisez ici vos besoins…"></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+      <p class="note" style="margin-top:10px">
+        En envoyant ce formulaire, j’accepte d’être contacté(e) par e-mail ou téléphone.
+        Horaires du bureau : Lun–Ven, 09:00–13:00.
+      </p>
+    </form>
+  </main>
+
+  <footer class="micro-footer">
+    <div class="wrap micro-footer-row">
+      <span>Horaires : Lun–Ven 09:00–13:00</span>
+      <span class="sep">•</span>
+      <span>Email : <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span>
     </div>
-  </nav>
-</header>
-
-<h1 class="page-title section">Demande d’Offre</h1>
-
-<main class="section">
-  <form class="card" action="#" method="POST">
-    <div class="grid-2">
-      <div>
-        <label>Nom complet *</label>
-        <input type="text" name="name" required />
-      </div>
-      <div>
-        <label>Email *</label>
-        <input type="email" name="email" required />
-      </div>
-      <div>
-        <label>Téléphone *</label>
-        <input type="tel" name="phone" required />
-      </div>
-      <div>
-        <label>Adresse de la copropriété *</label>
-        <input type="text" name="address" required />
-      </div>
-      <div>
-        <label>Nombre d’étages *</label>
-        <input type="number" name="floors" min="1" required />
-      </div>
-      <div>
-        <label>Nombre d’appartements (optionnel)</label>
-        <input type="number" name="units" min="1" />
-      </div>
-      <div>
-        <label>Avez-vous déjà un syndic ? *</label>
-        <select name="has_syndic" required>
-          <option value="">Sélectionner…</option>
-          <option value="oui">Oui</option>
-          <option value="non">Non</option>
-        </select>
-      </div>
-      <div>
-        <label>Dispose-t-on d’un box/parking ? *</label>
-        <select name="has_parking" required>
-          <option value="">Sélectionner…</option>
-          <option value="oui">Oui</option>
-          <option value="non">Non</option>
-        </select>
-      </div>
-      <div style="grid-column:1/-1">
-        <label>Commentaires ou demandes spécifiques</label>
-        <textarea name="message" rows="4" placeholder="Précisez ici vos besoins…"></textarea>
-      </div>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Envoyer la demande</button>
-    <p class="note" style="margin-top:10px">
-      En envoyant ce formulaire, j’accepte d’être contacté(e) par e-mail ou téléphone.
-      Horaires du bureau : Lun–Ven, 09:00–13:00.
-    </p>
-  </form>
-</main>
-
-<footer>
-  <p>© 2025 Laurent Hoessen · Gestion Immobilière — Syndic BILH &amp; DUHO</p>
-</footer>
+  </footer>
 </body>
 </html>

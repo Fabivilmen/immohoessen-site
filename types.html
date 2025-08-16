@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Types de gestion — Laurent Hoessen</title>
   <meta name="description" content="Nos offres de gestion de copropriété : administrative, technique, comptabilité & AG, sinistres. Conformité IPI, transparence, réactivité.">
-  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="stylesheet" href="styles.css?v=15" />
   <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
 </head>
 <body>
@@ -28,91 +28,81 @@
 <h1 class="page-title">Types de gestion</h1>
 
 <div class="container">
-  <!-- Intro + CTA -->
-  <div class="contact-summary" style="display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap">
-    <p style="margin:0">
+  <!-- CTA topo -->
+  <div class="item service-intro">
+    <p>
       Nous prenons en charge la <b>gestion complète</b> de votre copropriété : administrative, financière, technique et sinistres —
       avec <b>transparence</b>, <b>réactivité</b> et <b>conformité IPI</b>.
     </p>
-    <p style="margin:0">
-      <a class="btn btn-primary" href="offre.html">Demander une offre</a>
-    </p>
+    <a class="btn btn-primary" href="offre.html">Demander une offre</a>
   </div>
 
-  <!-- Mini sommaire (ancres) -->
-  <div class="list" style="margin-top:12px">
-    <div class="item" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-      <a href="#syndic" class="btn btn-outline" style="border-color:#2563eb;color:#2563eb">Syndic de copropriété</a>
-      <a href="#admin" class="btn btn-outline" style="border-color:#2563eb;color:#2563eb">Gestion administrative</a>
-      <a href="#tech" class="btn btn-outline" style="border-color:#2563eb;color:#2563eb">Gestion technique</a>
-      <a href="#ag" class="btn btn-outline" style="border-color:#2563eb;color:#2563eb">Comptabilité &amp; AG</a>
-      <a href="#sinistres" class="btn btn-outline" style="border-color:#2563eb;color:#2563eb">Sinistres &amp; assurances</a>
-    </div>
+  <!-- TOC de âncoras -->
+  <div class="toc">
+    <a href="#syndic" class="pill">Syndic de copropriété</a>
+    <a href="#admin" class="pill">Gestion administrative</a>
+    <a href="#tech" class="pill">Gestion technique</a>
+    <a href="#ag" class="pill">Comptabilité & AG</a>
+    <a href="#sinistres" class="pill">Sinistres & assurances</a>
   </div>
 
-  <!-- Cartes -->
-  <div class="list" style="margin-top:10px">
-    <div id="syndic" class="item">
-      <h2 style="margin:0 0 .35rem">Syndic de copropriété — pilotage global</h2>
-      <ul style="margin-left:1rem">
+  <!-- Cartões de serviços -->
+  <div class="service-list">
+    <section id="syndic" class="service-card">
+      <h2>Syndic de copropriété — pilotage global</h2>
+      <ul>
         <li>Exécution des décisions d’AG et suivi des prestataires</li>
         <li>Tenue des registres, affichages et conformité (ascenseurs, incendie…)</li>
         <li>Communication claire aux copropriétaires (courriels, avis, PV)</li>
         <li>Reporting régulier : dépenses, travaux, incidents</li>
       </ul>
-    </div>
+    </section>
 
-    <div id="admin" class="item">
-      <h2 style="margin:0 0 .35rem">Gestion administrative — sérénité au quotidien</h2>
-      <ul style="margin-left:1rem">
+    <section id="admin" class="service-card">
+      <h2>Gestion administrative — sérénité au quotidien</h2>
+      <ul>
         <li>Contrats et appels d’offres avec clauses protectrices</li>
         <li>Assurances, sinistres et dossiers réglementaires</li>
         <li>Suivi des fournisseurs et SLA (délais d’intervention)</li>
         <li>Courriers types, modèles d’affichage et procédures</li>
       </ul>
-    </div>
+    </section>
 
-    <div id="tech" class="item">
-      <h2 style="margin:0 0 .35rem">Gestion technique — sécurité & conformité</h2>
-      <ul style="margin-left:1rem">
+    <section id="tech" class="service-card">
+      <h2>Gestion technique — sécurité & conformité</h2>
+      <ul>
         <li>Plan d’entretien préventif des installations</li>
         <li>Devis comparatifs sous 72h pour travaux & interventions</li>
         <li>Suivi de chantiers, réceptions et garanties</li>
         <li>Contrôles périodiques (ascenseurs, extincteurs, électricité)</li>
       </ul>
-    </div>
+    </section>
 
-    <div id="ag" class="item">
-      <h2 style="margin:0 0 .35rem">Comptabilité & Assemblée Générale</h2>
-      <ul style="margin-left:1rem">
+    <section id="ag" class="service-card">
+      <h2>Comptabilité & Assemblée Générale</h2>
+      <ul>
         <li>Budgets, appels de fonds, décomptes individuels</li>
         <li>Préparation d’AG sous 10 jours ouvrables</li>
         <li>Présidence/Secrétariat d’AG et procès-verbaux</li>
         <li>Comptes annuels, pièces justificatives et archivage</li>
       </ul>
-    </div>
+    </section>
 
-    <div id="sinistres" class="item">
-      <h2 style="margin:0 0 .35rem">Sinistres & assurances</h2>
-      <ul style="margin-left:1rem">
+    <section id="sinistres" class="service-card">
+      <h2>Sinistres & assurances</h2>
+      <ul>
         <li>Déclaration rapide et coordination avec l’expert</li>
         <li>Suivi des indemnisations jusqu’à clôture</li>
         <li>Tableau de suivi partagé avec le conseil</li>
         <li>Réponse moyenne &lt; 72h ouvrées</li>
       </ul>
-    </div>
+    </section>
   </div>
 
-  <!-- Bloco de confiança + CTA final -->
-  <div class="list" style="margin-top:14px">
-    <div class="item" style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between">
-      <p style="margin:0">
-        <b>Conformité IPI</b> · Procédures documentées · Transparence budgétaire · Tableaux de bord partagés.
-      </p>
-      <p style="margin:0">
-        <a class="btn btn-primary" href="offre.html">Demander une offre personnalisée</a>
-      </p>
-    </div>
+  <!-- CTA final -->
+  <div class="item service-intro" style="margin-top:14px">
+    <p><b>Conformité IPI</b> · Procédures documentées · Transparence budgétaire · Tableaux de bord partagés.</p>
+    <a class="btn btn-primary" href="offre.html">Demander une offre personnalisée</a>
   </div>
 </div>
 

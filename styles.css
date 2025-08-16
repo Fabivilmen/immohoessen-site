@@ -1,26 +1,40 @@
-/* Contatos */
-.blue {
-  color: #2563eb; /* azul consistente */
+
+/* ====== CONTACTS ====== */
+.contacts-wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:2rem 1rem;
+  display:grid;
+  gap:16px;            /* espaço entre os blocos */
 }
 
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
+/* cartão padrão */
+.contact-card{
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+  padding:18px 20px;
+}
+.contact-card p{ margin:8px 0; line-height:1.45; }
+
+/* label preto em negrito */
+.contact-label{
+  font-weight:800;
+  color:#000;
 }
 
-.item {
-  background: #fff;
-  border-radius: 12px;
-  padding: 18px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+/* valores e links em azul */
+.contact-value,
+.contact-card a{
+  color:#2563eb;
+  text-decoration:none;
+  font-weight:600;
 }
+.contact-card a:hover{ text-decoration:underline; }
 
-.item p {
-  margin: 6px 0;
-  line-height: 1.4;
-}
-
-.item b {
-  color: #000; /* sempre preto para labels */
+/* grid da equipe */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:16px;            /* espaço entre cartões da grid */
 }

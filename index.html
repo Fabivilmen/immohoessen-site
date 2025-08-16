@@ -2,65 +2,50 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Laurent Hoessen — Gestion Immobilière</title>
-  <meta name="description" content="Gestion Immobilière — Syndic BILH & DUHO. Une gestion transparente, réactive et durable de votre copropriété.">
-  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <nav class="nav" aria-label="Navigation principale">
-      <a class="brand" href="index.html" aria-label="Accueil">
-        <img src="img/logo.svg" alt="Logo LH" width="28" height="28">
-        <span>Laurent&nbsp;Hoessen</span>
-      </a>
-      <div class="menu">
-        <a href="index.html" class="ativo" aria-current="page">Accueil</a>
-        <a href="types.html">Types de gestion</a>
-        <a href="#urgence">Urgence</a>
-        <a href="contacts.html">Contacts</a>
-        <a href="offre.html">Demande d’Offre</a>
-        <a href="plateforme.html">Accès à la plateforme</a>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo"> 
+      <span class="logo-icon">LH</span> Laurent Hoessen
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Accueil</a></li>
+      <li><a href="types.html">Types de gestion</a></li>
+      <li><a href="contacts.html">Contacts</a></li>
+      <li><a href="offre.html">Demande d’Offre</a></li>
+      <li><a href="plateforme.html">Accès à la plateforme</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO (imagem de capa) -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Une gestion transparente, réactive et durable</h1>
+      <div class="hero-buttons">
+        <a href="offre.html" class="btn-primary">Demande d’Offre</a>
+        <a href="contacts.html" class="btn-outline">Nous contacter</a>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" role="banner" aria-label="Photo de couverture">
-    <div class="hero-inner">
-      <h1>Laurent&nbsp;Hoessen</h1>
-      <p class="sub">Gestion Immobilière — Syndic BILH &amp; DUHO</p>
-      <p class="tagline">
-        Une gestion <strong>transparente</strong>, <strong>réactive</strong> et <strong>durable</strong> de votre copropriété.
-      </p>
-      <div class="cta">
-        <a class="btn btn-primary" href="offre.html">Demande d’Offre</a>
-        <a class="btn btn-outline" href="contacts.html">Nous contacter</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- URGENCE BAR -->
-  <div id="urgence" class="urgency-bar" role="note" aria-label="Urgence 24/24">
-    <div class="wrap">
-      <strong>Urgence</strong> — Problèmes techniques (fuite d’eau, panne d’ascenseur, etc.).
-      <span class="sep">•</span> <b>24/24 :</b> <a href="tel:0495261683">0495 26 16 83</a>
-    </div>
+  <!-- LINHA URGENCE -->
+  <div class="urgence-bar">
+    <strong>Urgence :</strong> Problèmes techniques (fuite d’eau, panne d’ascenseur, etc.) • 
+    <strong>24/24 :</strong> <a href="tel:+32495261683">0495 26 16 83</a>
   </div>
 
-  <!-- (removemos os 3 quadros brancos) -->
-  <main></main>
-
-  <!-- MICRO-FOOTER (linha fina com horário + e-mail) -->
-  <footer class="micro-footer">
-    <div class="wrap micro-footer-row">
-      <span>Horaires : Lun–Ven 09:00–13:00</span>
-      <span class="sep">•</span>
-      <span>Email : <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span>
-    </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Horaires : Lun–Ven 09:00–13:00 • 
+       Tél : <a href="tel:+3227725175">02 77 25 175</a> • 
+       Email : <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+    </p>
   </footer>
+
 </body>
 </html>

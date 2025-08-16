@@ -1,84 +1,136 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Laurent Hoessen — Gestion Immobilière</title>
-  <meta name="description" content="Gestion Immobilière — Syndic BILH & DUHO. Une gestion transparente, réactive et durable de votre copropriété.">
-  <link rel="stylesheet" href="styles.css?v=4">
-  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+:root {
+  --brand:#1f3b73;
+  --brand-2:#2563eb;
+  --text:#0f172a;
+  --muted:#475569;
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --radius:16px;
+  --shadow:0 10px 24px rgba(0,0,0,.08);
+}
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Laurent Hoessen — Gestion Immobilière">
-  <meta property="og:description" content="Syndic BILH & DUHO. Une gestion transparente, réactive et durable de votre copropriété.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="img/cover.jpg">
-</head>
-<body>
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
 
-<header class="site-header">
-  <nav class="nav" aria-label="Navigation principale">
-    <a class="brand" href="index.html" aria-label="Accueil">
-      <img src="img/logo.svg" alt="Logo LH" width="34" height="34">
-      <span>Laurent&nbsp;Hoessen</span>
-    </a>
-    <div class="menu">
-      <a href="index.html" class="ativo" aria-current="page">Accueil</a>
-      <a href="types.html">Types de gestion</a>
-      <a href="contacts.html">Contacts</a>
-      <a href="offre.html">Demande d’Offre</a>
-    </div>
-  </nav>
-</header>
+/* Header */
+.site-header {
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,255,255,.85);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid #e5e7eb;
+}
+.nav {
+  max-width:1100px;
+  margin:0 auto;
+  padding:10px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); font-weight:700; }
+.brand span { font-size:18px; letter-spacing:.2px; }
+.menu { display:flex; gap:12px; flex-wrap:wrap; }
+.menu a {
+  text-decoration:none;
+  color:var(--text);
+  padding:8px 14px;
+  border-radius:999px;
+  font-weight:600;
+}
+.menu a:hover { background:#eef2ff; }
+.menu a.ativo { background:var(--brand); color:#fff; }
 
-<!-- HERO -->
-<section class="hero" role="banner" aria-label="Photo de couverture">
-  <div class="hero-inner">
-    <h1>Laurent&nbsp;Hoessen</h1>
-    <p class="sub">Gestion Immobilière — Syndic BILH &amp; DUHO</p>
-    <p class="tagline">Une gestion <strong>transparente</strong>, <strong>réactive</strong> et <strong>durable</strong> de votre copropriété.</p>
-    <div class="cta">
-      <a class="btn btn-primary" href="offre.html">Demander une offre</a>
-      <a class="btn btn-outline" href="contacts.html">Nous contacter</a>
-    </div>
-  </div>
-</section>
+/* Hero */
+.hero {
+  flex:0 0 70vh; /* ocupa 70% da altura da tela */
+  position:relative;
+  display:grid;
+  place-items:center;
+  background-image:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.35)),url("img/cover.jpg");
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+  text-align:center;
+}
+.hero-inner {
+  max-width:1000px;
+  padding:40px 16px;
+}
+.hero h1 {
+  font-size:clamp(36px,5vw,56px);
+  margin:0 0 8px;
+  font-weight:800;
+  letter-spacing:.5px;
+}
+.hero .sub {
+  font-size:clamp(18px,2.6vw,26px);
+  opacity:.95;
+  margin:6px 0 14px;
+}
+.hero .tagline {
+  font-size:clamp(16px,2vw,20px);
+  opacity:.95;
+  margin:10px 0 22px;
+}
+.cta { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.btn {
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:999px;
+  font-weight:700;
+  text-decoration:none;
+  transition:transform .05s ease,opacity .2s ease;
+}
+.btn-primary { background:var(--brand-2); color:#fff; }
+.btn-outline { background:transparent; color:#fff; border:2px solid #fff; }
+.btn:hover { opacity:.9; }
+.btn:active { transform:scale(.98); }
 
-<!-- INFOS -->
-<main>
- <section class="section">
-  <div class="info-row">
-    <!-- Horaires -->
-    <div class="card">
-      <h3 class="card-title-sm">Horaires</h3>
-      <p>Lun–Ven : <b>09:00–13:00</b></p>
-    </div>
+/* Main content */
+.section {
+  flex:1; /* ocupa o restante da tela até o rodapé */
+  max-width:1100px;
+  margin:28px auto;
+  padding:0 16px;
+}
+.info-row {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.card {
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:20px;
+}
+.card-title-sm { margin:6px 0 12px; font-size:20px; }
 
-    <!-- Coordonnées -->
-    <div class="card">
-      <h3 class="card-title-sm">Coordonnées</h3>
-      <p><b>Adresse :</b> Avenue Heydenberg 14, 1200 Bruxelles</p>
-      <p><b>Tél. :</b> <a href="tel:027725175">0277 25 175</a></p>
-      <p><b>Email :</b> <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></p>
-    </div>
+/* Footer */
+footer {
+  background:#1f2937;
+  color:#f1f5f9;
+  text-align:center;
+  padding:20px 10px;
+  font-size:.95rem;
+}
+footer p { margin:0; }
 
-    <!-- Urgence -->
-    <div class="card">
-      <h3 class="card-title-sm">Urgence</h3>
-      <p>Problèmes techniques (fuite d’eau, panne d’ascenseur, etc.).</p>
-      <p><b>Urgences 24/24 :</b> <a href="tel:0495261683">0495 26 16 83</a></p>
-      <p class="muted">Hors horaires, laissez un message — nous rappelons rapidement.</p>
-    </div>
-  </div>
- </section>
-</main>
-
-<!-- FOOTER -->
-<footer>
-  <p>
-    © Laurent Hoessen · Gestion Immobilière — Syndic BILH &amp; DUHO
-  </p>
-</footer>
-
-</body>
-</html>
+/* Responsivo */
+@media (max-width:900px) {
+  .info-row { grid-template-columns:1fr; }
+  .hero { flex:0 0 60vh; }
+}

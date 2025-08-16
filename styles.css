@@ -127,3 +127,15 @@ footer { text-align: center; color: var(--muted); padding: 28px 10px 40px; }
 .alert { margin-top: 12px; padding: 10px 12px; border-radius: 8px; font-weight: 600; }
 .alert.success { background: #d1fae5; color: #065f46; }
 .alert.error { background: #fee2e2; color: #7f1d1d; }
+/* Linha com 3 cards lado a lado */
+.info-row {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.info-row .card {
+  flex: 1;
+  min-width: 250px;
+}
+

@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contacts — Laurent Hoessen</title>
-  <link rel="stylesheet" href="styles.css?v=4">
+  <meta name="description" content="Contacts et coordonnées de Laurent Hoessen — Syndic BILH & DUHO. Téléphone, e-mails, adresses et urgences.">
+  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
 </head>
 <body>
 
 <header class="site-header">
-  <nav class="nav">
+  <nav class="nav" aria-label="Navigation principale">
     <a class="brand" href="index.html">
       <img src="img/logo.svg" alt="Logo LH" width="34" height="34">
       <span>Laurent&nbsp;Hoessen</span>
@@ -17,7 +19,7 @@
     <div class="menu">
       <a href="index.html">Accueil</a>
       <a href="types.html">Types de gestion</a>
-      <a href="contacts.html" class="ativo">Contacts</a>
+      <a href="contacts.html" class="ativo" aria-current="page">Contacts</a>
       <a href="offre.html">Demande d’Offre</a>
     </div>
   </nav>
@@ -26,20 +28,36 @@
 <h1 class="page-title">Contacts</h1>
 
 <div class="container">
-  <div class="contact-summary">
-    <p><b>Adresse :</b> Av. Heydenberg 14 – 1200 Bruxelles</p>
-    <p><b>Horaires :</b> Lun–Ven 09:00–13:00</p>
-    <p><b>Tél. :</b> <a href="tel:027755175">0277 55 175</a></p>
-    <p><b>E-mail général :</b> <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></p>
-    <p><b>Urgences 24/24 :</b> <a href="tel:0495261683">0495 26 16 83</a></p>
+  <!-- Coordonnées générales -->
+  <div class="item">
+    <p><b>Adresse :</b> <span class="blue">Av. Heydenberg 14 – 1200 Bruxelles</span></p>
+    <p><b>Horaires :</b> <span class="blue">Lun–Ven 09:00–13:00</span></p>
+    <p><b>Tél. :</b> <a href="tel:027755175" class="blue">0277 55 175</a></p>
+    <p><b>E-mail général :</b> <a href="mailto:syndic@immohoessen.be" class="blue">syndic@immohoessen.be</a></p>
+    <p><b>Urgences 24/24 :</b> <a href="tel:0495261683" class="blue">0495 26 16 83</a></p>
   </div>
 
-  <div class="contacts-grid">
-    <div class="contact-item"><b>Laurent Hoessen</b> — Gestionnaire IPI titulaire · <a href="mailto:laurent@immohoessen.be">laurent@immohoessen.be</a></div>
-    <div class="contact-item"><b>André Hoessen</b> — Gestionnaire général · <a href="mailto:andre@immohoessen.be">andre@immohoessen.be</a></div>
-    <div class="contact-item"><b>Bonifacio Patricia</b> — Gestion collaboratrice · <a href="mailto:gestion@immohoessen.be">gestion@immohoessen.be</a></div>
-    <div class="contact-item"><b>Ledieu Viviane</b> — Gestion des sinistres · <a href="mailto:admin@immohoessen.be">admin@immohoessen.be</a></div>
-    <div class="contact-item"><b>Factures</b> · <a href="mailto:factures@immohoessen.be">factures@immohoessen.be</a></div>
+  <!-- Équipe -->
+  <div class="grid-2">
+    <div class="item">
+      <p><b>Laurent Hoessen :</b> <span class="blue">Gestionnaire IPI titulaire</span><br>
+      <a href="mailto:laurent@immohoessen.be" class="blue">laurent@immohoessen.be</a></p>
+    </div>
+    <div class="item">
+      <p><b>André Hoessen :</b> <span class="blue">Gestionnaire général</span><br>
+      <a href="mailto:andre@immohoessen.be" class="blue">andre@immohoessen.be</a></p>
+    </div>
+    <div class="item">
+      <p><b>Bonifacio Patricia :</b> <span class="blue">Gestion collaboratrice</span><br>
+      <a href="mailto:gestion@immohoessen.be" class="blue">gestion@immohoessen.be</a></p>
+    </div>
+    <div class="item">
+      <p><b>Ledieu Viviane :</b> <span class="blue">Gestion des sinistres</span><br>
+      <a href="mailto:admin@immohoessen.be" class="blue">admin@immohoessen.be</a></p>
+    </div>
+    <div class="item">
+      <p><b>Factures :</b> <a href="mailto:factures@immohoessen.be" class="blue">factures@immohoessen.be</a></p>
+    </div>
   </div>
 </div>
 

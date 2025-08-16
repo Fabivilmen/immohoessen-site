@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contacts — Laurent Hoessen</title>
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
 </head>
 <body>
-  <!-- HEADER -->
+
   <header class="site-header">
     <nav class="nav" aria-label="Navigation principale">
       <a class="brand" href="index.html" aria-label="Accueil">
@@ -19,6 +20,7 @@
         <a href="types.html">Types de gestion</a>
         <a href="contacts.html" class="ativo" aria-current="page">Contacts</a>
         <a href="offre.html">Demande d’Offre</a>
+        <a href="plateforme.html">Accès à la plateforme</a>
       </div>
     </nav>
   </header>
@@ -26,50 +28,40 @@
   <main class="section">
     <h1 class="page-title">Contacts</h1>
 
-    <!-- Coordonnées générales -->
-    <div class="card contact-card">
-      <h2 class="title">Coordonnées</h2>
-      <p><span class="icon icon-blue">📍</span> Avenue Heydenberg 14, 1200 Bruxelles</p>
-      <p><span class="icon icon-blue">🕒</span> Lun–Ven : 09:00–13:00</p>
-      <p><span class="icon icon-blue">📞</span> <a href="tel:027725175">0277 25 175</a></p>
-      <p><span class="icon icon-blue">✉️</span> <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></p>
-      <p><span class="icon icon-blue">🚨</span> Urgences 24/24 : <a href="tel:0495261683">0495 26 16 83</a></p>
-    </div>
-
-    <!-- Pessoas de contato -->
     <div class="card-grid">
       <div class="card contact-card">
-        <h2 class="title">Laurent Hoessen — Gestionnaire IPI titulaire</h2>
-        <p><span class="icon icon-blue">✉️</span> <a href="mailto:laurent@immohoessen.be">laurent@immohoessen.be</a></p>
+        <p><span class="contact-label">Laurent Hoessen</span> — Gestionnaire IPI titulaire</p>
+        <p class="ic-mail"><a href="mailto:laurent@immohoessen.be">laurent@immohoessen.be</a></p>
       </div>
 
       <div class="card contact-card">
-        <h2 class="title">André Hoessen — Gestionnaire général</h2>
-        <p><span class="icon icon-blue">✉️</span> <a href="mailto:andre@immohoessen.be">andre@immohoessen.be</a></p>
+        <p><span class="contact-label">André Hoessen</span> — Gestionnaire général</p>
+        <p class="ic-mail"><a href="mailto:andre@immohoessen.be">andre@immohoessen.be</a></p>
       </div>
 
       <div class="card contact-card">
-        <h2 class="title">Bonifacio Patricia — Gestionnaire collaboratrice</h2>
-        <p><span class="icon icon-blue">✉️</span> <a href="mailto:gestion@immohoessen.be">gestion@immohoessen.be</a></p>
+        <p><span class="contact-label">Bonifacio Patricia</span> — Gestionnaire collaboratrice</p>
+        <p class="ic-mail"><a href="mailto:gestion@immohoessen.be">gestion@immohoessen.be</a></p>
       </div>
 
       <div class="card contact-card">
-        <h2 class="title">Ledieu Viviane — Gestionnaire de sinistres  </h2>
-        <p><span class="icon icon-blue">✉️</span> <a href="mailto:admin@immohoessen.be">admin@immohoessen.be</a></p>
-        
+        <p><span class="contact-label">Ledieu Viviane</span> — Gestionnaire de sinistres </p>
+        <p class="ic-mail"><a href="mailto:admin@immohoessen.be">admin@immohoessen.be</a></p>
       </div>
-      </div>
-    </div>
 
-    <!-- Factures -->
-    <div class="card contact-card" style="margin-top:16px">
-      <h2 class="title">Factures</h2>
-      <p><span class="icon icon-blue">✉️</span> <a href="mailto:factures@immohoessen.be">factures@immohoessen.be</a></p>
+      <div class="card contact-card" style="grid-column:1/-1">
+        <p><span class="contact-label">Factures</span></p>
+        <p class="ic-mail"><a href="mailto:factures@immohoessen.be">factures@immohoessen.be</a></p>
+      </div>
     </div>
   </main>
 
-  <footer>
-    © 2025 Laurent Hoessen · Gestion Immobilière — Syndic BILH & DUHO
+  <footer class="micro-footer">
+    <div class="wrap micro-footer-row">
+      <span>Horaires : Lun–Ven 09:00–13:00</span>
+      <span class="sep">•</span>
+      <span>Email : <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span>
+    </div>
   </footer>
 </body>
 </html>

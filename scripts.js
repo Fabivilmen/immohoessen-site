@@ -1,17 +1,19 @@
-// v34 — menu mobile, link ativo e ano no rodapé
+// v43 — burger com classe .open, link ativo e ano no rodapé
 
-// Menu mobile
+// Menu mobile: abre/fecha com classe (CSS cuida do layout)
 const btn = document.querySelector('.burger');
 const menu = document.querySelector('.menu');
-if (btn) {
+if (btn && menu) {
   btn.addEventListener('click', () => {
-    const shown = getComputedStyle(menu).display !== 'none';
-    menu.style.display = shown ? 'none' : 'flex';
-    if (!shown) menu.style.flexWrap = 'wrap';
+    menu.classList.toggle('open');
+  });
+  // fecha ao tocar num link
+  menu.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=> menu.classList.remove('open'));
   });
 }
 
-// Destacar link atual
+// Link ativo no menu
 const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
 document.querySelectorAll('.menu a').forEach(a=>{
   const href = (a.getAttribute('href')||'').toLowerCase();
@@ -19,4 +21,5 @@ document.querySelectorAll('.menu a').forEach(a=>{
 });
 
 // Ano no rodapé
-const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+const y = document.getElementById('year');
+if (y) y.textContent = new Date().getFullYear();

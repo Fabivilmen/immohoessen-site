@@ -2,35 +2,34 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Politique de confidentialité — Laurent Hoessen</title>
-  <meta name="description" content="Informations sur la collecte et l’utilisation des données via le formulaire.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentions légales — Laurent Hoessen</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <script defer src="scripts.js"></script>
 </head>
 <body>
-<header class="site-header">
-  <nav class="nav" aria-label="Navigation principale">
-    <a class="brand" href="index.html"><img src="img/logo.svg" alt="" width="34" height="34"><span>Laurent&nbsp;Hoessen</span></a>
-    <div class="menu">
-      <a href="index.html">Accueil</a>
-      <a href="types.html">Types de gestion</a>
-      <a href="contacts.html">Contacts</a>
-      <a href="offre.html">Demande d’Offre</a>
+  <header class="header">
+    <div class="container nav">
+      <div class="brand"><div class="logo"></div><span class="title">Laurent Hoessen</span></div>
+      <nav class="menu">
+        <a href="index.html">Accueil</a>
+        <a href="types.html">Types de gestion</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="offre.html">Demande d'Offre</a>
+        <a href="privacite.html">Mentions légales</a>
+      </nav>
+      <button class="burger">☰</button>
     </div>
-  </nav>
-</header>
+  </header>
 
-<main class="section">
-  <h2 class="title">Politique de confidentialité</h2>
-  <div class="card">
-    <p>Nous collectons uniquement les données que vous soumettez via le formulaire (nom, e‑mail, téléphone, adresse et informations liées à la copropriété) afin de vous recontacter et préparer une offre. Ces données ne sont pas partagées avec des tiers, hormis les prestataires nécessaires au traitement (ex. outil de formulaire).</p>
-    <p>Vous pouvez demander l’accès, la rectification ou la suppression de vos données en écrivant à <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>. Les données sont conservées pour la durée strictement nécessaire au traitement de votre demande.</p>
-    <p>Nous n’utilisons pas de cookies de suivi sur ce site. Si à l’avenir des outils d’analyse anonymisés sont ajoutés, cette page sera mise à jour.</p>
-  </div>
-</main>
+  <main class="container section">
+    <h2>Mentions légales</h2>
+    <p>© <span id="year"></span> Laurent Hoessen — Syndic.</p>
+    <p>Adresse : Avenue Heydenberg 14, 1200 Bruxelles</p>
+    <p>Email : <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></p>
+    <p>TVA : BE _________</p>
+  </main>
 
-<footer>© <span id="ano"></span> Laurent Hoessen · Gestion Immobilière — Syndic BILH &amp; DUHO</footer>
-<script src="scripts.js"></script>
+  <footer class="footer"><div class="row">© <span id="year"></span> Laurent Hoessen — Syndic</div></footer>
 </body>
 </html>

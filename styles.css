@@ -42,33 +42,37 @@ a{color:inherit;text-decoration:none}
 .menu a.active{background:#e6f4ee;border-color:var(--line);color:var(--text)}
 .burger{display:none;border:1px solid var(--line);border-radius:10px;padding:8px 10px;color:var(--muted);background:#fff}
 
-/* ===== Botões ===== */
+/* ===== Botões (usados no hero e formulários) ===== */
 .button{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:12px 16px;border-radius:12px;border:1px solid rgba(2,6,23,.12);
-  color:var(--text); background:#ffffffcc; backdrop-filter:blur(3px)
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:12px 16px; border-radius:12px; border:1px solid rgba(2,6,23,.12);
+  color:var(--text); background:#ffffffcc; backdrop-filter:blur(3px);
+  text-align:center; min-width:220px;
 }
-.button:hover{background:#ffffff}
-.button.primary{
-  border:0; color:#ffffff; font-weight:800;
-  background:linear-gradient(180deg,var(--brand),var(--accent));
-}
+.button:hover{ background:#fff; }
+.button.primary{ border:0; color:#fff; font-weight:800; background:linear-gradient(180deg,var(--brand),var(--accent)); }
 .button.primary:hover{filter:brightness(1.05)}
 .button:active{transform:translateY(1px)}
 
 /* ===== Hero (Home) ===== */
 .hero{
-  min-height:72vh; display:grid; place-items:end center;
+  min-height:72vh;
+  display:grid; place-items:end center;
   border-bottom:1px solid var(--line);
   color:#fff;
+  overflow:hidden; /* impede conteúdo de baixo aparecer */
 }
 .hero.hero-image{
   background:
     center/cover no-repeat url("img/cover2.jpg"),
-    linear-gradient(180deg,#bde6d7,#eef7f2); /* fallback suave se a imagem não carregar */
+    linear-gradient(180deg,#bde6d7,#eef7f2); /* fallback suave */
 }
-.hero .inner{width:min(1100px,92vw);padding:56px 0}
-.hero .buttons{display:flex;gap:10px;flex-wrap:wrap}
+.hero .inner{
+  width:min(1100px,92vw);
+  padding:56px 0;
+  display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
+}
+.hero .buttons{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
 
 /* ===== Sections / Cards ===== */
 .section{padding:56px 0;border-bottom:1px solid var(--line);background:transparent}
@@ -81,14 +85,14 @@ a{color:inherit;text-decoration:none}
 .card h3{margin:0 0 6px;font-size:18px}
 .card p{margin:0;color:var(--muted)}
 
-/* ===== Listas tipo "key–value" ===== */
+/* ===== Lists tipo "key–value" (para Contacts) ===== */
 .kv{display:grid;grid-template-columns:220px 1fr;gap:8px 14px}
 .kv dt{color:var(--text);font-weight:700}
 .kv dd{margin:0;color:var(--text)}
 .kv a{color:#0b5f4f;border-bottom:1px dashed rgba(11,95,79,.35)}
 .kv a:hover{color:#084c3f}
 
-/* ===== Forms (ainda usados em offre.html) ===== */
+/* ===== Forms (Offre) ===== */
 .form{display:grid;gap:12px;max-width:720px}
 .input, textarea, select{
   width:100%;padding:12px 14px;border-radius:12px;border:1px solid #dbe7e2;
@@ -110,24 +114,3 @@ button[type="submit"]{align-self:flex-start}
   .card{padding:14px}
   .kv{grid-template-columns:1fr}
 }
-/* --- Contacts: cards com ícones discretos --- */
-.card.contact { padding: 18px }
-.card.contact h3 { margin: 0 0 10px; color: var(--text) }
-
-.list{ list-style:none; margin:0; padding:0; display:grid; gap:12px }
-.item{
-  display:grid;
-  grid-template-columns: 28px 1fr;
-  gap:12px; align-items:start;
-  padding:10px; border:1px solid var(--line); border-radius:12px; background:#fff;
-}
-.item .icon{
-  width:24px;height:24px;border-radius:8px;
-  display:grid;place-items:center;
-  color:var(--brand);
-  background: #e6f4ee; /* verde bem claro */
-}
-.label{ font-weight:700; color: var(--text); margin-bottom:2px }
-.item a{ color:#0b5f4f; border-bottom:1px dashed rgba(11,95,79,.35) }
-.item a:hover{ color:#084c3f }
-

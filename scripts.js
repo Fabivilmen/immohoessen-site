@@ -16,5 +16,5 @@ document.querySelectorAll('.menu a').forEach(a=>{
   if ((here === '' && href.endsWith('index.html')) || here === href) a.classList.add('active');
 });
 
-// Ano do rodapé
+// Ano no rodapé
 const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();

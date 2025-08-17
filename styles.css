@@ -114,3 +114,30 @@ button[type="submit"]{align-self:flex-start}
   .card{padding:14px}
   .kv{grid-template-columns:1fr}
 }
+/* --- Contacts: layout dos cards e lista com ícones --- */
+.kv{display:grid;grid-template-columns:220px 1fr;gap:8px 14px}
+.kv dt{color:var(--text);font-weight:700}
+.kv dd{margin:0;color:var(--text)}
+.kv a{color:#0b5f4f;border-bottom:1px dashed rgba(11,95,79,.35)}
+.kv a:hover{color:#084c3f}
+
+.card.contact { padding: 18px }
+.card.contact h3 { margin: 0 0 10px; color: var(--text) }
+
+.list{ list-style:none; margin:0; padding:0; display:grid; gap:12px }
+.item{
+  display:grid;
+  grid-template-columns: 28px 1fr;
+  gap:12px; align-items:start;
+  padding:10px; border:1px solid var(--line); border-radius:12px; background:#fff;
+}
+.item .icon{
+  width:24px;height:24px;border-radius:8px;
+  display:grid;place-items:center;
+  color:var(--brand);
+  background:#e6f4ee; /* verde bem claro */
+}
+.label{ font-weight:700; color: var(--text); margin-bottom:2px }
+.item a{ color:#0b5f4f; border-bottom:1px dashed rgba(11,95,79,.35) }
+.item a:hover{ color:#084c3f }
+

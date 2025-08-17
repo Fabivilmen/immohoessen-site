@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacts — Laurent Hoessen</title>
-  <meta name="description" content="Contactez le syndic Laurent Hoessen à Bruxelles.">
+  <meta name="description" content="Coordonnées et formulaire de contact.">
   <link rel="stylesheet" href="styles.css">
   <script defer src="scripts.js"></script>
 </head>
@@ -15,6 +15,7 @@
     <div class="brand"><div class="logo"></div><div class="title">Laurent Hoessen <span class="badge">Syndic</span></div></div>
     <nav class="menu">
       <a href="index.html">Accueil</a>
+      <a href="apropos.html">À propos</a>
       <a href="types.html">Types de gestion</a>
       <a href="contacts.html" class="active">Contacts</a>
       <a href="offre.html">Demande d’Offre</a>
@@ -30,37 +31,54 @@
     <h2>Contact</h2>
     <p class="lead">Nous répondons généralement sous 1 à 2 jours ouvrables.</p>
 
-    <!-- Netlify pronto -->
     <form class="form" name="contact" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact">
       <div><label for="nom">Nom</label><input class="input" id="nom" name="nom" required></div>
       <div><label for="email">E-mail</label><input class="input" id="email" name="email" type="email" required></div>
       <div><label for="tel">Téléphone</label><input class="input" id="tel" name="tel" type="tel" placeholder="+32 …"></div>
       <div><label for="message">Message</label><textarea id="message" name="message" placeholder="Décrivez votre demande"></textarea></div>
-      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-        <button class="cta" type="submit">Envoyer</button>
-      </div>
+      <button class="cta" type="submit">Envoyer</button>
     </form>
 
     <div style="height:22px"></div>
 
-    <div class="card contact-card">
-      <h3 style="margin:0 0 8px">Coordonnées principales</h3>
-      <div class="contact-row"><span class="ico">📍</span> <span>Avenue Heydenberg 14, 1200 Bruxelles</span></div>
-      <div class="contact-row"><span class="ico">✉️</span> <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></div>
-      <div class="contact-row"><span class="ico">☎️</span> <a href="tel:+32XXXXXXXX">+32 … … …</a> <span style="opacity:.8;margin-left:6px">Urgence</span></div>
+    <div class="card">
+      <h3 style="margin:0 0 10px">Coordonnées principales</h3>
+      <dl class="kv">
+        <dt>Adresse</dt>
+        <dd>Avenue Heydenberg 14, 1200 Bruxelles</dd>
+
+        <dt>Horaires</dt>
+        <dd>Lun–Ven 09:00–17:00</dd>
+
+        <dt>E-mail général</dt>
+        <dd><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></dd>
+
+        <dt>IPI – Titulaire</dt>
+        <dd>Laurent Hoessen — <a href="mailto:laurent@immohoessen.be">laurent@immohoessen.be</a></dd>
+
+        <dt>Gestionnaire des sinistres</dt>
+        <dd>Ledieu Viviane</dd>
+
+        <dt>Gestionnaire collaboratrice</dt>
+        <dd>Bonifacio Patricia — <a href="mailto:gestion@immohoessen.be">gestion@immohoessen.be</a></dd>
+
+        <dt>Factures</dt>
+        <dd><a href="mailto:factures@immohoessen.be">factures@immohoessen.be</a></dd>
+
+        <dt>Urgence</dt>
+        <dd><a href="tel:+32XXXXXXXX">+32 … … …</a></dd>
+      </dl>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer">
-    <div class="container"><div class="row">
-      <span>Horaires: Lun–Ven 09:00–17:00</span><span>·</span>
-      <span><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span><span>·</span>
-      <span>Avenue Heydenberg 14, 1200 Bruxelles</span>
-    </div></div>
-  </div>
+  <div class="footer"><div class="container"><div class="row">
+    <span>Horaires: Lun–Ven 09:00–17:00</span><span>·</span>
+    <span><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span><span>·</span>
+    <span>Avenue Heydenberg 14, 1200 Bruxelles</span>
+  </div></div></div>
   <div class="subfooter"><div class="container">© <span id="year"></span> Laurent Hoessen – Syndic.</div></div>
 </footer>
 </body>

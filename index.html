@@ -1,77 +1,85 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Laurent Hoessen — Gestion immobilière</title>
-  <meta name="description" content="Syndic à Bruxelles. Gestion transparente, réactive et durable de votre copropriété.">
-  <link rel="stylesheet" href="styles.css?v=31">
-  <script defer src="scripts.js?v=31"></script>
-  <!-- Anti-duplicação (caso a foto já tenha texto) -->
-  <style>.hero--only-image h1,.hero--only-image .subtitle{display:none!important}</style>
-</head>
-<body>
-  <header class="header">
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div class="title">Laurent Hoessen <span class="badge">Syndic</span></div>
-      </div>
-      <nav class="menu" aria-label="Navigation principale">
-        <a href="index.html" class="active">Accueil</a>
-        <a href="apropos.html">À propos</a>
-        <a href="types.html">Types de gestion</a>
-        <a href="contacts.html">Contacts</a>
-        <a href="offre.html">Demande d’Offre</a>
-      </nav>
-      <button class="burger" aria-label="Menu">☰</button>
-    </div>
-  </header>
+/* v32 — base estável, tema claro verde-escuro */
+:root{
+  --bg:#f6faf7; --bg-2:#ffffff; --surface:#ffffff; --line:rgba(2,6,23,.10);
+  --text:#0f3d2e; --muted:#3e7a68;
+  --brand:#0d8b78; --accent:#1ea765;
+}
 
-  <!-- Se a sua imagem de fundo tem texto impresso, DEIXE hero--only-image.
-       Se trocar por uma imagem sem texto, remova hero--only-image para exibir H1/subtítulo. -->
-  <section class="hero hero-image hero--only-image" role="img" aria-label="Copropriété moderne entourée de verdure">
-    <div class="inner">
-      <!-- Mantidos para SEO/acessibilidade (e exibidos se você tirar hero--only-image) -->
-      <h1>Laurent Hoessen</h1>
-      <p class="subtitle">Gestion immobilière — Syndic BILH &amp; DUHO</p>
-    </div>
-  </section>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Inter","SF Pro Text","Segoe UI",Roboto,system-ui,-apple-system,"Helvetica Neue",Arial,"Noto Sans";
+  background:linear-gradient(180deg,var(--bg),var(--bg-2));
+  color:var(--text); line-height:1.6;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1100px,92vw);margin:0 auto}
 
-  <section class="section">
-    <div class="container">
-      <h2>Pourquoi nous choisir</h2>
-      <p class="lead">Transparence financière, suivi technique rigoureux et communication proactive.</p>
-      <div class="grid cards">
-        <article class="card">
-          <h3>Transparence financière</h3>
-          <p>Budgets, comptes annuels et rapports clairs.</p>
-        </article>
-        <article class="card">
-          <h3>Suivi technique</h3>
-          <p>Plan pluriannuel, entretiens, conformité (ascenseurs, incendie).</p>
-        </article>
-        <article class="card">
-          <h3>Communication</h3>
-          <p>Information continue, réponses rapides, portail de documents partagé.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+/* ===== Header / Nav ===== */
+.header{
+  position:sticky;top:0;z-index:40;
+  backdrop-filter:saturate(120%) blur(8px);
+  background:rgba(255,255,255,.9);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:28px;height:28px;border-radius:8px;background:conic-gradient(from 180deg,#a7f3d0,#99f6e4,#93c5fd,#a7f3d0)}
+.title{font-weight:700;letter-spacing:.2px}
+.badge{font-weight:700;color:var(--text);font-size:12px;border:1px solid var(--line);padding:2px 8px;border-radius:999px;margin-left:6px;background:#f0fdf4}
 
-  <footer>
-    <div class="footer">
-      <div class="container">
-        <div class="row">
-          <span>Horaires: Lun–Ven 09:00–17:00</span><span>·</span>
-          <span><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span><span>·</span>
-          <span>Avenue Heydenberg 14, 1200 Bruxelles</span>
-        </div>
-      </div>
-    </div>
-    <div class="subfooter">
-      <div class="container">© <span id="year"></span> Laurent Hoessen – Syndic.</div>
-    </div>
-  </footer>
-</body>
-</html>
+.menu{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.menu a{padding:8px 12px;border-radius:10px;border:1px solid transparent;color:var(--muted)}
+.menu a:hover{border-color:var(--line);background:#eef7f2}
+.menu a.active{background:#e6f4ee;border-color:var(--line);color:var(--text)}
+.burger{display:none;border:1px solid var(--line);border-radius:10px;padding:8px 10px;color:var(--muted);background:#fff}
+
+/* ===== HERO (capa) ===== */
+.hero{
+  min-height:72vh;
+  display:grid; place-items:center;
+  border-bottom:1px solid var(--line);
+  color:#fff; overflow:hidden;
+}
+.hero.hero-image{
+  /* USE uma imagem SEM TEXTO em: img/cover-plain.jpg  */
+  background:
+    center/cover no-repeat url("img/cover-plain.jpg?v=32"),
+    linear-gradient(180deg,#bde6d7,#eef7f2);
+}
+.hero .inner{ width:min(1100px,92vw); padding:74px 0; text-align:center; }
+.hero h1{
+  font-family:"Georgia","Times New Roman",serif;
+  font-size:clamp(44px,8vw,96px);
+  line-height:1.05; font-weight:700; margin:0 0 10px;
+  color:#fff; text-shadow:0 6px 28px rgba(0,0,0,.45), 0 2px 10px rgba(0,0,0,.35);
+}
+.hero .subtitle{
+  font-size:clamp(18px,2.6vw,30px);
+  margin:0; color:#fff; text-shadow:0 4px 18px rgba(0,0,0,.45), 0 1px 6px rgba(0,0,0,.35);
+}
+/* Não mostrar botões na capa */
+.hero .buttons, .hero a.button{ display:none !important; }
+
+/* ===== Seções / Cards ===== */
+.section{padding:56px 0;border-bottom:1px solid var(--line);background:transparent}
+.section h2{font-size:28px;margin:0 0 8px;font-weight:800}
+.section .lead{color:var(--muted);margin:0 0 22px}
+.grid{display:grid;gap:14px}
+.grid.cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 4px 14px rgba(2,6,23,.06)}
+.card h3{margin:0 0 8px;font-size:18px}
+.card p{margin:0;color:var(--muted)}
+
+/* ===== Footer ===== */
+.footer{border-top:1px solid var(--line);padding:14px 0;color:var(--muted);font-size:14px;background:#fff}
+.footer .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;text-align:center}
+.subfooter{border-top:1px solid var(--line);color:#5c8b7c;padding:10px 0 36px;font-size:12px;text-align:center;background:#fff}
+
+/* ===== Responsivo ===== */
+@media (max-width:860px){
+  .menu{display:none}
+  .burger{display:inline-flex}
+  .card{padding:14px}
+}

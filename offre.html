@@ -2,104 +2,93 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Demande d’Offre — Laurent Hoessen</title>
-  <meta name="description" content="Demande d’offre pour la gestion de votre copropriété.">
-  <link rel="stylesheet" href="styles.css?v=22">
-  <script defer src="scripts.js?v=22"></script>
+  <meta name="description" content="Formulaire de demande d’offre pour votre copropriété.">
+  <link rel="stylesheet" href="styles.css?v=32">
+  <script defer src="scripts.js?v=32"></script>
 </head>
 <body>
-<header class="header">
-  <div class="container nav">
-    <div class="brand">
-      <div class="logo" aria-hidden="true"></div>
-      <div class="title">Laurent Hoessen <span class="badge">Syndic</span></div>
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title">Laurent Hoessen <span class="badge">Syndic</span></div>
+      </div>
+      <nav class="menu" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="types.html">Types de gestion</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="offre.html" class="active">Demande d’Offre</a>
+      </nav>
+      <button class="burger" aria-label="Menu">☰</button>
     </div>
-    <nav class="menu" aria-label="Navigation principale">
-      <a href="index.html">Accueil</a>
-      <a href="apropos.html">À propos</a>
-      <a href="types.html">Types de gestion</a>
-      <a href="contacts.html">Contacts</a>
-      <a href="offre.html" class="active">Demande d’Offre</a>
-    </nav>
-    <button class="burger" aria-label="Menu">☰</button>
-  </div>
-</header>
+  </header>
 
-<section class="section" aria-labelledby="titre">
-  <div class="container formwrap">
-    <h2 id="titre">Demande d’Offre</h2>
-    <p class="lead">Un formulaire simple pour évaluer vos besoins.</p>
+  <main class="section">
+    <div class="container formwrap">
+      <h1>Demande d’Offre</h1>
+      <p class="lead">Un formulaire simple pour évaluer vos besoins.</p>
 
-    <div class="card">
-      <form class="form" action="mailto:syndic@immohoessen.be" method="POST" enctype="text/plain">
-        <div>
-          <label for="nom">Nom complet *</label>
-          <input class="input" id="nom" name="Nom complet" type="text" autocomplete="name" required>
-        </div>
+      <!-- Formulaire statique : envoie un e-mail local via le client du visiteur.
+           Se preferir usar um serviço (Formspree/Formsubmit), troque o action. -->
+      <form class="form" method="POST" action="mailto:syndic@immohoessen.be" enctype="text/plain">
+        <label for="nom">Nom complet *</label>
+        <input id="nom" name="Nom complet" class="input" type="text" required placeholder="Votre nom">
 
-        <div>
-          <label for="email">Email *</label>
-          <input class="input" id="email" name="Email" type="email" autocomplete="email" required>
-        </div>
+        <label for="email">Email *</label>
+        <input id="email" name="Email" class="input" type="email" required placeholder="vous@exemple.com">
 
-        <div>
-          <label for="tel">Téléphone *</label>
-          <input class="input" id="tel" name="Téléphone" type="tel" autocomplete="tel" pattern="^[0-9+\\s().-]{6,}$" required>
-        </div>
+        <label for="tel">Téléphone *</label>
+        <input id="tel" name="Téléphone" class="input" type="tel" required inputmode="tel" placeholder="+32 ...">
 
-        <div>
-          <label for="adresse">Adresse de la copropriété *</label>
-          <input class="input" id="adresse" name="Adresse de la copropriété" type="text" required>
-        </div>
+        <label for="adresse">Adresse de la copropriété *</label>
+        <input id="adresse" name="Adresse" class="input" type="text" required placeholder="Rue, numéro, code postal, ville">
 
-        <div>
-          <label for="etages">Nombre d’étages *</label>
-          <input class="input" id="etages" name="Nombre d’étages" type="number" min="0" step="1" required>
-        </div>
+        <label for="etages">Nombre d’étages *</label>
+        <input id="etages" name="Nombre d’étages" class="input" type="number" min="0" required>
 
-        <div>
-          <label for="apparts">Nombre d’appartements (optionnel)</label>
-          <input class="input" id="apparts" name="Nombre d’appartements" type="number" min="0" step="1">
-        </div>
+        <label for="appts">Nombre d’appartements (optionnel)</label>
+        <input id="appts" name="Nombre d’appartements" class="input" type="number" min="0">
 
-        <div>
-          <label for="syndic">Avez-vous déjà un syndic ? *</label>
-          <select class="input" id="syndic" name="Déjà un syndic" required>
-            <option value="" selected disabled>Sélectionner…</option>
-            <option>Oui</option>
-            <option>Non</option>
-          </select>
-        </div>
+        <label for="syndic">Avez-vous déjà un syndic ? *</label>
+        <select id="syndic" name="Déjà un syndic" class="input" required>
+          <option value="" selected disabled>Sélectionner…</option>
+          <option>Oui</option>
+          <option>Non</option>
+          <option>Je ne sais pas</option>
+        </select>
 
-        <div>
-          <label for="parking">Dispose-t-on d’un box/parking ? *</label>
-          <select class="input" id="parking" name="Box/Parking" required>
-            <option value="" selected disabled>Sélectionner…</option>
-            <option>Oui</option>
-            <option>Non</option>
-          </select>
-        </div>
+        <label for="parking">Dispose-t-on d’un box/parking ? *</label>
+        <select id="parking" name="Box/Parking" class="input" required>
+          <option value="" selected disabled>Sélectionner…</option>
+          <option>Oui</option>
+          <option>Non</option>
+        </select>
 
-        <div>
-          <label for="msg">Commentaires ou demandes spécifiques</label>
-          <textarea id="msg" class="input" name="Commentaires" placeholder="Précisez ici vos besoins…"></textarea>
-        </div>
+        <label for="notes">Commentaires ou demandes spécifiques</label>
+        <textarea id="notes" name="Commentaires" placeholder="Précisez ici vos besoins…"></textarea>
 
-        <button type="submit" class="button primary">Envoyer la demande</button>
+        <button type="submit">Envoyer la demande</button>
       </form>
     </div>
-  </div>
-</section>
+  </main>
 
-<footer>
-  <div class="footer"><div class="container"><div class="row">
-    <span>Horaires: Lun–Ven 09:00–17:00</span><span>·</span>
-    <span><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span><span>·</span>
-    <span>Avenue Heydenberg 14, 1200 Bruxelles</span>
-  </div></div></div>
-  <div class="subfooter"><div class="container">© <span id="year"></span> Laurent Hoessen – Syndic.</div></div>
-</footer>
+  <footer>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <span>Horaires: Lun–Ven 09:00–17:00</span><span>·</span>
+          <span><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span><span>·</span>
+          <span>Avenue Heydenberg 14, 1200 Bruxelles</span>
+        </div>
+      </div>
+    </div>
+    <div class="subfooter">
+      <div class="container">© <span id="year"></span> Laurent Hoessen – Syndic.</div>
+    </div>
+  </footer>
 </body>
 </html>

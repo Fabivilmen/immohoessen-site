@@ -1,62 +1,112 @@
+/* ===== Tema Claro com texto verde-escuro ===== */
+:root{
+  --bg:#f6faf7;          /* fundo claro */
+  --bg-2:#ffffff;
+  --surface:#ffffff;     /* cards */
+  --line:rgba(2,6,23,.10);
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Types de gestion — Laurent Hoessen</title>
-  <meta name="description" content="Périmètres de gestion proposés pour votre copropriété.">
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="scripts.js"></script>
-</head>
-<body>
-<header class="header">
-  <div class="container nav">
-    <div class="brand"><div class="logo"></div><div class="title">Laurent Hoessen <span class="badge">Syndic</span></div></div>
-    <nav class="menu">
-      <a href="index.html">Accueil</a>
-      <a href="apropos.html">À propos</a>
-      <a href="types.html" class="active">Types de gestion</a>
-      <a href="contacts.html">Contacts</a>
-      <a href="offre.html">Demande d’Offre</a>
-    </nav>
-    <button class="burger" aria-label="Menu">☰</button>
-  </div>
-</header>
+  --text:#0f3d2e;        /* verde-escuro principal */
+  --muted:#3e7a68;       /* verde médio (texto secundário) */
 
-<section class="section">
-  <div class="container">
-    <h2>Types de gestion</h2>
-    <p class="lead">Périmètres clairs, obligations respectées et communication documentée.</p>
+  --brand:#0d8b78;       /* teal escuro */
+  --accent:#1ea765;      /* verde CTA */
+}
 
-    <div class="grid cards">
-      <article class="card">
-        <h3>Gestion globale (Syndic)</h3>
-        <p>• Convocation, tenue et PV d’AG · Exécution des décisions · Suivi des prestataires · Gouvernance et ROI.</p>
-      </article>
-      <article class="card">
-        <h3>Gestion administrative</h3>
-        <p>• Contrats d’entretien (ascenseurs, chaudières, portes, extincteurs) · Appels d’offres & comparatifs · Conformité (incendie, contrôles, RGPD).</p>
-      </article>
-      <article class="card">
-        <h3>Gestion financière</h3>
-        <p>• Comptabilité conforme · Budgets et appels de fonds · Recouvrement amiable · Rapports périodiques.</p>
-      </article>
-      <article class="card">
-        <h3>Technique & travaux / sinistres</h3>
-        <p>• Plan pluriannuel · Audits/diagnostics · Réceptions de travaux · Déclaration & suivi de sinistres (expertise, indemnisation).</p>
-      </article>
-    </div>
-  </div>
-</section>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Inter","SF Pro Text","Segoe UI",Roboto,system-ui,-apple-system,"Helvetica Neue",Arial,"Noto Sans";
+  background:linear-gradient(180deg,var(--bg),var(--bg-2));
+  color:var(--text); line-height:1.6;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1100px,92vw);margin:0 auto}
 
-<footer>
-  <div class="footer"><div class="container"><div class="row">
-    <span>Horaires: Lun–Ven 09:00–17:00</span><span>·</span>
-    <span><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span><span>·</span>
-    <span>Avenue Heydenberg 14, 1200 Bruxelles</span>
-  </div></div></div>
-  <div class="subfooter"><div class="container">© <span id="year"></span> Laurent Hoessen – Syndic.</div></div>
-</footer>
-</body>
-</html>
+/* ===== Header / Nav ===== */
+.header{
+  position:sticky;top:0;z-index:40;
+  backdrop-filter:saturate(120%) blur(8px);
+  background:rgba(255,255,255,.85);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:28px;height:28px;border-radius:8px;background:conic-gradient(from 180deg,#a7f3d0,#99f6e4,#93c5fd,#a7f3d0)}
+.title{font-weight:700;letter-spacing:.2px}
+.badge{font-weight:700;color:var(--text);font-size:12px;border:1px solid var(--line);padding:2px 8px;border-radius:999px;margin-left:6px;background:#f0fdf4}
+
+.menu{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.menu a{padding:8px 12px;border-radius:10px;border:1px solid transparent;color:var(--muted)}
+.menu a:hover{border-color:var(--line);background:#eef7f2}
+.menu a.active{background:#e6f4ee;border-color:var(--line);color:var(--text)}
+.burger{display:none;border:1px solid var(--line);border-radius:10px;padding:8px 10px;color:var(--muted);background:#fff}
+
+/* ===== Botões ===== */
+.button{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:12px 16px;border-radius:12px;border:1px solid rgba(2,6,23,.12);
+  color:var(--text); background:#ffffffcc; backdrop-filter:blur(3px)
+}
+.button:hover{background:#ffffff}
+.button.primary{
+  border:0; color:#ffffff; font-weight:800;
+  background:linear-gradient(180deg,var(--brand),var(--accent));
+}
+.button.primary:hover{filter:brightness(1.05)}
+.button:active{transform:translateY(1px)}
+
+/* ===== Hero (Home) ===== */
+.hero{
+  min-height:72vh; display:grid; place-items:end center;
+  border-bottom:1px solid var(--line);
+  color:#fff;
+}
+.hero.hero-image{
+  background:
+    center/cover no-repeat url("img/cover2.jpg"),
+    linear-gradient(180deg,#bde6d7,#eef7f2); /* fallback suave se a imagem não carregar */
+}
+.hero .inner{width:min(1100px,92vw);padding:56px 0}
+.hero .buttons{display:flex;gap:10px;flex-wrap:wrap}
+
+/* ===== Sections / Cards ===== */
+.section{padding:56px 0;border-bottom:1px solid var(--line);background:transparent}
+.section h2{font-size:28px;margin:0 0 8px;font-weight:800}
+.section .lead{color:var(--muted);margin:0 0 22px}
+
+.grid{display:grid;gap:14px}
+.grid.cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 4px 14px rgba(2,6,23,.06)}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:var(--muted)}
+
+/* ===== Listas tipo "key–value" ===== */
+.kv{display:grid;grid-template-columns:220px 1fr;gap:8px 14px}
+.kv dt{color:var(--text);font-weight:700}
+.kv dd{margin:0;color:var(--text)}
+.kv a{color:#0b5f4f;border-bottom:1px dashed rgba(11,95,79,.35)}
+.kv a:hover{color:#084c3f}
+
+/* ===== Forms (ainda usados em offre.html) ===== */
+.form{display:grid;gap:12px;max-width:720px}
+.input, textarea, select{
+  width:100%;padding:12px 14px;border-radius:12px;border:1px solid #dbe7e2;
+  background:#fff;color:var(--text)
+}
+textarea{min-height:140px;resize:vertical}
+label{font-size:14px;color:var(--muted)}
+button[type="submit"]{align-self:flex-start}
+
+/* ===== Footer ===== */
+.footer{border-top:1px solid var(--line);padding:14px 0;color:var(--muted);font-size:14px;background:#fff}
+.footer .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;text-align:center}
+.subfooter{border-top:1px solid var(--line);color:#5c8b7c;padding:10px 0 36px;font-size:12px;text-align:center;background:#fff}
+
+/* ===== Responsivo ===== */
+@media (max-width:860px){
+  .menu{display:none}
+  .burger{display:inline-flex}
+  .card{padding:14px}
+  .kv{grid-template-columns:1fr}
+}

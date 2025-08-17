@@ -4,32 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mentions légales — Laurent Hoessen</title>
+  <meta name="description" content="Mentions légales du syndic Laurent Hoessen.">
   <link rel="stylesheet" href="styles.css">
   <script defer src="scripts.js"></script>
 </head>
 <body>
-  <header class="header">
-    <div class="container nav">
-      <div class="brand"><div class="logo"></div><span class="title">Laurent Hoessen</span></div>
-      <nav class="menu">
-        <a href="index.html">Accueil</a>
-        <a href="types.html">Types de gestion</a>
-        <a href="contacts.html">Contacts</a>
-        <a href="offre.html">Demande d'Offre</a>
-        <a href="privacite.html">Mentions légales</a>
-      </nav>
-      <button class="burger">☰</button>
-    </div>
-  </header>
+<header class="header">
+  <div class="container nav">
+    <div class="brand"><div class="logo"></div><div class="title">Laurent Hoessen <span class="badge">Syndic</span></div></div>
+    <nav class="menu">
+      <a href="index.html">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="types.html">Types de gestion</a>
+      <a href="contacts.html">Contacts</a>
+      <a href="offre.html">Demande d’Offre</a>
+      <a href="privacite.html" class="active">Mentions légales</a>
+    </nav>
+    <button class="burger" aria-label="Menu">☰</button>
+    <a class="cta" href="offre.html">Demander une offre</a>
+  </div>
+</header>
 
-  <main class="container section">
+<section class="section">
+  <div class="container">
     <h2>Mentions légales</h2>
-    <p>© <span id="year"></span> Laurent Hoessen — Syndic.</p>
-    <p>Adresse : Avenue Heydenberg 14, 1200 Bruxelles</p>
-    <p>Email : <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></p>
-    <p>TVA : BE _________</p>
-  </main>
+    <div class="card">
+      <dl class="kv">
+        <dt>Dénomination</dt><dd>Laurent Hoessen — Syndic</dd>
+        <dt>Adresse</dt><dd>Avenue Heydenberg 14, 1200 Bruxelles</dd>
+        <dt>Numéro d’entreprise</dt><dd>0462.920.325</dd>
+        <dt>TVA (BE)</dt><dd>BE0462.920.325</dd>
+        <dt>E-mail</dt><dd><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></dd>
+        <dt>Objet</dt><dd>Gestion de copropriété (syndic) — Belgique</dd>
+      </dl>
+    </div>
+  </div>
+</section>
 
-  <footer class="footer"><div class="row">© <span id="year"></span> Laurent Hoessen — Syndic</div></footer>
+<footer>
+  <div class="footer"><div class="container"><div class="row">
+    <span>Horaires: Lun–Ven 09:00–17:00</span><span>·</span>
+    <span><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span><span>·</span>
+    <span>Avenue Heydenberg 14, 1200 Bruxelles</span>
+  </div></div></div>
+  <div class="subfooter"><div class="container">© <span id="year"></span> Laurent Hoessen – Syndic.</div></div>
+</footer>
 </body>
 </html>

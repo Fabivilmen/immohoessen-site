@@ -1,11 +1,20 @@
-// Atualiza o ano do rodapé automaticamente
-document.querySelectorAll('#ano').forEach(el=>el.textContent=new Date().getFullYear());
 
-// Rolagem suave para âncoras
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click', e=>{
-    const id = a.getAttribute('href').slice(1);
-    const el = document.getElementById(id);
-    if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+// Menu mobile
+const btn = document.querySelector('.burger');
+const menu = document.querySelector('.menu');
+if (btn) {
+  btn.addEventListener('click', () => {
+    if (menu.style.display === 'flex') menu.style.display = 'none';
+    else { menu.style.display = 'flex'; menu.style.flexWrap = 'wrap'; }
   });
+}
+
+// Destacar link atual
+const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+document.querySelectorAll('.menu a').forEach(a=>{
+  const href = a.getAttribute('href').toLowerCase();
+  if ((here === '' && href.endsWith('index.html')) || here === href) a.classList.add('active');
 });
+
+// Ano do rodapé
+const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();

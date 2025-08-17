@@ -1,3 +1,4 @@
+
 /* ===== Tema Claro com texto verde-escuro ===== */
 :root{
   --bg:#f6faf7;
@@ -42,30 +43,40 @@ a{color:inherit;text-decoration:none}
 .menu a.active{background:#e6f4ee;border-color:var(--line);color:var(--text)}
 .burger{display:none;border:1px solid var(--line);border-radius:10px;padding:8px 10px;color:var(--muted);background:#fff}
 
-/* ===== Hero (Home) — usando a imagem COM texto (cover2.jpg) ===== */
+/* ===== HERO (Home) — sem botões, título central ===== */
 .hero{
   min-height:78vh;
-  display:grid; place-items:end center;
+  display:grid; place-items:center;            /* centraliza vertical + horizontal */
   border-bottom:1px solid var(--line);
-  color:#fff;
-  overflow:hidden;
+  color:#fff; overflow:hidden;
 }
 .hero.hero-image{
-  /* deixe sua imagem com texto aqui */
+  /* USE a imagem sem texto para evitar duplicidade */
   background:
-    center/cover no-repeat url("img/cover2.jpg"),
-    linear-gradient(180deg,#bde6d7,#eef7f2);
+    center/cover no-repeat url("img/cover-plain.jpg"),
+    linear-gradient(180deg,#bde6d7,#eef7f2);   /* fallback suave */
 }
 .hero .inner{
   width:min(1100px,92vw);
-  padding:40px 0 110px;
-  display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
+  padding:72px 0;                               /* respiro uniforme */
   text-align:center;
 }
-/* Esconde QUALQUER grupo de botões que ainda exista no hero */
-.hero .buttons{ display:none !important; }
+/* Título/subtítulo em HTML */
+.hero h1{
+  font-family:"Georgia","Times New Roman",serif;
+  font-size:clamp(44px,8vw,96px);
+  line-height:1.05; font-weight:700; margin:0 0 10px;
+  color:#fff; text-shadow:0 6px 28px rgba(0,0,0,.45), 0 2px 10px rgba(0,0,0,.35);
+}
+.hero .subtitle{
+  font-size:clamp(18px,2.6vw,30px);
+  margin:0; color:#fff; text-shadow:0 4px 18px rgba(0,0,0,.45), 0 1px 6px rgba(0,0,0,.35);
+}
+/* REMOVER QUALQUER BOTÃO no hero (mesmo se existir no HTML) */
+.hero .buttons,
+.hero a.button{ display:none !important; }
 
-/* ===== Botões (mantidos para outras páginas) ===== */
+/* ===== Botões (para outras páginas) ===== */
 .button{
   display:inline-flex; align-items:center; justify-content:center; gap:10px;
   padding:12px 16px; border-radius:12px; border:1px solid rgba(2,6,23,.12);
@@ -81,29 +92,11 @@ a{color:inherit;text-decoration:none}
 .section{padding:56px 0;border-bottom:1px solid var(--line);background:transparent}
 .section h2{font-size:28px;margin:0 0 8px;font-weight:800}
 .section .lead{color:var(--muted);margin:0 0 22px}
-
 .grid{display:grid;gap:14px}
 .grid.cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 4px 14px rgba(2,6,23,.06)}
 .card h3{margin:0 0 6px;font-size:18px}
 .card p{margin:0;color:var(--muted)}
-
-/* ===== Lists (Contacts) ===== */
-.kv{display:grid;grid-template-columns:220px 1fr;gap:8px 14px}
-.kv dt{color:var(--text);font-weight:700}
-.kv dd{margin:0;color:var(--text)}
-.kv a{color:#0b5f4f;border-bottom:1px dashed rgba(11,95,79,.35)}
-.kv a:hover{color:#084c3f}
-
-/* ===== Forms (Offre) ===== */
-.form{display:grid;gap:12px;max-width:720px}
-.input, textarea, select{
-  width:100%;padding:12px 14px;border-radius:12px;border:1px solid #dbe7e2;
-  background:#fff;color:var(--text)
-}
-textarea{min-height:140px;resize:vertical}
-label{font-size:14px;color:var(--muted)}
-button[type="submit"]{align-self:flex-start}
 
 /* ===== Footer ===== */
 .footer{border-top:1px solid var(--line);padding:14px 0;color:var(--muted);font-size:14px;background:#fff}
@@ -115,5 +108,4 @@ button[type="submit"]{align-self:flex-start}
   .menu{display:none}
   .burger{display:inline-flex}
   .card{padding:14px}
-  .kv{grid-template-columns:1fr}
 }

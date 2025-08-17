@@ -1,86 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Types de gestion — Laurent Hoessen</title>
-  <link rel="stylesheet" href="styles.css?v=10" />
-  <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="scripts.js"></script>
 </head>
 <body>
-
-  <header class="site-header">
-    <nav class="nav" aria-label="Navigation principale">
-      <a class="brand" href="index.html" aria-label="Accueil">
-        <img src="img/logo.svg" alt="Logo LH" width="28" height="28" />
-        <span>Laurent&nbsp;Hoessen</span>
-      </a>
-      <div class="menu">
+  <header class="header">
+    <div class="container nav">
+      <div class="brand"><div class="logo"></div><span class="title">Laurent Hoessen</span></div>
+      <nav class="menu">
         <a href="index.html">Accueil</a>
-        <a href="types.html" class="ativo" aria-current="page">Types de gestion</a>
+        <a href="types.html">Types de gestion</a>
         <a href="contacts.html">Contacts</a>
-        <a href="offre.html">Demande d’Offre</a>
-        <a href="plateforme.html">Accès à la plateforme</a>
-      </div>
-    </nav>
+        <a href="offre.html">Demande d'Offre</a>
+        <a href="privacite.html">Mentions légales</a>
+      </nav>
+      <button class="burger">☰</button>
+    </div>
   </header>
 
-  <main class="section">
-    <h1 class="page-title">Types de gestion</h1>
+  <main class="container section">
+    <h2>Types de gestion</h2>
 
-    <div class="grid-2">
-      <article class="service-card card">
-        <h2 class="title">Syndic de copropriété — pilotage global</h2>
-        <ul>
-          <li>Exécution des décisions d’AG et suivi des prestataires</li>
-          <li>Tenue des registres, affichages et conformité (ascenseurs, incendie…)</li>
-          <li>Communication claire aux copropriétaires (courriels, avis, PV)</li>
-          <li>Reporting régulier : dépenses, travaux, incidents</li>
-        </ul>
-      </article>
-
-      <article class="service-card card">
-        <h2 class="title">Gestion administrative</h2>
-        <ul>
-          <li>Contrats et appels d’offres avec clauses protectrices</li>
-          <li>Assurances, sinistres et dossiers réglementaires</li>
-          <li>Suivi des fournisseurs et délais d’intervention</li>
-          <li>Courriers types, modèles d’affichage et procédures</li>
-        </ul>
-      </article>
-
-      <article class="service-card card">
-        <h2 class="title">Gestion technique — sécurité &amp; conformité</h2>
-        <ul>
-          <li>Plan d’entretien préventif des installations</li>
-          <li>Devis comparatifs pour travaux & interventions</li>
-          <li>Suivi de chantiers, réceptions et garanties</li>
-          <li>Contrôles périodiques (ascenseurs, extincteurs, électricité)</li>
-        </ul>
-      </article>
-
-      <article class="service-card card">
-        <h2 class="title">Comptabilité &amp; Assemblées Générales</h2>
-        <ul>
-          <li>Comptabilité claire et rapports financiers réguliers</li>
-          <li>Budgets, décomptes et appels de fonds</li>
-          <li>Préparation et présidence des AG</li>
-          <li>Convocations, PV et suivi des décisions</li>
-        </ul>
-      </article>
+    <div class="card">
+      <h3>Syndic de copropriété — pilotage global</h3>
+      <ul>
+        <li>Exécution des décisions d’AG et suivi des prestataires</li>
+        <li>Tenue des registres, affichages et conformité (ascenseurs, incendie…)</li>
+        <li>Communication claire aux copropriétaires (courriels, avis, PV)</li>
+        <li>Reporting régulier : dépenses, travaux, incidents</li>
+      </ul>
     </div>
 
-    <div style="text-align:center;margin-top:22px">
-      <a class="btn btn-primary" href="offre.html">Demander une offre</a>
+    <div class="card">
+      <h3>Gestion administrative</h3>
+      <p>Contrats et appels d’offres avec clauses protectrices</p>
+    </div>
+
+    <div class="card">
+      <h3>Gestion financière</h3>
+      <p>Comptabilité, appels de fonds, budgets prévisionnels</p>
     </div>
   </main>
 
-  <footer class="micro-footer">
-    <div class="wrap micro-footer-row">
-      <span>Horaires : Lun–Ven 09:00–13:00</span>
-      <span class="sep">•</span>
-      <span>Email : <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span>
-    </div>
-  </footer>
+  <footer class="footer"><div class="row">© <span id="year"></span> Laurent Hoessen — Syndic</div></footer>
 </body>
 </html>

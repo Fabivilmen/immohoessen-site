@@ -1,52 +1,64 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Types de gestion — Laurent Hoessen</title>
+  <meta name="description" content="Périmètres de gestion proposés pour votre copropriété.">
   <link rel="stylesheet" href="styles.css">
   <script defer src="scripts.js"></script>
 </head>
 <body>
-  <header class="header">
-    <div class="container nav">
-      <div class="brand"><div class="logo"></div><span class="title">Laurent Hoessen</span></div>
-      <nav class="menu">
-        <a href="index.html">Accueil</a>
-        <a href="types.html">Types de gestion</a>
-        <a href="contacts.html">Contacts</a>
-        <a href="offre.html">Demande d'Offre</a>
-        <a href="privacite.html">Mentions légales</a>
-      </nav>
-      <button class="burger">☰</button>
-    </div>
-  </header>
+<header class="header">
+  <div class="container nav">
+    <div class="brand"><div class="logo"></div><div class="title">Laurent Hoessen <span class="badge">Syndic</span></div></div>
+    <nav class="menu">
+      <a href="index.html">Accueil</a>
+      <a href="types.html" class="active">Types de gestion</a>
+      <a href="contacts.html">Contacts</a>
+      <a href="offre.html">Demande d’Offre</a>
+      <a href="privacite.html">Mentions légales</a>
+    </nav>
+    <button class="burger" aria-label="Menu">☰</button>
+    <a class="cta" href="offre.html">Demander une offre</a>
+  </div>
+</header>
 
-  <main class="container section">
+<section class="section">
+  <div class="container">
     <h2>Types de gestion</h2>
+    <p class="lead">Nous adaptons notre méthode aux particularités de votre copropriété.</p>
 
-    <div class="card">
-      <h3>Syndic de copropriété — pilotage global</h3>
-      <ul>
-        <li>Exécution des décisions d’AG et suivi des prestataires</li>
-        <li>Tenue des registres, affichages et conformité (ascenseurs, incendie…)</li>
-        <li>Communication claire aux copropriétaires (courriels, avis, PV)</li>
-        <li>Reporting régulier : dépenses, travaux, incidents</li>
-      </ul>
+    <div class="grid cards">
+      <article class="card">
+        <h3>Syndic de copropriété — pilotage global</h3>
+        <p>AG, exécution des décisions, suivi des prestataires et reporting continu.</p>
+      </article>
+      <article class="card">
+        <h3>Gestion administrative</h3>
+        <p>Contrats, appels d’offres, conformité (ascenseurs, incendie, RGPD).</p>
+      </article>
+      <article class="card">
+        <h3>Gestion technique</h3>
+        <p>Plan pluriannuel, entretiens, suivi des travaux et réceptions.</p>
+      </article>
+      <article class="card">
+        <h3>Sinistres & Assurances</h3>
+        <p>Déclaration, expertise, indemnisation et répartition.</p>
+      </article>
     </div>
+  </div>
+</section>
 
-    <div class="card">
-      <h3>Gestion administrative</h3>
-      <p>Contrats et appels d’offres avec clauses protectrices</p>
-    </div>
-
-    <div class="card">
-      <h3>Gestion financière</h3>
-      <p>Comptabilité, appels de fonds, budgets prévisionnels</p>
-    </div>
-  </main>
-
-  <footer class="footer"><div class="row">© <span id="year"></span> Laurent Hoessen — Syndic</div></footer>
+<footer>
+  <div class="footer">
+    <div class="container"><div class="row">
+      <span>Horaires: Lun–Ven 09:00–17:00</span><span>·</span>
+      <span><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span><span>·</span>
+      <span>Avenue Heydenberg 14, 1200 Bruxelles</span>
+    </div></div>
+  </div>
+  <div class="subfooter"><div class="container">© <span id="year"></span> Laurent Hoessen – Syndic.</div></div>
+</footer>
 </body>
 </html>

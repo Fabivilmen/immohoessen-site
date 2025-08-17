@@ -30,8 +30,8 @@
     <h2>Contact</h2>
     <p class="lead">Nous répondons généralement sous 1 à 2 jours ouvrables.</p>
 
-    <!-- Formulário: troque action se quiser usar Formspree -->
-    <form class="form" method="POST" data-netlify="true" name="contact">
+    <!-- Netlify: deixe data-netlify, ou troque por action Formspree -->
+    <form class="form" name="contact" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact">
       <div><label for="nom">Nom</label><input class="input" id="nom" name="nom" required></div>
       <div><label for="email">E-mail</label><input class="input" id="email" name="email" type="email" required></div>

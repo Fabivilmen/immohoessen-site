@@ -1,99 +1,76 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demande d’Offre — Laurent Hoessen</title>
-  <link rel="stylesheet" href="styles.css?v=10" />
-  <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
+  <meta name="description" content="Demandez une offre pour la gestion de votre copropriété.">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="scripts.js"></script>
 </head>
 <body>
-
-  <header class="site-header">
-    <nav class="nav" aria-label="Navigation principale">
-      <a class="brand" href="index.html" aria-label="Accueil">
-        <img src="img/logo.svg" alt="Logo LH" width="28" height="28" />
-        <span>Laurent&nbsp;Hoessen</span>
-      </a>
-      <div class="menu">
-        <a href="index.html">Accueil</a>
-        <a href="types.html">Types de gestion</a>
-        <a href="contacts.html">Contacts</a>
-        <a href="offre.html" class="ativo" aria-current="page">Demande d’Offre</a>
-        <a href="plateforme.html">Accès à la plateforme</a>
-      </div>
+<header class="header">
+  <div class="container nav">
+    <div class="brand"><div class="logo"></div><div class="title">Laurent Hoessen <span class="badge">Syndic</span></div></div>
+    <nav class="menu">
+      <a href="index.html">Accueil</a>
+      <a href="types.html">Types de gestion</a>
+      <a href="contacts.html">Contacts</a>
+      <a href="offre.html" class="active">Demande d’Offre</a>
+      <a href="privacite.html">Mentions légales</a>
     </nav>
-  </header>
+    <button class="burger" aria-label="Menu">☰</button>
+    <a class="cta" href="offre.html">Demander une offre</a>
+  </div>
+</header>
 
-  <main class="section">
-    <h1 class="page-title">Demande d’Offre</h1>
+<section class="section">
+  <div class="container">
+    <h2>Demande d’Offre</h2>
+    <p class="lead">Un formulaire simple pour évaluer vos besoins.</p>
 
-    <form class="card" action="#" method="POST">
-      <div class="grid-2">
-        <div>
-          <label>Nom complet *</label>
-          <input type="text" name="name" required />
-        </div>
-        <div>
-          <label>Email *</label>
-          <input type="email" name="email" required />
-        </div>
-
-        <div>
-          <label>Téléphone *</label>
-          <input type="tel" name="phone" required />
-        </div>
-        <div>
-          <label>Adresse de la copropriété *</label>
-          <input type="text" name="address" required />
-        </div>
-
-        <div>
-          <label>Nombre d’étages *</label>
-          <input type="number" name="floors" min="1" required />
-        </div>
-        <div>
-          <label>Nombre d’appartements (optionnel)</label>
-          <input type="number" name="units" min="1" />
-        </div>
-
-        <div>
-          <label>Avez-vous déjà un syndic ? *</label>
-          <select name="has_syndic" required>
-            <option value="">Sélectionner…</option>
-            <option value="oui">Oui</option>
-            <option value="non">Non</option>
-          </select>
-        </div>
-        <div>
-          <label>Dispose-t-on d’un box/parking ? *</label>
-          <select name="has_parking" required>
-            <option value="">Sélectionner…</option>
-            <option value="oui">Oui</option>
-            <option value="non">Non</option>
-          </select>
-        </div>
-
-        <div style="grid-column:1/-1">
-          <label>Commentaires ou demandes spécifiques</label>
-          <textarea name="message" rows="4" placeholder="Précisez ici vos besoins…"></textarea>
-        </div>
+    <!-- Netlify: deixe data-netlify ou troque por action Formspree -->
+    <form class="form" method="POST" data-netlify="true" name="offre">
+      <input type="hidden" name="form-name" value="offre">
+      <div><label for="nom">Nom complet *</label><input class="input" id="nom" name="nom" required></div>
+      <div><label for="email">Email *</label><input class="input" id="email" name="email" type="email" required></div>
+      <div><label for="tel">Téléphone *</label><input class="input" id="tel" name="tel" required></div>
+      <div><label for="adresse">Adresse de la copropriété *</label><input class="input" id="adresse" name="adresse" required></div>
+      <div><label for="etages">Nombre d’étages *</label><input class="input" id="etages" name="etages" type="number" min="1" required></div>
+      <div><label for="lots">Nombre d’appartements (optionnel)</label><input class="input" id="lots" name="lots" type="number" min="1"></div>
+      <div>
+        <label for="syndic">Avez-vous déjà un syndic ? *</label>
+        <select id="syndic" name="syndic" required>
+          <option value="">Sélectionner…</option>
+          <option>Oui</option><option>Non</option>
+        </select>
       </div>
-
-      <button type="submit" class="btn btn-primary">Envoyer la demande</button>
-      <p class="note" style="margin-top:10px">
-        En envoyant ce formulaire, j’accepte d’être contacté(e) par e-mail ou téléphone.
-        Horaires du bureau : Lun–Ven, 09:00–13:00.
-      </p>
+      <div>
+        <label for="parking">Dispose-t-on d’un box/parking ? *</label>
+        <select id="parking" name="parking" required>
+          <option value="">Sélectionner…</option>
+          <option>Oui</option><option>Non</option>
+        </select>
+      </div>
+      <div><label for="msg">Commentaires ou demandes spécifiques</label><textarea id="msg" name="msg" placeholder="Précisez ici vos besoins…"></textarea></div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <button class="cta" type="submit">Envoyer la demande</button>
+        <a class="button" href="mailto:syndic@immohoessen.be?subject=Demande%20d%27offre">Envoyer par e-mail</a>
+      </div>
     </form>
-  </main>
+  </div>
+</section>
 
-  <footer class="micro-footer">
-    <div class="wrap micro-footer-row">
-      <span>Horaires : Lun–Ven 09:00–13:00</span>
-      <span class="sep">•</span>
-      <span>Email : <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span>
-    </div>
-  </footer>
+<footer>
+  <div class="footer">
+    <div class="container"><div class="row">
+      <span>Horaires: Lun–Ven 09:00–17:00</span><span>·</span>
+      <span><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span><span>·</span>
+      <span>Avenue Heydenberg 14, 1200 Bruxelles</span>
+    </div></div>
+  </div>
+  <div class="subfooter"><div class="container">© <span id="year"></span> Laurent Hoessen – Syndic.</div></div>
+</footer>
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -30,7 +29,7 @@
     <h2>Contact</h2>
     <p class="lead">Nous répondons généralement sous 1 à 2 jours ouvrables.</p>
 
-    <!-- Netlify: deixe data-netlify, ou troque por action Formspree -->
+    <!-- Netlify (pronto para usar). Se preferir Formspree, troque o method/action -->
     <form class="form" name="contact" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact">
       <div><label for="nom">Nom</label><input class="input" id="nom" name="nom" required></div>
@@ -39,13 +38,12 @@
       <div><label for="message">Message</label><textarea id="message" name="message" placeholder="Décrivez votre demande"></textarea></div>
       <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
         <button class="cta" type="submit">Envoyer</button>
-        <a class="button" href="mailto:syndic@immohoessen.be">Envoyer par e-mail</a>
       </div>
     </form>
 
-    <div style="height:24px"></div>
+    <div style="height:22px"></div>
 
-    <div class="card" style="padding:22px">
+    <div class="card" style="padding:18px">
       <h3 style="margin:0 0 8px">Coordonnées principales</h3>
       <ul class="info-list">
         <li class="info-item">

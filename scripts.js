@@ -1,4 +1,3 @@
-
 // Menu mobile
 const btn = document.querySelector('.burger');
 const menu = document.querySelector('.menu');

@@ -1,5 +1,4 @@
-
-// v31 — menu mobile, link ativo e ano no rodapé
+// v32 — menu mobile, link ativo e ano no rodapé
 
 // Menu mobile
 const btn = document.querySelector('.burger');

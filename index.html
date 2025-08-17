@@ -6,8 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Laurent Hoessen — Gestion immobilière</title>
   <meta name="description" content="Syndic à Bruxelles. Gestion transparente, réactive et durable de votre copropriété.">
-  <link rel="stylesheet" href="styles.css?v=26">
-  <script defer src="scripts.js?v=26"></script>
+  <link rel="stylesheet" href="styles.css?v=27">
+  <script defer src="scripts.js?v=27"></script>
+  <!-- Garantir que, se a foto tiver texto, o H1/subtítulo do HTML fique oculto -->
+  <style>
+    .hero--only-image h1, .hero--only-image .subtitle { display:none !important; }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -27,10 +31,12 @@
     </div>
   </header>
 
-  <!-- HERO: imagem SEM texto embutido + título/subtítulo do HTML (corretos) -->
-  <section class="hero hero-image hero--only-image" ...>
-
+  <!-- Se a sua imagem de fundo já tiver texto, mantenha hero--only-image.
+       Se trocar para uma imagem SEM texto, pode remover hero--only-image
+       para mostrar o H1/subtítulo do HTML. -->
+  <section class="hero hero-image hero--only-image" role="img" aria-label="Copropriété moderne entourée de verdure">
     <div class="inner">
+      <!-- Mantido por SEO/acessibilidade; ficará oculto pela classe acima se a foto tiver texto -->
       <h1>Laurent Hoessen</h1>
       <p class="subtitle">Gestion immobilière — Syndic BILH &amp; DUHO</p>
     </div>
@@ -41,20 +47,35 @@
       <h2>Pourquoi nous choisir</h2>
       <p class="lead">Transparence financière, suivi technique rigoureux et communication proactive.</p>
       <div class="grid cards">
-        <article class="card"><h3>Transparence financière</h3><p>Budgets, comptes annuels et rapports clairs.</p></article>
-        <article class="card"><h3>Suivi technique</h3><p>Plan pluriannuel, entretiens, conformité (ascenseurs, incendie).</p></article>
-        <article class="card"><h3>Communication</h3><p>Information continue, réponses rapides, portail de documents partagé.</p></article>
+        <article class="card">
+          <h3>Transparence financière</h3>
+          <p>Budgets, comptes annuels et rapports clairs.</p>
+        </article>
+        <article class="card">
+          <h3>Suivi technique</h3>
+          <p>Plan pluriannuel, entretiens, conformité (ascenseurs, incendie).</p>
+        </article>
+        <article class="card">
+          <h3>Communication</h3>
+          <p>Information continue, réponses rapides, portail de documents partagé.</p>
+        </article>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="footer"><div class="container"><div class="row">
-      <span>Horaires: Lun–Ven 09:00–17:00</span><span>·</span>
-      <span><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span><span>·</span>
-      <span>Avenue Heydenberg 14, 1200 Bruxelles</span>
-    </div></div></div>
-    <div class="subfooter"><div class="container">© <span id="year"></span> Laurent Hoessen – Syndic.</div></div>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <span>Horaires: Lun–Ven 09:00–17:00</span><span>·</span>
+          <span><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span><span>·</span>
+          <span>Avenue Heydenberg 14, 1200 Bruxelles</span>
+        </div>
+      </div>
+    </div>
+    <div class="subfooter">
+      <div class="container">© <span id="year"></span> Laurent Hoessen – Syndic.</div>
+    </div>
   </footer>
 </body>
 </html>

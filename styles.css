@@ -1,4 +1,4 @@
-/* v31 — base estável, tema claro verde-escuro */
+/* v32 — base estável, tema claro verde-escuro */
 :root{
   --bg:#f6faf7; --bg-2:#ffffff; --surface:#ffffff; --line:rgba(2,6,23,.10);
   --text:#0f3d2e; --muted:#3e7a68;
@@ -43,9 +43,9 @@ a{color:inherit;text-decoration:none}
   color:#fff; overflow:hidden;
 }
 .hero.hero-image{
-  /* Se a imagem tiver texto, mantenha hero--only-image no HTML */
+  /* USE uma imagem SEM TEXTO em: img/cover-plain.jpg  */
   background:
-    center/cover no-repeat url("img/cover-plain.jpg?v=31"),
+    center/cover no-repeat url("img/cover-plain.jpg?v=32"),
     linear-gradient(180deg,#bde6d7,#eef7f2);
 }
 .hero .inner{ width:min(1100px,92vw); padding:74px 0; text-align:center; }
@@ -59,10 +59,8 @@ a{color:inherit;text-decoration:none}
   font-size:clamp(18px,2.6vw,30px);
   margin:0; color:#fff; text-shadow:0 4px 18px rgba(0,0,0,.45), 0 1px 6px rgba(0,0,0,.35);
 }
-/* Nunca mostrar botões na capa */
+/* Não mostrar botões na capa */
 .hero .buttons, .hero a.button{ display:none !important; }
-/* <<< Anti-duplicação: se a imagem tiver texto, esconda H1/subtítulo do HTML no hero */
-.hero--only-image h1, .hero--only-image .subtitle{ display:none !important; }
 
 /* ===== Seções / Cards ===== */
 .section{padding:56px 0;border-bottom:1px solid var(--line);background:transparent}

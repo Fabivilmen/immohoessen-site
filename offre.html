@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Demande d’Offre — Laurent Hoessen</title>
   <meta name="description" content="Formulaire de demande d’offre pour votre copropriété.">
-  <link rel="stylesheet" href="styles.css?v=32">
-  <script defer src="scripts.js?v=32"></script>
+  <link rel="stylesheet" href="styles.css?v=33">
+  <script defer src="scripts.js?v=33"></script>
 </head>
 <body>
   <header class="header">
@@ -32,8 +32,7 @@
       <h1>Demande d’Offre</h1>
       <p class="lead">Un formulaire simple pour évaluer vos besoins.</p>
 
-      <!-- Formulaire statique : envoie un e-mail local via le client du visiteur.
-           Se preferir usar um serviço (Formspree/Formsubmit), troque o action. -->
+      <!-- Formulaire: envia via cliente de e-mail do usuário. -->
       <form class="form" method="POST" action="mailto:syndic@immohoessen.be" enctype="text/plain">
         <label for="nom">Nom complet *</label>
         <input id="nom" name="Nom complet" class="input" type="text" required placeholder="Votre nom">

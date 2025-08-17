@@ -1,5 +1,6 @@
 
-// v22
+// v31 — menu mobile, link ativo e ano no rodapé
+
 // Menu mobile
 const btn = document.querySelector('.burger');
 const menu = document.querySelector('.menu');
@@ -7,7 +8,7 @@ if (btn) {
   btn.addEventListener('click', () => {
     const shown = getComputedStyle(menu).display !== 'none';
     menu.style.display = shown ? 'none' : 'flex';
-    if(!shown){ menu.style.flexWrap = 'wrap'; }
+    if (!shown) menu.style.flexWrap = 'wrap';
   });
 }
 

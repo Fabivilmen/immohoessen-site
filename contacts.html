@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -29,7 +30,7 @@
     <h2>Contact</h2>
     <p class="lead">Nous répondons généralement sous 1 à 2 jours ouvrables.</p>
 
-    <!-- Netlify (pronto para usar). Se preferir Formspree, troque o method/action -->
+    <!-- Netlify pronto -->
     <form class="form" name="contact" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact">
       <div><label for="nom">Nom</label><input class="input" id="nom" name="nom" required></div>
@@ -43,22 +44,11 @@
 
     <div style="height:22px"></div>
 
-    <div class="card" style="padding:18px">
+    <div class="card contact-card">
       <h3 style="margin:0 0 8px">Coordonnées principales</h3>
-      <ul class="info-list">
-        <li class="info-item">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s7-7.33 7-12a7 7 0 1 0-14 0c0 4.67 7 12 7 12Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
-          <div>Avenue Heydenberg 14, 1200 Bruxelles</div>
-        </li>
-        <li class="info-item">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6"/><path d="m22 8-10 6L2 8" stroke="currentColor" stroke-width="1.6"/></svg>
-          <div><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></div>
-        </li>
-        <li class="info-item">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.92v2a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.1 3.9 2 2 0 0 1 4.11 2h2a2 2 0 0 1 2 1.72c.12.9.33 1.77.62 2.61a2 2 0 0 1-.45 2.11L7.53 9.88a16 16 0 0 0 6 6l1.44-1.75a2 2 0 0 1 2.11-.45c.84.29 1.71.5 2.61.62A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.6"/></svg>
-          <div>Urgence : <a href="tel:+32XXXXXXXX">+32 … … …</a></div>
-        </li>
-      </ul>
+      <div class="contact-row"><span class="ico">📍</span> <span>Avenue Heydenberg 14, 1200 Bruxelles</span></div>
+      <div class="contact-row"><span class="ico">✉️</span> <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></div>
+      <div class="contact-row"><span class="ico">☎️</span> <a href="tel:+32XXXXXXXX">+32 … … …</a> <span style="opacity:.8;margin-left:6px">Urgence</span></div>
     </div>
   </div>
 </section>

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacts — Laurent Hoessen</title>
-  <meta name="description" content="Coordonnées et formulaire de contact.">
+  <meta name="description" content="Coordonnées du syndic Laurent Hoessen à Bruxelles.">
   <link rel="stylesheet" href="styles.css">
   <script defer src="scripts.js"></script>
 </head>
@@ -19,56 +19,42 @@
       <a href="types.html">Types de gestion</a>
       <a href="contacts.html" class="active">Contacts</a>
       <a href="offre.html">Demande d’Offre</a>
-      <a href="privacite.html">Mentions légales</a>
     </nav>
     <button class="burger" aria-label="Menu">☰</button>
-    <a class="cta" href="offre.html">Demander une offre</a>
   </div>
 </header>
 
 <section class="section">
   <div class="container">
-    <h2>Contact</h2>
-    <p class="lead">Nous répondons généralement sous 1 à 2 jours ouvrables.</p>
+    <h2>Contacts</h2>
+    <p class="lead">Informations générales et coordonnées principales.</p>
 
-    <form class="form" name="contact" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="contact">
-      <div><label for="nom">Nom</label><input class="input" id="nom" name="nom" required></div>
-      <div><label for="email">E-mail</label><input class="input" id="email" name="email" type="email" required></div>
-      <div><label for="tel">Téléphone</label><input class="input" id="tel" name="tel" type="tel" placeholder="+32 …"></div>
-      <div><label for="message">Message</label><textarea id="message" name="message" placeholder="Décrivez votre demande"></textarea></div>
-      <button class="cta" type="submit">Envoyer</button>
-    </form>
-
-    <div style="height:22px"></div>
-
+    <!-- Quadro principal -->
     <div class="card">
-      <h3 style="margin:0 0 10px">Coordonnées principales</h3>
+      <h3 style="margin:0 0 10px">Contacts généraux</h3>
       <dl class="kv">
-        <dt>Adresse</dt>
-        <dd>Avenue Heydenberg 14, 1200 Bruxelles</dd>
-
-        <dt>Horaires</dt>
-        <dd>Lun–Ven 09:00–17:00</dd>
-
-        <dt>E-mail général</dt>
-        <dd><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></dd>
-
-        <dt>IPI – Titulaire</dt>
-        <dd>Laurent Hoessen — <a href="mailto:laurent@immohoessen.be">laurent@immohoessen.be</a></dd>
-
-        <dt>Gestionnaire des sinistres</dt>
-        <dd>Ledieu Viviane</dd>
-
-        <dt>Gestionnaire collaboratrice</dt>
-        <dd>Bonifacio Patricia — <a href="mailto:gestion@immohoessen.be">gestion@immohoessen.be</a></dd>
-
-        <dt>Factures</dt>
-        <dd><a href="mailto:factures@immohoessen.be">factures@immohoessen.be</a></dd>
-
-        <dt>Urgence</dt>
-        <dd><a href="tel:+32XXXXXXXX">+32 … … …</a></dd>
+        <dt>Adresse</dt><dd>Avenue Heydenberg 14, 1200 Bruxelles</dd>
+        <dt>Horaires</dt><dd>Lun–Ven 09:00–13:00</dd>
+        <dt>E-mail général</dt><dd><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></dd>
+        <dt>IPI — Titulaire</dt><dd>Laurent Hoessen — IPI 105260 — <a href="mailto:laurent@immohoessen.be">laurent@immohoessen.be</a></dd>
+        <dt>Urgence</dt><dd><a href="tel:+32495261683">0495 26 16 83</a> · <a href="tel:+32495543808">0495 54 38 08</a></dd>
       </dl>
+    </div>
+
+    <!-- Outros quadros úteis -->
+    <div class="grid cards" style="margin-top:14px">
+      <article class="card">
+        <h3>Gestion</h3>
+        <p>Gestionnaire collaboratrice : Bonifacio Patricia — <a href="mailto:gestion@immohoessen.be">gestion@immohoessen.be</a></p>
+      </article>
+      <article class="card">
+        <h3>Sinistres</h3>
+        <p>Gestionnaire des sinistres : Ledieu Viviane</p>
+      </article>
+      <article class="card">
+        <h3>Factures</h3>
+        <p>Comptabilité &amp; factures : <a href="mailto:factures@immohoessen.be">factures@immohoessen.be</a></p>
+      </article>
     </div>
   </div>
 </section>

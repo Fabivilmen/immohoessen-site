@@ -335,6 +335,43 @@ h1, h2, h3,
   border-radius: 16px;
   box-shadow: 0 12px 32px rgba(2, 8, 23, .18);
 }
+/* ====== Portail: layout em 2 colunas ====== */
+.portail-split{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr; /* texto levemente maior */
+  gap: 2rem;
+  align-items:center;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.portail-text p{
+  margin:0;
+  color: var(--text);
+  line-height:1.7;
+  text-align:justify;
+  text-justify:inter-word;
+}
+
+.portail-media{
+  margin:0; padding:0;
+}
+.portail-media img{
+  width:100%; height:auto; display:block;
+  border-radius:16px;
+  box-shadow:0 12px 32px rgba(2,8,23,.18);
+  object-fit:cover;
+}
+
+/* Responsivo (tablet/celular): empilha */
+@media (max-width: 960px){
+  .portail-split{
+    grid-template-columns: 1fr;
+    gap:1rem;
+  }
+  .portail-media{
+    order:-1;           /* imagem sobe para cima do texto no mobile */
+  }
+}
 
 
 

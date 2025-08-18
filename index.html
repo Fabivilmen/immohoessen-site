@@ -145,7 +145,7 @@
   <section id="contact" class="wrap contact">
     <h2>Contact</h2>
     <p style="text-align:center; color:var(--muted); margin:0 0 1.4rem">
-      Équipe et coordonnées — nous répondons sous 24–48h ouvrables.
+      Équipe et coordonnées — nous répondons sous 48–72h ouvrables.
     </p>
 
     <div class="people">
@@ -190,18 +190,24 @@
   <section id="offre" class="wrap offre">
     <h2>Demande d’offre</h2>
     <p style="max-width:720px; margin:.5rem auto 1.2rem; color:var(--muted);">
-      Envoyez-nous les détails de votre immeuble et nous vous répondrons sous 24–48h ouvrables.
+      Envoyez-nous les détails de votre immeuble et nous vous répondrons sous 48–72h ouvrables.
     </p>
 
-    <!-- Substitua o endpoint SEU_ID pelo fornecido pelo Formspree -->
-    <form action="https://formspree.io/f/SEU_ID" method="POST">
-      <input type="hidden" name="_subject" value="Demande d’offre — Site Immo Hoessen" />
-      <input type="text" name="nom" placeholder="Votre nom" required>
-      <input type="email" name="email" placeholder="Votre email" required>
-      <input type="text" name="adresse" placeholder="Adresse de l’immeuble" required>
-      <input type="text" name="lots" placeholder="Nombre de lots">
-      <textarea name="message" rows="4" placeholder="Votre message"></textarea>
-      <button type="submit">Envoyer la demande</button>
+   <!-- Substitua o endpoint SEU_ID pelo fornecido pelo Formspree -->
+<form action="https://formspree.io/f/SEU_ID" method="POST">
+  <input type="hidden" name="_subject" value="Demande d’offre — Site Immo Hoessen" />
+  <input type="hidden" name="_next" value="https://fabivilmen.github.io/immohoessen-site/merci.html" />
+
+  <input type="text" name="nom" placeholder="Votre nom" required>
+  <input type="email" name="email" placeholder="Votre email" required>
+  <input type="text" name="adresse" placeholder="Adresse de l’immeuble" required>
+  <input type="text" name="lots" placeholder="Nombre de lots">
+  <textarea name="message" rows="4" placeholder="Votre message"></textarea>
+
+  <button type="submit">Envoyer la demande</button>
+</form>
+
+
     </form>
   </section>
 
@@ -212,7 +218,7 @@
         <h3 style="color:#fff; margin:0 0 .6rem">Coordonnées</h3>
         <p class="mini" style="margin:.2rem 0 1rem">
           Avenue Heydenberg 14, 1200 Bruxelles<br>
-          Lun–Ven 09:00–17:00 • <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+          Lun–Ven 09:00–13:00 • <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
         </p>
         <p class="mini" style="margin:0">TVA: BE 0462.920.325</p>
       </div>

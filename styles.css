@@ -275,6 +275,54 @@ h1, h2, h3,
 .hero-footer h3 { color:#fff !important; }
 .hero-footer a { color:#a7d5ff !important; }
 .hero-footer a:hover { color:#d1e9ff !important; }
+                     /* =========================================================
+   PALETA PROFISSIONAL — SOFT FOREST (só tipografia global)
+   NÃO altera a CAPA (hero) nem o rodapé da capa
+   ========================================================= */
+:root{
+  --heading:#0f3d2e;   /* títulos (verde escuro) */
+  --text:#1e4e3d;      /* texto (verde médio) */
+  --muted:#557a68;     /* secundário (verde acinzentado) */
+  --link:#0ea5e9;      /* azul da marca p/ e-mails/telefones */
+}
+
+/* ---- aplica no site todo (fora do hero) ---- */
+body, p, li, label, input, textarea, select { color: var(--text) !important; }
+
+h1, h2, h3,
+.section-head h1, .section-head h2,
+.card h3 { color: var(--heading) !important; }
+
+.card p, .muted, .role { color: var(--muted) !important; }
+.nav a { color: var(--heading) !important; }
+
+/* e-mails (Contact) e telefones (Urgence) seguem AZUIS */
+.person a, .urg-item a { color: var(--link) !important; text-decoration:none; }
+.person a:hover, .urg-item a:hover { text-decoration:underline; }
+
+/* placeholders dos inputs */
+::placeholder { color:#8ab2a3; opacity:1; }
+
+/* ---- CAPA (hero) permanece exatamente como está ---- */
+.hero-visual .hero-title{
+  color:#fff !important;
+  text-shadow:0 1px 2px rgba(0,0,0,.45);
+}
+.hero-visual .hero-subline,
+.hero-visual .hero-sub{
+  color:#e8eef6 !important;
+  text-shadow:0 1px 2px rgba(0,0,0,.35);
+}
+
+/* Rodapé da capa (Coordonnées) — sempre claro */
+.hero-footer,
+.hero-footer p,
+.hero-footer li,
+.hero-footer .hero-mini { color:#e6eef7 !important; }
+.hero-footer h3 { color:#fff !important; }
+.hero-footer a { color:#a7d5ff !important; }
+.hero-footer a:hover { color:#d1e9ff !important; }
+
 
 
 

@@ -108,3 +108,47 @@ select{
 .services-page .section-head { margin-bottom: 1rem; }
 .services-page .muted { margin-top:.5rem; margin-bottom: 3rem; }
 .services-page .grid-cards { margin-top: 3rem; margin-bottom: 3rem; }
+/* === PALETA NOVA (Slate Chic) ============================= */
+:root{
+  --heading:#0f172a;   /* títulos (slate-900)   */
+  --text:#1f2937;      /* corpo  (slate-800)   */
+  --muted:#475569;     /* secundário (slate-600) */
+}
+
+/* Base de tipografia */
+body, p, li, label, input, textarea, select {
+  color: var(--text);
+}
+
+.muted{
+  color: var(--muted) !important;
+}
+
+/* Títulos das seções e cards */
+.section-head h1,
+.section-head h2,
+.card h3{
+  color: var(--heading);
+}
+
+/* Navegação e links de ação */
+.nav a{
+  color: var(--heading);
+}
+.person a,           /* e-mails em Contact */
+.urg-item a{         /* telefones em Urgence */
+  color: #0ea5e9;    /* mantém a cor da marca/primary */
+  text-decoration: none;
+}
+
+/* Placeholders mais legíveis */
+::placeholder{
+  color:#8ea0b4;
+  opacity:1;
+}
+
+/* CAPA: mantém texto claro */
+.hero-visual .hero-title{ color:#fff !important; text-shadow:0 1px 2px rgba(0,0,0,.45); }
+.hero-visual .hero-subline{ color:#e8eef6 !important; text-shadow:0 1px 2px rgba(0,0,0,.35); }
+.hero-visual .hero-sub{ color:#e8eef6 !important; text-shadow:0 1px 2px rgba(0,0,0,.35); }
+

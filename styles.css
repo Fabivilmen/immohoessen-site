@@ -28,24 +28,28 @@ body{
   position:relative; min-height:70vh;
   display:flex; align-items:center; justify-content:center;
   text-align:center; padding:2rem 1rem;
-  background:url('img/cover-plain.jpg') center/cover no-repeat; /* <-- AQUI */
-}
-
+  background:url('img/cover-plain.jpg') center/cover no-repeat; /* usa sua imagem */
 }
 .hero-visual::before{
   content:""; position:absolute; inset:0;
   background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.28));
 }
-.hero-visual{
-  position:relative; min-height:70vh;
-  display:flex; align-items:center; justify-content:center;
-  text-align:center; padding:2rem 1rem;
-  background:url('img/cover-plain.jpg') center/cover no-repeat;
-}
-
+.hero-inner{
+  position:relative; z-index:1; max-width:900px;
+  background:rgba(0,0,0,.10); backdrop-filter:saturate(1.2) blur(.5px);
+  border-radius:20px; padding:28px 20px;
 }
 .hero-title{color:#fff; font-size:clamp(28px,5vw,50px); margin:0 0 .5rem}
-.hero-sub{color:#e8eef6; font-size:clamp(16px,2.2vw,20px); margin:0}
+.hero-sub{color:#e8eef6; font-size:clamp(16px,2.2vw,20px); margin:0} /* mantém caso use em outras páginas */
+
+/* >>> NOVO: segunda linha dentro do h1 */
+.hero-subline{
+  display:block;
+  margin-top:.35rem;
+  font-weight:700;
+  font-size:clamp(18px, 2.6vw, 28px);
+  color:#e8eef6;
+}
 
 /* Rodapé da capa (coordonnées + mapa) */
 .hero-footer{background:#0b1220; color:#cbd5e1; border-top:1px solid rgba(255,255,255,.08)}
@@ -97,9 +101,9 @@ select{
 
 /* Rodapé final */
 .site-footer{padding:1.2rem 1rem 2rem; color:#94a3b8; text-align:center}
-/* ---- ajustes de espaçamento só da página de serviços ---- */
-.services-page { padding-top: 5.5rem; }              /* afasta do topo */
-.services-page .section-head { margin-bottom: .75rem; }
-.services-page .muted { margin-top: .5rem; margin-bottom: 2.75rem; }
-.services-page .grid-cards { margin-top: 2.75rem; margin-bottom: 2.75rem; }
 
+/* ---- ajustes de espaçamento da página de serviços ---- */
+.services-page { padding-top: 6.5rem; }
+.services-page .section-head { margin-bottom: 1rem; }
+.services-page .muted { margin-top:.5rem; margin-bottom: 3rem; }
+.services-page .grid-cards { margin-top: 3rem; margin-bottom: 3rem; }

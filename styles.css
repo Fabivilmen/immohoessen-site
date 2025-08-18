@@ -192,5 +192,39 @@ body, p, li, label, input, textarea, select { color: var(--text); }
   color:#d1e9ff !important;
   text-decoration: underline;
 }
+/* === PALETA FINAL (Soft Forest) + FORÇA DE COR ================== */
+:root{
+  --heading:#0f3d2e;   /* títulos */
+  --text:#1e4e3d;      /* texto de parágrafo */
+  --muted:#557a68;     /* texto secundário */
+}
+
+/* Base – força a nova paleta em todo o site */
+body, p, li, label, input, textarea, select { color: var(--text) !important; }
+
+h1, h2, h3,
+.section-head h1, .section-head h2,
+.card h3 { color: var(--heading) !important; }
+
+.card p, .muted { color: var(--muted) !important; }
+.nav a { color: var(--heading) !important; }
+
+/* Links que devem continuar AZUIS (destacar e-mails/telefones) */
+.person a, .urg-item a { color:#0ea5e9 !important; text-decoration:none; }
+.person a:hover, .urg-item a:hover { text-decoration:underline; }
+
+/* Placeholders dos inputs */
+::placeholder { color:#8ab2a3; opacity:1; }
+
+/* CAPA: mantém texto claro */
+.hero-visual .hero-title{ color:#fff !important; text-shadow:0 1px 2px rgba(0,0,0,.45); }
+.hero-visual .hero-subline,
+.hero-visual .hero-sub{ color:#e8eef6 !important; text-shadow:0 1px 2px rgba(0,0,0,.35); }
+
+/* Faixa escura da capa (Coordonnées) — sempre clara */
+.hero-footer, .hero-footer p, .hero-footer li, .hero-footer .hero-mini { color:#e6eef7 !important; }
+.hero-footer h3{ color:#fff !important; }
+.hero-footer a{ color:#a7d5ff !important; }
+.hero-footer a:hover{ color:#d1e9ff !important; }
 
 

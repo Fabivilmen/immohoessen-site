@@ -1,9 +1,15 @@
 
 :root{
+  /* Cores base do tema */
   --primary:#0ea5e9;
   --teal:#1699a2;
-  --text:#0b1220;
-  --muted:#64748b;
+
+  /* Paleta de tipografia neutra (profissional) */
+  --heading:#0f172a;  /* títulos (slate-900) */
+  --text:#334155;     /* parágrafos (slate-700) */
+  --muted:#64748b;    /* secundário (slate-500/600) */
+
+  /* Outras variáveis já usadas no site */
   --bg:#ffffff;
   --card:#ffffff;
   --line:#e5eaf0;
@@ -21,7 +27,7 @@ body{
   display:flex; gap:18px; align-items:center; justify-content:center;
   padding:12px 16px; border-bottom:1px solid var(--line); position:sticky; top:0; background:#fff; z-index:10
 }
-.nav a{color:var(--text); text-decoration:none; font-weight:600}
+.nav a{color:var(--heading); text-decoration:none; font-weight:600}
 .nav a:hover{color:var(--primary)}
 
 /* CAPA */
@@ -29,7 +35,7 @@ body{
   position:relative; min-height:70vh;
   display:flex; align-items:center; justify-content:center;
   text-align:center; padding:2rem 1rem;
-  background:url('img/cover-plain.jpg') center/cover no-repeat; /* usa sua imagem */
+  background:url('img/cover-plain.jpg') center/cover no-repeat;
 }
 .hero-visual::before{
   content:""; position:absolute; inset:0;
@@ -41,30 +47,26 @@ body{
   border-radius:20px; padding:28px 20px;
 }
 .hero-title{color:#fff; font-size:clamp(28px,5vw,50px); margin:0 0 .5rem}
-.hero-sub{color:#e8eef6; font-size:clamp(16px,2.2vw,20px); margin:0} /* mantém caso use em outras páginas */
-
-/* >>> NOVO: segunda linha dentro do h1 */
+.hero-sub{color:#e8eef6; font-size:clamp(16px,2.2vw,20px); margin:0}
 .hero-subline{
-  display:block;
-  margin-top:.35rem;
-  font-weight:700;
-  font-size:clamp(18px, 2.6vw, 28px);
-  color:#e8eef6;
+  display:block; margin-top:.35rem; font-weight:700;
+  font-size:clamp(18px, 2.6vw, 28px); color:#e8eef6;
 }
 
 /* Rodapé da capa (coordonnées + mapa) */
 .hero-footer{background:#0b1220; color:#cbd5e1; border-top:1px solid rgba(255,255,255,.08)}
 .wrap-hero{max-width:1100px; margin:auto; padding:2rem 1rem}
 .grid-hero{display:grid; grid-template-columns:1.2fr .8fr; gap:1rem}
-.hero-footer a{color:#93c5fd; text-decoration:none}
-.hero-mini{color:#94a3b8; font-size:.95rem}
+.hero-footer a{color:#a7d5ff; text-decoration:none}
+.hero-footer a:hover{color:#d1e9ff}
+.hero-mini{color:#e6eef7; font-size:.95rem}
 .hero-map{width:100%; height:220px; border:0; border-radius:12px}
 @media (max-width:860px){ .grid-hero{grid-template-columns:1fr} }
 
 /* Conteúdo interno */
 .wrap{max-width:1100px; margin:auto; padding:3rem 1rem}
 .section-head{display:flex; align-items:center; justify-content:space-between; gap:1rem; margin:0 0 1rem;}
-.section-head h1,.section-head h2{margin:0}
+.section-head h1,.section-head h2{margin:0; color:var(--heading)}
 @media (max-width:640px){ .section-head{flex-direction:column; align-items:flex-start} }
 
 .muted{color:var(--muted); text-align:center}
@@ -75,30 +77,31 @@ body{
 .card:hover{box-shadow:0 10px 26px rgba(2,8,23,.06); transform:translateY(-2px)}
 .ico{width:70px; height:70px; margin:-48px auto 8px; display:grid; place-items:center; border-radius:999px; background:var(--teal); box-shadow:0 6px 20px rgba(22,153,162,.25)}
 .ico img{width:36px; height:36px; filter:invert(1) brightness(2)}
-.card h3{margin:.4rem 0 .4rem; text-align:center}
+.card h3{margin:.4rem 0 .4rem; text-align:center; color:var(--heading)}
 .card p{text-align:center; color:var(--muted); margin:0}
 
 /* Contatos */
 .people{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem}
 .person{border:1px solid var(--line); border-radius:var(--radius); padding:1rem}
 .role{color:var(--muted); font-size:.95rem; margin:.2rem 0 .6rem}
-.person a{color:#0a66c2; text-decoration:none; word-break:break-all}
+.person a{color:#0ea5e9; text-decoration:none; word-break:break-all}
 .person a:hover{text-decoration:underline}
 
 /* Demande d’offre */
 .box-offre{background:#f7f9fc; border:1px solid var(--line); border-radius:20px; padding:2rem 1rem}
 .form{max-width:680px; margin:auto; display:grid; gap:1rem; text-align:left}
 .row{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
-input, textarea, select{padding:.8rem; border:1px solid var(--line); border-radius:10px; width:100%}
-select{
-  appearance:auto; -webkit-appearance:auto; -moz-appearance:auto;
-  background-color:#fff;
-}
+input, textarea, select{padding:.8rem; border:1px solid var(--line); border-radius:10px; width:100%; color:var(--text)}
+select{appearance:auto; -webkit-appearance:auto; -moz-appearance:auto; background-color:#fff}
 .group{border:1px solid var(--line); border-radius:10px; padding:.8rem}
 .group legend{font-weight:600; padding:0 .4rem}
 .radio{display:flex; gap:1rem; align-items:center; flex-wrap:wrap}
 .btn-submit{background:var(--primary); color:#fff; padding:.9rem 1.2rem; border:none; border-radius:12px; font-weight:600; cursor:pointer}
 .btn-submit:hover{background:#0284c7}
+
+/* Botão genérico (para Portail) */
+.btn{display:inline-block; background:var(--primary); color:#fff; padding:.8rem 1.1rem; border-radius:12px; font-weight:600; text-decoration:none}
+.btn:hover{background:#0284c7}
 
 /* Rodapé final */
 .site-footer{padding:1.2rem 1rem 2rem; color:#94a3b8; text-align:center}
@@ -108,39 +111,7 @@ select{
 .services-page .section-head { margin-bottom: 1rem; }
 .services-page .muted { margin-top:.5rem; margin-bottom: 3rem; }
 .services-page .grid-cards { margin-top: 3rem; margin-bottom: 3rem; }
-/* === PALETA NOVA (Slate Chic) ============================= */
-:root{
-  /* === TIPOGRAFIA VERDE SUAVE (SOFT FOREST) ================== */
-:root{
-  --heading:#0f3d2e;   /* títulos: verde escuro elegante */
-  --text:#1e4e3d;      /* texto: verde médio legível */
-  --muted:#557a68;     /* secundário: verde acinzentado */
-}
 
-/* aplica nos textos */
-body, p, li, label, input, textarea, select { color: var(--text); }
-.section-head h1, .section-head h2, .card h3, h1, h2, h3 { color: var(--heading); }
-.muted { color: var(--muted) !important; }
-
-/* navegação */
-.nav a { color: var(--heading); }
-
-/* e-mails (Contact) e telefones (Urgence) em AZUL para destacar */
-.person a,
-.urg-item a { color:#0ea5e9; text-decoration:none; }
-.person a:hover,
-.urg-item a:hover { text-decoration:underline; }
-
-/* placeholders dos inputs mais suaves */
-::placeholder { color:#8ab2a3; opacity:1; }
-
-/* mantém a CAPA clara */
-.hero-visual .hero-title{ color:#fff !important; text-shadow:0 1px 2px rgba(0,0,0,.45); }
-.hero-visual .hero-subline{ color:#e8eef6 !important; text-shadow:0 1px 2px rgba(0,0,0,.35); }
-.hero-visual .hero-sub{ color:#e8eef6 !important; text-shadow:0 1px 2px rgba(0,0,0,.35); }
-
-
-  hero-visual .hero-sub{ color:#e8eef6 !important; text-shadow:0 1px 2px rgba(0,0,0,.35); }
 /* À PROPOS — leitura confortável */
 .apropos-page .propos-text{
   max-width: 900px;
@@ -150,11 +121,7 @@ body, p, li, label, input, textarea, select { color: var(--text); }
   hyphens: auto;
   line-height: 1.7;
 }
-
-/* parágrafo de abertura um tiquinho maior */
 .apropos-page .lead{ font-size: 1.05rem; }
-
-/* seção “pilares” (reaproveita seus cards) */
 .apropos-page .pillars{
   max-width: 1000px;
   margin: 2rem auto 2rem;
@@ -163,255 +130,45 @@ body, p, li, label, input, textarea, select { color: var(--text); }
   gap: 1rem;
 }
 .apropos-page .pillars .card p{ margin-top:.35rem; }
-
-/* assinatura do responsável */
 .apropos-page .signature{
-  max-width:900px;
-  margin: 1.25rem auto 0;
-  color: var(--muted);
-  font-style: italic;
+  max-width:900px; margin: 1.25rem auto 0; color: var(--muted); font-style: italic;
 }
 .apropos-page .signature strong{ color: var(--heading); font-style: normal; }
-  /* --- Corrige as cores na faixa escura da CAPA (Coordonnées) --- */
-.hero-footer,
-.hero-footer p,
-.hero-footer li,
-.hero-footer .hero-mini { 
-  color: #e6eef7 !important;   /* texto claro */
-}
 
-.hero-footer h3 { 
-  color: #ffffff !important;   /* título branco */
-}
-
-.hero-footer a { 
-  color: #a7d5ff !important;   /* links azul claro */
-  text-decoration: none;
-}
-.hero-footer a:hover{
-  color:#d1e9ff !important;
-  text-decoration: underline;
-}
-/* === PALETA FINAL (Soft Forest) + FORÇA DE COR ================== */
-:root{
-  --heading:#0f3d2e;   /* títulos */
-  --text:#1e4e3d;      /* texto de parágrafo */
-  --muted:#557a68;     /* texto secundário */
-}
-
-/* Base – força a nova paleta em todo o site */
-body, p, li, label, input, textarea, select { color: var(--text) !important; }
-
-h1, h2, h3,
-.section-head h1, .section-head h2,
-.card h3 { color: var(--heading) !important; }
-
-.card p, .muted { color: var(--muted) !important; }
-.nav a { color: var(--heading) !important; }
-
-/* Links que devem continuar AZUIS (destacar e-mails/telefones) */
-.person a, .urg-item a { color:#0ea5e9 !important; text-decoration:none; }
-.person a:hover, .urg-item a:hover { text-decoration:underline; }
-
-/* Placeholders dos inputs */
-::placeholder { color:#8ab2a3; opacity:1; }
-
-/* CAPA: mantém texto claro */
-.hero-visual .hero-title{ color:#fff !important; text-shadow:0 1px 2px rgba(0,0,0,.45); }
-.hero-visual .hero-subline,
-.hero-visual .hero-sub{ color:#e8eef6 !important; text-shadow:0 1px 2px rgba(0,0,0,.35); }
-
-/* Faixa escura da capa (Coordonnées) — sempre clara */
-.hero-footer, .hero-footer p, .hero-footer li, .hero-footer .hero-mini { color:#e6eef7 !important; }
-.hero-footer h3{ color:#fff !important; }
-.hero-footer a{ color:#a7d5ff !important; }
-.hero-footer a:hover{ color:#d1e9ff !important; 
-                    /* =========================================================
-   PALETA PROFISSIONAL — SOFT FOREST (apenas tipografia)
-   Cole este bloco no FINAL do styles.css
-   Para trocar a paleta no futuro, edite só os valores do :root
-   ========================================================= */
-:root{
-  --heading:#0f3d2e;   /* Títulos (verde escuro) */
-  --text:#1e4e3d;      /* Texto de parágrafo (verde médio) */
-  --muted:#557a68;     /* Texto secundário (verde acinzentado) */
-  --link:#0ea5e9;      /* Azul da marca (links importantes) */
-}
-
-/* Base – aplica a nova paleta em todo o site (fora da capa) */
-body, p, li, label, input, textarea, select { color: var(--text) !important; }
-
-h1, h2, h3,
-.section-head h1, .section-head h2,
-.card h3 { color: var(--heading) !important; }
-
-.card p, .muted { color: var(--muted) !important; }
-
-.nav a { color: var(--heading) !important; }
-
-/* E-mails (Contact) e telefones (Urgence) continuam AZUIS para destacar */
-.person a, .urg-item a { color: var(--link) !important; text-decoration:none; }
-.person a:hover, .urg-item a:hover { text-decoration:underline; }
-
-/* Placeholders de inputs mais suaves */
-::placeholder { color:#8ab2a3; opacity:1; }
-
-/* -------- NÃO MEXE NA CAPA (mantém clara) -------- */
-.hero-visual .hero-title{
-  color:#fff !important;
-  text-shadow:0 1px 2px rgba(0,0,0,.45);
-}
-.hero-visual .hero-subline,
-.hero-visual .hero-sub{
-  color:#e8eef6 !important;
-  text-shadow:0 1px 2px rgba(0,0,0,.35);
-}
-
-/* Faixa escura da capa (Coordonnées) — texto/link claros */
-.hero-footer,
-.hero-footer p,
-.hero-footer li,
-.hero-footer .hero-mini { color:#e6eef7 !important; }
-.hero-footer h3 { color:#fff !important; }
-.hero-footer a { color:#a7d5ff !important; }
-.hero-footer a:hover { color:#d1e9ff !important; }
-                     /* =========================================================
-   PALETA PROFISSIONAL — SOFT FOREST (só tipografia global)
-   NÃO altera a CAPA (hero) nem o rodapé da capa
-   ========================================================= */
-:root{
-  --heading:#0f3d2e;   /* títulos (verde escuro) */
-  --text:#1e4e3d;      /* texto (verde médio) */
-  --muted:#557a68;     /* secundário (verde acinzentado) */
-  --link:#0ea5e9;      /* azul da marca p/ e-mails/telefones */
-}
-
-/* ---- aplica no site todo (fora do hero) ---- */
-body, p, li, label, input, textarea, select { color: var(--text) !important; }
-
-h1, h2, h3,
-.section-head h1, .section-head h2,
-.card h3 { color: var(--heading) !important; }
-
-.card p, .muted, .role { color: var(--muted) !important; }
-.nav a { color: var(--heading) !important; }
-
-/* e-mails (Contact) e telefones (Urgence) seguem AZUIS */
-.person a, .urg-item a { color: var(--link) !important; text-decoration:none; }
-.person a:hover, .urg-item a:hover { text-decoration:underline; }
-
-/* placeholders dos inputs */
-::placeholder { color:#8ab2a3; opacity:1; }
-
-/* ---- CAPA (hero) permanece exatamente como está ---- */
-.hero-visual .hero-title{
-  color:#fff !important;
-  text-shadow:0 1px 2px rgba(0,0,0,.45);
-}
-.hero-visual .hero-subline,
-.hero-visual .hero-sub{
-  color:#e8eef6 !important;
-  text-shadow:0 1px 2px rgba(0,0,0,.35);
-}
-
-/* Rodapé da capa (Coordonnées) — sempre claro */
-.hero-footer,
-.hero-footer p,
-.hero-footer li,
-.hero-footer .hero-mini { color:#e6eef7 !important; }
-.hero-footer h3 { color:#fff !important; }
-.hero-footer a { color:#a7d5ff !important; }
-.hero-footer a:hover { color:#d1e9ff !important; }
-/* Ilustração da página Portail */
-.portail-illu{
-  display: flex;
-  justify-content: center;
-  margin: 1rem auto 1.25rem;
-}
+/* Ilustração Portail (se usar imagem solta) */
+.portail-illu{ display:flex; justify-content:center; margin: 1rem auto 1.25rem; }
 .portail-illu img{
-  max-width: 960px;   /* largura máx. */
-  width: 100%;        /* responsivo */
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 0 12px 32px rgba(2, 8, 23, .18);
+  max-width: 960px; width: 100%; height: auto;
+  border-radius: 16px; box-shadow: 0 12px 32px rgba(2, 8, 23, .18);
 }
-/* ====== Portail: layout em 2 colunas ====== */
+
+/* Portail split (caso use o layout em colunas) */
 .portail-split{
-  display:grid;
-  grid-template-columns: 1.1fr 0.9fr; /* texto levemente maior */
-  gap: 2rem;
-  align-items:center;
-  margin: 1.25rem 0 1.75rem;
+  display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; align-items:center; margin: 1.25rem 0 1.75rem;
 }
-
 .portail-text p{
-  margin:0;
-  color: var(--text);
-  line-height:1.7;
-  text-align:justify;
-  text-justify:inter-word;
+  margin:0; color: var(--text); line-height:1.7; text-align:justify; text-justify:inter-word;
 }
-
-.portail-media{
-  margin:0; padding:0;
-}
+.portail-media{ margin:0; padding:0; }
 .portail-media img{
   width:100%; height:auto; display:block;
-  border-radius:16px;
-  box-shadow:0 12px 32px rgba(2,8,23,.18);
-  object-fit:cover;
+  border-radius:16px; box-shadow:0 12px 32px rgba(2,8,23,.18); object-fit:cover;
 }
-
-/* Responsivo (tablet/celular): empilha */
 @media (max-width: 960px){
-  .portail-split{
-    grid-template-columns: 1fr;
-    gap:1rem;
-  }
-  .portail-media{
-    order:-1;           /* imagem sobe para cima do texto no mobile */
-  }
-}
-                     /* =========================================================
-   COLOR RESET — Consistente e profissional (não muda a CAPA)
-   Cole este bloco NO FINAL do styles.css
-   ========================================================= */
-:root{
-  --heading:#0f172a;   /* títulos: slate 900 (escuro elegante) */
-  --text:#334155;      /* corpo:  slate 700 (legível)         */
-  --brand:#0ea5e9;     /* azul da marca p/ links e botões      */
+  .portail-split{ grid-template-columns: 1fr; gap:1rem; }
+  .portail-media{ order:-1; }
 }
 
-/* Base: aplica UMA cor nos textos do site inteiro (fora do hero) */
-body, p, li, label, input, textarea, select,
-.card p, .role, .muted, .propos-text {
-  color: var(--text) !important;
-}
-
-/* Títulos (e itens do menu) com a mesma cor escura */
-h1, h2, h3,
-.section-head h1, .section-head h2,
-.card h3,
-.nav a {
-  color: var(--heading) !important;
-}
-
-/* Links: azul da marca (exceto regras específicas abaixo) */
-a { color: var(--brand) !important; }
-a:hover { text-decoration: underline; }
-
-/* --------- NÃO ALTERA A CAPA --------- */
+/* -------- CAPA (hero) – garantias de cor -------- */
 .hero-visual .hero-title{
-  color:#fff !important;
-  text-shadow:0 1px 2px rgba(0,0,0,.45);
+  color:#fff !important; text-shadow:0 1px 2px rgba(0,0,0,.45);
 }
 .hero-visual .hero-subline,
 .hero-visual .hero-sub{
-  color:#e8eef6 !important;
-  text-shadow:0 1px 2px rgba(0,0,0,.35);
+  color:#e8eef6 !important; text-shadow:0 1px 2px rgba(0,0,0,.35);
 }
 
-/* Faixa de coordonnées da capa: texto/link claros */
+/* Faixa de coordonnées da capa */
 .hero-footer,
 .hero-footer p,
 .hero-footer li,
@@ -420,10 +177,5 @@ a:hover { text-decoration: underline; }
 .hero-footer a { color:#a7d5ff !important; }
 .hero-footer a:hover { color:#d1e9ff !important; }
 
-/* Menu deve permanecer na cor de título (não azul) */
-.nav a { color: var(--heading) !important; }
-
-
-
-
-
+/* Placeholders mais legíveis */
+::placeholder{ color:#8aa0b4; opacity:1; }

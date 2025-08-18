@@ -151,4 +151,35 @@ body, p, li, label, input, textarea, select {
 .hero-visual .hero-title{ color:#fff !important; text-shadow:0 1px 2px rgba(0,0,0,.45); }
 .hero-visual .hero-subline{ color:#e8eef6 !important; text-shadow:0 1px 2px rgba(0,0,0,.35); }
 .hero-visual .hero-sub{ color:#e8eef6 !important; text-shadow:0 1px 2px rgba(0,0,0,.35); }
+/* À PROPOS — leitura confortável */
+.apropos-page .propos-text{
+  max-width: 900px;
+  margin: 0 auto 1rem;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  line-height: 1.7;
+}
+
+/* parágrafo de abertura um tiquinho maior */
+.apropos-page .lead{ font-size: 1.05rem; }
+
+/* seção “pilares” (reaproveita seus cards) */
+.apropos-page .pillars{
+  max-width: 1000px;
+  margin: 2rem auto 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 1rem;
+}
+.apropos-page .pillars .card p{ margin-top:.35rem; }
+
+/* assinatura do responsável */
+.apropos-page .signature{
+  max-width:900px;
+  margin: 1.25rem auto 0;
+  color: var(--muted);
+  font-style: italic;
+}
+.apropos-page .signature strong{ color: var(--heading); font-style: normal; }
 

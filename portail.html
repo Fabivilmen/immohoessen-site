@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portail — Immo Hoessen</title>
   <link rel="icon" href="favicon.ico" />
-  <!-- carrega seu CSS (bust de cache leve) -->
   <link rel="stylesheet" href="styles.css?v=14" />
 
-  <!-- ===== Estilos específicos da página Portail ===== -->
   <style>
     /* Afasta o conteúdo do título nesta página */
     .portail-page .section-head{ margin-bottom: 2rem; }
@@ -67,7 +64,7 @@
     }
     .portail-text p{
       margin: 0;
-      color: var(--text);
+      color: var(--text); /* Corrigido para usar a variável --text */
       line-height: 1.7;
     }
 
@@ -110,13 +107,11 @@
     <a href="urgence.html">Urgence</a>
   </nav>
 
-  <!-- note a classe 'portail-page' para alvo de CSS local -->
   <main class="wrap portail-page">
     <div class="section-head">
       <h1>Portail</h1>
     </div>
 
-    <!-- BLOCO COM MARCA D’EAU (imagem no fundo) -->
     <section class="portail-watermark">
       <div class="portail-split">
         <div class="portail-text">
@@ -133,7 +128,6 @@
           </div>
         </div>
 
-        <!-- Imagem de apoio: oculta no desktop; mostrada no mobile -->
         <figure class="portail-media">
           <img src="img/portail-office.png" alt="Portail de copropriété sécurisé — Immo Hoessen" loading="lazy">
         </figure>

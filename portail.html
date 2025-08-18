@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,7 +6,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portail — Immo Hoessen</title>
   <link rel="icon" href="favicon.ico" />
-  <link rel="stylesheet" href="styles.css" />
+  <!-- carrega seu CSS (com bust de cache leve) -->
+  <link rel="stylesheet" href="styles.css?v=12" />
+
+  <!-- ===== Estilos específicos da página Portail ===== -->
+  <style>
+    /* Caixa com marca d’água ao fundo (imagem no canto direito) */
+    .portail-watermark{
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 2rem 1.25rem;
+      background: #fff;
+      margin: 1rem 0 1.75rem;
+    }
+    /* imagem de fundo em baixa opacidade */
+    .portail-watermark::before{
+      content: "";
+      position: absolute; inset: 0;
+      background-image: url("img/portail-office.png"); /* troque o nome se o seu arquivo for outro */
+      background-size: cover;
+      background-position: right center;
+      opacity: 0.18;              /* intensidade da marca d’água */
+      filter: saturate(1.05) contrast(1.05);
+      pointer-events: none;
+    }
+    /* gradiente sutil para garantir legibilidade do texto à esquerda */
+    .portail-watermark::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(90deg,
+        rgba(255,255,255,0.88) 0%,
+        rgba(255,255,255,0.65) 38%,
+        rgba(255,255,255,0.30) 62%,
+        rgba(255,255,255,0.00) 100%);
+      pointer-events:none;
+    }
+
+    /* Layout em 2 colunas (texto à esquerda, “imagem de apoio” à direita — só mobile mostra a tag <img>) */
+    .portail-split{
+      position: relative; z-index: 1; /* fica acima da marca d’água */
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .portail-text p{
+      margin: 0;
+      color: var(--text);
+      line-height: 1.7;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+    .portail-media{ margin:0; padding:0; display:none; }
+    .portail-media img{
+      width:100%; height:auto; display:block;
+      border-radius:16px;
+      box-shadow:0 12px 32px rgba(2,8,23,.18);
+      object-fit:cover;
+    }
+
+    /* Responsivo: empilha e mostra a imagem normal (além da marca d’água ficar ainda mais suave) */
+    @media (max-width: 960px){
+      .portail-watermark{ padding: 1rem; }
+      .portail-watermark::before{ opacity: .12; }
+      .portail-watermark::after{
+        background: rgba(255,255,255,.88);
+      }
+      .portail-split{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .portail-media{ display:block; }
+    }
+  </style>
 </head>
 <body>
   <nav class="nav">
@@ -19,46 +94,34 @@
   </nav>
 
   <main class="wrap">
-    <main class="wrap">
-  <div class="section-head">
-    <h1>Portail</h1>
-  </div>
+    <div class="section-head">
+      <h1>Portail</h1>
+    </div>
 
-  <!-- BLOCO EM 2 COLUNAS: texto à esquerda, imagem à direita -->
-  <section class="portail-split">
-    <div class="portail-text">
-      <p>
-        Pour accéder au portail de votre copropriété, cliquez sur le lien ci-dessous et connectez-vous avec
-        les informations et le mot de passe remis en assemblée générale. Si vous ne les avez pas, merci de
-        contacter le gestionnaire de votre copropriété.
-      </p>
+    <!-- BLOCO COM MARCA D’EAU (imagem no fundo) -->
+    <section class="portail-watermark">
+      <div class="portail-split">
+        <div class="portail-text">
+          <p>
+            Pour accéder au portail de votre copropriété, cliquez sur le lien ci-dessous et connectez-vous avec
+            les informations et le mot de passe remis en assemblée générale. Si vous ne les avez pas, merci de
+            contacter le gestionnaire de votre copropriété.
+          </p>
 
-      <div style="margin-top:1rem;">
-        <a class="btn" href="http://immohoessen.quickconnect.to" target="_blank" rel="noopener">
-          Accéder au portail
-        </a>
+          <div style="margin-top:1rem;">
+            <a class="btn" href="http://immohoessen.quickconnect.to" target="_blank" rel="noopener">
+              Accéder au portail
+            </a>
+          </div>
+        </div>
+
+        <!-- Imagem de apoio: fica oculta no desktop (só a marca d’água aparece).
+             No mobile, esta imagem aparece acima do texto. -->
+        <figure class="portail-media">
+          <img src="img/portail-office.png" alt="Portail de copropriété sécurisé — Immo Hoessen" loading="lazy">
+        </figure>
       </div>
-    </div>
-
-    <figure class="portail-media">
-      <!-- use o nome real do arquivo que você subiu na pasta img/ -->
-      <img src="img/portail-office.png" alt="Portail de copropriété sécurisé — Immo Hoessen" loading="lazy">
-    </figure>
-  </section>
-</main>
-
-
-    </div>
-
-    <p class="muted" style="max-width:800px; margin: 0 auto 1rem; text-align:left;">
-      Pour accéder au portail de votre copropriété, cliquez sur le lien ci-dessous et connectez-vous avec
-      les informations et le mot de passe remis en assemblée générale. Si vous ne les avez pas, merci de
-      contacter le gestionnaire de votre copropriété.
-    </p>
-
-    <div style="text-align:center; margin-top:1.25rem;">
-      <a class="btn" href="http://immohoessen.quickconnect.to" target="_blank" rel="noopener">Accéder au portail</a>
-    </div>
+    </section>
   </main>
 </body>
 </html>

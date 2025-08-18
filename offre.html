@@ -2,93 +2,77 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Demande d’Offre — Laurent Hoessen</title>
-  <meta name="description" content="Formulaire de demande d’offre pour votre copropriété.">
-<link rel="stylesheet" href="styles.css?v=43">
-<script defer src="scripts.js?v=43"></script>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demande d’offre — Immo Hoessen</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .wrap{max-width:1100px; margin:auto; padding:3rem 1rem}
+    .offre{background:#f7f9fc; border:1px solid #e5eaf0; border-radius:20px; padding:2rem 1rem}
+    .offre form{max-width:680px; margin:auto; display:grid; gap:1rem; text-align:left}
+    .row{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
+    input, textarea, select{padding:.8rem; border:1px solid #e5eaf0; border-radius:10px; width:100%}
+    .group{border:1px solid #e5eaf0; border-radius:10px; padding:.8rem}
+    .group legend{font-weight:600; padding:0 .4rem}
+    .radio{display:flex; gap:1rem; align-items:center; flex-wrap:wrap}
+    .btn{display:inline-block; background:#0ea5e9; color:#fff; text-decoration:none; padding:.9rem 1.2rem; border-radius:12px; font-weight:700; border:none; cursor:pointer}
+    .btn:hover{background:#0284c7}
+    .nav{display:flex; gap:18px; align-items:center; justify-content:center; padding:12px 16px; border-bottom:1px solid #e5eaf0}
+    .nav a{color:#0b1220; text-decoration:none; font-weight:600}
+    .nav a:hover{color:#0ea5e9}
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div class="title">Laurent Hoessen <span class="badge">Syndic</span></div>
-      </div>
-      <nav class="menu" aria-label="Navigation principale">
-        <a href="index.html">Accueil</a>
-        <a href="apropos.html">À propos</a>
-        <a href="types.html">Types de gestion</a>
-        <a href="contacts.html">Contacts</a>
-        <a href="offre.html" class="active">Demande d’Offre</a>
-      </nav>
-      <button class="burger" aria-label="Menu">☰</button>
-    </div>
-  </header>
+  <nav class="nav">
+    <a href="index.html">Accueil</a>
+    <a href="types.html">Nos services</a>
+    <a href="contacts.html">Contact</a>
+    <a href="offre.html">Demande d’offre</a>
+  </nav>
 
-  <main class="section">
-    <div class="container formwrap">
-      <h1>Demande d’Offre</h1>
-      <p class="lead">Un formulaire simple pour évaluer vos besoins.</p>
+  <main class="wrap">
+    <h1>Demande d’offre</h1>
 
-      <!-- Formulaire: envia via cliente de e-mail do usuário. -->
-      <form class="form" method="POST" action="mailto:syndic@immohoessen.be" enctype="text/plain">
-        <label for="nom">Nom complet *</label>
-        <input id="nom" name="Nom complet" class="input" type="text" required placeholder="Votre nom">
-
-        <label for="email">Email *</label>
-        <input id="email" name="Email" class="input" type="email" required placeholder="vous@exemple.com">
-
-        <label for="tel">Téléphone *</label>
-        <input id="tel" name="Téléphone" class="input" type="tel" required inputmode="tel" placeholder="+32 ...">
-
-        <label for="adresse">Adresse de la copropriété *</label>
-        <input id="adresse" name="Adresse" class="input" type="text" required placeholder="Rue, numéro, code postal, ville">
-
-        <label for="etages">Nombre d’étages *</label>
-        <input id="etages" name="Nombre d’étages" class="input" type="number" min="0" required>
-
-        <label for="appts">Nombre d’appartements (optionnel)</label>
-        <input id="appts" name="Nombre d’appartements" class="input" type="number" min="0">
-
-        <label for="syndic">Avez-vous déjà un syndic ? *</label>
-        <select id="syndic" name="Déjà un syndic" class="input" required>
-          <option value="" selected disabled>Sélectionner…</option>
-          <option>Oui</option>
-          <option>Non</option>
-          <option>Je ne sais pas</option>
-        </select>
-
-        <label for="parking">Dispose-t-on d’un box/parking ? *</label>
-        <select id="parking" name="Box/Parking" class="input" required>
-          <option value="" selected disabled>Sélectionner…</option>
-          <option>Oui</option>
-          <option>Non</option>
-        </select>
-
-        <label for="notes">Commentaires ou demandes spécifiques</label>
-        <textarea id="notes" name="Commentaires" placeholder="Précisez ici vos besoins…"></textarea>
-
-        <button type="submit">Envoyer la demande</button>
-      </form>
-    </div>
-  </main>
-
-  <footer>
-    <div class="footer">
-      <div class="container">
+    <!-- Modo offline: redireciona para merci.html. Depois trocamos por Formspree. -->
+    <section class="offre">
+      <form onsubmit="window.location.href='merci.html'; return false;">
         <div class="row">
-          <span>Horaires: Lun–Ven 09:00–17:00</span><span>·</span>
-          <span><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span><span>·</span>
-          <span>Avenue Heydenberg 14, 1200 Bruxelles</span>
+          <input type="text" name="nom" placeholder="Votre nom" required>
+          <input type="email" name="email" placeholder="Votre email" required>
         </div>
-      </div>
-    </div>
-    <div class="subfooter">
-      <div class="container">© <span id="year"></span> Laurent Hoessen – Syndic.</div>
-    </div>
-  </footer>
+
+        <div class="row">
+          <input type="tel" name="telephone" placeholder="Téléphone" required>
+          <input type="text" name="adresse" placeholder="Adresse de l’immeuble" required>
+        </div>
+
+        <div class="row">
+          <input type="number" name="lots" placeholder="Nombre de lots" min="0">
+          <input type="number" name="etages" placeholder="Nombre d’étages" min="0">
+        </div>
+
+        <fieldset class="group">
+          <legend>Avez-vous déjà un syndic ?</legend>
+          <div class="radio">
+            <label><input type="radio" name="syndic_actuel" value="oui"> Oui</label>
+            <label><input type="radio" name="syndic_actuel" value="non"> Non</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="group">
+          <legend>Garage</legend>
+          <div class="radio">
+            <label><input type="radio" name="garage" value="oui"> Oui</label>
+            <label><input type="radio" name="garage" value="non"> Non</label>
+          </div>
+        </fieldset>
+
+        <textarea name="message" rows="4" placeholder="Votre message (optionnel)"></textarea>
+
+        <button class="btn" type="submit">Envoyer la demande</button>
+      </form>
+    </section>
+  </main>
 </body>
 </html>

@@ -1,122 +1,78 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacts — Laurent Hoessen</title>
-  <meta name="description" content="Coordonnées du syndic Laurent Hoessen à Bruxelles.">
-  <link rel="stylesheet" href="styles.css?v=43">
-<script defer src="scripts.js?v=43"></script>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Immo Hoessen</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .wrap{max-width:1100px; margin:auto; padding:3rem 1rem}
+    .section-head{display:flex; align-items:center; justify-content:space-between; gap:1rem; margin:0 0 1rem}
+    .btn{display:inline-block; background:#0ea5e9; color:#fff; text-decoration:none; padding:.7rem 1rem; border-radius:12px; font-weight:700}
+    .btn:hover{transform:translateY(-1px)}
+    .people{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem}
+    .person{border:1px solid #e5eaf0; border-radius:16px; padding:1rem}
+    .role{color:#64748b; font-size:.95rem; margin:.2rem 0 .6rem}
+    .person a{color:#0a66c2; text-decoration:none; word-break:break-all}
+    .person a:hover{text-decoration:underline}
+    .nav{display:flex; gap:18px; align-items:center; justify-content:center; padding:12px 16px; border-bottom:1px solid #e5eaf0}
+    .nav a{color:#0b1220; text-decoration:none; font-weight:600}
+    .nav a:hover{color:#0ea5e9}
+  </style>
 </head>
 <body>
-<header class="header">
-  <div class="container nav">
-    <div class="brand"><div class="logo"></div><div class="title">Laurent Hoessen <span class="badge">Syndic</span></div></div>
-    <nav class="menu" aria-label="Navigation principale">
-      <a href="index.html">Accueil</a>
-      <a href="apropos.html">À propos</a>
-      <a href="types.html">Types de gestion</a>
-      <a href="contacts.html" class="active">Contacts</a>
-      <a href="offre.html">Demande d’Offre</a>
-    </nav>
-    <button class="burger" aria-label="Menu">☰</button>
-  </div>
-</header>
+  <nav class="nav">
+    <a href="index.html">Accueil</a>
+    <a href="types.html">Nos services</a>
+    <a href="contacts.html">Contact</a>
+    <a href="offre.html">Demande d’offre</a>
+  </nav>
 
-<main class="section">
-  <div class="container">
-    <h2>Contacts</h2>
-    <p class="lead">Informations générales et coordonnées principales.</p>
+  <main class="wrap">
+    <div class="section-head">
+      <h1>Contact</h1>
+      <a class="btn" href="offre.html">Demande d’offre</a>
+    </div>
 
-    <!-- Coordonnées générales (com ícones) -->
-    <article class="card">
-      <h3 style="margin:0 0 10px">Coordonnées générales</h3>
-      <ul class="kvlist">
-        <li class="kvrow">
-          <span class="kvic" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg>
-          </span>
-          <div><div class="kvlabel">Adresse</div><div class="kvval">Avenue Heydenberg 14, 1200 Bruxelles</div></div>
-        </li>
-        <li class="kvrow">
-          <span class="kvic" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v6l4 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </span>
-          <div><div class="kvlabel">Horaires</div><div class="kvval">Lun–Ven 09:00–13:00</div></div>
-        </li>
-        <li class="kvrow">
-          <span class="kvic" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6"/></svg>
-          </span>
-          <div><div class="kvlabel">E-mail général</div><div class="kvval"><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></div></div>
-        </li>
-        <li class="kvrow">
-          <span class="kvic" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M22 16.92v2a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.09 4.18 2 2 0 0 1 4.11 2h2a2 2 0 0 1 2 1.72c.12.88.31 1.73.57 2.55a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.53-1.14a2 2 0 0 1 2.11-.45c.82.26 1.67.45 2.55.57A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.6"/></svg>
-          </span>
-          <div><div class="kvlabel">Urgence</div><div class="kvval"><a href="tel:+32495261683">0495 26 16 83</a> · <a href="tel:+32495543808">0495 54 38 08</a></div></div>
-        </li>
-      </ul>
-    </article>
+    <div class="people">
+      <div class="person">
+        <strong>Laurent Hoessen</strong>
+        <div class="role">Syndic titulaire — IPI n° 105260</div>
+        <a href="mailto:laurent@immohoessen.be">laurent@immohoessen.be</a>
+      </div>
 
-    <!-- Équipe & responsabilités -->
-    <article class="card contact">
-      <h3>Équipe & responsabilités</h3>
-      <ul class="list" style="list-style:none;margin:0;padding:0;display:grid;gap:10px">
-        <!-- Titulaire -->
-        <li class="item" style="display:flex;gap:10px;align-items:flex-start">
-          <span class="kvic" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.6"/></svg></span>
-          <div><div class="kvlabel">Titulaire IPI</div><div>Laurent Hoessen — IPI 105260 — <a href="mailto:laurent@immohoessen.be">laurent@immohoessen.be</a></div></div>
-        </li>
+      <div class="person">
+        <strong>Andrée Hoessen</strong>
+        <div class="role">Gestionnaire général</div>
+        <a href="mailto:andre@immohoessen.be">andre@immohoessen.be</a>
+      </div>
 
-        <!-- Gestion générale -->
-        <li class="item" style="display:flex;gap:10px;align-items:flex-start">
-          <span class="kvic" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.6"/></svg></span>
-          <div><div class="kvlabel">Gestion générale</div><div>Hoessen André — <a href="mailto:andre@immohoessen.be">andre@immohoessen.be</a></div></div>
-        </li>
+      <div class="person">
+        <strong>Patricia Boniface</strong>
+        <div class="role">Gestionnaire collaboratrice</div>
+        <a href="mailto:gestion@immohoessen.be">gestion@immohoessen.be</a>
+      </div>
 
-        <!-- NOVO: Assistante de gestion générale -->
-        <li class="item" style="display:flex;gap:10px;align-items:flex-start">
-          <span class="kvic" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.6"/></svg></span>
-          <div><div class="kvlabel">Assistante de gestion générale</div><div>Menezes Fabiane — <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></div></div>
-        </li>
+      <div class="person">
+        <strong>Viviane Ledieu</strong>
+        <div class="role">Gestionnaire des sinistres</div>
+        <a href="mailto:admin@immohoessen.be">admin@immohoessen.be</a>
+      </div>
 
-        <!-- Gestion (collaboratrice) -->
-        <li class="item" style="display:flex;gap:10px;align-items:flex-start">
-          <span class="kvic" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M19 7l-7 5-7-5" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/></svg></span>
-          <div><div class="kvlabel">Gestion</div><div>Gestionnaire collaboratrice : Bonifacio Patricia — <a href="mailto:gestion@immohoessen.be">gestion@immohoessen.be</a></div></div>
-        </li>
+      <div class="person">
+        <strong>Menezes Fabiane</strong>
+        <div class="role">Assistante de gestion</div>
+        <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+      </div>
 
-        <!-- NOVO: Stagiaire (en formation IPI) -->
-        <li class="item" style="display:flex;gap:10px;align-items:flex-start">
-          <span class="kvic" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.6"/></svg></span>
-          <div><div class="kvlabel">Stagiaire (en formation IPI)</div><div>Uçaer Mikail — <a href="mailto:gestionaire@immohoessen.be">gestionaire@immohoessen.be</a></div></div>
-        </li>
-
-        <!-- Sinistres -->
-        <li class="item" style="display:flex;gap:10px;align-items:flex-start">
-          <span class="kvic" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M4 13h16M4 9h16" stroke="currentColor" stroke-width="1.6"/><path d="M8 17h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-          <div><div class="kvlabel">Sinistres</div><div>Gestionnaire des sinistres : Ledieu Viviane — <a href="mailto:admin@immohoessen.be">admin@immohoessen.be</a></div></div>
-        </li>
-
-        <!-- Factures -->
-        <li class="item" style="display:flex;gap:10px;align-items:flex-start">
-          <span class="kvic" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-          <div><div class="kvlabel">Factures</div><div>Comptabilité &amp; factures : <a href="mailto:factures@immohoessen.be">factures@immohoessen.be</a></div></div>
-        </li>
-      </ul>
-    </article>
-  </div>
-</main>
-
-<footer>
-  <div class="footer"><div class="container"><div class="row">
-    <span>Horaires: Lun–Ven 09:00–13:00</span><span>·</span>
-    <span><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span><span>·</span>
-    <span>Avenue Heydenberg 14, 1200 Bruxelles</span>
-  </div></div></div>
-  <div class="subfooter"><div class="container">© <span id="year"></span> Laurent Hoessen – Syndic.</div></div>
-</footer>
+      <div class="person">
+        <strong>Uçar Mikail</strong>
+        <div class="role">Stagiaire (en formation IPI)</div>
+        <a href="mailto:gestionarie@immohoessen.be">gestionarie@immohoessen.be</a>
+      </div>
+    </div>
+  </main>
 </body>
 </html>

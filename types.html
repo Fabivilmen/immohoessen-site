@@ -2,61 +2,67 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Types de gestion — Laurent Hoessen</title>
-  <meta name="description" content="Périmètres de gestion proposés pour votre copropriété.">
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="scripts.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nos services — Immo Hoessen</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .wrap{max-width:1100px; margin:auto; padding:3rem 1rem}
+    .section-head{display:flex; align-items:center; justify-content:space-between; gap:1rem; margin:0 0 1rem}
+    .btn{display:inline-block; background:#0ea5e9; color:#fff; text-decoration:none; padding:.7rem 1rem; border-radius:12px; font-weight:700}
+    .btn:hover{transform:translateY(-1px)}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem}
+    .card{background:#fff; border:1px solid #e5eaf0; border-radius:16px; padding:1.25rem; transition:.2s}
+    .card:hover{box-shadow:0 10px 26px rgba(2,8,23,.06); transform:translateY(-2px)}
+    .ico{width:70px; height:70px; margin:-48px auto 8px; display:grid; place-items:center; border-radius:999px; background:#1699a2}
+    .ico img{width:36px; height:36px; filter:invert(1) brightness(2)}
+    .muted{color:#64748b; text-align:center}
+    .nav{display:flex; gap:18px; align-items:center; justify-content:center; padding:12px 16px; border-bottom:1px solid #e5eaf0}
+    .nav a{color:#0b1220; text-decoration:none; font-weight:600}
+    .nav a:hover{color:#0ea5e9}
+  </style>
 </head>
 <body>
-<header class="header">
-  <div class="container nav">
-    <div class="brand"><div class="logo"></div><div class="title">Laurent Hoessen <span class="badge">Syndic</span></div></div>
-    <nav class="menu">
-      <a href="index.html">Accueil</a>
-      <a href="apropos.html">À propos</a>
-      <a href="types.html" class="active">Types de gestion</a>
-      <a href="contacts.html">Contacts</a>
-      <a href="offre.html">Demande d’Offre</a>
-    </nav>
-    <button class="burger" aria-label="Menu">☰</button>
-  </div>
-</header>
+  <nav class="nav">
+    <a href="index.html">Accueil</a>
+    <a href="types.html">Nos services</a>
+    <a href="contacts.html">Contact</a>
+    <a href="offre.html">Demande d’offre</a>
+  </nav>
 
-<section class="section">
-  <div class="container">
-    <h2>Types de gestion</h2>
-    <p class="lead">Périmètres clairs, obligations respectées et communication documentée.</p>
+  <main class="wrap">
+    <div class="section-head">
+      <h1>Nos services</h1>
+      <a class="btn" href="offre.html">Demande d’offre</a>
+    </div>
+    <p class="muted">Transparence financière, suivi technique rigoureux et communication claire.</p>
 
-    <div class="grid cards">
+    <div class="grid">
       <article class="card">
-        <h3>Gestion globale (Syndic)</h3>
-        <p>• Convocation, tenue et PV d’AG · Exécution des décisions · Suivi des prestataires · Gouvernance et ROI.</p>
+        <div class="ico"><img src="icons/transparency.svg" alt="Transparence financière"></div>
+        <h3>Transparence financière</h3>
+        <p class="muted">Budgets, comptes annuels et rapports clairs, disponibles à tout moment.</p>
       </article>
+
       <article class="card">
-        <h3>Gestion administrative</h3>
-        <p>• Contrats d’entretien (ascenseurs, chaudières, portes, extincteurs) · Appels d’offres & comparatifs · Conformité (incendie, contrôles, RGPD).</p>
+        <div class="ico"><img src="icons/maintenance.svg" alt="Suivi technique"></div>
+        <h3>Suivi technique</h3>
+        <p class="muted">Plan pluriannuel, entretiens, conformité (ascenseurs, incendie, électricité).</p>
       </article>
+
       <article class="card">
-        <h3>Gestion financière</h3>
-        <p>• Comptabilité conforme · Budgets et appels de fonds · Recouvrement amiable · Rapports périodiques.</p>
+        <div class="ico"><img src="icons/building.svg" alt="Gestion d’immeuble"></div>
+        <h3>Gestion d’immeuble</h3>
+        <p class="muted">Administration courante, AG, contrats de service et coordination des travaux.</p>
       </article>
+
       <article class="card">
-        <h3>Technique & travaux / sinistres</h3>
-        <p>• Plan pluriannuel · Audits/diagnostics · Réceptions de travaux · Déclaration & suivi de sinistres (expertise, indemnisation).</p>
+        <div class="ico"><img src="icons/communication.svg" alt="Communication"></div>
+        <h3>Communication</h3>
+        <p class="muted">Réponses rapides, information continue et portail documentaire partagé.</p>
       </article>
     </div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer"><div class="container"><div class="row">
-    <span>Horaires: Lun–Ven 09:00–17:00</span><span>·</span>
-    <span><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span><span>·</span>
-    <span>Avenue Heydenberg 14, 1200 Bruxelles</span>
-  </div></div></div>
-  <div class="subfooter"><div class="container">© <span id="year"></span> Laurent Hoessen – Syndic.</div></div>
-</footer>
+  </main>
 </body>
 </html>

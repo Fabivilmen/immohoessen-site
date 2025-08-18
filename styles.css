@@ -372,6 +372,57 @@ h1, h2, h3,
     order:-1;           /* imagem sobe para cima do texto no mobile */
   }
 }
+                     /* =========================================================
+   COLOR RESET — Consistente e profissional (não muda a CAPA)
+   Cole este bloco NO FINAL do styles.css
+   ========================================================= */
+:root{
+  --heading:#0f172a;   /* títulos: slate 900 (escuro elegante) */
+  --text:#334155;      /* corpo:  slate 700 (legível)         */
+  --brand:#0ea5e9;     /* azul da marca p/ links e botões      */
+}
+
+/* Base: aplica UMA cor nos textos do site inteiro (fora do hero) */
+body, p, li, label, input, textarea, select,
+.card p, .role, .muted, .propos-text {
+  color: var(--text) !important;
+}
+
+/* Títulos (e itens do menu) com a mesma cor escura */
+h1, h2, h3,
+.section-head h1, .section-head h2,
+.card h3,
+.nav a {
+  color: var(--heading) !important;
+}
+
+/* Links: azul da marca (exceto regras específicas abaixo) */
+a { color: var(--brand) !important; }
+a:hover { text-decoration: underline; }
+
+/* --------- NÃO ALTERA A CAPA --------- */
+.hero-visual .hero-title{
+  color:#fff !important;
+  text-shadow:0 1px 2px rgba(0,0,0,.45);
+}
+.hero-visual .hero-subline,
+.hero-visual .hero-sub{
+  color:#e8eef6 !important;
+  text-shadow:0 1px 2px rgba(0,0,0,.35);
+}
+
+/* Faixa de coordonnées da capa: texto/link claros */
+.hero-footer,
+.hero-footer p,
+.hero-footer li,
+.hero-footer .hero-mini { color:#e6eef7 !important; }
+.hero-footer h3 { color:#fff !important; }
+.hero-footer a { color:#a7d5ff !important; }
+.hero-footer a:hover { color:#d1e9ff !important; }
+
+/* Menu deve permanecer na cor de título (não azul) */
+.nav a { color: var(--heading) !important; }
+
 
 
 

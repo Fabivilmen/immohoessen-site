@@ -28,7 +28,9 @@ body{
   position:relative; min-height:70vh;
   display:flex; align-items:center; justify-content:center;
   text-align:center; padding:2rem 1rem;
-  background:url('cover2.jpg') center/cover no-repeat; /* imagem na raiz do repo */
+  background:url('img/cover-plain.jpg') center/cover no-repeat; /* <-- AQUI */
+}
+
 }
 .hero-visual::before{
   content:""; position:absolute; inset:0;

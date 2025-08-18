@@ -172,4 +172,25 @@ body, p, li, label, input, textarea, select { color: var(--text); }
   font-style: italic;
 }
 .apropos-page .signature strong{ color: var(--heading); font-style: normal; }
+  /* --- Corrige as cores na faixa escura da CAPA (Coordonnées) --- */
+.hero-footer,
+.hero-footer p,
+.hero-footer li,
+.hero-footer .hero-mini { 
+  color: #e6eef7 !important;   /* texto claro */
+}
+
+.hero-footer h3 { 
+  color: #ffffff !important;   /* título branco */
+}
+
+.hero-footer a { 
+  color: #a7d5ff !important;   /* links azul claro */
+  text-decoration: none;
+}
+.hero-footer a:hover{
+  color:#d1e9ff !important;
+  text-decoration: underline;
+}
+
 

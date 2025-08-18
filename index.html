@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Laurent Hoessen — Syndic à Bruxelles</title>
-  <meta name="description" content="Gestion de copropriété à Bruxelles : transparence financière, suivi technique et communication rapide. Demandez une offre pour votre immeuble." />
+  <meta name="description" content="Gestion de copropriété à Bruxelles : transparence financière, suivi technique et communication claire. Demandez une offre pour votre immeuble." />
   <link rel="icon" href="favicon.ico" />
   <style>
     :root{
@@ -26,27 +26,37 @@
     .nav a{color:var(--text); text-decoration:none; font-weight:600}
     .nav a:hover{color:var(--primary)}
 
-    /* HERO */
-    .hero{
+    /* CAPA = hero visual (70%) + rodapé da capa (coordonnées+mapa, 30%) */
+    header.capa{background:#fff}
+    .hero-visual{
       position:relative;
-      min-height:72vh;
+      min-height:70vh; /* 70% da tela */
       display:flex; align-items:center; justify-content:center;
       text-align:center; padding:2rem 1rem;
-      background:url('images/hero.jpg') center/cover no-repeat; /* sua capa */
+      background:url('images/hero.jpg') center/cover no-repeat; /* sua imagem */
     }
-    .hero::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.42), rgba(0,0,0,.35))}
-    .hero .inner{
+    .hero-visual::before{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.28));
+    }
+    .hero-visual .inner{
       position:relative; z-index:1; max-width:900px;
       background:rgba(0,0,0,.10); backdrop-filter:saturate(1.2) blur(.5px);
       border-radius:20px; padding:28px 20px;
     }
-    .hero h1{color:#fff; font-size:clamp(28px,5vw,50px); margin:0 0 .5rem}
-    .hero p{color:#e8eef6; font-size:clamp(16px,2.2vw,20px); margin:0 0 1.2rem}
-    .btn{
-      display:inline-block; background:var(--primary); color:#fff; text-decoration:none;
-      padding:.9rem 1.2rem; border-radius:14px; font-weight:700; box-shadow:0 8px 24px rgba(14,165,233,.25)
+    .hero-visual h1{color:#fff; font-size:clamp(28px,5vw,50px); margin:0 0 .5rem}
+    .hero-visual p{color:#e8eef6; font-size:clamp(16px,2.2vw,20px); margin:0}
+
+    /* rodapé da capa: coordonnées + mapa */
+    .hero-footer{background:#0b1220; color:#cbd5e1}
+    .hero-footer .wrap{padding:2rem 1rem}
+    .hero-footer .grid{display:grid; grid-template-columns:1.2fr .8fr; gap:1rem}
+    .hero-footer a{color:#93c5fd; text-decoration:none}
+    .mini{color:#94a3b8; font-size:.95rem}
+    .hero-footer iframe{width:100%; height:220px; border:0; border-radius:12px}
+    @media (max-width:860px){
+      .hero-footer .grid{grid-template-columns:1fr}
     }
-    .btn:hover{transform:translateY(-1px)}
 
     /* CONTAINERS */
     .wrap{max-width:1100px; margin:auto; padding:3rem 1rem}
@@ -69,23 +79,20 @@
     .person a{color:#0a66c2; text-decoration:none; word-break:break-all}
     .person a:hover{text-decoration:underline}
 
-    /* OFFRE (Form) */
+    /* DEMANDE D’OFFRE */
     .offre{text-align:center; background:#f7f9fc; border-radius:20px; margin:3rem auto; padding:2rem 1rem}
     .offre h2{margin-top:0}
-    .offre form{max-width:600px; margin:auto; display:grid; gap:1rem; text-align:left}
-    .offre input, .offre textarea{padding:.8rem; border:1px solid var(--line); border-radius:10px}
+    .offre form{max-width:680px; margin:auto; display:grid; gap:1rem; text-align:left}
+    .offre .row{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
+    .offre input, .offre textarea, .offre select{padding:.8rem; border:1px solid var(--line); border-radius:10px; width:100%}
+    .offre .group{border:1px solid var(--line); border-radius:10px; padding:.8rem}
+    .offre .group legend{font-weight:600; padding:0 .4rem}
+    .radio{display:flex; gap:1rem; align-items:center; flex-wrap:wrap}
     .offre button{background:var(--primary); color:#fff; padding:.9rem 1.2rem; border:none; border-radius:12px; font-weight:600; cursor:pointer}
     .offre button:hover{background:#0284c7}
 
-    /* FOOTER */
-    footer{background:#0b1220; color:#cbd5e1}
-    footer .grid{display:grid; grid-template-columns:1.3fr .7fr; gap:1rem}
-    footer a{color:#93c5fd; text-decoration:none}
-    footer .mini{color:#94a3b8; font-size:.92rem}
-    @media (max-width:860px){
-      .ico{margin:-40px auto 8px}
-      footer .grid{grid-template-columns:1fr}
-    }
+    /* FOOTER FINAL (simples) */
+    footer.site{padding:1.2rem 1rem 2rem; color:#94a3b8; text-align:center}
   </style>
 </head>
 <body>
@@ -98,12 +105,35 @@
     <a href="#offre">Demande d’offre</a>
   </nav>
 
-  <!-- HERO -->
-  <header id="accueil" class="hero">
-    <div class="inner">
-      <h1>Laurent Hoessen — Syndic à Bruxelles</h1>
-      <p>Gestion immobilière transparente, technique et proactive.</p>
-      <a class="btn" href="#offre">Demander une offre</a>
+  <!-- CAPA -->
+  <header class="capa" id="accueil">
+    <!-- 70% imagem -->
+    <div class="hero-visual">
+      <div class="inner">
+        <h1>Laurent Hoessen — Syndic à Bruxelles</h1>
+        <p>Gestion immobilière transparente, technique et proactive.</p>
+        <!-- Sem botão aqui, conforme pedido -->
+      </div>
+    </div>
+
+    <!-- Rodapé da capa: coordonnées + mapa -->
+    <div class="hero-footer">
+      <div class="wrap">
+        <div class="grid">
+          <div>
+            <h3 style="color:#fff; margin:.2rem 0 .6rem">Coordonnées</h3>
+            <p class="mini" style="margin:.2rem 0 .6rem">
+              Avenue Heydenberg 14, 1200 Bruxelles<br>
+              Lun–Ven 09:00–17:00 • <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a><br>
+              TVA: BE 0462.920.325
+            </p>
+          </div>
+          <iframe title="Localisation"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Avenue%20Heydenberg%2014%2C%201200%20Bruxelles&output=embed">
+          </iframe>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -141,17 +171,15 @@
     </div>
   </section>
 
-  <!-- CONTACT (com equipe completa) -->
+  <!-- CONTACT -->
   <section id="contact" class="wrap contact">
     <h2>Contact</h2>
-    <p style="text-align:center; color:var(--muted); margin:0 0 1.4rem">
-      Équipe et coordonnées — nous répondons sous 48–72h ouvrables.
-    </p>
-
+    <!-- Sem frase de “respondemos em...” -->
     <div class="people">
       <div class="person">
         <strong>Laurent Hoessen</strong>
         <div class="role">Syndic titulaire — IPI n° 105260</div>
+        <a href="mailto:laurent@immohoessen.be">laurent@immohoessen.be</a>
       </div>
 
       <div class="person">
@@ -186,53 +214,54 @@
     </div>
   </section>
 
-  <!-- DEMANDE D’OFFRE (Formspree) -->
+  <!-- DEMANDE D’OFFRE -->
   <section id="offre" class="wrap offre">
     <h2>Demande d’offre</h2>
-    <p style="max-width:720px; margin:.5rem auto 1.2rem; color:var(--muted);">
-      Envoyez-nous les détails de votre immeuble et nous vous répondrons sous 48–72h ouvrables.
-    </p>
+    <!-- Sem “respondemos em 24–48h” -->
+    <form action="https://formspree.io/f/SEU_ID" method="POST">
+      <input type="hidden" name="_subject" value="Demande d’offre — Site Immo Hoessen" />
+      <input type="hidden" name="_next" value="https://fabivilmen.github.io/immohoessen-site/merci.html" />
 
-   <!-- Substitua o endpoint SEU_ID pelo fornecido pelo Formspree -->
-<form action="https://formspree.io/f/SEU_ID" method="POST">
-  <input type="hidden" name="_subject" value="Demande d’offre — Site Immo Hoessen" />
-  <input type="hidden" name="_next" value="https://fabivilmen.github.io/immohoessen-site/merci.html" />
+      <div class="row">
+        <input type="text" name="nom" placeholder="Votre nom" required>
+        <input type="email" name="email" placeholder="Votre email" required>
+      </div>
 
-  <input type="text" name="nom" placeholder="Votre nom" required>
-  <input type="email" name="email" placeholder="Votre email" required>
-  <input type="text" name="adresse" placeholder="Adresse de l’immeuble" required>
-  <input type="text" name="lots" placeholder="Nombre de lots">
-  <textarea name="message" rows="4" placeholder="Votre message"></textarea>
+      <div class="row">
+        <input type="tel" name="telephone" placeholder="Téléphone" required>
+        <input type="text" name="adresse" placeholder="Adresse de l’immeuble" required>
+      </div>
 
-  <button type="submit">Envoyer la demande</button>
-</form>
+      <div class="row">
+        <input type="number" name="lots" placeholder="Nombre de lots" min="0">
+        <input type="number" name="etages" placeholder="Nombre d’étages" min="0">
+      </div>
 
+      <fieldset class="group">
+        <legend>Avez-vous déjà un syndic ?</legend>
+        <div class="radio">
+          <label><input type="radio" name="syndic_actuel" value="oui"> Oui</label>
+          <label><input type="radio" name="syndic_actuel" value="non"> Non</label>
+        </div>
+      </fieldset>
 
+      <fieldset class="group">
+        <legend>Garage</legend>
+        <div class="radio">
+          <label><input type="radio" name="garage" value="oui"> Oui</label>
+          <label><input type="radio" name="garage" value="non"> Non</label>
+        </div>
+      </fieldset>
+
+      <textarea name="message" rows="4" placeholder="Votre message (optionnel)"></textarea>
+
+      <button type="submit">Envoyer la demande</button>
     </form>
   </section>
 
-  <!-- FOOTER (endereço, horário, email, TVA + mapa) -->
-  <footer class="wrap" style="padding:2rem 1rem 1.2rem">
-    <div class="grid">
-      <div>
-        <h3 style="color:#fff; margin:0 0 .6rem">Coordonnées</h3>
-        <p class="mini" style="margin:.2rem 0 1rem">
-          Avenue Heydenberg 14, 1200 Bruxelles<br>
-          Lun–Ven 09:00–13:00 • <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
-        </p>
-        <p class="mini" style="margin:0">TVA: BE 0462.920.325</p>
-      </div>
-
-      <iframe title="Localisation"
-        style="width:100%; height:220px; border:0; border-radius:12px;"
-        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps?q=Avenue%20Heydenberg%2014%2C%201200%20Bruxelles&output=embed">
-      </iframe>
-    </div>
-
-    <p style="text-align:center; color:#94a3b8; margin:1.2rem 0 0">
-      © Laurent Hoessen — Syndic. Tous droits réservés.
-    </p>
+  <!-- FOOTER FINAL (somente copyright, coordenadas já estão no rodapé da capa) -->
+  <footer class="site">
+    © Laurent Hoessen — Syndic. Tous droits réservés.
   </footer>
 
 </body>

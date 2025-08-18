@@ -219,3 +219,10 @@ body{
 body.home{
   background:#ffffff;
 }
+/* Fundo corporativo — MUITO FORTE (todas as páginas, exceto a capa) */
+body:not(.home){
+  background:
+    radial-gradient(68rem 46rem at 100% 0%, rgba(15,61,46,.24) 0%, rgba(15,61,46,0) 62%),
+    radial-gradient(58rem 42rem at   0% 86%, rgba(14,165,233,.16) 0%, rgba(14,165,233,0) 62%),
+    #e9f4ef; /* base um tom mais carregada */
+}

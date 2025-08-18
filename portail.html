@@ -7,10 +7,13 @@
   <title>Portail — Immo Hoessen</title>
   <link rel="icon" href="favicon.ico" />
   <!-- carrega seu CSS (bust de cache leve) -->
-  <link rel="stylesheet" href="styles.css?v=13" />
+  <link rel="stylesheet" href="styles.css?v=14" />
 
   <!-- ===== Estilos específicos da página Portail ===== -->
   <style>
+    /* Afasta o conteúdo do título nesta página */
+    .portail-page .section-head{ margin-bottom: 2rem; }
+
     /* Caixa com marca d’água ao fundo (imagem no canto direito) */
     .portail-watermark{
       position: relative;
@@ -19,17 +22,17 @@
       border-radius: 20px;
       padding: 2rem 1.25rem;
       background: #fff;
-      margin: 1rem 0 1.75rem;
+      margin: 2.75rem 0 2rem;   /* ↑ mais espaço acima do bloco */
     }
 
-    /* >>> Marca d’água MAIOR e MAIS FORTE <<< */
+    /* Marca d’água MAIOR e MAIS FORTE */
     .portail-watermark::before{
       content: "";
       position: absolute; inset: 0;
-      background-image: url("img/portail-office.png"); /* troque o nome se seu arquivo for outro */
-      background-size: 150% auto;          /* aumenta o tamanho da imagem */
-      background-position: 70% center;     /* puxa mais para a direita */
-      opacity: 0.38;                        /* mais forte (0.30–0.50 conforme gosto) */
+      background-image: url("img/portail-office.png");
+      background-size: 150% auto;
+      background-position: 70% center;
+      opacity: 0.38;
       filter: saturate(1.05) contrast(1.05);
       pointer-events: none;
     }
@@ -42,10 +45,9 @@
       pointer-events:none;
     }
 
-    /* Layout: 1 COLUNA centralizada (desktop)
-       (a <figure> fica oculta no desktop; no mobile aparece) */
+    /* Layout: 1 COLUNA centralizada (desktop) */
     .portail-split{
-      position: relative; z-index: 1; /* acima da marca d’água */
+      position: relative; z-index: 1;
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.25rem;
@@ -82,8 +84,8 @@
     @media (max-width: 960px){
       .portail-watermark{ padding: 1rem; }
       .portail-watermark::before{
-        opacity: .30;            /* um pouco mais suave no mobile */
-        background-size: cover;  /* preenche bem o fundo */
+        opacity: .30;
+        background-size: cover;
         background-position: center;
       }
       .portail-watermark::after{
@@ -93,7 +95,7 @@
         grid-template-columns: 1fr;
         gap: 1rem;
       }
-      .portail-media{ display:block; } /* mostra a imagem normal abaixo no mobile */
+      .portail-media{ display:block; }
     }
   </style>
 </head>
@@ -108,7 +110,8 @@
     <a href="urgence.html">Urgence</a>
   </nav>
 
-  <main class="wrap">
+  <!-- note a classe 'portail-page' para alvo de CSS local -->
+  <main class="wrap portail-page">
     <div class="section-head">
       <h1>Portail</h1>
     </div>

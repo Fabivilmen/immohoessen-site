@@ -95,7 +95,8 @@ select{
 /* Rodapé final */
 .site-footer{padding:1.2rem 1rem 2rem; color:#94a3b8; text-align:center}
 /* ---- ajustes de espaçamento só da página de serviços ---- */
-.services-page { padding-top: 4.5rem; }
-.services-page .muted { margin-top:.25rem; margin-bottom:2.5rem; }
-.services-page .grid-cards { margin-top:2rem; margin-bottom:2.5rem; }
+.services-page { padding-top: 5.5rem; }              /* afasta do topo */
+.services-page .section-head { margin-bottom: .75rem; }
+.services-page .muted { margin-top: .5rem; margin-bottom: 2.75rem; }
+.services-page .grid-cards { margin-top: 2.75rem; margin-bottom: 2.75rem; }
 

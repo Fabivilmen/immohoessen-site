@@ -5,118 +5,51 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Laurent Hoessen — Syndic à Bruxelles</title>
-  <meta name="description" content="Gestion de copropriété à Bruxelles : transparence financière, suivi technique et communication claire. Demandez une offre pour votre immeuble." />
   <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    :root{
-      --primary:#0ea5e9;
-      --teal:#1699a2;
-      --text:#0b1220;
-      --muted:#64748b;
-      --bg:#ffffff;
-      --card:#ffffff;
-      --line:#e5eaf0;
-      --radius:16px;
-    }
-    *{box-sizing:border-box}
-    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif; color:var(--text); background:var(--bg); line-height:1.5}
-
-    /* NAV */
-    .nav{display:flex; gap:18px; align-items:center; justify-content:center; padding:12px 16px; border-bottom:1px solid var(--line); position:sticky; top:0; background:#fff; z-index:10}
-    .nav a{color:var(--text); text-decoration:none; font-weight:600}
-    .nav a:hover{color:var(--primary)}
-
-    /* CAPA = hero visual (70%) + rodapé da capa (coordonnées+mapa, 30%) */
-    header.capa{background:#fff}
+    /* CAPA local (pequeno bloco para garantir visual agora) */
     .hero-visual{
-      position:relative;
-      min-height:70vh; /* 70% da tela */
-      display:flex; align-items:center; justify-content:center;
-      text-align:center; padding:2rem 1rem;
-      background:url('images/hero.jpg') center/cover no-repeat; /* sua imagem */
+      position:relative; min-height:70vh;
+      display:flex; align-items:center; justify-content:center; text-align:center; padding:2rem 1rem;
+      background:url('cover2.jpg') center/cover no-repeat; /* usa seu cover2.jpg na raiz */
     }
-    .hero-visual::before{
-      content:""; position:absolute; inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.28));
-    }
-    .hero-visual .inner{
-      position:relative; z-index:1; max-width:900px;
-      background:rgba(0,0,0,.10); backdrop-filter:saturate(1.2) blur(.5px);
-      border-radius:20px; padding:28px 20px;
-    }
+    .hero-visual::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.28))}
+    .hero-visual .inner{position:relative; z-index:1; max-width:900px; background:rgba(0,0,0,.10); border-radius:20px; padding:28px 20px; backdrop-filter:saturate(1.2) blur(.5px)}
     .hero-visual h1{color:#fff; font-size:clamp(28px,5vw,50px); margin:0 0 .5rem}
     .hero-visual p{color:#e8eef6; font-size:clamp(16px,2.2vw,20px); margin:0}
-
-    /* rodapé da capa: coordonnées + mapa */
-    .hero-footer{background:#0b1220; color:#cbd5e1}
-    .hero-footer .wrap{padding:2rem 1rem}
+    .hero-footer{background:#0b1220; color:#cbd5e1; border-top:1px solid rgba(255,255,255,.08)}
+    .hero-footer .wrap{max-width:1100px; margin:auto; padding:2rem 1rem}
     .hero-footer .grid{display:grid; grid-template-columns:1.2fr .8fr; gap:1rem}
     .hero-footer a{color:#93c5fd; text-decoration:none}
     .mini{color:#94a3b8; font-size:.95rem}
     .hero-footer iframe{width:100%; height:220px; border:0; border-radius:12px}
-    @media (max-width:860px){
-      .hero-footer .grid{grid-template-columns:1fr}
-    }
-
-    /* CONTAINERS */
-    .wrap{max-width:1100px; margin:auto; padding:3rem 1rem}
-
-    /* SERVICES */
-    .services h2{text-align:center; margin:0 0 1rem}
-    .services .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem}
-    .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.25rem; transition:box-shadow .2s, transform .2s}
-    .card:hover{box-shadow:0 10px 26px rgba(2,8,23,.06); transform:translateY(-2px)}
-    .ico{width:70px; height:70px; margin:-48px auto 8px; display:grid; place-items:center; border-radius:999px; background:var(--teal); box-shadow:0 6px 20px rgba(22,153,162,.25)}
-    .ico img{width:36px; height:36px; filter:invert(1) brightness(2)}
-    .card h3{margin:.4rem 0 .4rem; text-align:center}
-    .card p{margin:0; color:var(--muted); text-align:center}
-
-    /* CONTACT */
-    .contact h2{text-align:center; margin:0 0 1rem}
-    .people{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem}
-    .person{border:1px solid var(--line); border-radius:var(--radius); padding:1rem}
-    .role{color:var(--muted); font-size:.95rem; margin:.2rem 0 .6rem}
-    .person a{color:#0a66c2; text-decoration:none; word-break:break-all}
-    .person a:hover{text-decoration:underline}
-
-    /* DEMANDE D’OFFRE */
-    .offre{text-align:center; background:#f7f9fc; border-radius:20px; margin:3rem auto; padding:2rem 1rem}
-    .offre h2{margin-top:0}
-    .offre form{max-width:680px; margin:auto; display:grid; gap:1rem; text-align:left}
-    .offre .row{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
-    .offre input, .offre textarea, .offre select{padding:.8rem; border:1px solid var(--line); border-radius:10px; width:100%}
-    .offre .group{border:1px solid var(--line); border-radius:10px; padding:.8rem}
-    .offre .group legend{font-weight:600; padding:0 .4rem}
-    .radio{display:flex; gap:1rem; align-items:center; flex-wrap:wrap}
-    .offre button{background:var(--primary); color:#fff; padding:.9rem 1.2rem; border:none; border-radius:12px; font-weight:600; cursor:pointer}
-    .offre button:hover{background:#0284c7}
-
-    /* FOOTER FINAL (simples) */
-    footer.site{padding:1.2rem 1rem 2rem; color:#94a3b8; text-align:center}
+    @media (max-width:860px){ .hero-footer .grid{grid-template-columns:1fr} }
+    .nav{display:flex; gap:18px; align-items:center; justify-content:center; padding:12px 16px; border-bottom:1px solid #e5eaf0; position:sticky; top:0; background:#fff; z-index:10}
+    .nav a{color:#0b1220; text-decoration:none; font-weight:600}
+    .nav a:hover{color:#0ea5e9}
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- NAV igual em todas -->
   <nav class="nav">
-    <a href="#accueil">Accueil</a>
-    <a href="#services">Nos services</a>
-    <a href="#contact">Contact</a>
-    <a href="#offre">Demande d’offre</a>
+    <a href="index.html">Accueil</a>
+    <a href="types.html">Nos services</a>
+    <a href="contacts.html">Contact</a>
+    <a href="offre.html">Demande d’offre</a>
   </nav>
 
-  <!-- CAPA -->
-  <header class="capa" id="accueil">
-    <!-- 70% imagem -->
+  <!-- Apenas CAPA (sem botões) -->
+  <header>
     <div class="hero-visual">
       <div class="inner">
         <h1>Laurent Hoessen — Syndic à Bruxelles</h1>
         <p>Gestion immobilière transparente, technique et proactive.</p>
-        <!-- Sem botão aqui, conforme pedido -->
       </div>
     </div>
 
-    <!-- Rodapé da capa: coordonnées + mapa -->
+    <!-- Rodapé da capa: coordonnées + mapa + TVA -->
     <div class="hero-footer">
       <div class="wrap">
         <div class="grid">
@@ -128,141 +61,12 @@
               TVA: BE 0462.920.325
             </p>
           </div>
-          <iframe title="Localisation"
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Avenue%20Heydenberg%2014%2C%201200%20Bruxelles&output=embed">
-          </iframe>
+          <iframe title="Localisation" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Avenue%20Heydenberg%2014%2C%201200%20Bruxelles&output=embed"></iframe>
         </div>
       </div>
     </div>
   </header>
-
-  <!-- SERVICES -->
-  <section id="services" class="wrap services">
-    <h2>Nos services</h2>
-    <p style="text-align:center; color:var(--muted); margin:0 0 1.2rem">
-      Transparence financière, suivi technique rigoureux et communication claire.
-    </p>
-
-    <div class="grid">
-      <article class="card">
-        <div class="ico"><img src="icons/transparency.svg" alt="Transparence financière"></div>
-        <h3>Transparence financière</h3>
-        <p>Budgets, comptes annuels et rapports clairs, disponibles à tout moment.</p>
-      </article>
-
-      <article class="card">
-        <div class="ico"><img src="icons/maintenance.svg" alt="Suivi technique"></div>
-        <h3>Suivi technique</h3>
-        <p>Plan pluriannuel, entretiens, conformité (ascenseurs, incendie, électricité).</p>
-      </article>
-
-      <article class="card">
-        <div class="ico"><img src="icons/building.svg" alt="Gestion d’immeuble"></div>
-        <h3>Gestion d’immeuble</h3>
-        <p>Administration courante, AG, contrats de service et coordination des travaux.</p>
-      </article>
-
-      <article class="card">
-        <div class="ico"><img src="icons/communication.svg" alt="Communication"></div>
-        <h3>Communication</h3>
-        <p>Réponses rapides, information continue et portail documentaire partagé.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="wrap contact">
-    <h2>Contact</h2>
-    <!-- Sem frase de “respondemos em...” -->
-    <div class="people">
-      <div class="person">
-        <strong>Laurent Hoessen</strong>
-        <div class="role">Syndic titulaire — IPI n° 105260</div>
-        <a href="mailto:laurent@immohoessen.be">laurent@immohoessen.be</a>
-      </div>
-
-      <div class="person">
-        <strong>Andrée Hoessen</strong>
-        <div class="role">Gestionnaire général</div>
-        <a href="mailto:andre@immohoessen.be">andre@immohoessen.be</a>
-      </div>
-
-      <div class="person">
-        <strong>Patricia Boniface</strong>
-        <div class="role">Gestionnaire collaboratrice</div>
-        <a href="mailto:gestion@immohoessen.be">gestion@immohoessen.be</a>
-      </div>
-
-      <div class="person">
-        <strong>Viviane Ledieu</strong>
-        <div class="role">Gestionnaire des sinistres</div>
-        <a href="mailto:admin@immohoessen.be">admin@immohoessen.be</a>
-      </div>
-
-      <div class="person">
-        <strong>Menezes Fabiane</strong>
-        <div class="role">Assistante de gestion</div>
-        <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
-      </div>
-
-      <div class="person">
-        <strong>Uçar Mikail</strong>
-        <div class="role">Stagiaire (en formation IPI)</div>
-        <a href="mailto:gestionarie@immohoessen.be">gestionarie@immohoessen.be</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- DEMANDE D’OFFRE -->
-  <section id="offre" class="wrap offre">
-    <h2>Demande d’offre</h2>
-    <!-- Sem “respondemos em 24–48h” -->
-    <form action="https://formspree.io/f/SEU_ID" method="POST">
-      <input type="hidden" name="_subject" value="Demande d’offre — Site Immo Hoessen" />
-      <input type="hidden" name="_next" value="https://fabivilmen.github.io/immohoessen-site/merci.html" />
-
-      <div class="row">
-        <input type="text" name="nom" placeholder="Votre nom" required>
-        <input type="email" name="email" placeholder="Votre email" required>
-      </div>
-
-      <div class="row">
-        <input type="tel" name="telephone" placeholder="Téléphone" required>
-        <input type="text" name="adresse" placeholder="Adresse de l’immeuble" required>
-      </div>
-
-      <div class="row">
-        <input type="number" name="lots" placeholder="Nombre de lots" min="0">
-        <input type="number" name="etages" placeholder="Nombre d’étages" min="0">
-      </div>
-
-      <fieldset class="group">
-        <legend>Avez-vous déjà un syndic ?</legend>
-        <div class="radio">
-          <label><input type="radio" name="syndic_actuel" value="oui"> Oui</label>
-          <label><input type="radio" name="syndic_actuel" value="non"> Non</label>
-        </div>
-      </fieldset>
-
-      <fieldset class="group">
-        <legend>Garage</legend>
-        <div class="radio">
-          <label><input type="radio" name="garage" value="oui"> Oui</label>
-          <label><input type="radio" name="garage" value="non"> Non</label>
-        </div>
-      </fieldset>
-
-      <textarea name="message" rows="4" placeholder="Votre message (optionnel)"></textarea>
-
-      <button type="submit">Envoyer la demande</button>
-    </form>
-  </section>
-
-  <!-- FOOTER FINAL (somente copyright, coordenadas já estão no rodapé da capa) -->
-  <footer class="site">
-    © Laurent Hoessen — Syndic. Tous droits réservés.
-  </footer>
 
 </body>
 </html>

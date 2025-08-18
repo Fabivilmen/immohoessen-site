@@ -225,6 +225,56 @@ h1, h2, h3,
 .hero-footer, .hero-footer p, .hero-footer li, .hero-footer .hero-mini { color:#e6eef7 !important; }
 .hero-footer h3{ color:#fff !important; }
 .hero-footer a{ color:#a7d5ff !important; }
-.hero-footer a:hover{ color:#d1e9ff !important; }
+.hero-footer a:hover{ color:#d1e9ff !important; 
+                    /* =========================================================
+   PALETA PROFISSIONAL — SOFT FOREST (apenas tipografia)
+   Cole este bloco no FINAL do styles.css
+   Para trocar a paleta no futuro, edite só os valores do :root
+   ========================================================= */
+:root{
+  --heading:#0f3d2e;   /* Títulos (verde escuro) */
+  --text:#1e4e3d;      /* Texto de parágrafo (verde médio) */
+  --muted:#557a68;     /* Texto secundário (verde acinzentado) */
+  --link:#0ea5e9;      /* Azul da marca (links importantes) */
+}
+
+/* Base – aplica a nova paleta em todo o site (fora da capa) */
+body, p, li, label, input, textarea, select { color: var(--text) !important; }
+
+h1, h2, h3,
+.section-head h1, .section-head h2,
+.card h3 { color: var(--heading) !important; }
+
+.card p, .muted { color: var(--muted) !important; }
+
+.nav a { color: var(--heading) !important; }
+
+/* E-mails (Contact) e telefones (Urgence) continuam AZUIS para destacar */
+.person a, .urg-item a { color: var(--link) !important; text-decoration:none; }
+.person a:hover, .urg-item a:hover { text-decoration:underline; }
+
+/* Placeholders de inputs mais suaves */
+::placeholder { color:#8ab2a3; opacity:1; }
+
+/* -------- NÃO MEXE NA CAPA (mantém clara) -------- */
+.hero-visual .hero-title{
+  color:#fff !important;
+  text-shadow:0 1px 2px rgba(0,0,0,.45);
+}
+.hero-visual .hero-subline,
+.hero-visual .hero-sub{
+  color:#e8eef6 !important;
+  text-shadow:0 1px 2px rgba(0,0,0,.35);
+}
+
+/* Faixa escura da capa (Coordonnées) — texto/link claros */
+.hero-footer,
+.hero-footer p,
+.hero-footer li,
+.hero-footer .hero-mini { color:#e6eef7 !important; }
+.hero-footer h3 { color:#fff !important; }
+.hero-footer a { color:#a7d5ff !important; }
+.hero-footer a:hover { color:#d1e9ff !important; }
+
 
 

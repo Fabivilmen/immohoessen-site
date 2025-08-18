@@ -4,10 +4,10 @@
   --primary:#0ea5e9;
   --teal:#1699a2;
 
-  /* >>> PALETA DE TIPOGRAFIA (NOVA PALETA DE VERDE) <<< */
-  --heading:#023020;  /* Títulos: verde bem escuro */
-  --text:#2E8B57;     /* Parágrafos: verde médio legível */
-  --muted:#6B8E23;    /* Secundário: verde oliva */
+  /* >>> PALETA DE TIPOGRAFIA (AGORA EM TONS DE AZUL) <<< */
+  --heading:#1a237e;  /* Títulos: azul marinho forte */
+  --text:#3f51b5;     /* Parágrafos: azul médio e legível */
+  --muted:#7986cb;    /* Secundário: azul suave e acinzentado */
 
   /* Base do tema */
   --bg:#ffffff;
@@ -206,4 +206,3 @@ body{
   padding:2.25rem 1.25rem;
   margin-top:1.25rem;
 }
-

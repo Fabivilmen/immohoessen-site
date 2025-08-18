@@ -1,15 +1,15 @@
 
 :root{
-  /* Cores base do tema */
+  /* Ações/links principais (mantém seu azul de marca nos botões e e-mails) */
   --primary:#0ea5e9;
   --teal:#1699a2;
 
-  /* Paleta de tipografia neutra (profissional) */
-  --heading:#0f172a;  /* títulos (slate-900) */
-  --text:#334155;     /* parágrafos (slate-700) */
-  --muted:#64748b;    /* secundário (slate-500/600) */
+  /* >>> PALETA DE TIPOGRAFIA (VERDE PROFISSIONAL) <<< */
+  --heading:#0f3d2e;  /* Títulos: verde-escuro elegante */
+  --text:#1e4e3d;     /* Parágrafos: verde médio legível */
+  --muted:#557a68;    /* Secundário: cinza esverdeado */
 
-  /* Outras variáveis já usadas no site */
+  /* Base do tema */
   --bg:#ffffff;
   --card:#ffffff;
   --line:#e5eaf0;
@@ -18,14 +18,18 @@
 
 *{box-sizing:border-box}
 body{
-  margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif;
-  color:var(--text); background:var(--bg); line-height:1.5;
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.5;
 }
 
 /* NAV (igual em todas) */
 .nav{
   display:flex; gap:18px; align-items:center; justify-content:center;
-  padding:12px 16px; border-bottom:1px solid var(--line); position:sticky; top:0; background:#fff; z-index:10
+  padding:12px 16px; border-bottom:1px solid var(--line);
+  position:sticky; top:0; background:#fff; z-index:10;
 }
 .nav a{color:var(--heading); text-decoration:none; font-weight:600}
 .nav a:hover{color:var(--primary)}
@@ -46,6 +50,7 @@ body{
   background:rgba(0,0,0,.10); backdrop-filter:saturate(1.2) blur(.5px);
   border-radius:20px; padding:28px 20px;
 }
+/* Título da capa (NÃO ALTERAR CORES DO HERO) */
 .hero-title{color:#fff; font-size:clamp(28px,5vw,50px); margin:0 0 .5rem}
 .hero-sub{color:#e8eef6; font-size:clamp(16px,2.2vw,20px); margin:0}
 .hero-subline{
@@ -53,7 +58,7 @@ body{
   font-size:clamp(18px, 2.6vw, 28px); color:#e8eef6;
 }
 
-/* Rodapé da capa (coordonnées + mapa) */
+/* Rodapé da capa (coordonnées + mapa) — manter claro */
 .hero-footer{background:#0b1220; color:#cbd5e1; border-top:1px solid rgba(255,255,255,.08)}
 .wrap-hero{max-width:1100px; margin:auto; padding:2rem 1rem}
 .grid-hero{display:grid; grid-template-columns:1.2fr .8fr; gap:1rem}
@@ -73,9 +78,16 @@ body{
 
 /* Serviços (cards com ícones) */
 .grid-cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.25rem}
-.card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.25rem; transition:.2s}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:1.25rem; transition:.2s
+}
 .card:hover{box-shadow:0 10px 26px rgba(2,8,23,.06); transform:translateY(-2px)}
-.ico{width:70px; height:70px; margin:-48px auto 8px; display:grid; place-items:center; border-radius:999px; background:var(--teal); box-shadow:0 6px 20px rgba(22,153,162,.25)}
+.ico{
+  width:70px; height:70px; margin:-48px auto 8px;
+  display:grid; place-items:center; border-radius:999px;
+  background:var(--teal); box-shadow:0 6px 20px rgba(22,153,162,.25)
+}
 .ico img{width:36px; height:36px; filter:invert(1) brightness(2)}
 .card h3{margin:.4rem 0 .4rem; text-align:center; color:var(--heading)}
 .card p{text-align:center; color:var(--muted); margin:0}
@@ -91,7 +103,10 @@ body{
 .box-offre{background:#f7f9fc; border:1px solid var(--line); border-radius:20px; padding:2rem 1rem}
 .form{max-width:680px; margin:auto; display:grid; gap:1rem; text-align:left}
 .row{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
-input, textarea, select{padding:.8rem; border:1px solid var(--line); border-radius:10px; width:100%; color:var(--text)}
+input, textarea, select{
+  padding:.8rem; border:1px solid var(--line); border-radius:10px; width:100%;
+  color:var(--text)
+}
 select{appearance:auto; -webkit-appearance:auto; -moz-appearance:auto; background-color:#fff}
 .group{border:1px solid var(--line); border-radius:10px; padding:.8rem}
 .group legend{font-weight:600; padding:0 .4rem}
@@ -99,14 +114,17 @@ select{appearance:auto; -webkit-appearance:auto; -moz-appearance:auto; backgroun
 .btn-submit{background:var(--primary); color:#fff; padding:.9rem 1.2rem; border:none; border-radius:12px; font-weight:600; cursor:pointer}
 .btn-submit:hover{background:#0284c7}
 
-/* Botão genérico (para Portail) */
-.btn{display:inline-block; background:var(--primary); color:#fff; padding:.8rem 1.1rem; border-radius:12px; font-weight:600; text-decoration:none}
+/* Botão genérico (Portail, etc.) */
+.btn{
+  display:inline-block; background:var(--primary); color:#fff;
+  padding:.8rem 1.1rem; border-radius:12px; font-weight:600; text-decoration:none
+}
 .btn:hover{background:#0284c7}
 
 /* Rodapé final */
 .site-footer{padding:1.2rem 1rem 2rem; color:#94a3b8; text-align:center}
 
-/* ---- ajustes de espaçamento da página de serviços ---- */
+/* ---- Espaçamento: página de serviços ---- */
 .services-page { padding-top: 6.5rem; }
 .services-page .section-head { margin-bottom: 1rem; }
 .services-page .muted { margin-top:.5rem; margin-bottom: 3rem; }
@@ -114,20 +132,13 @@ select{appearance:auto; -webkit-appearance:auto; -moz-appearance:auto; backgroun
 
 /* À PROPOS — leitura confortável */
 .apropos-page .propos-text{
-  max-width: 900px;
-  margin: 0 auto 1rem;
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
-  line-height: 1.7;
+  max-width: 900px; margin: 0 auto 1rem;
+  text-align: justify; text-justify: inter-word; hyphens: auto; line-height: 1.7;
 }
 .apropos-page .lead{ font-size: 1.05rem; }
 .apropos-page .pillars{
-  max-width: 1000px;
-  margin: 2rem auto 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-  gap: 1rem;
+  max-width: 1000px; margin: 2rem auto 2rem;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1rem;
 }
 .apropos-page .pillars .card p{ margin-top:.35rem; }
 .apropos-page .signature{
@@ -135,31 +146,29 @@ select{appearance:auto; -webkit-appearance:auto; -moz-appearance:auto; backgroun
 }
 .apropos-page .signature strong{ color: var(--heading); font-style: normal; }
 
-/* Ilustração Portail (se usar imagem solta) */
+/* Ilustração Portail (quando usar imagem solta) */
 .portail-illu{ display:flex; justify-content:center; margin: 1rem auto 1.25rem; }
 .portail-illu img{
   max-width: 960px; width: 100%; height: auto;
   border-radius: 16px; box-shadow: 0 12px 32px rgba(2, 8, 23, .18);
 }
 
-/* Portail split (caso use o layout em colunas) */
+/* Portail split (se usar colunas) */
 .portail-split{
   display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; align-items:center; margin: 1.25rem 0 1.75rem;
 }
-.portail-text p{
-  margin:0; color: var(--text); line-height:1.7; text-align:justify; text-justify:inter-word;
-}
+.portail-text p{ margin:0; color: var(--text); line-height:1.7; text-align:justify; text-justify:inter-word; }
 .portail-media{ margin:0; padding:0; }
 .portail-media img{
-  width:100%; height:auto; display:block;
-  border-radius:16px; box-shadow:0 12px 32px rgba(2,8,23,.18); object-fit:cover;
+  width:100%; height:auto; display:block; border-radius:16px;
+  box-shadow:0 12px 32px rgba(2,8,23,.18); object-fit:cover;
 }
 @media (max-width: 960px){
   .portail-split{ grid-template-columns: 1fr; gap:1rem; }
   .portail-media{ order:-1; }
 }
 
-/* -------- CAPA (hero) – garantias de cor -------- */
+/* -------- GARANTIAS DE COR DA CAPA (não mexer) -------- */
 .hero-visual .hero-title{
   color:#fff !important; text-shadow:0 1px 2px rgba(0,0,0,.45);
 }
@@ -168,7 +177,7 @@ select{appearance:auto; -webkit-appearance:auto; -moz-appearance:auto; backgroun
   color:#e8eef6 !important; text-shadow:0 1px 2px rgba(0,0,0,.35);
 }
 
-/* Faixa de coordonnées da capa */
+/* Faixa de coordonnées da capa (sempre claro) */
 .hero-footer,
 .hero-footer p,
 .hero-footer li,

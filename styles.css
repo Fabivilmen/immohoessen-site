@@ -4,10 +4,10 @@
   --primary:#0ea5e9;
   --teal:#1699a2;
 
-  /* >>> PALETA DE TIPOGRAFIA (VERDE PROFISSIONAL) <<< */
-  --heading:#0f3d2e;  /* Títulos: verde-escuro elegante */
-  --text:#1e4e3d;     /* Parágrafos: verde médio legível */
-  --muted:#557a68;    /* Secundário: cinza esverdeado */
+  /* >>> PALETA DE TIPOGRAFIA (NOVA PALETA DE VERDE) <<< */
+  --heading:#023020;  /* Títulos: verde bem escuro */
+  --text:#2E8B57;     /* Parágrafos: verde médio legível */
+  --muted:#6B8E23;    /* Secundário: verde oliva */
 
   /* Base do tema */
   --bg:#ffffff;

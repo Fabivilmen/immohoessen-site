@@ -110,47 +110,37 @@ select{
 .services-page .grid-cards { margin-top: 3rem; margin-bottom: 3rem; }
 /* === PALETA NOVA (Slate Chic) ============================= */
 :root{
-  --heading:#0f172a;   /* títulos (slate-900)   */
-  --text:#1f2937;      /* corpo  (slate-800)   */
-  --muted:#475569;     /* secundário (slate-600) */
+  /* === TIPOGRAFIA VERDE SUAVE (SOFT FOREST) ================== */
+:root{
+  --heading:#0f3d2e;   /* títulos: verde escuro elegante */
+  --text:#1e4e3d;      /* texto: verde médio legível */
+  --muted:#557a68;     /* secundário: verde acinzentado */
 }
 
-/* Base de tipografia */
-body, p, li, label, input, textarea, select {
-  color: var(--text);
-}
+/* aplica nos textos */
+body, p, li, label, input, textarea, select { color: var(--text); }
+.section-head h1, .section-head h2, .card h3, h1, h2, h3 { color: var(--heading); }
+.muted { color: var(--muted) !important; }
 
-.muted{
-  color: var(--muted) !important;
-}
+/* navegação */
+.nav a { color: var(--heading); }
 
-/* Títulos das seções e cards */
-.section-head h1,
-.section-head h2,
-.card h3{
-  color: var(--heading);
-}
+/* e-mails (Contact) e telefones (Urgence) em AZUL para destacar */
+.person a,
+.urg-item a { color:#0ea5e9; text-decoration:none; }
+.person a:hover,
+.urg-item a:hover { text-decoration:underline; }
 
-/* Navegação e links de ação */
-.nav a{
-  color: var(--heading);
-}
-.person a,           /* e-mails em Contact */
-.urg-item a{         /* telefones em Urgence */
-  color: #0ea5e9;    /* mantém a cor da marca/primary */
-  text-decoration: none;
-}
+/* placeholders dos inputs mais suaves */
+::placeholder { color:#8ab2a3; opacity:1; }
 
-/* Placeholders mais legíveis */
-::placeholder{
-  color:#8ea0b4;
-  opacity:1;
-}
-
-/* CAPA: mantém texto claro */
+/* mantém a CAPA clara */
 .hero-visual .hero-title{ color:#fff !important; text-shadow:0 1px 2px rgba(0,0,0,.45); }
 .hero-visual .hero-subline{ color:#e8eef6 !important; text-shadow:0 1px 2px rgba(0,0,0,.35); }
 .hero-visual .hero-sub{ color:#e8eef6 !important; text-shadow:0 1px 2px rgba(0,0,0,.35); }
+
+
+  hero-visual .hero-sub{ color:#e8eef6 !important; text-shadow:0 1px 2px rgba(0,0,0,.35); }
 /* À PROPOS — leitura confortável */
 .apropos-page .propos-text{
   max-width: 900px;

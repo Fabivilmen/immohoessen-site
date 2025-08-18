@@ -322,6 +322,19 @@ h1, h2, h3,
 .hero-footer h3 { color:#fff !important; }
 .hero-footer a { color:#a7d5ff !important; }
 .hero-footer a:hover { color:#d1e9ff !important; }
+/* Ilustração da página Portail */
+.portail-illu{
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto 1.25rem;
+}
+.portail-illu img{
+  max-width: 960px;   /* largura máx. */
+  width: 100%;        /* responsivo */
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(2, 8, 23, .18);
+}
 
 
 

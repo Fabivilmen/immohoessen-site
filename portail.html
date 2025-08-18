@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portail — Immo Hoessen</title>
   <link rel="icon" href="favicon.ico" />
-  <!-- carrega seu CSS (com bust de cache leve) -->
-  <link rel="stylesheet" href="styles.css?v=12" />
+  <!-- carrega seu CSS (bust de cache leve) -->
+  <link rel="stylesheet" href="styles.css?v=13" />
 
   <!-- ===== Estilos específicos da página Portail ===== -->
   <style>
@@ -21,44 +21,55 @@
       background: #fff;
       margin: 1rem 0 1.75rem;
     }
-    /* imagem de fundo em baixa opacidade */
+
+    /* >>> Marca d’água MAIOR e MAIS FORTE <<< */
     .portail-watermark::before{
       content: "";
       position: absolute; inset: 0;
-      background-image: url("img/portail-office.png"); /* troque o nome se o seu arquivo for outro */
-      background-size: cover;
-      background-position: right center;
-      opacity: 0.18;              /* intensidade da marca d’água */
+      background-image: url("img/portail-office.png"); /* troque o nome se seu arquivo for outro */
+      background-size: 150% auto;          /* aumenta o tamanho da imagem */
+      background-position: 70% center;     /* puxa mais para a direita */
+      opacity: 0.38;                        /* mais forte (0.30–0.50 conforme gosto) */
       filter: saturate(1.05) contrast(1.05);
       pointer-events: none;
     }
-    /* gradiente sutil para garantir legibilidade do texto à esquerda */
+
+    /* overlay sutil para manter a leitura */
     .portail-watermark::after{
       content:"";
       position:absolute; inset:0;
-      background: linear-gradient(90deg,
-        rgba(255,255,255,0.88) 0%,
-        rgba(255,255,255,0.65) 38%,
-        rgba(255,255,255,0.30) 62%,
-        rgba(255,255,255,0.00) 100%);
+      background: rgba(255,255,255,0.18);
       pointer-events:none;
     }
 
-    /* Layout em 2 colunas (texto à esquerda, “imagem de apoio” à direita — só mobile mostra a tag <img>) */
+    /* Layout: 1 COLUNA centralizada (desktop)
+       (a <figure> fica oculta no desktop; no mobile aparece) */
     .portail-split{
-      position: relative; z-index: 1; /* fica acima da marca d’água */
+      position: relative; z-index: 1; /* acima da marca d’água */
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 2rem;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
       align-items: center;
+      justify-items: center;
+    }
+
+    /* Texto CENTRALIZADO em “cartão” translúcido */
+    .portail-text{
+      max-width: 760px;
+      text-align: center;
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      border-radius: 16px;
+      padding: 1rem 1.25rem;
     }
     .portail-text p{
       margin: 0;
       color: var(--text);
       line-height: 1.7;
-      text-align: justify;
-      text-justify: inter-word;
     }
+
+    /* A imagem <figure> segue oculta no desktop; aparece no mobile abaixo */
     .portail-media{ margin:0; padding:0; display:none; }
     .portail-media img{
       width:100%; height:auto; display:block;
@@ -67,18 +78,22 @@
       object-fit:cover;
     }
 
-    /* Responsivo: empilha e mostra a imagem normal (além da marca d’água ficar ainda mais suave) */
+    /* Responsivo (mobile) */
     @media (max-width: 960px){
       .portail-watermark{ padding: 1rem; }
-      .portail-watermark::before{ opacity: .12; }
+      .portail-watermark::before{
+        opacity: .30;            /* um pouco mais suave no mobile */
+        background-size: cover;  /* preenche bem o fundo */
+        background-position: center;
+      }
       .portail-watermark::after{
-        background: rgba(255,255,255,.88);
+        background: rgba(255,255,255,.85);
       }
       .portail-split{
         grid-template-columns: 1fr;
         gap: 1rem;
       }
-      .portail-media{ display:block; }
+      .portail-media{ display:block; } /* mostra a imagem normal abaixo no mobile */
     }
   </style>
 </head>
@@ -115,8 +130,7 @@
           </div>
         </div>
 
-        <!-- Imagem de apoio: fica oculta no desktop (só a marca d’água aparece).
-             No mobile, esta imagem aparece acima do texto. -->
+        <!-- Imagem de apoio: oculta no desktop; mostrada no mobile -->
         <figure class="portail-media">
           <img src="img/portail-office.png" alt="Portail de copropriété sécurisé — Immo Hoessen" loading="lazy">
         </figure>

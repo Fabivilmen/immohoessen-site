@@ -8,8 +8,8 @@
   <link rel="icon" href="favicon.ico" />
   <style>
     :root{
-      --primary:#0ea5e9;      /* azul CTA */
-      --teal:#1699a2;         /* teal dos ícones */
+      --primary:#0ea5e9;
+      --teal:#1699a2;
       --text:#0b1220;
       --muted:#64748b;
       --bg:#ffffff;
@@ -21,18 +21,16 @@
     *{box-sizing:border-box}
     body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif; color:var(--text); background:var(--bg); line-height:1.5}
 
-    /* NAV simples (mantido minimalista) */
     .nav{display:flex; gap:18px; align-items:center; justify-content:center; padding:12px 16px; border-bottom:1px solid var(--line); position:sticky; top:0; background:#fff; z-index:10}
     .nav a{color:var(--text); text-decoration:none; font-weight:600}
     .nav a:hover{color:var(--primary)}
 
-    /* HERO com overlay (não troca sua imagem; ajuste a URL abaixo se quiser outra) */
     .hero{
       position:relative;
       min-height:72vh;
       display:flex; align-items:center; justify-content:center;
       text-align:center; padding:2rem 1rem;
-      background:url('images/hero.jpg') center/cover no-repeat; /* use sua imagem atual */
+      background:url('images/hero.jpg') center/cover no-repeat;
     }
     .hero::before{
       content:""; position:absolute; inset:0;
@@ -53,10 +51,8 @@
     }
     .btn:hover{transform:translateY(-1px)}
 
-    /* CONTAINERS */
     .wrap{max-width:1100px; margin:auto; padding:3rem 1rem}
 
-    /* SERVICES com ícones */
     .services h2{text-align:center; margin:0 0 1rem}
     .services .grid{
       display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem;
@@ -75,7 +71,6 @@
     .card h3{margin:.4rem 0 .4rem; text-align:center}
     .card p{margin:0; color:var(--muted); text-align:center}
 
-    /* RODAPÉ */
     footer{background:#0b1220; color:#cbd5e1}
     footer .grid{
       display:grid; grid-template-columns:1.3fr .7fr; gap:1rem;
@@ -90,7 +85,6 @@
 </head>
 <body>
 
-  <!-- NAV (ajuste os links conforme seus arquivos/âncoras existentes) -->
   <nav class="nav">
     <a href="#accueil">Accueil</a>
     <a href="#services">Nos services</a>
@@ -98,7 +92,6 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- HERO com overlay (SEM trocar sua capa; apenas contraste e CTA) -->
   <header id="accueil" class="hero">
     <div class="inner">
       <h1>Laurent Hoessen — Syndic à Bruxelles</h1>
@@ -107,7 +100,6 @@
     </div>
   </header>
 
-  <!-- NOS SERVICES (com ícones) -->
   <section id="services" class="wrap services">
     <h2>Nos services</h2>
     <p style="text-align:center; color:var(--muted); margin:0 0 1.2rem">
@@ -115,7 +107,6 @@
     </p>
 
     <div class="grid">
-      <!-- Transparence financière -->
       <article class="card">
         <div class="ico">
           <img src="icons/transparency.svg" alt="Transparence financière">
@@ -124,7 +115,6 @@
         <p>Budgets, comptes annuels et rapports clairs, disponibles à tout moment.</p>
       </article>
 
-      <!-- Suivi technique -->
       <article class="card">
         <div class="ico">
           <img src="icons/maintenance.svg" alt="Suivi technique">
@@ -133,7 +123,6 @@
         <p>Plan pluriannuel, entretiens, conformité (ascenseurs, incendie, électricité).</p>
       </article>
 
-      <!-- Gestion d’immeuble -->
       <article class="card">
         <div class="ico">
           <img src="icons/building.svg" alt="Gestion d’immeuble">
@@ -142,7 +131,6 @@
         <p>Administration courante, AG, contrats de service et coordination des travaux.</p>
       </article>
 
-      <!-- Communication -->
       <article class="card">
         <div class="ico">
           <img src="icons/communication.svg" alt="Communication">
@@ -153,28 +141,10 @@
     </div>
   </section>
 
-  <!-- (3) Notre équipe — você preferiu NÃO incluir agora, então omitido -->
-
-  <!-- (4) Galerie — você não tem fotos reais; se quiser usar imagens genéricas, descomente abaixo
-  <section id="galerie" class="wrap" style="padding-top:1rem">
-    <h2 style="text-align:center">Nos réalisations</h2>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:.75rem; margin-top:1rem">
-      <img src="images/gal1.jpg" alt="Inspection d’immeuble" style="width:100%; height:180px; object-fit:cover; border-radius:12px;">
-      <img src="images/gal2.jpg" alt="Salle technique" style="width:100%; height:180px; object-fit:cover; border-radius:12px;">
-      <img src="images/gal3.jpg" alt="Assemblée générale" style="width:100%; height:180px; object-fit:cover; border-radius:12px;">
-      <img src="images/gal4.jpg" alt="Maintenance préventive" style="width:100%; height:180px; object-fit:cover; border-radius:12px;">
-    </div>
-  </section>
-  -->
-
-  <!-- (5) CONTACT — mantido (não alterei). 
-       Se sua página já tem a seção #contact, este botão rola até ela.
-       Caso use página separada, mude o href do botão do hero para 'contact.html'. -->
   <section id="contact" class="wrap" style="padding-top:1rem">
-    <!-- Deixe aqui sua seção de contato EXISTENTE -->
+    <!-- Sua seção de contato existente aqui -->
   </section>
 
-  <!-- (6) RODAPÉ limpo + correções de nomes -->
   <footer class="wrap" style="padding:2rem 1rem 1.2rem">
     <div class="grid">
       <div>
@@ -184,12 +154,11 @@
           Lun–Ven 09:00–17:00 • <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
         </p>
 
-        <!-- Lista curta de contatos com nomes corrigidos -->
         <div class="mini">
           <div><strong>Laurent Hoessen</strong> — Syndic titulaire</div>
           <div><strong>Menezes Fabiane</strong> — Assistante de gestion générale • <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></div>
           <div><strong>Uçar Mikail</strong> — Stagiaire (en formation IPI) • <a href="mailto:gestionaire@immohoessen.be">gestionaire@immohoessen.be</a></div>
-          <div><strong>Boniface</strong> — (corrigé)</div>
+          <div><strong>Boniface</strong></div>
         </div>
 
         <p class="mini" style="margin:1rem 0 0">
@@ -197,7 +166,6 @@
         </p>
       </div>
 
-      <!-- Google Maps embutido -->
       <iframe title="Localisation"
         style="width:100%; height:220px; border:0; border-radius:12px;"
         loading="lazy" referrerpolicy="no-referrer-when-downgrade"

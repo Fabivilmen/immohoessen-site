@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,8 +9,8 @@
   <link rel="icon" href="favicon.ico" />
   <style>
     :root{
-      --primary:#0ea5e9;      /* azul CTA */
-      --teal:#1699a2;         /* teal dos ícones */
+      --primary:#0ea5e9;
+      --teal:#1699a2;
       --text:#0b1220;
       --muted:#64748b;
       --bg:#ffffff;
@@ -43,11 +44,11 @@
     .hero p{color:#e8eef6; font-size:clamp(16px,2.2vw,20px); margin:0 0 1.2rem}
     .btn{
       display:inline-block; background:var(--primary); color:#fff; text-decoration:none;
-      padding:.9rem 1.2rem; border-radius:14px; font-weight:700; box-shadow:0 8px 24px rgba(14,165,233,.25);
+      padding:.9rem 1.2rem; border-radius:14px; font-weight:700; box-shadow:0 8px 24px rgba(14,165,233,.25)
     }
     .btn:hover{transform:translateY(-1px)}
 
-    /* LAYOUT */
+    /* CONTAINERS */
     .wrap{max-width:1100px; margin:auto; padding:3rem 1rem}
 
     /* SERVICES */
@@ -68,6 +69,14 @@
     .person a{color:#0a66c2; text-decoration:none; word-break:break-all}
     .person a:hover{text-decoration:underline}
 
+    /* OFFRE (Form) */
+    .offre{text-align:center; background:#f7f9fc; border-radius:20px; margin:3rem auto; padding:2rem 1rem}
+    .offre h2{margin-top:0}
+    .offre form{max-width:600px; margin:auto; display:grid; gap:1rem; text-align:left}
+    .offre input, .offre textarea{padding:.8rem; border:1px solid var(--line); border-radius:10px}
+    .offre button{background:var(--primary); color:#fff; padding:.9rem 1.2rem; border:none; border-radius:12px; font-weight:600; cursor:pointer}
+    .offre button:hover{background:#0284c7}
+
     /* FOOTER */
     footer{background:#0b1220; color:#cbd5e1}
     footer .grid{display:grid; grid-template-columns:1.3fr .7fr; gap:1rem}
@@ -86,6 +95,7 @@
     <a href="#accueil">Accueil</a>
     <a href="#services">Nos services</a>
     <a href="#contact">Contact</a>
+    <a href="#offre">Demande d’offre</a>
   </nav>
 
   <!-- HERO -->
@@ -93,7 +103,7 @@
     <div class="inner">
       <h1>Laurent Hoessen — Syndic à Bruxelles</h1>
       <p>Gestion immobilière transparente, technique et proactive.</p>
-      <a class="btn" href="#contact">Demander une offre</a>
+      <a class="btn" href="#offre">Demander une offre</a>
     </div>
   </header>
 
@@ -131,7 +141,7 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- CONTACT (com equipe completa) -->
   <section id="contact" class="wrap contact">
     <h2>Contact</h2>
     <p style="text-align:center; color:var(--muted); margin:0 0 1.4rem">
@@ -139,42 +149,35 @@
     </p>
 
     <div class="people">
-      <!-- Laurent -->
       <div class="person">
         <strong>Laurent Hoessen</strong>
         <div class="role">Syndic titulaire — IPI n° 105260</div>
-        <!-- Sem e-mail indicado para Laurent; se desejar, adicione aqui -->
       </div>
 
-      <!-- Andrée -->
       <div class="person">
         <strong>Andrée Hoessen</strong>
         <div class="role">Gestionnaire général</div>
         <a href="mailto:andre@immohoessen.be">andre@immohoessen.be</a>
       </div>
 
-      <!-- Boniface Patricia -->
       <div class="person">
         <strong>Patricia Boniface</strong>
         <div class="role">Gestionnaire collaboratrice</div>
         <a href="mailto:gestion@immohoessen.be">gestion@immohoessen.be</a>
       </div>
 
-      <!-- Ledieu Viviane -->
       <div class="person">
         <strong>Viviane Ledieu</strong>
         <div class="role">Gestionnaire des sinistres</div>
         <a href="mailto:admin@immohoessen.be">admin@immohoessen.be</a>
       </div>
 
-      <!-- Menezes Fabiane -->
       <div class="person">
         <strong>Menezes Fabiane</strong>
         <div class="role">Assistante de gestion</div>
         <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
       </div>
 
-      <!-- Uçar Mikail -->
       <div class="person">
         <strong>Uçar Mikail</strong>
         <div class="role">Stagiaire (en formation IPI)</div>
@@ -183,7 +186,26 @@
     </div>
   </section>
 
-  <!-- FOOTER com endereço/horário/email + mapa + TVA -->
+  <!-- DEMANDE D’OFFRE (Formspree) -->
+  <section id="offre" class="wrap offre">
+    <h2>Demande d’offre</h2>
+    <p style="max-width:720px; margin:.5rem auto 1.2rem; color:var(--muted);">
+      Envoyez-nous les détails de votre immeuble et nous vous répondrons sous 24–48h ouvrables.
+    </p>
+
+    <!-- Substitua o endpoint SEU_ID pelo fornecido pelo Formspree -->
+    <form action="https://formspree.io/f/SEU_ID" method="POST">
+      <input type="hidden" name="_subject" value="Demande d’offre — Site Immo Hoessen" />
+      <input type="text" name="nom" placeholder="Votre nom" required>
+      <input type="email" name="email" placeholder="Votre email" required>
+      <input type="text" name="adresse" placeholder="Adresse de l’immeuble" required>
+      <input type="text" name="lots" placeholder="Nombre de lots">
+      <textarea name="message" rows="4" placeholder="Votre message"></textarea>
+      <button type="submit">Envoyer la demande</button>
+    </form>
+  </section>
+
+  <!-- FOOTER (endereço, horário, email, TVA + mapa) -->
   <footer class="wrap" style="padding:2rem 1rem 1.2rem">
     <div class="grid">
       <div>

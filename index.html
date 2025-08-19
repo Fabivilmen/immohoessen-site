@@ -1,4 +1,3 @@
-
 ```html
 <!doctype html>
 <html lang="fr">
@@ -7,18 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Accueil — Immo Hoessen</title>
 
-  <!-- Fonte bonita para a frase -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Fonte sutil para a frase -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --blue:#1756ff;
+      --blue:#1756ff;     /* azul marca (links/cta) */
       --nav-fg:#1756ff;   /* letras azuis no menu */
       --nav-bg:#ffffff;   /* menu branco */
-      --footer:#08224a;   /* azul-escuro do rodapé */
-      --text:#1e4e3d;
-      --heading:#0b2a5a;
+      --footer:#031a3a;   /* rodapé azul-escuro */
+      --text:#1e4e3d;     /* texto padrão */
     }
+
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{
@@ -28,7 +27,7 @@
     a{color:var(--blue); text-decoration:none}
     a:hover{text-decoration:underline}
 
-    /* NAV — branco com letras azuis; CTA apenas no menu */
+    /* MENU branco com letras azuis; CTA só no menu */
     .nav{
       position:absolute; top:0; left:0; right:0; z-index:10;
       display:flex; gap:1.25rem; justify-content:center; align-items:center;
@@ -38,41 +37,43 @@
     .nav a{color:var(--nav-fg); font-weight:600}
     .nav .cta{padding:.55rem .9rem; border:1px solid var(--blue); border-radius:10px;}
 
-    /* HERO — imagem mais clara + frase bonita sem barra branca */
+    /* CAPA — imagem ocupa 85% da tela, mais clara */
     .hero{
-      min-height:88vh; display:flex; align-items:center; justify-content:center;
+      height:85vh; min-height:85vh;
+      display:flex; align-items:center; justify-content:center;
       text-align:center; position:relative; color:#fff;
-      background:url("img/cover-plain.jpg?v=2") center/cover no-repeat;
+      background:url("img/cover-plain.jpg?v=4") center/cover no-repeat;
     }
-    /* overlay mais claro para “dar vida” à imagem */
+    /* overlay branco leve para clarear a foto */
     .hero::after{
-      content:""; position:absolute; inset:0; background:rgba(0,0,0,.28);
+      content:""; position:absolute; inset:0;
+      background:rgba(255,255,255,.24);
     }
     .hero-content{position:relative; z-index:1; padding:2rem 1rem; max-width:900px}
     .hero h1{margin:0 0 .5rem; font-size:clamp(2rem,4vw,3rem); color:#fff}
     .hero p{margin:0; font-size:1.15rem; color:#fff}
 
-    /* Frase posicionada no rodapé do hero, sem faixa */
+    /* Frase mais sutil no rodapé do hero */
     .slogan{
-      position:absolute; left:50%; transform:translateX(-50%); bottom:6vh; z-index:1;
-      font-family:"Playfair Display", serif; font-weight:600;
-      font-size:clamp(1.2rem,2.2vw,1.6rem); color:#fff;
-      text-shadow:0 3px 18px rgba(0,0,0,.35);
-      padding:.25rem .6rem; /* sem fundo, sem barra */
+      position:absolute; left:50%; transform:translateX(-50%); bottom:5vh; z-index:1;
+      font-family:"Lora", serif; font-weight:500;
+      font-size:clamp(1.1rem,2vw,1.45rem); color:rgba(255,255,255,.92);
+      letter-spacing:.2px; text-shadow:0 2px 10px rgba(0,0,0,.25);
     }
 
-    /* Rodapé escuro com mapa */
+    /* Rodapé mais baixo e mais escuro */
     .footer-wrap{ background:var(--footer); color:#fff; }
     .footer-box{
-      display:grid; grid-template-columns:1.1fr .9fr; gap:1.25rem;
-      max-width:1100px; margin:0 auto; padding:1.5rem 1rem;
+      display:grid; grid-template-columns:1.1fr .9fr; gap:1rem;
+      max-width:1100px; margin:0 auto; padding:0.9rem 0.9rem;
     }
-    .footer-info p{margin:.25rem 0; color:#fff}
+    .footer-info p{margin:.18rem 0; color:#fff}
     .footer-info strong{color:#fff}
     .footer-bar{
-      text-align:center; color:#fff; padding:.9rem 1rem; border-top:1px solid rgba(255,255,255,.2);
+      text-align:center; color:#fff; padding:.6rem .9rem;
+      border-top:1px solid rgba(255,255,255,.18);
     }
-    .footer-map iframe{width:100%; height:230px; border:0}
+    .footer-map iframe{width:100%; height:170px; border:0}
     @media(max-width:900px){ .footer-box{grid-template-columns:1fr} }
   </style>
 </head>

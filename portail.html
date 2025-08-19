@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Laurent Hoessen — Gestion immobilière</title>
+  <title>Portail copropriétaires — Immo Hoessen</title>
+  <meta name="description" content="Accès au portail copropriétaires pour consulter les documents de votre copropriété." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- NAV -->
+  <!-- HEADER -->
   <header class="site-header">
     <nav class="navbar container">
-      <a class="brand" href="index.html">Laurent Hoessen</a>
+      <a class="brand" href="index.html">Immo Hoessen</a>
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
       <ul class="nav-menu">
         <li><a href="types.html">Notre gestion</a></li>
         <li><a href="offre.html">Demande d’offre</a></li>
-        <li><a href="portail.html">Portail</a></li>
+        <li><a href="portail.html" class="active">Portail</a></li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="contacts.html">Contact</a></li>
         <li><a href="urgence.html">Urgence</a></li>
@@ -23,36 +24,24 @@
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" role="banner" aria-label="Image de couverture">
-    <div class="hero__overlay"></div>
-    <div class="hero__content container">
-      <h1 class="hero__title">Laurent Hoessen</h1>
-      <p class="hero__subtitle">Gestion immobilière — Syndic BILH — DUHO</p>
-      <div class="hero__actions">
-        <a class="btn btn-primary" href="offre.html">Demander une offre</a>
-        <a class="btn btn-outline" href="portail.html">Accéder au portail</a>
-      </div>
-    </div>
-  </section>
+  <!-- MAIN -->
+  <main class="container section">
+    <h1>Portail copropriétaires</h1>
+    <p>
+      Pour consulter les documents de votre copropriété (procès-verbaux, documents comptables, ROI, contrats d’assurance, etc.), 
+      veuillez cliquer sur le lien ci-dessous.
+    </p>
+    <p>
+      Si vous n’avez pas encore reçu votre mot de passe ou si vous l’avez perdu, merci de prendre contact avec la gestionnaire 
+      de votre copropriété.
+    </p>
 
-  <!-- COORDONNÉES (barra verde escura) -->
-  <section class="coordonnees">
-    <div class="container coordonnees-grid">
-      <div>
-        <h3>Adresse</h3>
-        <p>Avenue Heydenberg 14, 1200 Bruxelles</p>
-      </div>
-      <div>
-        <h3>Email</h3>
-        <p><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></p>
-      </div>
-      <div>
-        <h3>Horaires</h3>
-        <p>Lun–Ven · 09:00–13:00</p>
-      </div>
+    <div style="margin-top:30px; text-align:center">
+      <a href="http://immohoessen.quickconnect.to" target="_blank" rel="noopener" class="btn btn-primary">
+        Accéder au portail
+      </a>
     </div>
-  </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">

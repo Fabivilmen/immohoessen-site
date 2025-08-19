@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mentions légales — Laurent Hoessen</title>
+  <meta name="description" content="Mentions légales du site Immo Hoessen — informations éditeur, hébergeur, propriété intellectuelle et responsabilité." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mentions légales — Laurent Hoessen" />
+  <meta property="og:description" content="Informations légales et coordonnées d’Immo Hoessen à Bruxelles." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/cover-plain2.jpg" />
+  <meta property="og:image:alt" content="Résidence moderne avec espaces verts" />
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .legal h1{text-align:center;margin-bottom:18px}
+    .legal h2{color:var(--green-900);margin-top:26px}
+    .legal p{margin:10px 0;color:#2b3a33}
+    .legal ul{padding-left:20px;margin:10px 0}
+    .legal li{margin:6px 0}
+    .legal a{color:var(--brand-blue);text-decoration:none}
+    .legal a:hover{text-decoration:underline}
+    .legal .block{background:#fff;border:1px solid #e3eee7;border-radius:14px;padding:18px;margin-top:16px}
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="index.html">Laurent Hoessen</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="types.html">Nos services</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+        <li><a href="portail.html">Portail</a></li>
+        <li><a href="offre.html">Demande d’offre</a></li>
+        <li><a href="urgence.html">Urgence</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container section legal">
+    <h1>Mentions légales</h1>
+
+    <section class="block">
+      <h2>Éditeur du site</h2>
+      <p><strong>Immo Hoessen — Laurent Hoessen (Syndic)</strong><br>
+         Avenue Heydenberg 14, 1200 Bruxelles, Belgique<br>
+         TVA&nbsp;: BE&nbsp;0462.920.325<br>
+         Email&nbsp;: <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+      </p>
+    </section>
+
+    <section class="block">
+      <h2>Responsable de la publication</h2>
+      <p><strong>Laurent Hoessen</strong> — Syndic titulaire<br>
+         IPI&nbsp;: 105260 (Institut Professionnel des Agents Immobiliers)
+      </p>
+    </section>
+
+    <section class="block">
+      <h2>Hébergement</h2>
+      <p>Le site est hébergé par <strong>GitHub Pages</strong> (GitHub, Inc.).<br>
+         Adresse&nbsp;: 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA<br>
+         Site&nbsp;: <a href="https://pages.github.com/" target="_blank" rel="noopener">pages.github.com</a>
+      </p>
+    </section>
+
+    <section class="block">
+      <h2>Propriété intellectuelle</h2>
+      <p>Le contenu de ce site (textes, éléments graphiques, logos) est protégé par le droit d’auteur. Toute reproduction ou réutilisation, totale ou partielle, nécessite l’autorisation préalable d’Immo Hoessen.</p>
+    </section>
+
+    <section class="block">
+      <h2>Données personnelles</h2>
+      <p>Nous traitons vos données conformément au RGPD. Pour plus d’informations (finalités, base légale, durée de conservation et vos droits), consultez notre
+        <a href="privacite.html">Politique de confidentialité</a>.
+      </p>
+    </section>
+
+    <section class="block">
+      <h2>Cookies</h2>
+      <p>Le site n’utilise que des cookies techniques nécessaires à son fonctionnement. Aucun cookie publicitaire n’est déposé.</p>
+    </section>
+
+    <section class="block">
+      <h2>Limitation de responsabilité</h2>
+      <p>Nous nous efforçons d’assurer l’exactitude des informations publiées. Toutefois, Immo Hoessen ne saurait être tenue responsable des erreurs ou omissions ainsi que de l’utilisation qui pourrait être faite des informations fournies.</p>
+    </section>
+
+    <section class="block">
+      <h2>Règlement des litiges</h2>
+      <p>Le droit belge est applicable. En cas de litige, les tribunaux de l’arrondissement de Bruxelles sont compétents.</p>
+    </section>
+
+    <section class="block">
+      <h2>Contact</h2>
+      <p>Pour toute question concernant ces mentions&nbsp;: <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>.</p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-line">
+      <span>Horaires: Lun–Ven 9:00–17:00</span>
+      <span>•</span>
+      <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+    </div>
+    <div class="container legal">
+      <small>© <span id="year"></span> Immo Hoessen — Tous droits réservés.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Ano automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Toggle menu mobile
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-menu');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!open));
+        menu.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>

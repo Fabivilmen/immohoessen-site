@@ -2,10 +2,77 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Accueil — Immo Hoessen</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+      line-height:1.6;
+      color:#fff;
+    }
+    a{color:#fff;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* NAV (menu superior escuro) */
+    .nav{
+      position:absolute; top:0; left:0; right:0;
+      display:flex; justify-content:center; gap:1.5rem;
+      padding:1rem; background:rgba(0,0,0,0.55);
+      z-index:10;
+    }
+    .nav a{color:#fff; font-weight:600}
+
+    /* HERO */
+    .hero{
+      min-height:90vh;
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      text-align:center;
+      background:url("https://picsum.photos/id/1018/1600/900") center/cover no-repeat;
+      position:relative;
+    }
+    .hero::after{
+      content:""; position:absolute; inset:0; background:rgba(0,0,0,0.55);
+    }
+    .hero-content{
+      position:relative; z-index:1;
+      max-width:800px; padding:2rem;
+    }
+    .hero h1{
+      font-size:clamp(2rem,4vw,3rem);
+      margin:0 0 .5rem; color:#fff;
+    }
+    .hero p{font-size:1.2rem;margin:0 0 1.5rem;color:#fff}
+    .btn{
+      display:inline-block; padding:.7rem 1.2rem; border-radius:8px;
+      background:#1756ff; color:#fff; font-weight:600;
+    }
+
+    /* FRASE */
+    .slogan{
+      background:#0f3d2e;
+      text-align:center; padding:2rem 1rem;
+      font-size:1.25rem; font-weight:500;
+    }
+
+    /* FOOTER */
+    .footer-map{
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:1.5rem;
+      padding:2rem; background:#0b2a5a; color:#fff;
+    }
+    .footer-info p{margin:.3rem 0}
+    .footer-info strong{color:#fff}
+    .footer-bar{
+      text-align:center; padding:.8rem; background:#0b2a5a; color:#fff;
+      border-top:1px solid rgba(255,255,255,0.2);
+    }
+    @media(max-width:900px){
+      .footer-map{grid-template-columns:1fr}
+      .footer-map iframe{width:100%}
+    }
+  </style>
 </head>
 <body>
   <nav class="nav">
@@ -19,30 +86,35 @@
   </nav>
 
   <header class="hero">
-    <h1>Laurent Hoessen</h1>
-    <p class="subtitle">Gestion immobilière — Syndic BILH-DUHO</p>
-    <p><a class="btn btn-primary" href="offre.html">Demander une offre</a></p>
+    <div class="hero-content">
+      <h1>Laurent Hoessen</h1>
+      <p>Gestion immobilière — Syndic BILH-DUHO</p>
+      <a class="btn" href="offre.html">Demander une offre</a>
+    </div>
   </header>
 
-  <main class="container">
-    <div class="card">
-      <h2>Bienvenue</h2>
-      <p>Votre syndic de confiance à Bruxelles, garantissant transparence et gestion proactive de vos copropriétés.</p>
-    </div>
-  </main>
+  <section class="slogan">
+    Une gestion transparente et proactive de vos copropriétés
+  </section>
 
-  <footer class="footer-map">
-    <div class="footer-info">
-      <p><strong>Adresse :</strong> Avenue Heydenberg 14, 1200 Bruxelles</p>
-      <p><strong>Téléphone :</strong> +32 (0)2 123 45 67</p>
-      <p><strong>Email :</strong> <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></p>
-      <p><strong>Horaires :</strong> Lun–Ven, 9h–17h</p>
+  <footer>
+    <div class="footer-map">
+      <div class="footer-info">
+        <p><strong>Coordonnées :</strong></p>
+        <p><strong>Adresse :</strong> Avenue Heydenberg 14, 1200 Bruxelles</p>
+        <p><strong>Téléphone :</strong> +32 (0)2 123 45 67</p>
+        <p><strong>Email :</strong> <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></p>
+        <p><strong>Horaire :</strong> Lun–Ven, 9h–13h</p>
+      </div>
+      <div class="footer-map-embed">
+        <iframe
+          src="https://www.google.com/maps?q=Avenue%20Heydenberg%2014,%201200%20Bruxelles&output=embed"
+          width="360" height="220" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
     </div>
-    <div class="footer-map-embed">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.395206132907!2d4.4370926!3d50.8575234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3db34b4b88f4b%3A0x123456789abcdef!2sAvenue%20Heydenberg%2014%2C%201200%20Woluwe-Saint-Lambert!5e0!3m2!1sfr!2sbe!4v1690000000000"
-        width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy">
-      </iframe>
+    <div class="footer-bar">
+      © Immo Hoessen
     </div>
   </footer>
 </body>

@@ -8,9 +8,10 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* Estilo leve do formulário para combinar com seu site */
+    /* Ajustes visuais da página de oferta */
     .form-wrap{max-width:800px;margin:0 auto}
-    .legend{margin:0 0 12px;color:#2b3a33}
+    .page-intro{text-align:center;max-width:800px;margin:0 auto 18px}
+    .legend{margin:6px 0 0;color:#2b3a33}
     .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .full{grid-column:1 / -1}
     label{display:block;font-weight:600;margin:6px 0;color:var(--green-900)}
@@ -18,10 +19,10 @@
       width:100%;padding:12px;border:1px solid #dfe6e2;border-radius:10px;background:#fff;font:inherit;outline:none
     }
     input:focus,textarea:focus,select:focus{border-color:var(--green-500)}
-    .help{font-size:12px;opacity:.8;margin-top:4px}
-    .notice{background:#f5fbf8;border:1px solid #e0efe8;padding:12px 14px;border-radius:12px;margin-bottom:16px}
+    .notice{background:#f5fbf8;border:1px solid #e0efe8;padding:12px 14px;border-radius:12px;margin-bottom:16px;text-align:center}
     .required{color:#b3261e}
-    .actions{margin-top:10px}
+    .actions{text-align:center;margin-top:10px}
+    @media (max-width:720px){ .form-grid{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
@@ -43,15 +44,17 @@
 
   <!-- MAIN -->
   <main class="container section">
-    <h1>Demander une offre</h1>
-    <p class="legend">Remplissez le formulaire et nous vous répondrons rapidement avec une offre adaptée à votre copropriété.</p>
+    <div class="page-intro">
+      <h1>Demander une offre</h1>
+      <p class="legend">Remplissez le formulaire et nous vous répondrons rapidement avec une offre adaptée à votre copropriété.</p>
+    </div>
 
     <div class="form-wrap">
       <div class="notice">
         Les champs marqués d’un <span class="required">*</span> sont obligatoires.
       </div>
 
-      <!-- Substituir o action pelo seu endpoint (Formspree) configurado para syndic@immohoessen.be -->
+      <!-- Substituir o action abaixo pelo endpoint (Formspree) configurado para syndic@immohoessen.be -->
       <form action="https://formspree.io/f/SEU_ENDPOINT_AQUI" method="POST" id="offreForm" class="form-offre" novalidate>
         <div class="form-grid">
           <div>
@@ -70,8 +73,8 @@
           </div>
 
           <div>
-            <label for="etages">Nombre d’étages</label>
-            <input type="number" id="etages" name="nombre_etages" min="0" step="1" placeholder="ex. 4" />
+            <label for="etages">Nombre d’étages <span class="required">*</span></label>
+            <input type="number" id="etages" name="nombre_etages" min="0" step="1" placeholder="ex. 4" required />
           </div>
 
           <div class="full">
@@ -80,7 +83,7 @@
           </div>
 
           <div>
-            <label for="syndic">Déjà un syndic ?</label>
+            <label for="syndic">Avez-vous déjà un syndic ?</label>
             <select id="syndic" name="deja_syndic">
               <option value="" selected>— Sélectionner —</option>
               <option value="oui">Oui</option>
@@ -99,8 +102,8 @@
           </div>
 
           <div class="full">
-            <label for="message">Message <span class="required">*</span></label>
-            <textarea id="message" name="message" rows="6" required placeholder="Plus vous donnez de détails, plus l’offre sera précise."></textarea>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Plus vous donnez de détails, plus l’offre sera précise."></textarea>
           </div>
         </div>
 
@@ -112,13 +115,11 @@
         <div class="actions">
           <button type="submit" class="btn btn-primary">Envoyer la demande</button>
         </div>
-
-        <p class="help" style="margin-top:10px">Les demandes sont reçues à <strong>syndic@immohoessen.be</strong>.</p>
       </form>
     </div>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (sem e-mail) -->
   <footer class="site-footer">
     <div class="container legal">
       <small>© 2025 Immo Hoessen — Tous droits réservés. • 
@@ -128,7 +129,7 @@
   </footer>
 
   <script>
-    // Toggle du menu mobile (igual ao restante do site)
+    // Toggle do menu mobile
     const toggle = document.querySelector('.nav-toggle');
     const menu = document.querySelector('.nav-menu');
     if (toggle) {

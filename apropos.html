@@ -3,44 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Urgence — Immo Hoessen</title>
+  <title>À propos — Immo Hoessen</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     :root{
-      --blue-dark:#0b2a5a;
-      --blue:#1756ff;
+      --blue-dark:#0b2a5a;  /* titres bleu foncé */
+      --blue:#1756ff;       /* texte bleu moyen / accents */
       --border:#e6efe9;
-      --text:#1e4e3d;
-      --card:#ffffff;
     }
-    /* Nav branca (coerente com a capa) */
+    /* Nav blanche (cohérente avec la capa) */
     .nav{background:#fff; border-bottom:1px solid var(--border);}
     .nav a{color:var(--blue-dark); font-weight:600;}
     .nav .cta{padding:.55rem .9rem; border:1px solid var(--blue); border-radius:10px;}
 
-    /* Cabeçalho */
-    .hero-urgence{
+    /* En-tête */
+    .hero-apropos{
       padding:3rem 1rem; text-align:center;
       background:linear-gradient(120deg,#f4f8fb,#eef4fb);
       border-bottom:1px solid var(--border);
     }
-    .hero-urgence h1{color:var(--blue-dark); margin:0 0 .4rem;}
-    .hero-urgence p{color:var(--text); margin:0;}
+    .hero-apropos h1{color:var(--blue-dark); margin:0 0 .4rem;}
 
-    /* Cartão de urgência */
-    .urgence{
-      max-width:780px; margin:2rem auto; padding:1.6rem 1.25rem; text-align:center;
-      background:var(--card); border-radius:16px; border:1px solid var(--border);
-      box-shadow:0 10px 28px rgba(2,8,23,.06);
-    }
-    .urgence p{color:var(--text); font-size:1.04rem; margin:.3rem 0 1rem;}
-    .num{
-      display:block; margin:.4rem auto; font-weight:800; font-size:1.35rem;
-      color:#0b2a5a;
-      text-decoration:none;
-    }
-    .num:hover{opacity:.9}
-    .note{color:#557a68; font-size:.92rem; margin-top:.6rem;}
+    /* Bloc compact */
+    .apropos-compact{ max-width:980px; margin:2rem auto; padding:0 1rem; }
+    .title-blue{ color:var(--blue-dark); margin:.5rem 0 .25rem; }
+    .text-blue{ color:var(--blue); }
+
+    /* Option: petites puces propres */
+    .list{ margin:.25rem 0 0 1rem; color:var(--blue); }
+    .list li{ margin:.25rem 0; }
   </style>
 </head>
 <body>
@@ -54,17 +45,40 @@
     <a href="urgence.html">Urgence</a>
   </nav>
 
-  <header class="hero-urgence">
-    <h1>Urgence</h1>
-    <p>En cas d’urgence en dehors des horaires du bureau</p>
+  <header class="hero-apropos">
+    <h1>À propos</h1>
+    <p class="text-blue" style="margin:0;">Syndic fondé par Laurent Hoessen à Bruxelles</p>
   </header>
 
-  <main>
-    <section class="urgence">
-      <p>Veuillez contacter immédiatement&nbsp;:</p>
-      <a class="num" href="tel:+32495543808">0495 54 38 08</a>
-      <a class="num" href="tel:+32495261683">0495 26 16 83</a>
-      <p class="note">Horaires du bureau&nbsp;: Lun–Ven, 9h–13h</p>
+  <main class="apropos-compact">
+    <section>
+      <h2 class="title-blue">Notre histoire</h2>
+      <p class="text-blue">
+        Fondé en 2001 par <strong>Laurent Hoessen</strong>, notre syndic s’est imposé à Bruxelles
+        grâce à une gestion <em>claire</em>, <em>transparente</em> et <em>proactive</em>, appuyée sur
+        une parfaite maîtrise du cadre bruxellois et des décisions toujours tracées.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="title-blue">Nos atouts</h2>
+      <p class="text-blue">
+        Disponibilité et réactivité au quotidien, communication directe avec les copropriétaires
+        et suivi technique rigoureux, du préventif à l’urgence, pour une gestion sereine et durable.
+      </p>
+      <ul class="list">
+        <li>Transparence comptable et accès facilité aux documents.</li>
+        <li>Délais de réponse courts et reporting régulier au conseil.</li>
+        <li>Respect du ROI et accompagnement par commissaire aux comptes.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="title-blue">Notre équipe</h2>
+      <p class="text-blue">
+        Une équipe <strong>multiculturelle et multilingue</strong> (FR / NL / EN / PT),
+        au plus près des besoins des immeubles, renforçant la proximité, la confiance et l’efficacité.
+      </p>
     </section>
   </main>
 

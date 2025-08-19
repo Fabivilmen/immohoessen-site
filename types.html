@@ -1,4 +1,3 @@
-```html
 <!doctype html>
 <html lang="fr">
 <head>
@@ -15,12 +14,12 @@
       --card:#ffffff;
     }
 
-    /* Nav blanc + liens bleus (cohérent avec la capa) */
+    /* Nav branco com letras azuis – igual à capa */
     .nav{background:#fff; border-bottom:1px solid var(--border);}
     .nav a{color:var(--blue-dark); font-weight:600;}
     .nav .cta{padding:.55rem .9rem; border:1px solid var(--blue); border-radius:10px;}
 
-    /* En-tête */
+    /* Cabeçalho */
     .hero-services{
       padding:3rem 1rem; text-align:center;
       background:linear-gradient(120deg,#f4f8fb,#eef4fb);
@@ -31,7 +30,7 @@
     }
     .hero-services p{color:var(--text); margin:0;}
 
-    /* Grid de 3 services */
+    /* Grid de 3 serviços */
     .services{
       max-width:1100px; margin:2rem auto; padding:0 1rem;
       display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem;
@@ -47,9 +46,9 @@
     .service-card h3{color:var(--blue-dark); margin:.45rem 0 .5rem; font-size:1.12rem;}
     .service-card p{color:var(--text); font-size:.95rem; line-height:1.5; margin:0 0 .6rem;}
 
-    /* Liste pro com “check” */
+    /* Lista profissional (checks) */
     .features{
-      list-style:none; padding:0; margin:.2rem 0 0; text-align:left;
+      list-style:none; padding:0; margin:.2rem auto 0; text-align:left;
       display:inline-block; max-width:92%;
     }
     .features li{
@@ -60,9 +59,8 @@
     .features li::before{
       content:""; position:absolute; left:.2rem; top:.52rem; width:14px; height:14px;
       border:2px solid var(--blue-dark); border-radius:50%;
-      box-shadow:inset 0 0 0 3px #fff; /* anel branco */
-      background:
-        radial-gradient(circle at 50% 50%, var(--blue) 0 3px, transparent 3px);
+      box-shadow:inset 0 0 0 3px #fff;
+      background:radial-gradient(circle at 50% 50%, var(--blue) 0 3px, transparent 3px);
     }
   </style>
 </head>
@@ -86,7 +84,7 @@
     <section class="services">
       <!-- 1) ADMINISTRATIF & COMPTABLE -->
       <article class="service-card">
-        <!-- Icône dossier/compta -->
+        <!-- Ícone: dossier/compta -->
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <rect x="3" y="4" width="18" height="16" rx="2.5" stroke="#0b2a5a" stroke-width="1.6"/>
           <path d="M3 8.5h18M8 12h8M8 15h5" stroke="#1756ff" stroke-width="1.6" stroke-linecap="round"/>
@@ -94,16 +92,15 @@
         <h3>Gestion administrative et comptable</h3>
         <p>Comptabilité rigoureuse, budgets, appels de fonds et communication claire.</p>
         <ul class="features">
-          <li>Budgets prévisionnels et répartition des charges.</li>
-          <li>Appels de fonds, recouvrement et gestion des impayés.</li>
-          <li>Reporting périodique au conseil et accès aux documents via le portail.</li>
-          <li>Conformité IPI et archivage des pièces comptables.</li>
+          <li>Budgets prévisionnels & répartition des charges.</li>
+          <li>Appels de fonds, recouvrement & gestion des impayés.</li>
+          <li>Reporting périodique au conseil & archivage conforme IPI.</li>
         </ul>
       </article>
 
       <!-- 2) ASSEMBLÉES GÉNÉRALES -->
       <article class="service-card">
-        <!-- Icône assemblée/personnes -->
+        <!-- Ícone: assemblée/personnes -->
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <circle cx="8" cy="8" r="2.8" stroke="#0b2a5a" stroke-width="1.6"/>
           <circle cx="16" cy="8" r="2.8" stroke="#0b2a5a" stroke-width="1.6"/>
@@ -114,15 +111,14 @@
         <p>Préparation, tenue et suivi des décisions de l’AG.</p>
         <ul class="features">
           <li>Convocations, ordre du jour et dossiers techniques.</li>
-          <li>Présidence/assistance en séance & procès-verbaux signés.</li>
-          <li>Suivi des résolutions et communication aux copropriétaires.</li>
+          <li>Procès-verbaux signés & communication aux copropriétaires.</li>
           <li>Réunions régulières avec les membres du conseil.</li>
         </ul>
       </article>
 
       <!-- 3) SUIVI TECHNIQUE & MAINTENANCE -->
       <article class="service-card">
-        <!-- Icône outil/maintenance -->
+        <!-- Ícone: outil/maintenance -->
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M14.5 5.5c.3 1.6-.2 3.3-1.6 4.6l-6.6 6.6a2 2 0 0 0 2.9 2.9l6.6-6.6c1.3-1.3 3-1.9 4.6-1.6a5 5 0 0 0-6-6z" stroke="#0b2a5a" stroke-width="1.6"/>
           <path d="M7.5 16.5l-2 2" stroke="#1756ff" stroke-width="1.6" stroke-linecap="round"/>
@@ -130,10 +126,9 @@
         <h3>Suivi technique et maintenance</h3>
         <p>Gestion des prestataires, travaux et urgences avec traçabilité.</p>
         <ul class="features">
-          <li>Plan de maintenance pluriannuel et contrôles réglementaires.</li>
-          <li>Appels d’offres, comparatif de devis et réception des travaux.</li>
+          <li>Plan de maintenance & contrôles réglementaires.</li>
+          <li>Appels d’offres, comparatif de devis & réception des travaux.</li>
           <li>Gestion des sinistres jusqu’à indemnisation (assurance).</li>
-          <li>Astreinte et protocoles d’intervention en cas d’urgence.</li>
         </ul>
       </article>
     </section>
@@ -144,4 +139,3 @@
   </footer>
 </body>
 </html>
-```

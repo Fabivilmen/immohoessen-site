@@ -1,66 +1,50 @@
-
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Demande d’offre — Immo Hoessen</title>
-  <link rel="icon" href="favicon.ico" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <nav class="nav">
-    <a href="index.html">Accueil</a>
-    <a href="types.html">Nos services</a>
-    <a href="apropos.html">À propos</a>
-    <a href="contacts.html">Contact</a>
-    <a href="portail.html">Portail</a>
-    <a href="offre.html">Demande d’offre</a>
-    <a href="urgence.html">Urgence</a>
-  </nav>
+<a href="portail.html">Portail</a>
+<a class="active" href="offre.html">Demande d’offre</a>
+<a href="urgence.html">Urgence</a>
+</nav>
 
-  <main class="wrap">
-    <div class="section-head">
-      <h1>Demande d’offre</h1>
-    </div>
 
-    <section class="box-offre">
-      <!-- OFFLINE: redireciona; depois troque por Formspree -->
-      <form class="form" onsubmit="window.location.href='merci.html'; return false;">
-        <div class="row">
-          <input type="text" name="nom" placeholder="Votre nom" required>
-          <input type="email" name="email" placeholder="Votre email" required>
-        </div>
+<main class="wrap">
+<div class="section-head">
+<h1>Demande d’offre</h1>
+</div>
 
-        <div class="row">
-          <input type="tel" name="telephone" placeholder="Téléphone" required>
-          <input type="text" name="adresse" placeholder="Adresse de l’immeuble" required>
-        </div>
 
-        <div class="row">
-          <input type="number" name="lots" placeholder="Nombre de lots" min="0">
-          <input type="number" name="etages" placeholder="Nombre d’étages" min="0">
-        </div>
+<section class="box-offre">
+<form action="https://formspree.io/f/SEU_ID" method="POST" class="form">
+<input type="hidden" name="_subject" value="Demande d’offre — Site Immo Hoessen" />
+<input type="hidden" name="_next" value="https://fabivilmen.github.io/immohoessen-site/merci.html" />
 
-        <div class="row">
-          <select name="syndic_actuel" required>
-            <option value="" disabled selected>Avez-vous déjà un syndic ?</option>
-            <option value="oui">Oui</option>
-            <option value="non">Non</option>
-          </select>
 
-          <select name="garage" required>
-            <option value="" disabled selected>Garage/emplacement</option>
-            <option value="oui">Oui</option>
-            <option value="non">Non</option>
-          </select>
-        </div>
-
-        <textarea name="message" rows="4" placeholder="Votre message (optionnel)"></textarea>
-
-        <button class="btn-submit" type="submit">Envoyer la demande</button>
-      </form>
-    </section>
-  </main>
+<div class="row">
+<input type="text" name="nom" placeholder="Votre nom" required>
+<input type="email" name="email" placeholder="Votre email" required>
+</div>
+<div class="row">
+<input type="tel" name="telephone" placeholder="Téléphone" required>
+<input type="text" name="adresse" placeholder="Adresse de l’immeuble" required>
+</div>
+<div class="row">
+<input type="number" name="lots" inputmode="numeric" min="0" placeholder="Nombre de lots">
+<input type="number" name="etages" inputmode="numeric" min="0" placeholder="Nombre d’étages">
+</div>
+<div class="row">
+<select name="garage">
+<option value="" selected>Garage ?</option>
+<option value="oui">Oui</option>
+<option value="non">Non</option>
+</select>
+<select name="deja_syndic">
+<option value="" selected>Avez-vous déjà un syndic ?</option>
+<option value="oui">Oui</option>
+<option value="non">Non</option>
+</select>
+</div>
+<textarea name="message" rows="4" placeholder="Votre message (travaux, spécificités, etc.)"></textarea>
+<button type="submit" class="btn-submit">Envoyer la demande</button>
+</form>
+</section>
+</main>
 </body>
 </html>

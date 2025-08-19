@@ -1,84 +1,72 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portail — Immo Hoessen</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    :root{
-      --blue:#1756ff;       /* azul médio (títulos/botão/texto) */
-      --blue-dark:#0b2a5a;  /* azul escuro (links/nav) */
-      --border:#e6efe9;
-    }
+/* Paleta global (do projeto): verdes + azul da marca */
+:root{
+  --green-900:#0f3d2e;
+  --green-800:#1e4e3d;
+  --green-500:#557a68;
+  --brand-blue:#21578A; /* botões/links */
+  --text:#1e4e3d;
+  --bg:#ffffff;
+}
 
-    /* Nav branca como na capa */
-    .nav{background:#fff; border-bottom:1px solid var(--border);}
-    .nav a{color:var(--blue-dark); font-weight:600;}
-    .nav .cta{padding:.55rem .9rem; border:1px solid var(--blue); border-radius:10px;}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.55}
 
-    /* Área com marca d’água */
-    .portail-hero{
-      position:relative; min-height:70vh;
-      display:grid; place-items:center; padding:3.5rem 1rem; overflow:hidden;
-      isolation:isolate; /* garante sobreposição correta */
-    }
-    /* Marca d’água (use img/portail-illu.jpg no repo) */
-    .portail-hero::before{
-      content:""; position:absolute; inset:0; z-index:-1;
-      background-image:
-        url("img/portail-illu.jpg"),
-        url(".portail-illu.jpg"); /* fallback se você mantiver esse nome */
-      background-position:center; background-size:cover; background-repeat:no-repeat;
-      opacity:.20; filter:saturate(1.05) contrast(1.05);
-    }
+.container{max-width:1100px;margin:0 auto;padding:0 16px}
 
-    /* Cartão central */
-    .portail{
-      max-width:880px; width:100%;
-      background:#fff; border:1px solid var(--border); border-radius:16px;
-      box-shadow:0 10px 28px rgba(2,8,23,.06);
-      padding:2rem 1.5rem; text-align:center;
-    }
-    .portail h1{color:var(--blue-dark); margin:0 0 1rem; font-size:clamp(1.6rem,2.8vw,2.2rem);} /* ALTERADO AQUI */
-    .portail p{color:var(--blue); margin:.75rem 0; font-size:1.02rem;}
-    .portail strong{color:var(--blue);}
+/* ===== NAVBAR ===== */
+.site-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eaeaea;z-index:100}
+.navbar{display:flex;align-items:center;justify-content:space-between;min-height:60px}
+.brand{font-weight:700;color:var(--green-900);text-decoration:none}
+.nav-toggle{display:none;background:none;border:0;font-size:24px;cursor:pointer}
+.nav-menu{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+.nav-menu a{color:#0c2a22;text-decoration:none;padding:10px 6px;border-radius:8px}
+.nav-menu a:hover{background:#f2f6f4}
 
-    .btn{
-      display:inline-block; margin-top:1.1rem; padding:.75rem 1.25rem;
-      border-radius:10px; background:var(--blue); color:#fff; font-weight:700;
-      border:1px solid rgba(0,0,0,.06); text-decoration:none;
-    }
-    .btn:hover{filter:brightness(.95);}
-  </style>
-</head>
-<body>
-  <nav class="nav">
-    <a href="index.html">Accueil</a>
-    <a href="types.html">Nos services</a>
-    <a href="apropos.html">À propos</a>
-    <a href="contacts.html">Contact</a>
-    <a href="portail.html">Portail</a>
-    <a class="cta" href="offre.html">Demande d’offre</a>
-    <a href="urgence.html">Urgence</a>
-  </nav>
+/* Mobile nav */
+@media (max-width: 860px){
+  .nav-toggle{display:block}
+  .nav-menu{position:absolute;top:60px;right:16px;left:16px;flex-direction:column;background:#fff;border:1px solid #eaeaea;border-radius:12px;padding:8px;display:none}
+  .nav-menu.open{display:flex}
+}
 
-  <main class="portail-hero">
-    <div class="portail">
-      <h1>Portail des copropriétaires</h1>
-      <p>Accédez à vos <strong>documents</strong>, <strong>convocations</strong>,<br>
-         <strong>procès-verbaux</strong> et <strong>documents comptables</strong>.</p>
-      <p>Cliquez sur o link ci-dessous para acessar o portail.</p>
-      <p>Si vous n’avez pas encore de mot de passe ou d’identifiant, merci de prendre contact<br>
-         avec le gestionnaire de votre copropriété.</p>
-      <a class="btn" href="http://immohoessen.quickconnect.to" target="_blank" rel="noopener noreferrer">
-        Accéder au portail
-      </a>
-    </div>
-  </main>
+/* ===== HERO (capa) ===== */
+.hero{
+  position:relative;
+  min-height:90vh;              /* ocupa ~90% da viewport */
+  display:flex;align-items:center;
+  justify-content:center;
+  background: url("img/cover-plain2.jpg") center/cover no-repeat fixed; /* usa a sua imagem */
+  color:#fff;
+  isolation:isolate;            /* garante overlay acima do bg */
+}
+.hero__overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.30), rgba(0,0,0,.25));
+  backdrop-filter:saturate(110%) contrast(105%);
+  z-index:-1;
+}
+.hero__content{text-align:center;max-width:900px;padding:48px 16px}
+.hero__title{font-size:clamp(28px,5vw,48px);margin:0 0 10px}
+.hero__subtitle{font-size:clamp(16px,2.5vw,22px);opacity:.95;margin:0 0 24px}
 
-  <footer style="text-align:center; color:#1756ff; margin:1rem 0;">
-    © Immo Hoessen
-  </footer>
-</body>
-</html>
+/* Botões */
+.btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:600;border:2px solid transparent;transition:transform .06s ease,opacity .2s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--brand-blue);color:#fff}
+.btn-primary:hover{opacity:.9}
+.btn-outline{border-color:#fff;color:#fff;background:transparent}
+.btn-outline:hover{background:rgba(255,255,255,.08)}
+
+/* Seções comuns */
+.section{padding:56px 0}
+.section h2{color:var(--green-900);margin-top:0}
+
+/* ===== FOOTER ===== */
+.site-footer{border-top:1px solid #eaeaea;margin-top:40px}
+.footer-line, .legal{
+  display:flex;gap:10px;justify-content:center;align-items:center;
+  padding:12px 16px;color:#57615b
+}
+.footer-line a{color:var(--brand-blue);text-decoration:none}
+.footer-line a:hover{text-decoration:underline}

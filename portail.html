@@ -1,34 +1,56 @@
 
+```html
 <!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portail — Immo Hoessen</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .portail{
+      max-width:800px; margin:3rem auto; padding:2rem 1.5rem; text-align:center;
+      background:#fff; border-radius:16px; border:1px solid #e6efe9;
+      box-shadow:0 10px 28px rgba(2,8,23,.06);
+    }
+    .portail h1{color:#1756ff; margin-bottom:1rem;}
+    .portail p{color:#1e4e3d; margin:.75rem 0;}
+    .btn{
+      display:inline-block; margin-top:1.2rem; padding:.7rem 1.2rem;
+      border-radius:8px; background:#1756ff; color:#fff; font-weight:600;
+    }
+    .btn:hover{filter:brightness(.95);}
+    .note{color:#557a68; font-size:.95rem;}
+  </style>
 </head>
 <body>
   <nav class="nav">
     <a href="index.html">Accueil</a>
-    <a href="services.html">Nos services</a>
+    <a href="types.html">Nos services</a>
     <a href="apropos.html">À propos</a>
-    <a href="contact.html">Contact</a>
+    <a href="contacts.html">Contact</a>
     <a href="portail.html">Portail</a>
     <a href="offre.html">Demande d’offre</a>
     <a href="urgence.html">Urgence</a>
   </nav>
 
-  <main class="portail-watermark">
-    <div class="portail-text">
+  <main>
+    <div class="portail">
       <h1>Portail des copropriétaires</h1>
-      <p>Accédez à vos documents, convocations, procès-verbaux et informations en toute sécurité.</p>
-      <p><a class="btn btn-primary" href="#">Connexion au portail</a></p>
+      <p>Accédez à vos <strong>documents</strong>, <strong>convocations</strong>, 
+         <strong>procès-verbaux</strong> et <strong>documents comptables</strong> en toute sécurité.</p>
+      <p>Cliquez sur le lien ci-dessous pour accéder au portail.</p>
+      <p class="note">
+        Si vous n’avez pas encore de mot de passe ou d’identifiant, merci de prendre contact avec 
+        le gestionnaire de votre copropriété.
+      </p>
+      <a class="btn" href="http://immohoessen.quickconnect.to" target="_blank">Accéder au portail</a>
     </div>
   </main>
 
   <footer>
-    © Immo Hoessen — Horaires Lun–Ven 9h–17h · 
-    <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+    © Immo Hoessen — <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
   </footer>
 </body>
 </html>
+```

@@ -1,141 +1,124 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nos services — Immo Hoessen</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nos services — Laurent Hoessen</title>
+  <meta name="description" content="Une gestion complète et transparente pour vos copropriétés à Bruxelles." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nos services — Laurent Hoessen" />
+  <meta property="og:description" content="Gestion administrative, organisation des AG, suivi technique et maintenance pour copropriétés à Bruxelles." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/cover-plain2.jpg" />
+  <meta property="og:image:alt" content="Résidence moderne avec espaces verts" />
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Estilos específicos -->
   <style>
-    :root{
-      --blue-dark:#0b2a5a;  /* titres bleu foncé */
-      --blue:#1756ff;       /* accents/bordures */
-      --border:#e6efe9;
-      --text:#1e4e3d;       /* texte */
-      --card:#ffffff;
+    .services-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:22px;margin-top:28px
     }
-
-    /* Nav branco com letras azuis – igual à capa */
-    .nav{background:#fff; border-bottom:1px solid var(--border);}
-    .nav a{color:var(--blue-dark); font-weight:600;}
-    .nav .cta{padding:.55rem .9rem; border:1px solid var(--blue); border-radius:10px;}
-
-    /* Cabeçalho */
-    .hero-services{
-      padding:3rem 1rem; text-align:center;
-      background:linear-gradient(120deg,#f4f8fb,#eef4fb);
-      border-bottom:1px solid var(--border);
-    }
-    .hero-services h1{
-      color:var(--blue-dark); margin:0 0 .4rem; font-size:clamp(1.6rem,2.6vw,2rem);
-    }
-    .hero-services p{color:var(--text); margin:0;}
-
-    /* Grid de 3 serviços */
-    .services{
-      max-width:1100px; margin:2rem auto; padding:0 1rem;
-      display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem;
-    }
-    @media(max-width:1024px){ .services{ grid-template-columns:repeat(2,1fr);} }
-    @media(max-width:720px){ .services{ grid-template-columns:1fr;} }
-
     .service-card{
-      background:var(--card); border-radius:16px; padding:1.6rem 1.25rem; text-align:center;
-      box-shadow:0 8px 20px rgba(0,0,0,0.06); border:1px solid var(--border);
+      background:#fff;border:1px solid #e3eee7;border-radius:14px;
+      padding:20px;box-shadow:0 4px 16px rgba(0,0,0,.04)
     }
-    .service-card svg{width:58px; height:58px; display:block; margin:0 auto .7rem;}
-    .service-card h3{color:var(--blue-dark); margin:.45rem 0 .5rem; font-size:1.12rem;}
-    .service-card p{color:var(--text); font-size:.95rem; line-height:1.5; margin:0 0 .6rem;}
-
-    /* Lista profissional (checks) */
-    .features{
-      list-style:none; padding:0; margin:.2rem auto 0; text-align:left;
-      display:inline-block; max-width:92%;
+    .service-card h2{
+      margin:0 0 8px;color:var(--green-900);
+      font-size:20px
     }
-    .features li{
-      color:var(--text); font-size:.95rem; line-height:1.45;
-      padding:.28rem 0 .28rem 1.6rem; position:relative; border-top:1px dashed #e9efe9;
-    }
-    .features li:first-child{border-top:none}
-    .features li::before{
-      content:""; position:absolute; left:.2rem; top:.52rem; width:14px; height:14px;
-      border:2px solid var(--blue-dark); border-radius:50%;
-      box-shadow:inset 0 0 0 3px #fff;
-      background:radial-gradient(circle at 50% 50%, var(--blue) 0 3px, transparent 3px);
-    }
+    .service-card p{margin:0 0 12px}
+    .service-card ul{margin:0;padding-left:18px;color:#2b3a33}
+    .service-card li{margin:6px 0}
+    .section-title{text-align:center;margin-bottom:10px}
+    .section-sub{ text-align:center; max-width:720px; margin:0 auto 28px; color:#2b3a33 }
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <a href="index.html">Accueil</a>
-    <a href="types.html">Nos services</a>
-    <a href="apropos.html">À propos</a>
-    <a href="contacts.html">Contact</a>
-    <a href="portail.html">Portail</a>
-    <a class="cta" href="offre.html">Demande d’offre</a>
-    <a href="urgence.html">Urgence</a>
-  </nav>
-
-  <header class="hero-services">
-    <h1>Nos services</h1>
-    <p>Une gestion complète et transparente pour vos copropriétés</p>
+  <!-- NAV -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="index.html">Laurent Hoessen</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <ul class="nav-menu">
+        <li><a href="types.html" class="active">Nos services</a></li>
+        <li><a href="gestion.html">Gestion</a></li>
+        <li><a href="offre.html">Offre</a></li>
+        <li><a href="portail.html">Portail</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+        <li><a href="urgence.html">Urgence</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section class="services">
-      <!-- 1) ADMINISTRATIF & COMPTABLE -->
-      <article class="service-card">
-        <!-- Ícone: dossier/compta -->
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <rect x="3" y="4" width="18" height="16" rx="2.5" stroke="#0b2a5a" stroke-width="1.6"/>
-          <path d="M3 8.5h18M8 12h8M8 15h5" stroke="#1756ff" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-        <h3>Gestion administrative et comptable</h3>
+  <!-- MAIN -->
+  <main class="container section">
+    <h1 class="section-title">Nos services</h1>
+    <p class="section-sub">Une gestion complète et transparente pour vos copropriétés</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h2>Gestion administrative et comptable</h2>
         <p>Comptabilité rigoureuse, budgets, appels de fonds et communication claire.</p>
-        <ul class="features">
-          <li>Budgets prévisionnels & répartition des charges.</li>
-          <li>Appels de fonds, recouvrement & gestion des impayés.</li>
-          <li>Reporting périodique au conseil & archivage conforme IPI.</li>
+        <ul>
+          <li>Budgets prévisionnels & répartition des charges</li>
+          <li>Appels de fonds, recouvrement & gestion des impayés</li>
+          <li>Reporting périodique au conseil & archivage conforme IPI</li>
         </ul>
-      </article>
+      </div>
 
-      <!-- 2) ASSEMBLÉES GÉNÉRALES -->
-      <article class="service-card">
-        <!-- Ícone: assemblée/personnes -->
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="8" cy="8" r="2.8" stroke="#0b2a5a" stroke-width="1.6"/>
-          <circle cx="16" cy="8" r="2.8" stroke="#0b2a5a" stroke-width="1.6"/>
-          <path d="M3.5 18c.7-2.6 3.1-4.3 5.9-4.3s5.2 1.7 5.9 4.3" stroke="#1756ff" stroke-width="1.6" stroke-linecap="round"/>
-          <path d="M18.5 14.2c1.9.7 3.2 2.2 3.9 3.8" stroke="#1756ff" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-        <h3>Organisation des assemblées générales</h3>
+      <div class="service-card">
+        <h2>Organisation des assemblées générales</h2>
         <p>Préparation, tenue et suivi des décisions de l’AG.</p>
-        <ul class="features">
-          <li>Convocations, ordre du jour et dossiers techniques.</li>
-          <li>Procès-verbaux signés & communication aux copropriétaires.</li>
-          <li>Réunions régulières avec les membres du conseil.</li>
+        <ul>
+          <li>Convocations, ordre du jour et dossiers techniques</li>
+          <li>Procès-verbaux signés & communication aux copropriétaires</li>
+          <li>Réunions régulières avec les membres du conseil</li>
         </ul>
-      </article>
+      </div>
 
-      <!-- 3) SUIVI TECHNIQUE & MAINTENANCE -->
-      <article class="service-card">
-        <!-- Ícone: outil/maintenance -->
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M14.5 5.5c.3 1.6-.2 3.3-1.6 4.6l-6.6 6.6a2 2 0 0 0 2.9 2.9l6.6-6.6c1.3-1.3 3-1.9 4.6-1.6a5 5 0 0 0-6-6z" stroke="#0b2a5a" stroke-width="1.6"/>
-          <path d="M7.5 16.5l-2 2" stroke="#1756ff" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-        <h3>Suivi technique et maintenance</h3>
+      <div class="service-card">
+        <h2>Suivi technique et maintenance</h2>
         <p>Gestion des prestataires, travaux et urgences avec traçabilité.</p>
-        <ul class="features">
-          <li>Plan de maintenance & contrôles réglementaires.</li>
-          <li>Appels d’offres, comparatif de devis & réception des travaux.</li>
-          <li>Gestion des sinistres jusqu’à indemnisation (assurance).</li>
+        <ul>
+          <li>Plan de maintenance & contrôles réglementaires</li>
+          <li>Appels d’offres, comparatif de devis & réception des travaux</li>
+          <li>Gestion des sinistres jusqu’à indemnisation (assurance)</li>
         </ul>
-      </article>
-    </section>
+      </div>
+    </div>
   </main>
 
-  <footer style="text-align:center; color:#1756ff; margin:1rem 0;">
-    © Immo Hoessen
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-line">
+      <span>Horaires: Lun–Ven 9:00–17:00</span>
+      <span>•</span>
+      <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+    </div>
+    <div class="container legal">
+      <small>© <span id="year"></span> Immo Hoessen — Tous droits réservés.</small>
+    </div>
   </footer>
+
+  <script>
+    // Ano automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Toggle menu mobile
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-menu');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!open));
+        menu.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>

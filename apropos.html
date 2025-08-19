@@ -1,28 +1,66 @@
 
-<!-- Bloc “À propos” avec titres bleu foncé et texte bleu moyen -->
-<style>
-  .title-blue{ color:#0b2a5a; margin:.5rem 0 .25rem; }
-  .text-blue{ color:#1756ff; }
-  .apropos-compact{ max-width:980px; margin:1.25rem auto; padding:0 1rem; }
-</style>
+```html
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>À propos — Immo Hoessen</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root{
+      --blue-dark:#0b2a5a; /* titres bleu foncé */
+      --blue:#1756ff;      /* texte bleu moyen */
+      --border:#e6efe9;
+    }
+    /* Nav blanche avec lettres bleues (comme la capa) */
+    .nav{background:#fff; border-bottom:1px solid var(--border);}
+    .nav a{color:var(--blue-dark); font-weight:600;}
+    .nav .cta{padding:.55rem .9rem; border:1px solid var(--blue); border-radius:10px;}
 
-<section class="apropos-compact">
-  <h2 class="title-blue">Notre histoire</h2>
-  <p class="text-blue">
-    Fondé en 2001 par <strong>Laurent Hoessen</strong>, notre syndic s’est imposé à Bruxelles
-    par une gestion <em>claire</em>, <em>transparente</em> et <em>proactive</em>, appuyée sur
-    une parfaite maîtrise du cadre bruxellois et des décisions toujours tracées.
-  </p>
+    /* Bloc compact “À propos” */
+    .title-blue{ color:var(--blue-dark); margin:.5rem 0 .25rem; }
+    .text-blue{ color:var(--blue); }
+    .apropos-compact{ max-width:980px; margin:2rem auto; padding:0 1rem; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html">Accueil</a>
+    <a href="types.html">Nos services</a>
+    <a href="apropos.html">À propos</a>
+    <a href="contacts.html">Contact</a>
+    <a href="portail.html">Portail</a>
+    <a class="cta" href="offre.html">Demande d’offre</a>
+    <a href="urgence.html">Urgence</a>
+  </nav>
 
-  <h2 class="title-blue">Nos atouts</h2>
-  <p class="text-blue">
-    Disponibilité et réactivité au quotidien, communication directe avec les copropriétaires
-    et suivi technique rigoureux, du préventif à l’urgence.
-  </p>
+  <!-- Conteúdo -->
+  <section class="apropos-compact">
+    <h2 class="title-blue">Notre histoire</h2>
+    <p class="text-blue">
+      Fondé en 2001 par <strong>Laurent Hoessen</strong>, notre syndic s’est imposé à Bruxelles
+      par une gestion <em>claire</em>, <em>transparente</em> et <em>proactive</em>, appuyée sur
+      une parfaite maîtrise du cadre bruxellois et des décisions toujours tracées.
+    </p>
 
-  <h2 class="title-blue">Notre équipe</h2>
-  <p class="text-blue">
-    Une équipe <strong>multiculturelle et multilingue</strong> (FR / NL / EN / PT),
-    au plus près des besoins des immeubles, pour plus de proximité, de confiance et d’efficacité.
-  </p>
-</section>
+    <h2 class="title-blue">Nos atouts</h2>
+    <p class="text-blue">
+      Disponibilité et réactivité au quotidien, communication directe avec les copropriétaires
+      et suivi technique rigoureux, du préventif à l’urgence.
+    </p>
+
+    <h2 class="title-blue">Notre équipe</h2>
+    <p class="text-blue">
+      Une équipe <strong>multiculturelle et multilingue</strong> (FR / NL / EN / PT),
+      au plus près des besoins des immeubles, pour plus de proximité, de confiance et d’efficacité.
+    </p>
+  </section>
+
+  <!-- Rodapé sem e-mail -->
+  <footer style="text-align:center; color:#1756ff; margin:1rem 0;">
+    © Immo Hoessen
+  </footer>
+</body>
+</html>
+```

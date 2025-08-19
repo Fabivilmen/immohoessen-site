@@ -1,132 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Accueil — Immo Hoessen</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Laurent Hoessen — Gestion immobilière</title>
+  <meta name="description" content="Syndic de copropriété à Bruxelles. Gestion transparente, réactive et professionnelle." />
 
-  <!-- Fonte sutil para a frase -->
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&display=swap" rel="stylesheet">
+  <!-- Open Graph (pré-visualização) -->
+  <meta property="og:title" content="Laurent Hoessen — Gestion immobilière" />
+  <meta property="og:description" content="Syndic de copropriété à Bruxelles. Gestion transparente, réactive et professionnelle." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/cover-plain2.jpg" />
+  <meta property="og:image:alt" content="Résidence moderne avec espaces verts" />
 
-  <style>
-    :root{
-      --blue:#1756ff;     /* azul marca (links/cta) */
-      --nav-fg:#1756ff;   /* letras azuis no menu */
-      --nav-bg:#ffffff;   /* menu branco */
-      --footer:#031a3a;   /* rodapé azul-escuro */
-      --text:#1e4e3d;     /* texto padrão */
-    }
+  <!-- Preload da imagem de capa para entrar mais rápido -->
+  <link rel="preload" as="image" href="img/cover-plain2.jpg" imagesrcset="img/cover-plain2.jpg" />
 
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
-      color:var(--text); line-height:1.6; background:#fff;
-    }
-    a{color:var(--blue); text-decoration:none}
-    a:hover{text-decoration:underline}
-
-    /* MENU branco com letras azuis; CTA só no menu */
-    .nav{
-      position:absolute; top:0; left:0; right:0; z-index:20;
-      display:flex; gap:1.25rem; justify-content:center; align-items:center;
-      padding:1rem 1.25rem; background:var(--nav-bg);
-      border-bottom:1px solid #e6efe9;
-    }
-    .nav a{color:var(--nav-fg); font-weight:600}
-    .nav .cta{padding:.55rem .9rem; border:1px solid var(--blue); border-radius:10px;}
-
-    /* CAPA — 85% da tela com imagem como <img> para filtrar só ela */
-    .hero{
-      height:85vh; min-height:85vh;
-      position:relative; display:flex; align-items:center; justify-content:center; text-align:center; color:#fff;
-      overflow:hidden;
-    }
-    .hero-bg{
-      position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-      /* Leve “boost” de nitidez visual */
-      filter:saturate(1.08) contrast(1.08) brightness(1.04);
-      transform:translateZ(0);
-    }
-    /* overlay branco mais leve para clarear sem “lavar” a imagem */
-    .hero::after{
-      content:""; position:absolute; inset:0; background:rgba(255,255,255,.18); z-index:1;
-    }
-    .hero-content{position:relative; z-index:2; padding:2rem 1rem; max-width:900px}
-    .hero h1{margin:0 0 .5rem; font-size:clamp(2rem,4vw,3rem); color:#fff}
-    .hero p{margin:0; font-size:1.15rem; color:#fff}
-
-    /* Frase mais sutil no rodapé do hero */
-    .slogan{
-      position:absolute; left:50%; transform:translateX(-50%); bottom:5vh; z-index:2;
-      font-family:"Lora", serif; font-weight:500;
-      font-size:clamp(1.1rem,2vw,1.45rem); color:rgba(255,255,255,.92);
-      letter-spacing:.2px; text-shadow:0 2px 10px rgba(0,0,0,.25);
-      padding:.1rem .4rem;
-    }
-
-    /* Rodapé mais baixo e mais escuro */
-    .footer-wrap{ background:var(--footer); color:#fff; }
-    .footer-box{
-      display:grid; grid-template-columns:1.1fr .9fr; gap:1rem;
-      max-width:1100px; margin:0 auto; padding:0.9rem 0.9rem;
-    }
-    .footer-info p{margin:.18rem 0; color:#fff}
-    .footer-info strong{color:#fff}
-    .footer-bar{
-      text-align:center; color:#fff; padding:.6rem .9rem;
-      border-top:1px solid rgba(255,255,255,.18);
-    }
-    .footer-map iframe{width:100%; height:170px; border:0}
-    @media(max-width:900px){ .footer-box{grid-template-columns:1fr} }
-  </style>
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-  <!-- MENU -->
-  <nav class="nav">
-    <a href="index.html">Accueil</a>
-    <a href="types.html">Nos services</a>
-    <a href="apropos.html">À propos</a>
-    <a href="contacts.html">Contact</a>
-    <a href="portail.html">Portail</a>
-    <a class="cta" href="offre.html">Demande d’offre</a>
-    <a href="urgence.html">Urgence</a>
-  </nav>
-
-  <!-- CAPA -->
-  <header class="hero">
-    <!-- Imagem de fundo com srcset (use @2x quando você subir a versão maior) -->
-    <img
-      class="hero-bg"
-      src="img/cover-plain.jpg?v=5"
-      srcset="img/cover-plain.jpg?v=5 1280w, img/cover-plain@2x.jpg 2560w"
-      sizes="100vw"
-      alt="Immeuble à Bruxelles">
-    <div class="hero-content">
-      <h1>Laurent Hoessen</h1>
-      <p>Gestion immobilière Syndic BILH-DUHO</p>
-    </div>
-    <div class="slogan">Une gestion transparente et proactive de vos copropriétés</div>
+  <!-- NAV: mantenha igual às demais páginas -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="index.html">Laurent Hoessen</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <ul class="nav-menu">
+        <li><a href="types.html">Types</a></li>
+        <li><a href="gestion.html">Gestion</a></li>
+        <li><a href="offre.html">Offre</a></li>
+        <li><a href="portail.html">Portail</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- Se tiver "Urgence" como página separada:
+        <li><a href="urgence.html">Urgence</a></li> -->
+      </ul>
+    </nav>
   </header>
 
-  <!-- RODAPÉ COM COORDENADAS + MAPA -->
-  <footer class="footer-wrap">
-    <div class="footer-box">
-      <div class="footer-info">
-        <p><strong>Coordonnées :</strong></p>
-        <p><strong>Adresse :</strong> Avenue Heydenberg 14, 1200 Bruxelles</p>
-        <p><strong>Téléphone :</strong> +32 027725175</p>
-        <p><strong>Email :</strong> <a href="mailto:syndic@immohoessen.be" style="color:#fff; text-decoration:underline;">syndic@immohoessen.be</a></p>
-        <p><strong>Horaire :</strong> Lun–Ven, 9h–13h</p>
-      </div>
-      <div class="footer-map">
-        <iframe
-          src="https://www.google.com/maps?q=Avenue%20Heydenberg%2014,%201200%20Bruxelles&output=embed"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+  <!-- HERO (Capa) -->
+  <section class="hero" role="banner" aria-label="Image de couverture">
+    <div class="hero__overlay"></div>
+    <div class="hero__content container">
+      <h1 class="hero__title">Laurent Hoessen — Gestion immobilière</h1>
+      <p class="hero__subtitle">Votre syndic de confiance à Bruxelles</p>
+      <div class="hero__actions">
+        <a class="btn btn-primary" href="offre.html">Demander une offre</a>
+        <a class="btn btn-outline" href="portail.html">Accéder au portail</a>
       </div>
     </div>
-    <div class="footer-bar">© Immo Hoessen</div>
+  </section>
+
+  <!-- Conteúdo abaixo da capa (opcional) -->
+  <main class="container section">
+    <h2>Gestion claire, proactive et humaine</h2>
+    <p>Nous accompagnons les copropriétés avec transparence, réactivité et une communication continue.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-line">
+      <span>Horaires: Lun–Ven 9:00–17:00</span>
+      <span>•</span>
+      <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+    </div>
+    <div class="container legal">
+      <small>© <span id="year"></span> Laurent Hoessen — Tous droits réservés.</small>
+    </div>
   </footer>
+
+  <script>
+    // Ano automático no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Toggle do menu mobile
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-menu');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!open));
+        menu.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>
+

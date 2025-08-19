@@ -1,56 +1,78 @@
 
-/* ===== SAFE COLOR FIX (somente cores, zero layout) ===== */
 :root{
-  --heading:#0f172a;      /* títulos */
-  --text:#334155;         /* parágrafos */
-  --muted:#667085;        /* secundário */
-  --brand:#0ea5e9;        /* links/botões */
-  --brand-hover:#0284c7;
+  --heading:#0f3d2e;
+  --text:#1e4e3d;
+  --muted:#557a68;
+  --brand:#1756ff;
+  --nav-bg:#0b2a5a;   /* azul-escuro do menu (ou #0a3161) */
+  --nav-fg:#ffffff;   /* texto do menu */
+  --bg:#f7faf9;       /* preenchimento de fundo */
+  --card:#ffffff;
+  --border:#e6efe9;
 }
 
-/* Tipografia (apenas cor) */
-main h1, main h2, main h3,
-.section-head h1, .section-head h2, .card h3{
-  color:var(--heading) !important;
+/* Reset básico */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+  color:var(--text); background:var(--bg); line-height:1.65;
 }
-main p, main li, label, input, textarea, select,
-.muted, .role{
-  color:var(--text) !important;
-}
-a, a:visited{ color:var(--brand) !important; }
-a:hover{ color:var(--brand-hover) !important; }
+h1,h2,h3{color:var(--heading);line-height:1.25}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
 
-/* ===== NAV: capa intacta ===== */
-.home .nav{
-  background:#fff !important;
-  border-bottom:1px solid var(--line) !important;
-  box-shadow:none !important;
-  -webkit-backdrop-filter:none !important;
-  backdrop-filter:none !important;
+/* NAV (páginas internas) */
+.nav{
+  position:sticky; top:0; z-index:50;
+  display:flex; gap:1rem; align-items:center; justify-content:center;
+  padding:.8rem 1rem; background:var(--nav-bg);
+  border-bottom:1px solid rgba(255,255,255,.15);
 }
-.home .nav a{ color:var(--heading) !important; }
-.home .nav a:hover{ color:var(--brand) !important; background:transparent !important; }
+.nav a{color:var(--nav-fg); font-weight:600}
+.nav a:hover{text-decoration:underline}
 
-/* ===== NAV: páginas internas (azul-escuro + branco) ===== */
-body:not(.home) .nav{
-  background: linear-gradient(180deg, #0f2a6b, #13347f) !important;
-  border-bottom: 1px solid rgba(255,255,255,.12) !important;
-  box-shadow: 0 8px 24px rgba(2,8,23,.18) !important;
-}
-body:not(.home) .nav a{
-  color:#ffffff !important;
-  border-radius:10px;
-  padding:6px 10px;
-}
-body:not(.home) .nav a:hover{ background: rgba(255,255,255,.14) !important; color:#fff !important; }
-
-/* ===== Fundo discreto nas páginas internas (não afeta a capa) ===== */
-body:not(.home){
-  background:
-    radial-gradient(52rem 36rem at 0% 86%, rgba(253,232,208,.12) 0%, rgba(253,232,208,0) 60%),
-    #f7f5f2;
+/* Layout comum */
+.container{max-width:980px; margin:2rem auto; padding:0 1rem}
+.card{
+  background:var(--card); border:1px solid var(--border); border-radius:16px;
+  padding:1.25rem 1.5rem; box-shadow:0 10px 28px rgba(2,8,23,.06);
 }
 
-/* ===== Urgence: garante contraste e destaque dos telefones ===== */
-.urg{ color:var(--text) !important; text-align:center; }
-.urg a{ color:var(--brand) !important; font-weight:700; }
+/* Rodapé leve */
+footer{
+  margin:2rem auto 3rem; padding:1rem; text-align:center; color:var(--muted);
+}
+
+/* PORTAIL — watermark mais forte + texto central */
+.portail-watermark{
+  position:relative; padding:2rem 1rem; min-height:60vh; display:grid; place-items:center;
+}
+.portail-watermark::before{
+  content:""; position:absolute; inset:0;
+  background:url("assets/portail.jpg") center/cover no-repeat;
+  opacity:.42; filter:sepia(.08) saturate(1.05) contrast(1.02);
+  pointer-events:none;
+}
+.portail-watermark::after{
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(90deg, rgba(255,250,244,.92) 0%, rgba(255,248,240,.78) 45%, rgba(255,244,232,.30) 68%, rgba(255,244,232,0) 100%);
+  pointer-events:none;
+}
+.portail-text{
+  position:relative; z-index:1; max-width:760px; text-align:center;
+  background:rgba(255,248,240,.78); backdrop-filter: blur(2px);
+  border:1px solid #f3e9dc; border-radius:16px; padding:1rem 1.25rem;
+  box-shadow:0 8px 22px rgba(85,64,40,.05);
+}
+
+/* À PROPOS — faixa com gradiente verde, sem foto */
+.apropos-hero{
+  padding:3rem 1rem; background:linear-gradient(120deg,#f0f7f3, #e6f2ec);
+  border-bottom:1px solid var(--border); text-align:center;
+}
+
+/* Botões */
+.btn{display:inline-block; padding:.6rem .95rem; border-radius:10px; border:1px solid transparent}
+.btn-primary{background:var(--brand); color:#fff; border-color:rgba(0,0,0,.08)}
+.btn-primary:hover{filter:brightness(.95)}

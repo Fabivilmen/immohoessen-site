@@ -1,52 +1,56 @@
-/* =========================================================
-/* Botão genérico */
-.btn{
-display:inline-block; background:var(--brand); color:#fff;
-padding:.8rem 1.1rem; border-radius:12px; font-weight:600; text-decoration:none
-}
-.btn:hover{ background:var(--brand-hover) }
 
-
-/* ---------- À PROPOS ---------- */
-.apropos-page .propos-text{
-max-width: 900px; margin: 0 auto 1rem;
-text-align: justify; text-justify: inter-word; hyphens: auto; line-height: 1.7; color:var(--text);
-}
-.apropos-page .lead{ font-size: 1.05rem; }
-.apropos-page .pillars{
-max-width: 1000px; margin: 2rem auto 2rem;
-display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1rem;
-}
-.apropos-page .pillars .card p{ margin-top:.35rem; }
-.apropos-page .signature{ max-width:900px; margin: 1.25rem auto 0; color: var(--muted); font-style: italic; }
-.apropos-page .signature strong{ color: var(--heading); font-style: normal; }
-
-
-/* ---------- Portail (layout em 1 ou 2 colunas) ---------- */
-.portail-illu{ display:flex; justify-content:center; margin: 1rem auto 1.25rem; }
-.portail-illu img{
-max-width: 960px; width: 100%; height: auto;
-border-radius: 16px; box-shadow: 0 12px 32px rgba(2, 8, 23, .18);
-}
-.portail-split{
-display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; align-items:center; margin: 1.25rem 0 1.75rem;
-}
-.portail-text p{ margin:0; color: var(--text); line-height:1.7; text-align:justify; text-justify:inter-word; }
-.portail-media{ margin:0; padding:0; }
-.portail-media img{
-width:100%; height:auto; display:block; border-radius:16px;
-box-shadow:0 12px 32px rgba(2,8,23,.18); object-fit:cover;
-}
-@media (max-width: 960px){
-.portail-split{ grid-template-columns: 1fr; gap:1rem; }
-.portail-media{ order:-1; }
+/* ===== SAFE COLOR FIX (somente cores, zero layout) ===== */
+:root{
+  --heading:#0f172a;      /* títulos */
+  --text:#334155;         /* parágrafos */
+  --muted:#667085;        /* secundário */
+  --brand:#0ea5e9;        /* links/botões */
+  --brand-hover:#0284c7;
 }
 
+/* Tipografia (apenas cor) */
+main h1, main h2, main h3,
+.section-head h1, .section-head h2, .card h3{
+  color:var(--heading) !important;
+}
+main p, main li, label, input, textarea, select,
+.muted, .role{
+  color:var(--text) !important;
+}
+a, a:visited{ color:var(--brand) !important; }
+a:hover{ color:var(--brand-hover) !important; }
 
-/* ---------- Rodapé final ---------- */
-.site-footer{ padding:1.2rem 1rem 2rem; color:#94a3b8; text-align:center }
+/* ===== NAV: capa intacta ===== */
+.home .nav{
+  background:#fff !important;
+  border-bottom:1px solid var(--line) !important;
+  box-shadow:none !important;
+  -webkit-backdrop-filter:none !important;
+  backdrop-filter:none !important;
+}
+.home .nav a{ color:var(--heading) !important; }
+.home .nav a:hover{ color:var(--brand) !important; background:transparent !important; }
 
+/* ===== NAV: páginas internas (azul-escuro + branco) ===== */
+body:not(.home) .nav{
+  background: linear-gradient(180deg, #0f2a6b, #13347f) !important;
+  border-bottom: 1px solid rgba(255,255,255,.12) !important;
+  box-shadow: 0 8px 24px rgba(2,8,23,.18) !important;
+}
+body:not(.home) .nav a{
+  color:#ffffff !important;
+  border-radius:10px;
+  padding:6px 10px;
+}
+body:not(.home) .nav a:hover{ background: rgba(255,255,255,.14) !important; color:#fff !important; }
 
-/* ---------- Qualidade de vida ---------- */
-::placeholder{ color:#8aa0b4; opacity:1; }
-a, a:visited{ color:var(--brand); }
+/* ===== Fundo discreto nas páginas internas (não afeta a capa) ===== */
+body:not(.home){
+  background:
+    radial-gradient(52rem 36rem at 0% 86%, rgba(253,232,208,.12) 0%, rgba(253,232,208,0) 60%),
+    #f7f5f2;
+}
+
+/* ===== Urgence: garante contraste e destaque dos telefones ===== */
+.urg{ color:var(--text) !important; text-align:center; }
+.urg a{ color:var(--brand) !important; font-weight:700; }

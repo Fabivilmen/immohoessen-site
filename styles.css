@@ -1,40 +1,85 @@
 
+/* =========================================================
+   Immo Hoessen — styles.css (versão profissional)
+   - Paleta corporativa QUENTE (neutros elegantes)
+   - Tipografia consistente
+   - Capa (hero) preservada
+   - Menu azul-escuro APENAS nas páginas internas
+   ========================================================= */
+
+/* ---------- Tokens de design (cores & raios) ---------- */
 :root{
-  /* Ações/links principais (mantém seu azul de marca nos botões e e-mails) */
-  --primary:#0ea5e9;
-  --teal:#1699a2;
+  /* Marca / ações */
+  --brand:#0ea5e9;        /* links, botões (azul da marca) */
+  --brand-hover:#0284c7;
 
-  /* >>> PALETA DE TIPOGRAFIA (AGORA EM TONS DE AZUL) <<< */
-  --heading:#1a237e;  /* Títulos: azul marinho forte */
-  --text:#3f51b5;     /* Parágrafos: azul médio e legível */
-  --muted:#7986cb;    /* Secundário: azul suave e acinzentado */
+  /* Neutros tipográficos (quentes, legíveis) */
+  --heading:#0f172a;      /* títulos (charcoal) */
+  --text:#334155;         /* parágrafos (slate quente) */
+  --muted:#667085;        /* secundário */
 
-  /* Base do tema */
-  --bg:#ffffff;
+  /* Base / componentes */
+  --bg:#ffffff;           /* base da CAPA e cartões */
+  --bg-internal:#f7f5f2;  /* base das páginas internas (marfim quente) */
+  --line:#e9e2d9;         /* bordas quentes */
   --card:#ffffff;
-  --line:#e5eaf0;
   --radius:16px;
+
+  /* Nav interna (azul-escuro) */
+  --nav-navy-1:#0f2a6b;
+  --nav-navy-2:#13347f;
+  --nav-navy-border:rgba(255,255,255,.10);
 }
 
-*{box-sizing:border-box}
+/* ---------- Base ---------- */
+*{ box-sizing:border-box; }
+html, body { height: 100%; }
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif;
   color:var(--text);
-  background:var(--bg);
-  line-height:1.5;
+  line-height:1.6;
+  background:var(--bg); /* a CAPA usa este fundo */
 }
 
-/* NAV (igual em todas) */
+/* PÁGINAS INTERNAS: fundo corporativo quente (não afeta a CAPA) */
+body:not(.home){
+  background:
+    radial-gradient(60rem 40rem at 100% 0%, rgba(15,61,46,.12) 0%, rgba(15,61,46,0) 60%),
+    radial-gradient(52rem 36rem at 0% 86%,   rgba(253,232,208,.16) 0%, rgba(253,232,208,0) 60%),
+    var(--bg-internal);
+}
+
+/* ---------- Navegação ---------- */
 .nav{
   display:flex; gap:18px; align-items:center; justify-content:center;
-  padding:12px 16px; border-bottom:1px solid var(--line);
-  position:sticky; top:0; background:#fff; z-index:10;
+  padding:12px 16px; position:sticky; top:0; z-index:10;
+  border-bottom:1px solid var(--line);
+  background:#fff; /* padrão (CAPA) */
 }
-.nav a{color:var(--heading); text-decoration:none; font-weight:600}
-.nav a:hover{color:var(--primary)}
 
-/* CAPA */
+/* CAPA (home) — menu claro como na sua versão boa */
+.home .nav{
+  background:#fff !important;
+  border-bottom:1px solid var(--line) !important;
+  box-shadow:none !important;
+}
+.home .nav a{ color:var(--heading) !important; }
+.home .nav a:hover{ color:var(--brand) !important; background:transparent; }
+
+/* PÁGINAS INTERNAS — menu azul-escuro com letras brancas */
+body:not(.home) .nav{
+  background:linear-gradient(180deg, var(--nav-navy-1), var(--nav-navy-2)) !important;
+  border-bottom:1px solid var(--nav-navy-border) !important;
+  box-shadow:0 8px 24px rgba(2,8,23,.18);
+}
+.nav a{
+  text-decoration:none; font-weight:600; border-radius:10px; padding:6px 10px;
+}
+body:not(.home) .nav a{ color:#fff !important; }
+body:not(.home) .nav a:hover{ background:rgba(255,255,255,.14); color:#fff !important; }
+
+/* ---------- CAPA (hero) — preservada ---------- */
 .hero-visual{
   position:relative; min-height:70vh;
   display:flex; align-items:center; justify-content:center;
@@ -50,90 +95,81 @@ body{
   background:rgba(0,0,0,.10); backdrop-filter:saturate(1.2) blur(.5px);
   border-radius:20px; padding:28px 20px;
 }
-/* Título da capa (NÃO ALTERAR CORES DO HERO) */
-.hero-title{color:#fff; font-size:clamp(28px,5vw,50px); margin:0 0 .5rem}
-.hero-sub{color:#e8eef6; font-size:clamp(16px,2.2vw,20px); margin:0}
-.hero-subline{
-  display:block; margin-top:.35rem; font-weight:700;
-  font-size:clamp(18px, 2.6vw, 28px); color:#e8eef6;
-}
+.hero-title{ color:#fff; font-size:clamp(28px,5vw,50px); margin:0 0 .5rem; text-shadow:0 1px 2px rgba(0,0,0,.45); }
+.hero-sub{ color:#e8eef6; font-size:clamp(16px,2.2vw,20px); margin:0; text-shadow:0 1px 2px rgba(0,0,0,.35); }
+.hero-subline{ display:block; margin-top:.35rem; font-weight:700; font-size:clamp(18px, 2.6vw, 28px); color:#e8eef6; text-shadow:0 1px 2px rgba(0,0,0,.35); }
 
 /* Rodapé da capa (coordonnées + mapa) — manter claro */
-.hero-footer{background:#0b1220; color:#cbd5e1; border-top:1px solid rgba(255,255,255,.08)}
-.wrap-hero{max-width:1100px; margin:auto; padding:2rem 1rem}
-.grid-hero{display:grid; grid-template-columns:1.2fr .8fr; gap:1rem}
-.hero-footer a{color:#a7d5ff; text-decoration:none}
-.hero-footer a:hover{color:#d1e9ff}
-.hero-mini{color:#e6eef7; font-size:.95rem}
-.hero-map{width:100%; height:220px; border:0; border-radius:12px}
-@media (max-width:860px){ .grid-hero{grid-template-columns:1fr} }
+.hero-footer{ background:#0b1220; color:#cbd5e1; border-top:1px solid rgba(255,255,255,.08) }
+.wrap-hero{ max-width:1100px; margin:auto; padding:2rem 1rem }
+.grid-hero{ display:grid; grid-template-columns:1.2fr .8fr; gap:1rem }
+.hero-footer a{ color:#a7d5ff; text-decoration:none }
+.hero-footer a:hover{ color:#d1e9ff }
+.hero-mini{ color:#e6eef7; font-size:.95rem }
+.hero-map{ width:100%; height:220px; border:0; border-radius:12px }
+@media (max-width:860px){ .grid-hero{ grid-template-columns:1fr } }
 
-/* Conteúdo interno */
-.wrap{max-width:1100px; margin:auto; padding:3rem 1rem}
-.section-head{display:flex; align-items:center; justify-content:space-between; gap:1rem; margin:0 0 1rem;}
-.section-head h1,.section-head h2{margin:0; color:var(--heading)}
-@media (max-width:640px){ .section-head{flex-direction:column; align-items:flex-start} }
+/* ---------- Conteúdo interno ---------- */
+.wrap{ max-width:1100px; margin:auto; padding:3rem 1rem }
+.section-head{ display:flex; align-items:center; justify-content:space-between; gap:1rem; margin:0 0 1rem; }
+.section-head h1,.section-head h2{ margin:0; color:var(--heading); }
+@media (max-width:640px){ .section-head{ flex-direction:column; align-items:flex-start } }
 
-.muted{color:var(--muted); text-align:center}
+.muted{ color:var(--muted); text-align:center }
 
-/* Serviços (cards com ícones) */
-.grid-cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.25rem}
+/* ---------- Cards de serviços ---------- */
+.grid-cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.25rem }
 .card{
   background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
   padding:1.25rem; transition:.2s
 }
-.card:hover{box-shadow:0 10px 26px rgba(2,8,23,.06); transform:translateY(-2px)}
+.card:hover{ box-shadow:0 10px 26px rgba(2,8,23,.06); transform:translateY(-2px) }
 .ico{
   width:70px; height:70px; margin:-48px auto 8px;
   display:grid; place-items:center; border-radius:999px;
-  background:var(--teal); box-shadow:0 6px 20px rgba(22,153,162,.25)
+  background:#1699a2; box-shadow:0 6px 20px rgba(22,153,162,.25)
 }
-.ico img{width:36px; height:36px; filter:invert(1) brightness(2)}
-.card h3{margin:.4rem 0 .4rem; text-align:center; color:var(--heading)}
-.card p{text-align:center; color:var(--muted); margin:0}
+.ico img{ width:36px; height:36px; filter:invert(1) brightness(2) }
+.card h3{ margin:.4rem 0 .4rem; text-align:center; color:var(--heading) }
+.card p{ text-align:center; color:var(--muted); margin:0 }
 
-/* Contatos */
-.people{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem}
-.person{border:1px solid var(--line); border-radius:var(--radius); padding:1rem}
-.role{color:var(--muted); font-size:.95rem; margin:.2rem 0 .6rem}
-.person a{color:#0ea5e9; text-decoration:none; word-break:break-all}
-.person a:hover{text-decoration:underline}
+/* ---------- Contatos ---------- */
+.people{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem }
+.person{ border:1px solid var(--line); border-radius:var(--radius); padding:1rem; background:#fff; }
+.role{ color:var(--muted); font-size:.95rem; margin:.2rem 0 .6rem }
+.person a{ color:var(--brand); text-decoration:none; word-break:break-all }
+.person a:hover{ text-decoration:underline }
 
-/* Demande d’offre */
-.box-offre{background:#f7f9fc; border:1px solid var(--line); border-radius:20px; padding:2rem 1rem}
-.form{max-width:680px; margin:auto; display:grid; gap:1rem; text-align:left}
-.row{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
+/* ---------- Demande d’offre ---------- */
+.box-offre{
+  background:#fff;
+  border:1px solid var(--line); border-radius:20px;
+  padding:2rem 1rem; box-shadow:0 10px 30px rgba(2,8,23,.06);
+}
+.form{ max-width:680px; margin:auto; display:grid; gap:1rem; text-align:left }
+.row{ display:grid; grid-template-columns:1fr 1fr; gap:1rem }
 input, textarea, select{
   padding:.8rem; border:1px solid var(--line); border-radius:10px; width:100%;
-  color:var(--text)
+  color:var(--text); background:#fff;
 }
-select{appearance:auto; -webkit-appearance:auto; -moz-appearance:auto; background-color:#fff}
-.group{border:1px solid var(--line); border-radius:10px; padding:.8rem}
-.group legend{font-weight:600; padding:0 .4rem}
-.radio{display:flex; gap:1rem; align-items:center; flex-wrap:wrap}
-.btn-submit{background:var(--primary); color:#fff; padding:.9rem 1.2rem; border:none; border-radius:12px; font-weight:600; cursor:pointer}
-.btn-submit:hover{background:#0284c7}
+select{ appearance:auto; -webkit-appearance:auto; -moz-appearance:auto; }
+.group{ border:1px solid var(--line); border-radius:10px; padding:.8rem }
+.group legend{ font-weight:600; padding:0 .4rem }
+.radio{ display:flex; gap:1rem; align-items:center; flex-wrap:wrap }
+.btn-submit{ background:var(--brand); color:#fff; padding:.9rem 1.2rem; border:none; border-radius:12px; font-weight:600; cursor:pointer }
+.btn-submit:hover{ background:var(--brand-hover) }
 
-/* Botão genérico (Portail, etc.) */
+/* Botão genérico */
 .btn{
-  display:inline-block; background:var(--primary); color:#fff;
+  display:inline-block; background:var(--brand); color:#fff;
   padding:.8rem 1.1rem; border-radius:12px; font-weight:600; text-decoration:none
 }
-.btn:hover{background:#0284c7}
+.btn:hover{ background:var(--brand-hover) }
 
-/* Rodapé final */
-.site-footer{padding:1.2rem 1rem 2rem; color:#94a3b8; text-align:center}
-
-/* ---- Espaçamento: página de serviços ---- */
-.services-page { padding-top: 6.5rem; }
-.services-page .section-head { margin-bottom: 1rem; }
-.services-page .muted { margin-top:.5rem; margin-bottom: 3rem; }
-.services-page .grid-cards { margin-top: 3rem; margin-bottom: 3rem; }
-
-/* À PROPOS — leitura confortável */
+/* ---------- À PROPOS ---------- */
 .apropos-page .propos-text{
   max-width: 900px; margin: 0 auto 1rem;
-  text-align: justify; text-justify: inter-word; hyphens: auto; line-height: 1.7;
+  text-align: justify; text-justify: inter-word; hyphens: auto; line-height: 1.7; color:var(--text);
 }
 .apropos-page .lead{ font-size: 1.05rem; }
 .apropos-page .pillars{
@@ -141,19 +177,15 @@ select{appearance:auto; -webkit-appearance:auto; -moz-appearance:auto; backgroun
   display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1rem;
 }
 .apropos-page .pillars .card p{ margin-top:.35rem; }
-.apropos-page .signature{
-  max-width:900px; margin: 1.25rem auto 0; color: var(--muted); font-style: italic;
-}
+.apropos-page .signature{ max-width:900px; margin: 1.25rem auto 0; color: var(--muted); font-style: italic; }
 .apropos-page .signature strong{ color: var(--heading); font-style: normal; }
 
-/* Ilustração Portail (quando usar imagem solta) */
+/* ---------- Portail (layout em 1 ou 2 colunas) ---------- */
 .portail-illu{ display:flex; justify-content:center; margin: 1rem auto 1.25rem; }
 .portail-illu img{
   max-width: 960px; width: 100%; height: auto;
   border-radius: 16px; box-shadow: 0 12px 32px rgba(2, 8, 23, .18);
 }
-
-/* Portail split (se usar colunas) */
 .portail-split{
   display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; align-items:center; margin: 1.25rem 0 1.75rem;
 }
@@ -168,133 +200,9 @@ select{appearance:auto; -webkit-appearance:auto; -moz-appearance:auto; backgroun
   .portail-media{ order:-1; }
 }
 
-/* -------- GARANTIAS DE COR DA CAPA (não mexer) -------- */
-.hero-visual .hero-title{
-  color:#fff !important; text-shadow:0 1px 2px rgba(0,0,0,.45);
-}
-.hero-visual .hero-subline,
-.hero-visual .hero-sub{
-  color:#e8eef6 !important; text-shadow:0 1px 2px rgba(0,0,0,.35);
-}
+/* ---------- Rodapé final ---------- */
+.site-footer{ padding:1.2rem 1rem 2rem; color:#94a3b8; text-align:center }
 
-/* Faixa de coordonnées da capa (sempre claro) */
-.hero-footer,
-.hero-footer p,
-.hero-footer li,
-.hero-footer .hero-mini { color:#e6eef7 !important; }
-.hero-footer h3 { color:#fff !important; }
-.hero-footer a { color:#a7d5ff !important; }
-.hero-footer a:hover { color:#d1e9ff !important; }
-
-/* Placeholders mais legíveis */
+/* ---------- Qualidade de vida ---------- */
 ::placeholder{ color:#8aa0b4; opacity:1; }
-/* === Fundo suave global (não altera a CAPA) ==================== */
-body{
-  /* duas “nuvens” discretas nas bordas + base branca */
-  background:
-    radial-gradient(60rem 40rem at 100% 0%, rgba(15,61,46,.06) 0%, rgba(15,61,46,0) 60%),
-    radial-gradient(50rem 35rem at 0% 85%,  rgba(14,165,233,.05) 0%, rgba(14,165,233,0) 60%),
-    #ffffff;
-}
-
-/* (Opcional) dá um look de cartão ao conteúdo interno sem tocar no hero */
-.wrap{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(2,8,23,.06);
-  padding:2.25rem 1.25rem;
-  margin-top:1.25rem;
-}
-/* === Fundo corporativo em TODAS as páginas (menos na capa) === */
-body{
-  /* névoa verde + brilho discreto no canto superior direito */
-  background:
-    radial-gradient(60rem 40rem at 100% 0%, rgba(15,61,46,.08) 0%, rgba(15,61,46,0) 60%),
-    radial-gradient(50rem 35rem at   0% 85%, rgba(14,165,233,.06) 0%, rgba(14,165,233,0) 60%),
-    #f4faf7; /* verde névoa de base */
-}
-
-/* Na CAPA (home) mantém branco liso */
-body.home{
-  background:#ffffff;
-}
-/* Fundo corporativo — MUITO FORTE (todas as páginas, exceto a capa) */
-body:not(.home){
-  background:
-    radial-gradient(68rem 46rem at 100% 0%, rgba(15,61,46,.24) 0%, rgba(15,61,46,0) 62%),
-    radial-gradient(58rem 42rem at   0% 86%, rgba(14,165,233,.16) 0%, rgba(14,165,233,0) 62%),
-    #e9f4ef; /* base um tom mais carregada */
-}
-/* === Barra de menu com preenchimento (quente + vidro) === */
-:root{
-  --nav-bg-1: rgba(255,250,244,.92); /* marfim quente */
-  --nav-bg-2: rgba(255,250,244,.86);
-  --nav-border: #efe7db;
-}
-
-.nav{
-  background: linear-gradient(180deg, var(--nav-bg-1), var(--nav-bg-2)) !important;
-  -webkit-backdrop-filter: saturate(1.1) blur(8px);
-  backdrop-filter: saturate(1.1) blur(8px);
-  border-bottom: 1px solid var(--nav-border) !important;
-  box-shadow: 0 6px 20px rgba(85,64,40,.06);
-}
-
-/* (opcional) leve “pill” no hover, mantendo sua cor de link */
-.nav a{
-  border-radius: 10px;
-  padding: 6px 10px;
-}
-.nav a:hover{
-  background: rgba(15,61,46,.06);
-}
-/* === NAV azul-escuro com letras brancas (páginas internas) === */
-:root{
-  --nav-navy-1:#0f2a6b; /* azul escuro */
-  --nav-navy-2:#13347f; /* azul um tom abaixo */
-  --nav-navy-border:rgba(255,255,255,.10);
-}
-
-body:not(.home) .nav{
-  background: linear-gradient(180deg, var(--nav-navy-1), var(--nav-navy-2)) !important;
-  border-bottom: 1px solid var(--nav-navy-border) !important;
-  box-shadow: 0 8px 24px rgba(2,8,23,.18);
-}
-
-body:not(.home) .nav a{
-  color:#ffffff !important;
-  border-radius:10px;
-  padding:6px 10px;
-}
-
-body:not(.home) .nav a:hover,
-body:not(.home) .nav a:focus{
-  background: rgba(255,255,255,.14);
-  color:#ffffff !important;
-}
-/* ===== NÃO MEXER NA CAPA (home) ===== */
-.home .nav{
-  background:#fff !important;
-  border-bottom:1px solid var(--line) !important;
-  box-shadow:none !important;
-  -webkit-backdrop-filter:none !important;
-  backdrop-filter:none !important;
-}
-.home .nav a{
-  color:var(--heading) !important;
-}
-.home .nav a:hover{
-  background:transparent !important;
-  color:var(--primary) !important;
-}
-
-/* ===== NAV azul-escuro SÓ nas páginas internas ===== */
-body:not(.home) .nav{
-  background: linear-gradient(180deg, #0f2a6b, #13347f) !important;
-  border-bottom: 1px solid rgba(255,255,255,.10) !important;
-  box-shadow: 0 8px 24px rgba(2,8,23,.18);
-}
-
-}
-
+a, a:visited{ color:var(--brand); } /* evita “roxo visitado” */

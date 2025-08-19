@@ -1,4 +1,3 @@
-
 ```html
 <!doctype html>
 <html lang="fr">
@@ -8,19 +7,42 @@
   <title>Contact — Immo Hoessen</title>
   <link rel="stylesheet" href="styles.css">
   <style>
+    :root{
+      --blue-dark:#0b2a5a;
+      --blue:#1756ff;
+      --border:#e6efe9;
+      --text:#1e4e3d;
+      --card:#ffffff;
+    }
+    /* Nav branco com letras azuis (coerente com a capa) */
+    .nav{background:#fff; border-bottom:1px solid var(--border);}
+    .nav a{color:var(--blue-dark); font-weight:600;}
+    .nav .cta{padding:.55rem .9rem; border:1px solid var(--blue); border-radius:10px;}
+
+    /* Cabeçalho */
+    .hero-contact{
+      padding:3rem 1rem; text-align:center;
+      background:linear-gradient(120deg,#f4f8fb,#eef4fb);
+      border-bottom:1px solid var(--border);
+    }
+    .hero-contact h1{color:var(--blue-dark); margin:0 0 .4rem;}
+    .hero-contact p{color:var(--text); margin:0;}
+
+    /* Cards de contato */
     .contacts{
       max-width:1100px; margin:2rem auto; padding:0 1rem;
       display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.25rem;
     }
     .contact-card{
-      background:#fff; border-radius:16px; padding:1.25rem 1.5rem;
-      box-shadow:0 8px 20px rgba(0,0,0,0.06); border:1px solid #e6efe9;
+      background:var(--card); border-radius:16px; padding:1.25rem 1.5rem;
+      box-shadow:0 8px 20px rgba(0,0,0,0.06); border:1px solid var(--border);
     }
     .contact-card h3{
-      margin:.2rem 0 .4rem; font-size:1.15rem; color:#1756ff;
+      margin:.2rem 0 .4rem; font-size:1.15rem; color:var(--blue-dark);
     }
-    .contact-card p{margin:.2rem 0; color:#1e4e3d; font-size:.95rem}
-    .contact-card a{color:#1756ff; font-weight:500}
+    .role{margin:.1rem 0 .4rem; color:var(--text);}
+    .contact-card a{color:var(--blue); font-weight:600; text-decoration:none;}
+    .contact-card a:hover{text-decoration:underline;}
   </style>
 </head>
 <body>
@@ -30,56 +52,63 @@
     <a href="apropos.html">À propos</a>
     <a href="contacts.html">Contact</a>
     <a href="portail.html">Portail</a>
-    <a href="offre.html">Demande d’offre</a>
+    <a class="cta" href="offre.html">Demande d’offre</a>
     <a href="urgence.html">Urgence</a>
   </nav>
 
-  <header class="apropos-hero">
-    <h1 class="title-blue">Contact</h1>
-    <p class="lead">Notre équipe à votre service</p>
+  <header class="hero-contact">
+    <h1>Contact</h1>
+    <p>Notre équipe à votre service</p>
   </header>
 
   <main>
-    <div class="contacts">
-      <div class="contact-card">
+    <section class="contacts">
+      <article class="contact-card">
         <h3>Laurent Hoessen</h3>
-        <p>Syndic titulaire — IPI 105260</p>
+        <p class="role">Syndic titulaire — IPI 105260</p>
         <p><a href="mailto:laurent@immohoessen.be">laurent@immohoessen.be</a></p>
-      </div>
-      <div class="contact-card">
+      </article>
+
+      <article class="contact-card">
         <h3>André Hoessen</h3>
-        <p>Gestionnaire général & RH</p>
+        <p class="role">Gestionnaire général & RH</p>
         <p><a href="mailto:andre@immohoessen.be">andre@immohoessen.be</a></p>
-      </div>
-      <div class="contact-card">
+      </article>
+
+      <article class="contact-card">
         <h3>Viviane Ledieu</h3>
-        <p>Gestionnaire de sinistres</p>
+        <p class="role">Gestionnaire de sinistres</p>
         <p><a href="mailto:admin@immohoessen.be">admin@immohoessen.be</a></p>
-      </div>
-      <div class="contact-card">
+      </article>
+
+      <article class="contact-card">
         <h3>Patricia Boniface</h3>
-        <p>Gestionnaire collaboratrice</p>
+        <p class="role">Gestionnaire collaboratrice</p>
         <p><a href="mailto:gestion@immohoessen.be">gestion@immohoessen.be</a></p>
-      </div>
-      <div class="contact-card">
+      </article>
+
+      <article class="contact-card">
         <h3>Fabiane Menezes</h3>
-        <p>Assistante de gestion</p>
+        <p class="role">Assistante de gestion</p>
         <p><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></p>
-      </div>
-      <div class="contact-card">
+      </article>
+
+      <article class="contact-card">
         <h3>Uçarer Mikail</h3>
-        <p>Stagiaire (formation IPI)</p>
+        <p class="role">Stagiaire (formation IPI)</p>
         <p><a href="mailto:gestionaria@immohoessen.be">gestionaria@immohoessen.be</a></p>
-      </div>
-      <div class="contact-card">
+      </article>
+
+      <article class="contact-card">
         <h3>Envoi de factures</h3>
+        <p class="role">Adresse dédiée pour vos factures</p>
         <p><a href="mailto:factures@immohoessen.be">factures@immohoessen.be</a></p>
-      </div>
-    </div>
+      </article>
+    </section>
   </main>
 
-  <footer>
-    © Immo Hoessen — <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+  <footer style="text-align:center; color:#1756ff; margin:1rem 0;">
+    © Immo Hoessen
   </footer>
 </body>
 </html>

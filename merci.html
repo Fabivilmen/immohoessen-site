@@ -1,30 +1,63 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Merci — Immo Hoessen</title>
-<link rel="icon" href="favicon.ico" />
-<link rel="stylesheet" href="styles.css?v=40" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Merci — Laurent Hoessen</title>
+  <meta name="description" content="Merci pour votre demande d’offre. Nous vous contacterons très prochainement." />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<nav class="nav">
-<a href="index.html">Accueil</a>
-<a href="types.html">Nos services</a>
-<a href="apropos.html">À propos</a>
-<a href="contacts.html">Contact</a>
-<a href="portail.html">Portail</a>
-<a class="active" href="offre.html">Demande d’offre</a>
-<a href="urgence.html">Urgence</a>
-</nav>
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="index.html">Laurent Hoessen</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <ul class="nav-menu">
+        <li><a href="types.html">Types</a></li>
+        <li><a href="gestion.html">Gestion</a></li>
+        <li><a href="offre.html">Offre</a></li>
+        <li><a href="portail.html">Portail</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+        <li><a href="urgence.html">Urgence</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main class="container section" style="text-align:center;max-width:760px">
+    <h1>Merci pour votre demande</h1>
+    <p>Votre message a bien été envoyé. Nous vous répondrons très prochainement.</p>
+    <p>Si votre demande est urgente, vous pouvez nous écrire à
+      <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>.
+    </p>
+    <p>
+      <a class="btn btn-primary" href="index.html">Retour à l’accueil</a>
+    </p>
+  </main>
 
-<main class="wrap">
-<div class="section-head">
-<h1>Merci</h1>
-</div>
-<p class="muted">Votre demande a été envoyée. Nous vous contacterons très bientôt.</p>
-</main>
+  <footer class="site-footer">
+    <div class="container footer-line">
+      <span>Horaires: Lun–Ven 9:00–17:00</span>
+      <span>•</span>
+      <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+    </div>
+    <div class="container legal">
+      <small>© <span id="year"></span> Laurent Hoessen — Tous droits réservés.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-menu');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!open));
+        menu.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>

@@ -1,5 +1,4 @@
 
-```html
 <!doctype html>
 <html lang="fr">
 <head>
@@ -8,19 +7,50 @@
   <title>Portail — Immo Hoessen</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    .portail{
-      max-width:800px; margin:3rem auto; padding:2rem 1.5rem; text-align:center;
-      background:#fff; border-radius:16px; border:1px solid #e6efe9;
-      box-shadow:0 10px 28px rgba(2,8,23,.06);
+    :root{
+      --blue:#1756ff;       /* azul médio (títulos/botão/texto) */
+      --blue-dark:#0b2a5a;  /* azul escuro (links/nav) */
+      --border:#e6efe9;
     }
-    .portail h1{color:#1756ff; margin-bottom:1rem;}
-    .portail p{color:#1e4e3d; margin:.75rem 0;}
+
+    /* Nav branca como na capa */
+    .nav{background:#fff; border-bottom:1px solid var(--border);}
+    .nav a{color:var(--blue-dark); font-weight:600;}
+    .nav .cta{padding:.55rem .9rem; border:1px solid var(--blue); border-radius:10px;}
+
+    /* Área com marca d’água */
+    .portail-hero{
+      position:relative; min-height:70vh;
+      display:grid; place-items:center; padding:3.5rem 1rem; overflow:hidden;
+      isolation:isolate; /* garante sobreposição correta */
+    }
+    /* Marca d’água (use img/portail-illu.jpg no repo) */
+    .portail-hero::before{
+      content:""; position:absolute; inset:0; z-index:-1;
+      background-image:
+        url("img/portail-illu.jpg"),
+        url(".portail-illu.jpg"); /* fallback se você mantiver esse nome */
+      background-position:center; background-size:cover; background-repeat:no-repeat;
+      opacity:.20; filter:saturate(1.05) contrast(1.05);
+    }
+
+    /* Cartão central */
+    .portail{
+      max-width:880px; width:100%;
+      background:#fff; border:1px solid var(--border); border-radius:16px;
+      box-shadow:0 10px 28px rgba(2,8,23,.06);
+      padding:2rem 1.5rem; text-align:center;
+    }
+    .portail h1{color:var(--blue); margin:0 0 1rem; font-size:clamp(1.6rem,2.8vw,2.2rem);}
+    .portail p{color:var(--blue); margin:.75rem 0; font-size:1.02rem;}
+    .portail strong{color:var(--blue);}
+
     .btn{
-      display:inline-block; margin-top:1.2rem; padding:.7rem 1.2rem;
-      border-radius:8px; background:#1756ff; color:#fff; font-weight:600;
+      display:inline-block; margin-top:1.1rem; padding:.75rem 1.25rem;
+      border-radius:10px; background:var(--blue); color:#fff; font-weight:700;
+      border:1px solid rgba(0,0,0,.06); text-decoration:none;
     }
     .btn:hover{filter:brightness(.95);}
-    .note{color:#557a68; font-size:.95rem;}
   </style>
 </head>
 <body>
@@ -30,26 +60,26 @@
     <a href="apropos.html">À propos</a>
     <a href="contacts.html">Contact</a>
     <a href="portail.html">Portail</a>
-    <a href="offre.html">Demande d’offre</a>
+    <a class="cta" href="offre.html">Demande d’offre</a>
     <a href="urgence.html">Urgence</a>
   </nav>
 
-  <main>
+  <main class="portail-hero">
     <div class="portail">
       <h1>Portail des copropriétaires</h1>
-      <p>Accédez à vos <strong>procès-verbaux</strong> et <strong>documents comptables</strong>   
+      <p>Accédez à vos <strong>documents</strong>, <strong>convocations</strong>,
+         <strong>procès-verbaux</strong> et <strong>documents comptables</strong>.</p>
       <p>Cliquez sur le lien ci-dessous pour accéder au portail.</p>
-      <p class="note">
-        Si vous n’avez pas encore de mot de passe ou d’identifiant, merci de prendre contact avec 
-        le gestionnaire de votre copropriété.
-      </p>
-      <a class="btn" href="http://immohoessen.quickconnect.to" target="_blank">Accéder au portail</a>
+      <p>Si vous n’avez pas encore de mot de passe ou d’identifiant, merci de prendre contact
+         avec le gestionnaire de votre copropriété.</p>
+      <a class="btn" href="http://immohoessen.quickconnect.to" target="_blank" rel="noopener noreferrer">
+        Accéder au portail
+      </a>
     </div>
   </main>
 
-  <footer>
-    © Immo Hoessen — <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+  <footer style="text-align:center; color:#1756ff; margin:1rem 0;">
+    © Immo Hoessen
   </footer>
 </body>
 </html>
-```

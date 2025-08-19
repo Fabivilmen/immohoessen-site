@@ -47,7 +47,6 @@ body{
 .hero__overlay{
   position:absolute;inset:0;
   background:linear-gradient(180deg, rgba(0,0,0,.30), rgba(0,0,0,.25));
-  /* sem z-index negativo pra evitar bugs */
   z-index:0;
 }
 .hero__content{
@@ -87,4 +86,3 @@ body{
 }
 .footer-line a{color:var(--brand-blue);text-decoration:none}
 .footer-line a:hover{text-decoration:underline}
-

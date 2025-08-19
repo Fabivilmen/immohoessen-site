@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Laurent Hoessen — Gestion immobilière</title>
-  <meta name="description" content="Syndic de copropriété à Bruxelles. Gestion transparente, réactive et professionnelle." />
+  <meta name="description" content="Gestion immobilière à Bruxelles. Syndic BILH - DUHO. Gestion claire, proactive et humaine." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Laurent Hoessen — Gestion immobilière" />
-  <meta property="og:description" content="Syndic de copropriété à Bruxelles. Gestion transparente, réactive et professionnelle." />
+  <meta property="og:description" content="Gestion immobiliere - Syndic BILH - DUHO" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="img/cover-plain2.jpg" />
   <meta property="og:image:alt" content="Résidence moderne avec espaces verts" />
@@ -16,75 +16,58 @@
   <!-- Preload da imagem de capa -->
   <link rel="preload" as="image" href="img/cover-plain2.jpg" />
 
-  <!-- CSS global -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- NAV -->
-  <header class="site-header">
-    <nav class="navbar container">
-      <a class="brand" href="index.html">Laurent Hoessen</a>
-      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-      <ul class="nav-menu">
-        <li><a href="types.html">Types</a></li>
-        <li><a href="gestion.html">Gestion</a></li>
-        <li><a href="offre.html">Offre</a></li>
-        <li><a href="portail.html">Portail</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="contacts.html">Contact</a></li>
-        <li><a href="urgence.html">Urgence</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- HERO (Capa) -->
+  <!-- CAPA -->
   <section class="hero" role="banner" aria-label="Image de couverture">
     <div class="hero__overlay"></div>
     <div class="hero__content container">
-      <h1 class="hero__title">Laurent Hoessen — Gestion immobilière</h1>
-      <p class="hero__subtitle">Votre syndic de confiance à Bruxelles</p>
-      <div class="hero__actions">
-        <a class="btn btn-primary" href="offre.html">Demander une offre</a>
-        <a class="btn btn-outline" href="portail.html">Accéder au portail</a>
-      </div>
+      <h1 class="hero__title">Laurent Hoessen</h1>
+      <p class="hero__subtitle">Gestion immobiliere - Syndic BILH - DUHO</p>
     </div>
   </section>
 
-  <!-- Conteúdo -->
-  <main class="container section">
-    <h2>Gestion claire, proactive et humaine</h2>
-    <p>Nous accompagnons les copropriétés avec transparence, réactivité et une communication continue.</p>
+  <!-- FRASE ABAIXO -->
+  <main class="container phrase">
+    <p>Gestion claire, proactive et humaine</p>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-line">
-      <span>Horaires: Lun–Ven 9:00–17:00</span>
-      <span>•</span>
-      <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+  <!-- COORDONNÉES + MAP -->
+  <section class="contact-map container" aria-label="Coordonnées et localisation">
+    <div class="coords">
+      <h2>Coordonnées</h2>
+      <p><strong>Adresse</strong><br>Avenue Heydenberg 14, 1200 Bruxelles</p>
+
+      <p><strong>Tél.</strong><br>+32 02 772 51 75</p>
+
+      <p><strong>Email</strong><br>
+        <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+      </p>
+
+      <p><strong>Horaires</strong><br>Lun–Ven · 13h–17h</p>
     </div>
+
+    <div class="map">
+      <iframe
+        title="Localisation Immo Hoessen"
+        src="https://www.google.com/maps?q=Avenue+Heydenberg+14,+1200+Bruxelles&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- RODAPÉ LEGAL -->
+  <footer class="site-footer">
     <div class="container legal">
       <small>
-        © <span id="year"></span> Immo Hoessen — Tous droits réservés.
+        © 2025 Immo Hoessen — Tous droits réservés.
         &nbsp;•&nbsp;<a href="mentions-legales.html">Mentions légales</a>
       </small>
     </div>
   </footer>
-
-  <script>
-    // Ano automático no rodapé
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Toggle do menu mobile
-    const toggle = document.querySelector('.nav-toggle');
-    const menu = document.querySelector('.nav-menu');
-    if (toggle) {
-      toggle.addEventListener('click', () => {
-        const open = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!open));
-        menu.classList.toggle('open');
-      });
-    }
-  </script>
 </body>
 </html>

@@ -1,102 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portail — Immo Hoessen</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root{
+      --blue:#1756ff;       /* azul médio (títulos/botão/texto) */
+      --blue-dark:#0b2a5a;  /* azul escuro (links/nav) */
+      --border:#e6efe9;
+    }
 
-:root{
-  --heading:#0f3d2e;
-  --text:#1e4e3d;
-  --muted:#557a68;
-  --brand:#1756ff;
-  --nav-bg:#0b2a5a;   /* azul-escuro do menu (ou #0a3161) */
-  --nav-fg:#ffffff;   /* texto do menu */
-  --bg:#f7faf9;       /* preenchimento de fundo */
-  --card:#ffffff;
-  --border:#e6efe9;
-}
+    /* Nav branca como na capa */
+    .nav{background:#fff; border-bottom:1px solid var(--border);}
+    .nav a{color:var(--blue-dark); font-weight:600;}
+    .nav .cta{padding:.55rem .9rem; border:1px solid var(--blue); border-radius:10px;}
 
-/* Reset básico */
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
-  color:var(--text); background:var(--bg); line-height:1.65;
-}
-h1,h2,h3{color:var(--heading);line-height:1.25}
-a{color:var(--brand);text-decoration:none}
-a:hover{text-decoration:underline}
+    /* Área com marca d’água */
+    .portail-hero{
+      position:relative; min-height:70vh;
+      display:grid; place-items:center; padding:3.5rem 1rem; overflow:hidden;
+      isolation:isolate; /* garante sobreposição correta */
+    }
+    /* Marca d’água (use img/portail-illu.jpg no repo) */
+    .portail-hero::before{
+      content:""; position:absolute; inset:0; z-index:-1;
+      background-image:
+        url("img/portail-illu.jpg"),
+        url(".portail-illu.jpg"); /* fallback se você mantiver esse nome */
+      background-position:center; background-size:cover; background-repeat:no-repeat;
+      opacity:.20; filter:saturate(1.05) contrast(1.05);
+    }
 
-/* NAV (páginas internas) */
-.nav{
-  position:sticky; top:0; z-index:50;
-  display:flex; gap:1rem; align-items:center; justify-content:center;
-  padding:.8rem 1rem; background:var(--nav-bg);
-  border-bottom:1px solid rgba(255,255,255,.15);
-}
-.nav a{color:var(--nav-fg); font-weight:600}
-.nav a:hover{text-decoration:underline}
+    /* Cartão central */
+    .portail{
+      max-width:880px; width:100%;
+      background:#fff; border:1px solid var(--border); border-radius:16px;
+      box-shadow:0 10px 28px rgba(2,8,23,.06);
+      padding:2rem 1.5rem; text-align:center;
+    }
+    .portail h1{color:var(--blue-dark); margin:0 0 1rem; font-size:clamp(1.6rem,2.8vw,2.2rem);} /* ALTERADO AQUI */
+    .portail p{color:var(--blue); margin:.75rem 0; font-size:1.02rem;}
+    .portail strong{color:var(--blue);}
 
-/* Layout comum */
-.container{max-width:980px; margin:2rem auto; padding:0 1rem}
-.card{
-  background:var(--card); border:1px solid var(--border); border-radius:16px;
-  padding:1.25rem 1.5rem; box-shadow:0 10px 28px rgba(2,8,23,.06);
-}
+    .btn{
+      display:inline-block; margin-top:1.1rem; padding:.75rem 1.25rem;
+      border-radius:10px; background:var(--blue); color:#fff; font-weight:700;
+      border:1px solid rgba(0,0,0,.06); text-decoration:none;
+    }
+    .btn:hover{filter:brightness(.95);}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html">Accueil</a>
+    <a href="types.html">Nos services</a>
+    <a href="apropos.html">À propos</a>
+    <a href="contacts.html">Contact</a>
+    <a href="portail.html">Portail</a>
+    <a class="cta" href="offre.html">Demande d’offre</a>
+    <a href="urgence.html">Urgence</a>
+  </nav>
 
-/* Rodapé leve */
-footer{
-  margin:2rem auto 3rem; padding:1rem; text-align:center; color:var(--muted);
-}
+  <main class="portail-hero">
+    <div class="portail">
+      <h1>Portail des copropriétaires</h1>
+      <p>Accédez à vos <strong>documents</strong>, <strong>convocations</strong>,<br>
+         <strong>procès-verbaux</strong> et <strong>documents comptables</strong>.</p>
+      <p>Cliquez sur o link ci-dessous para acessar o portail.</p>
+      <p>Si vous n’avez pas encore de mot de passe ou d’identifiant, merci de prendre contact<br>
+         avec le gestionnaire de votre copropriété.</p>
+      <a class="btn" href="http://immohoessen.quickconnect.to" target="_blank" rel="noopener noreferrer">
+        Accéder au portail
+      </a>
+    </div>
+  </main>
 
-/* PORTAIL — watermark mais forte + texto central */
-.portail-watermark{
-  position:relative; padding:2rem 1rem; min-height:60vh; display:grid; place-items:center;
-}
-.portail-watermark::before{
-  content:""; position:absolute; inset:0;
-  background:url("assets/portail.jpg") center/cover no-repeat;
-  opacity:.42; filter:sepia(.08) saturate(1.05) contrast(1.02);
-  pointer-events:none;
-}
-.portail-watermark::after{
-  content:""; position:absolute; inset:0;
-  background: linear-gradient(90deg, rgba(255,250,244,.92) 0%, rgba(255,248,240,.78) 45%, rgba(255,244,232,.30) 68%, rgba(255,244,232,0) 100%);
-  pointer-events:none;
-}
-.portail-text{
-  position:relative; z-index:1; max-width:760px; text-align:center;
-  background:rgba(255,248,240,.78); backdrop-filter: blur(2px);
-  border:1px solid #f3e9dc; border-radius:16px; padding:1rem 1.25rem;
-  box-shadow:0 8px 22px rgba(85,64,40,.05);
-}
-
-/* À PROPOS — faixa com gradiente verde, sem foto */
-.apropos-hero{
-  padding:3rem 1rem; background:linear-gradient(120deg,#f0f7f3, #e6f2ec);
-  border-bottom:1px solid var(--border); text-align:center;
-}
-
-/* Botões */
-.btn{display:inline-block; padding:.6rem .95rem; border-radius:10px; border:1px solid transparent}
-.btn-primary{background:var(--brand); color:#fff; border-color:rgba(0,0,0,.08)}
-.btn-primary:hover{filter:brightness(.95)}
-:root{
-  --brand-blue:#1756ff;
-  --nav-fg:#0b2a5a;
-  --nav-bg:#ffffff;
-  --nav-border:#e6efe9;
-}
-
-/* NAV PADRÃO (todas as páginas internas) */
-.nav{
-  position: sticky; top:0; z-index:100;
-  display:flex; gap:1.25rem; justify-content:center; align-items:center;
-  padding:1rem 1.25rem; background:var(--nav-bg);
-  border-bottom:1px solid var(--nav-border);
-}
-.nav a{
-  color:var(--nav-fg); font-weight:600; text-decoration:none;
-  padding:.1rem .2rem; background:transparent !important;
-}
-.nav a:hover{ text-decoration:underline; }
-.nav .cta{
-  padding:.55rem .9rem; border:1px solid var(--brand-blue);
-  border-radius:10px; color:var(--brand-blue);
-}
-.nav .cta:hover{ background:var(--brand-blue); color:#fff; }
+  <footer style="text-align:center; color:#1756ff; margin:1rem 0;">
+    © Immo Hoessen
+  </footer>
+</body>
+</html>

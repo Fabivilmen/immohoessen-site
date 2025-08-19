@@ -3,71 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portail — Laurent Hoessen</title>
-  <meta name="description" content="Accédez au portail de votre copropriété géré par Laurent Hoessen à Bruxelles." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Portail — Laurent Hoessen" />
-  <meta property="og:description" content="Accédez au portail de votre copropriété géré par Laurent Hoessen à Bruxelles." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="img/cover-plain2.jpg" />
-  <meta property="og:image:alt" content="Résidence moderne avec espaces verts" />
-
-  <!-- CSS global -->
+  <title>Portail copropriétaires — Immo Hoessen</title>
+  <meta name="description" content="Accès au portail copropriétaires pour consulter les documents de votre copropriété." />
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Estilos específicos da página (marca d'água e layout central) -->
-  <style>
-    .portal-wrap{
-      min-height: calc(100vh - 60px - 120px); /* altura total menos nav+footer */
-      display:flex; align-items:center; justify-content:center;
-      padding:40px 16px;
-      position:relative; overflow:hidden; background:#f7faf8;
-      border-radius:16px; margin-top:24px;
-    }
-    .portal-watermark{
-      position:absolute; inset:0;
-      display:flex; align-items:center; justify-content:center;
-      pointer-events:none; user-select:none;
-      font-weight:800; letter-spacing:.2em;
-      font-size: min(20vw, 160px); color:#0f3d2e;
-      opacity:0.06; text-transform:uppercase;
-    }
-    .portal-card{
-      position:relative; z-index:1;
-      max-width:760px; width:100%;
-      background:#ffffff; border:1px solid #e3eee7; border-radius:16px;
-      box-shadow:0 6px 24px rgba(0,0,0,.06);
-      padding:28px;
-      text-align:center;
-    }
-    .portal-card h1{ margin:0 0 10px; color:var(--green-900) }
-    .portal-card p{ margin:0 0 18px }
-    .portal-actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:10px }
-    .portal-actions .btn{ min-width:200px }
-    .portal-help{
-      margin-top:18px; font-size:14px; color:#4d5a54
-    }
-    .portal-list{
-      margin-top:22px; text-align:left; color:#2b3a33
-    }
-    .portal-list li{ margin:6px 0 }
-    @media (max-width: 620px){
-      .portal-card{ padding:20px }
-      .portal-list{ font-size:15px }
-    }
-  </style>
 </head>
 <body>
-  <!-- NAV -->
+  <!-- HEADER -->
   <header class="site-header">
     <nav class="navbar container">
-      <a class="brand" href="index.html">Laurent Hoessen</a>
+      <a class="brand" href="index.html">Immo Hoessen</a>
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
       <ul class="nav-menu">
-        <li><a href="types.html">Types</a></li>
-        <li><a href="gestion.html">Gestion</a></li>
-        <li><a href="offre.html">Offre</a></li>
+        <li><a href="types.html">Notre gestion</a></li>
+        <li><a href="offre.html">Demande d’offre</a></li>
         <li><a href="portail.html" class="active">Portail</a></li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="contacts.html">Contact</a></li>
@@ -78,50 +26,34 @@
 
   <!-- MAIN -->
   <main class="container section">
-    <div class="portal-wrap" aria-label="Accès au portail de copropriété">
-      <div class="portal-watermark" aria-hidden="true">PORTAIL</div>
+    <h1>Portail copropriétaires</h1>
+    <p>
+      Pour consulter les documents de votre copropriété (procès-verbaux, documents comptables, ROI, contrats d’assurance, etc.), 
+      veuillez cliquer sur le lien ci-dessous.
+    </p>
+    <p>
+      Si vous n’avez pas encore reçu votre mot de passe ou si vous l’avez perdu, merci de prendre contact avec la gestionnaire 
+      de votre copropriété.
+    </p>
 
-      <section class="portal-card">
-        <h1>Portail de copropriété</h1>
-        <p>Consultez vos documents, suivez les interventions et échangez avec la gestion — en toute transparence.</p>
-
-        <div class="portal-actions">
-          <!-- Substitua o href pelo link real do seu portal -->
-          <a class="btn btn-primary" href="https://votre-portail.exemple" target="_blank" rel="noopener">Se connecter</a>
-          <a class="btn btn-outline" href="mailto:syndic@immohoessen.be">Demander un accès</a>
-        </div>
-
-        <ul class="portal-list">
-          <li>📄 PV d’assemblée, règlements, contrats et budgets toujours disponibles.</li>
-          <li>🛠️ Suivi des travaux et demandes d’intervention.</li>
-          <li>💬 Communication centralisée avec le syndic.</li>
-          <li>🔐 Accès sécurisé pour copropriétaires et locataires autorisés.</li>
-        </ul>
-
-        <p class="portal-help">Besoin d’aide&nbsp;? Écrivez-nous à
-          <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>.
-        </p>
-      </section>
+    <div style="margin-top:30px; text-align:center">
+      <a href="http://immohoessen.quickconnect.to" target="_blank" rel="noopener" class="btn btn-primary">
+        Accéder au portail
+      </a>
     </div>
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-line">
-      <span>Horaires: Lun–Ven 9:00–17:00</span>
-      <span>•</span>
-      <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
-    </div>
     <div class="container legal">
-      <small>© <span id="year"></span> Laurent Hoessen — Tous droits réservés.</small>
+      <small>© 2025 Immo Hoessen — Tous droits réservés. • 
+        <a href="mentions-legales.html">Mentions légales</a>
+      </small>
     </div>
   </footer>
 
   <script>
-    // Ano automático
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Toggle menu mobile
+    // Toggle du menu mobile
     const toggle = document.querySelector('.nav-toggle');
     const menu = document.querySelector('.nav-menu');
     if (toggle) {
@@ -134,3 +66,4 @@
   </script>
 </body>
 </html>
+

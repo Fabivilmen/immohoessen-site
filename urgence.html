@@ -1,75 +1,104 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Urgence — Immo Hoessen</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Urgence — Laurent Hoessen</title>
+  <meta name="description" content="En cas d’urgence en dehors des horaires du bureau, contactez nos numéros directs." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Urgence — Laurent Hoessen" />
+  <meta property="og:description" content="Numéros d’urgence pour copropriétés gérées par Immo Hoessen à Bruxelles." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/cover-plain2.jpg" />
+  <meta property="og:image:alt" content="Résidence moderne avec espaces verts" />
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="style.css" />
+
   <style>
-    :root{
-      --blue-dark:#0b2a5a;
-      --blue:#1756ff;
-      --border:#e6efe9;
-      --text:#1e4e3d;
-      --card:#ffffff;
+    .urgence-block{
+      max-width:700px;margin:0 auto;
+      background:#fff;border:1px solid #e3eee7;border-radius:14px;
+      padding:28px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,.06)
     }
-    /* Nav branca (coerente com a capa) */
-    .nav{background:#fff; border-bottom:1px solid var(--border);}
-    .nav a{color:var(--blue-dark); font-weight:600;}
-    .nav .cta{padding:.55rem .9rem; border:1px solid var(--blue); border-radius:10px;}
-
-    /* Cabeçalho */
-    .hero-urgence{
-      padding:3rem 1rem; text-align:center;
-      background:linear-gradient(120deg,#f4f8fb,#eef4fb);
-      border-bottom:1px solid var(--border);
+    .urgence-block h1{margin:0 0 16px;color:var(--green-900)}
+    .urgence-block p{margin:0 0 14px;color:#2b3a33}
+    .urgence-phones{
+      display:flex;flex-direction:column;gap:10px;margin:18px 0
     }
-    .hero-urgence h1{color:var(--blue-dark); margin:0 0 .4rem;}
-    .hero-urgence p{color:var(--text); margin:0;}
-
-    /* Cartão de urgência */
-    .urgence{
-      max-width:780px; margin:2rem auto; padding:1.6rem 1.25rem; text-align:center;
-      background:var(--card); border-radius:16px; border:1px solid var(--border);
-      box-shadow:0 10px 28px rgba(2,8,23,.06);
+    .urgence-phones a{
+      display:inline-block;font-size:20px;font-weight:700;
+      padding:12px 18px;border-radius:12px;
+      background:var(--brand-blue);color:#fff;text-decoration:none
     }
-    .urgence p{color:var(--text); font-size:1.04rem; margin:.3rem 0 1rem;}
-    .num{
-      display:block; margin:.4rem auto; font-weight:800; font-size:1.35rem;
-      color:#0b2a5a;
-      text-decoration:none;
+    .urgence-phones a:hover{opacity:.9}
+    .office-hours{
+      margin-top:20px;font-size:15px;color:#4d5a54
     }
-    .num:hover{opacity:.9}
-    .note{color:#557a68; font-size:.92rem; margin-top:.6rem;}
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <a href="index.html">Accueil</a>
-    <a href="types.html">Nos services</a>
-    <a href="apropos.html">À propos</a>
-    <a href="contacts.html">Contact</a>
-    <a href="portail.html">Portail</a>
-    <a class="cta" href="offre.html">Demande d’offre</a>
-    <a href="urgence.html">Urgence</a>
-  </nav>
-
-  <header class="hero-urgence">
-    <h1>Urgence</h1>
-    <p>En cas d’urgence en dehors des horaires du bureau</p>
+  <!-- NAV -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="index.html">Laurent Hoessen</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="types.html">Nos services</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+        <li><a href="portail.html">Portail</a></li>
+        <li><a href="offre.html">Demande d’offre</a></li>
+        <li><a href="urgence.html" class="active">Urgence</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section class="urgence">
-      <p>Veuillez contacter immédiatement&nbsp;:</p>
-      <a class="num" href="tel:+32495543808">0495 54 38 08</a>
-      <a class="num" href="tel:+32495261683">0495 26 16 83</a>
-      <p class="note">Horaires du bureau&nbsp;: Lun–Ven, 9h–13h</p>
-    </section>
+  <!-- MAIN -->
+  <main class="container section">
+    <div class="urgence-block">
+      <h1>Urgence</h1>
+      <p>En cas d’urgence en dehors des horaires du bureau,<br>veuillez contacter immédiatement :</p>
+
+      <div class="urgence-phones">
+        <a href="tel:+32495543808">0495 54 38 08</a>
+        <a href="tel:+32495261683">0495 26 16 83</a>
+      </div>
+
+      <div class="office-hours">
+        Horaires du bureau : Lun–Ven, 9h–13h
+      </div>
+    </div>
   </main>
 
-  <footer style="text-align:center; color:#1756ff; margin:1rem 0;">
-    © Immo Hoessen
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-line">
+      <span>Horaires: Lun–Ven 9:00–17:00</span>
+      <span>•</span>
+      <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+    </div>
+    <div class="container legal">
+      <small>© <span id="year"></span> Immo Hoessen — Tous droits réservés.</small>
+    </div>
   </footer>
+
+  <script>
+    // Ano automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Toggle menu mobile
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-menu');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!open));
+        menu.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>

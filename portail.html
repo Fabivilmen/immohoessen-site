@@ -1,57 +1,34 @@
-<!DOCTYPE html>
-opacity: 0.40; filter: sepia(.08) saturate(1.05) contrast(1.02);
-pointer-events: none;
-}
-.portail-watermark::after{
-content:""; position:absolute; inset:0;
-background: linear-gradient(90deg,
-rgba(255, 250, 244, .92) 0%, rgba(255, 248, 240, .78) 45%,
-rgba(255, 244, 232, .30) 68%, rgba(255, 244, 232, 0) 100%);
-pointer-events:none;
-}
-.portail-split{ position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: 1.25rem; align-items: center; justify-items: center; }
-.portail-text{ max-width: 760px; text-align: center; background: rgba(255, 248, 240, .78); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); border: 1px solid #f3e9dc; border-radius: 16px; padding: 1rem 1.25rem; box-shadow: 0 8px 22px rgba(85, 64, 40, .05); }
-.portail-text p{ margin: 0; color: var(--text); line-height: 1.7; }
-.portail-media{ margin:0; padding:0; display:none; }
-.portail-media img{ width:100%; height:auto; display:block; border-radius:16px; box-shadow:0 12px 32px rgba(2,8,23,.18); object-fit:cover; }
-@media (max-width: 960px){ .portail-watermark{ padding: 1rem; } .portail-watermark::before{ opacity: .32; background-size: cover; background-position: center; } .portail-watermark::after{ background: rgba(255,250,244,.88); } .portail-media{ display:block; } }
-</style>
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portail — Immo Hoessen</title>
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<nav class="nav">
-<a href="index.html">Accueil</a>
-<a href="types.html">Nos services</a>
-<a href="apropos.html">À propos</a>
-<a href="contacts.html">Contact</a>
-<a class="active" href="portail.html">Portail</a>
-<a href="offre.html">Demande d’offre</a>
-<a href="urgence.html">Urgence</a>
-</nav>
+  <nav class="nav">
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Nos services</a>
+    <a href="apropos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="portail.html">Portail</a>
+    <a href="offre.html">Demande d’offre</a>
+    <a href="urgence.html">Urgence</a>
+  </nav>
 
+  <main class="portail-watermark">
+    <div class="portail-text">
+      <h1>Portail des copropriétaires</h1>
+      <p>Accédez à vos documents, convocations, procès-verbaux et informations en toute sécurité.</p>
+      <p><a class="btn btn-primary" href="#">Connexion au portail</a></p>
+    </div>
+  </main>
 
-<main class="wrap portail-page">
-<div class="section-head">
-<h1>Portail</h1>
-</div>
-
-
-<section class="portail-watermark">
-<div class="portail-split">
-<div class="portail-text">
-<p>
-Pour accéder au portail de votre copropriété, cliquez sur le lien ci-dessous et connectez-vous avec
-les informations et le mot de passe remis en assemblée générale. Si vous ne les avez pas, merci de
-contacter le gestionnaire de votre copropriété.
-</p>
-<div style="margin-top:1rem;">
-<a class="btn" href="http://immohoessen.quickconnect.to" target="_blank" rel="noopener">Accéder au portail</a>
-</div>
-</div>
-<figure class="portail-media">
-<img src="img/portail-office.png" alt="Portail de copropriété sécurisé — Immo Hoessen" loading="lazy">
-</figure>
-</div>
-</section>
-</main>
+  <footer>
+    © Immo Hoessen — Horaires Lun–Ven 9h–17h · 
+    <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+  </footer>
 </body>
 </html>

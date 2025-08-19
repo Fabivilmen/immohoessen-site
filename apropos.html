@@ -1,94 +1,37 @@
 
-```html
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>À propos — Immo Hoessen</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Ajustes específicos desta página */
-    .hero-apropos{
-      padding:3rem 1rem; text-align:center;
-      background:linear-gradient(120deg,#f0f7f3,#e6f2ec);
-      border-bottom:1px solid #e6efe9;
-    }
-    .title-blue{ color:#1756ff; margin:0 0 .5rem; }
-    .lead{ color:#1756ff; font-size:1.05rem; margin:0; }
-    .container{ max-width:980px; margin:2rem auto; padding:0 1rem; }
-    .card{
-      background:#fff; border:1px solid #e6efe9; border-radius:16px;
-      padding:1.25rem 1.5rem; box-shadow:0 10px 28px rgba(2,8,23,.06);
-    }
-    .grid{
-      display:grid; gap:1rem; grid-template-columns:1fr 1fr;
-    }
-    .muted{ color:#1e4e3d; opacity:.9; }
-    @media (max-width:900px){ .grid{ grid-template-columns:1fr; } }
-  </style>
-</head>
-<body>
-  <nav class="nav">
-    <a href="index.html">Accueil</a>
-    <a href="types.html">Nos services</a>
-    <a href="apropos.html">À propos</a>
-    <a href="contacts.html">Contact</a>
-    <a href="portail.html">Portail</a>
-    <a href="offre.html">Demande d’offre</a>
-    <a href="urgence.html">Urgence</a>
-  </nav>
+<!-- Bloc résumé “À propos” (petit et harmonisé) -->
+<style>
+  .title-blue{ color:#0b2a5a; margin:.5rem 0 .25rem; }
+  .text-blue{ color:#1756ff; }
+  .apropos-compact{ max-width:980px; margin:1.25rem auto; padding:0 1rem; }
+  .apropos-compact ul{ margin:.5rem 0 0 1rem; padding:0; }
+  .apropos-compact li{ color:#1756ff; margin:.25rem 0; }
+</style>
 
-  <header class="hero-apropos">
-    <h1 class="title-blue">À propos</h1>
-    <p class="lead">Syndic fondé par M. Laurent Hoessen en 2001 — basé à Bruxelles</p>
-  </header>
+<section class="apropos-compact">
+  <h2 class="title-blue">Notre histoire</h2>
+  <p class="text-blue">
+    Depuis 2001 à Bruxelles, Immo Hoessen accompagne des copropriétés de toutes tailles
+    avec une gestion claire, transparente et proactive, fondée sur une connaissance précise
+    du cadre bruxellois et des décisions documentées.
+  </p>
 
-  <main class="container">
-    <div class="card">
-      <div class="grid">
-        <div>
-          <h2 class="title-blue">Notre histoire</h2>
-          <p class="muted">
-            Depuis 2001, Immo Hoessen accompagne des copropriétés de toutes tailles à Bruxelles.
-            Créé par <strong>Laurent Hoessen</strong>, notre syndic s’est développé autour d’une
-            idée simple&nbsp;: une gestion <em>claire</em>, <em>transparente</em> et <em>proactive</em>,
-            avec une communication directe et des décisions documentées.
-          </p>
-          <p class="muted">
-            Notre ancrage local nous permet de répondre rapidement, de connaître les
-            spécificités réglementaires bruxelloises et d’assurer un suivi technique rigoureux.
-          </p>
-        </div>
-        <div>
-          <h2 class="title-blue">Notre équipe</h2>
-          <p class="muted">
-            Nous sommes une <strong>équipe multiculturelle</strong> et multilingue
-            (FR / NL / EN / PT), afin d’être au plus près des besoins des
-            copropriétaires et des conseils de copropriété. Cette diversité
-            favorise la proximité, la confiance et la compréhension des attentes
-            de chaque immeuble.
-          </p>
-          <p class="muted">
-            Réunions régulières avec les membres du conseil, rapports clairs, et
-            plan d’actions suivi&nbsp;: tout est pensé pour une gestion sereine et durable.
-          </p>
-        </div>
-      </div>
+  <h2 class="title-blue">Notre équipe</h2>
+  <p class="text-blue">
+    Équipe multiculturelle et multilingue (FR / NL / EN / PT), au plus près des besoins
+    des copropriétaires et des conseils, pour une relation de confiance et de proximité.
+  </p>
 
-      <h2 class="title-blue" style="margin-top:1.25rem;">Nos engagements</h2>
-      <ul class="muted">
-        <li>Transparence comptable et accès facilité aux documents.</li>
-        <li>Communication proactive et délais de réponse courts.</li>
-        <li>Suivi technique structuré, du préventif à l’urgence.</li>
-        <li>Respect du ROI et accompagnement par commissaire aux comptes.</li>
-      </ul>
-    </div>
-  </main>
+  <h2 class="title-blue">Nos engagements</h2>
+  <ul>
+    <li>Transparence comptable et accès facilité aux documents.</li>
+    <li>Communication proactive et délais de réponse courts.</li>
+    <li>Suivi technique structuré, du préventif à l’urgence.</li>
+    <li>Respect du ROI et accompagnement par commissaire aux comptes.</li>
+  </ul>
+</section>
 
-  <footer>
-    © Immo Hoessen — <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
-  </footer>
-</body>
-</html>
-```
+<!-- Rodapé sem e-mail -->
+<footer style="text-align:center; color:#1756ff; margin:1.25rem 0;">
+  © Immo Hoessen
+</footer>

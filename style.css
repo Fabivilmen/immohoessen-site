@@ -1,88 +1,88 @@
-:root{
-  --green-900:#0f3d2e;
-  --green-800:#1e4e3d;
-  --green-500:#557a68;
-  --brand-blue:#21578A;
-  --text:#1e4e3d;
-  --bg:#ffffff;
-}
 
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--text); background:var(--bg); line-height:1.55;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Laurent Hoessen — Gestion immobilière</title>
+  <meta name="description" content="Syndic de copropriété à Bruxelles. Gestion transparente, réactive et professionnelle." />
 
-.container{max-width:1100px;margin:0 auto;padding:0 16px}
+  <!-- Open Graph -->
+  <meta property="og:title" content="Laurent Hoessen — Gestion immobilière" />
+  <meta property="og:description" content="Syndic de copropriété à Bruxelles. Gestion transparente, réactive et professionnelle." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/cover-plain2.jpg" />
+  <meta property="og:image:alt" content="Résidence moderne avec espaces verts" />
 
-/* ===== NAVBAR ===== */
-.site-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eaeaea;z-index:100}
-.navbar{display:flex;align-items:center;justify-content:space-between;min-height:60px}
-.brand{font-weight:700;color:var(--green-900);text-decoration:none}
-.nav-toggle{display:none;background:none;border:0;font-size:24px;cursor:pointer}
-.nav-menu{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-.nav-menu a{color:var(--green-900);text-decoration:none;padding:10px 6px;border-radius:8px}
-.nav-menu a:hover{background:#f2f6f4}
+  <!-- Preload da imagem de capa -->
+  <link rel="preload" as="image" href="img/cover-plain2.jpg" />
 
-/* Mobile nav */
-@media (max-width: 860px){
-  .nav-toggle{display:block}
-  .nav-menu{
-    position:absolute;top:60px;right:16px;left:16px;
-    flex-direction:column;background:#fff;border:1px solid #eaeaea;
-    border-radius:12px;padding:8px;display:none
-  }
-  .nav-menu.open{display:flex}
-}
+  <!-- CSS correto (renomeado para style.css) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="index.html">Laurent Hoessen</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <ul class="nav-menu">
+        <li><a href="types.html">Types</a></li>
+        <li><a href="gestion.html">Gestion</a></li>
+        <li><a href="offre.html">Offre</a></li>
+        <li><a href="portail.html">Portail</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+        <li><a href="urgence.html">Urgence</a></li>
+      </ul>
+    </nav>
+  </header>
 
-/* ===== HERO (capa) ===== */
-.hero{
-  position:relative;
-  min-height:90vh;
-  display:flex;align-items:center;justify-content:center;
-  background: url("img/cover-plain2.jpg") center/cover no-repeat fixed;
-  color:#fff;
-}
-.hero__overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(180deg, rgba(0,0,0,.30), rgba(0,0,0,.25));
-  z-index:0;
-}
-.hero__content{
-  position:relative; /* fica acima do overlay */
-  z-index:1;
-  text-align:center;max-width:900px;padding:48px 16px
-}
-.hero__title{font-size:clamp(28px,5vw,48px);margin:0 0 10px}
-.hero__subtitle{font-size:clamp(16px,2.5vw,22px);opacity:.95;margin:0 0 24px}
+  <!-- HERO (Capa) -->
+  <section class="hero" role="banner" aria-label="Image de couverture">
+    <div class="hero__overlay"></div>
+    <div class="hero__content container">
+      <h1 class="hero__title">Laurent Hoessen — Gestion immobilière</h1>
+      <p class="hero__subtitle">Votre syndic de confiance à Bruxelles</p>
+      <div class="hero__actions">
+        <a class="btn btn-primary" href="offre.html">Demander une offre</a>
+        <a class="btn btn-outline" href="portail.html">Accéder au portail</a>
+      </div>
+    </div>
+  </section>
 
-/* Evita glitch do 'fixed' em mobile */
-@media (max-width: 860px){
-  .hero{ background-attachment: scroll; }
-}
+  <!-- Conteúdo -->
+  <main class="container section">
+    <h2>Gestion claire, proactive et humaine</h2>
+    <p>Nous accompagnons les copropriétés avec transparence, réactivité et une communication continue.</p>
+  </main>
 
-/* Botões */
-.btn{
-  display:inline-block;padding:12px 18px;border-radius:12px;
-  text-decoration:none;font-weight:600;border:2px solid transparent;
-  transition:transform .06s ease,opacity .2s
-}
-.btn:active{transform:translateY(1px)}
-.btn-primary{background:var(--brand-blue);color:#fff}
-.btn-primary:hover{opacity:.9}
-.btn-outline{border-color:#fff;color:#fff;background:transparent}
-.btn-outline:hover{background:rgba(255,255,255,.08)}
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-line">
+      <span>Horaires: Lun–Ven 9:00–17:00</span>
+      <span>•</span>
+      <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+    </div>
+    <div class="container legal">
+      <small>© <span id="year"></span> Laurent Hoessen — Tous droits réservés.</small>
+    </div>
+  </footer>
 
-/* Seções comuns */
-.section{padding:56px 0}
-.section h2{color:var(--green-900);margin-top:0}
+  <script>
+    // Atualiza ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-/* ===== FOOTER ===== */
-.site-footer{border-top:1px solid #eaeaea;margin-top:40px}
-.footer-line, .legal{
-  display:flex;gap:10px;justify-content:center;align-items:center;
-  padding:12px 16px;color:#57615b
-}
-.footer-line a{color:var(--brand-blue);text-decoration:none}
-.footer-line a:hover{text-decoration:underline}
+    // Toggle menu mobile
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-menu');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!open));
+        menu.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>

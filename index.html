@@ -2,95 +2,48 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Accueil — Immo Hoessen</title>
-
-  <!-- Paleta tipográfica (verde) + links/botões azul-marca -->
-  <style>
-    :root{
-      --heading:#0f3d2e; /* títulos */
-      --text:#1e4e3d;    /* texto */
-      --muted:#557a68;   /* textos suaves */
-      --brand:#1756ff;   /* links/botões (azul da marca) */
-      --bg:#f6faf8;      /* fundo leve, apenas capa */
-      --nav-bg:rgba(255,255,255,.88); /* menu capa translúcido */
-      --nav-fg:#0f3d2e;
-      --card:#ffffff;
-      --border:#e6efe9;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.6;
-    }
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    /* NAV (capa mantém seu estilo próprio) */
-    .nav{
-      position:sticky; top:0; z-index:50;
-      display:flex; gap:1rem; align-items:center; justify-content:center;
-      padding:.75rem 1rem; background:var(--nav-bg); backdrop-filter:saturate(120%) blur(6px);
-      border-bottom:1px solid var(--border);
-    }
-    .nav a{color:var(--nav-fg); font-weight:600}
-    .hero{
-      min-height:72vh; display:grid; place-items:center; padding:6rem 1rem 3rem;
-      background:
-        linear-gradient(180deg, rgba(246,250,248,.9), rgba(246,250,248,.75)),
-        url("assets/hero.jpg") center/cover no-repeat;
-      text-align:center;
-    }
-    h1{margin:.2rem 0; font-size:clamp(1.6rem,2.8vw,2.4rem); color:var(--heading)}
-    .subtitle{color:var(--muted); font-size:1.05rem; margin:.25rem 0 1.25rem}
-    .card{
-      background:var(--card); border:1px solid var(--border); border-radius:16px;
-      padding:1rem 1.25rem; max-width:880px; margin:-2rem auto 2rem; box-shadow:0 10px 28px rgba(2,8,23,.06);
-    }
-    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem}
-    .grid div{background:#fff; border:1px solid var(--border); border-radius:12px; padding:1rem}
-    @media (max-width:960px){ .grid{grid-template-columns:1fr} }
-    footer{
-      margin:2rem auto 3rem; padding:1rem; text-align:center; color:var(--muted);
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <nav class="nav">
     <a href="index.html">Accueil</a>
-    <a href="services.html">Nos services</a>
+    <a href="types.html">Nos services</a>
     <a href="apropos.html">À propos</a>
-    <a href="contact.html">Contact</a>
+    <a href="contacts.html">Contact</a>
     <a href="portail.html">Portail</a>
     <a href="offre.html">Demande d’offre</a>
     <a href="urgence.html">Urgence</a>
   </nav>
 
   <header class="hero">
-    <div>
-      <h1>Laurent Hoessen Gestion immobilière — Syndic BILH-DUHO</h1>
-      <p class="subtitle">Syndic à Bruxelles — gestion transparente, technique et proactive</p>
-      <p>
-        <a href="offre.html">Demander une offre</a> ·
-        <a href="portail.html">Accéder au portail</a>
-      </p>
-    </div>
+    <h1>Laurent Hoessen</h1>
+    <p class="subtitle">Gestion immobilière — Syndic BILH-DUHO</p>
+    <p><a class="btn btn-primary" href="offre.html">Demander une offre</a></p>
   </header>
 
-  <main class="card">
-    <h3 style="margin-top:0">Coordonnées</h3>
-    <div class="grid">
-      <div><strong>Adresse</strong><br>Bruxelles, Belgique</div>
-      <div><strong>Horaires</strong><br>Lun–Ven, 9h–17h</div>
-      <div><strong>Email</strong><br><a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></div>
+  <main class="container">
+    <div class="card">
+      <h2>Bienvenue</h2>
+      <p>Votre syndic de confiance à Bruxelles, garantissant transparence et gestion proactive de vos copropriétés.</p>
     </div>
   </main>
 
-  <footer>
-    © Immo Hoessen — Horaires Lun–Ven 9h–17h · <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+  <footer class="footer-map">
+    <div class="footer-info">
+      <p><strong>Adresse :</strong> Avenue Heydenberg 14, 1200 Bruxelles</p>
+      <p><strong>Téléphone :</strong> +32 (0)2 123 45 67</p>
+      <p><strong>Email :</strong> <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></p>
+      <p><strong>Horaires :</strong> Lun–Ven, 9h–17h</p>
+    </div>
+    <div class="footer-map-embed">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.395206132907!2d4.4370926!3d50.8575234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3db34b4b88f4b%3A0x123456789abcdef!2sAvenue%20Heydenberg%2014%2C%201200%20Woluwe-Saint-Lambert!5e0!3m2!1sfr!2sbe!4v1690000000000"
+        width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
   </footer>
 </body>
 </html>

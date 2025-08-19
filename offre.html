@@ -1,182 +1,101 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Demande d’offre — Immo Hoessen</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Demander une offre — Laurent Hoessen</title>
+  <meta name="description" content="Demander une offre de gestion de copropriété à Bruxelles avec Laurent Hoessen." />
 
-  <link rel="stylesheet" href="styles.css?v=4">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Demander une offre — Laurent Hoessen" />
+  <meta property="og:description" content="Syndic de copropriété à Bruxelles. Gestion transparente, réactive et professionnelle." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/cover-plain2.jpg" />
+  <meta property="og:image:alt" content="Résidence moderne avec espaces verts" />
 
-  <style>
-    :root{
-      --brand-blue:#1756ff;   /* destaque (botões/links) */
-      --blue-dark:#0b2a5a;    /* títulos e nav */
-      --text:#1e4e3d;         /* corpo do texto */
-      --border:#e6efe9;       /* bordas suaves */
-      --card:#ffffff;         /* fundo do cartão/formulário */
-    }
-
-    /* NAV unificada (branca, letras azuis) */
-    .nav{
-      position:sticky; top:0; z-index:100;
-      display:flex; gap:1.25rem; justify-content:center; align-items:center;
-      padding:1rem 1.25rem; background:#fff; border-bottom:1px solid var(--border);
-    }
-    .nav a{color:var(--blue-dark); font-weight:600; text-decoration:none; padding:.1rem .2rem;}
-    .nav a:hover{text-decoration:underline;}
-    .nav .cta{
-      padding:.55rem .9rem; border:1px solid var(--brand-blue); border-radius:10px; color:var(--brand-blue);
-    }
-    .nav .cta:hover{background:var(--brand-blue); color:#fff;}
-
-    /* HERO */
-    .hero{
-      padding:2.5rem 1rem; text-align:center;
-      background:linear-gradient(120deg,#f4f8fb,#eef4fb);
-      border-bottom:1px solid var(--border);
-    }
-    .hero h1{color:var(--blue-dark); margin:0 0 .35rem;}
-    .hero p{color:var(--text); margin:0;}
-
-    /* FORM em seções (respirado) */
-    .wrap{max-width:980px; margin:2rem auto; padding:0 1rem;}
-    .card{
-      background:var(--card); border:1px solid var(--border); border-radius:16px;
-      box-shadow:0 12px 30px rgba(2,8,23,.06); padding:1.25rem 1.25rem; margin-bottom:1rem;
-    }
-    .card h2{
-      margin:.1rem 0 1rem; font-size:1.1rem; letter-spacing:.2px; color:var(--blue-dark);
-    }
-
-    form{margin-top:.25rem;}
-    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:1rem;}
-    .grid-3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem;}
-    @media (max-width:900px){ .grid-2,.grid-3{grid-template-columns:1fr;} }
-
-    label{display:block; margin:0 0 .35rem; color:var(--text); font-weight:600;}
-    .required{color:#d10000; margin-left:.15rem;}
-
-    input, select, textarea{
-      width:100%; padding:.7rem .8rem; border-radius:10px;
-      border:1px solid #cfd8d3; background:#fff; font-size:.96rem;
-    }
-    input:focus, select:focus, textarea:focus{
-      outline:none; border-color:var(--brand-blue);
-      box-shadow:0 0 0 2px rgba(23,86,255,.12);
-    }
-    textarea{min-height:140px; resize:vertical;}
-
-    .hint{color:#557a68; font-size:.9rem; margin:.2rem 0 0;}
-
-    .actions{display:flex; justify-content:flex-end; gap:.75rem; margin-top:1rem;}
-    .btn{
-      appearance:none; border:none; cursor:pointer;
-      padding:.9rem 1.5rem; border-radius:10px; font-weight:700;
-      background:var(--brand-blue); color:#fff; box-shadow:0 1px 0 rgba(0,0,0,.04);
-    }
-    .btn:hover{filter:brightness(.96);}
-    .btn.secondary{background:#fff; color:var(--blue-dark); border:1px solid var(--border);}
-  </style>
+  <!-- CSS global -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- NAV -->
-  <nav class="nav">
-    <a href="index.html">Accueil</a>
-    <a href="types.html">Nos services</a>
-    <a href="apropos.html">À propos</a>
-    <a href="contacts.html">Contact</a>
-    <a href="portail.html">Portail</a>
-    <a class="cta" href="offre.html">Demande d’offre</a>
-    <a href="urgence.html">Urgence</a>
-  </nav>
-
-  <!-- TÍTULO -->
-  <header class="hero">
-    <h1>Demander une offre</h1>
-    <p>Recevez une proposition personnalisée pour votre copropriété.</p>
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="index.html">Laurent Hoessen</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <ul class="nav-menu">
+        <li><a href="types.html">Types</a></li>
+        <li><a href="gestion.html">Gestion</a></li>
+        <li><a href="offre.html" class="active">Offre</a></li>
+        <li><a href="portail.html">Portail</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+        <li><a href="urgence.html">Urgence</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- FORM (envio para syndic@immohoessen.be via FormSubmit) -->
-  <main class="wrap">
-    <form action="https://formsubmit.co/syndic@immohoessen.be" method="POST" accept-charset="UTF-8">
-      <!-- anti-spam/honeypot -->
-      <input type="text" name="_honey" style="display:none">
-      <!-- configurações -->
-      <input type="hidden" name="_subject" value="Demande d’offre — Immo Hoessen">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://fabivilmen.github.io/immohoessen-site/merci.html">
+  <!-- MAIN -->
+  <main class="container section">
+    <h1>Demander une offre</h1>
+    <p>Vous souhaitez recevoir une offre personnalisée pour la gestion de votre copropriété à Bruxelles ? Remplissez le formulaire ci-dessous, nous vous répondrons dans les plus brefs délais.</p>
 
-      <section class="card">
-        <h2>Vos coordonnées</h2>
-        <div class="grid-2">
-          <div>
-            <label for="nom">Nom <span class="required">*</span></label>
-            <input id="nom" name="nom" type="text" required autocomplete="name" placeholder="Votre nom complet">
-          </div>
-          <div>
-            <label for="telephone">Téléphone</label>
-            <input id="telephone" name="telephone" type="tel" autocomplete="tel" placeholder="+32 …">
-          </div>
-          <div>
-            <label for="email">Email <span class="required">*</span></label>
-            <input id="email" name="email" type="email" required autocomplete="email" placeholder="nom@exemple.be">
-          </div>
-        </div>
-      </section>
+    <form action="https://formspree.io/f/xxxxxx" method="POST" class="form-offre">
+      <label>
+        Nom et prénom :<br>
+        <input type="text" name="nom" required>
+      </label><br><br>
 
-      <section class="card">
-        <h2>Immeuble concerné</h2>
-        <div class="grid-2">
-          <div>
-            <label for="adresse">Adresse de la copropriété <span class="required">*</span></label>
-            <input id="adresse" name="adresse" type="text" required placeholder="Rue, numéro, code postal, ville">
-          </div>
-          <div>
-            <label for="etages">Nombre d’étages <span class="required">*</span></label>
-            <input id="etages" name="etages" type="number" min="1" required placeholder="ex.: 5">
-          </div>
-        </div>
-        <div class="grid-3" style="margin-top:1rem;">
-          <div>
-            <label for="lots">Nombre de lots (optionnel)</label>
-            <input id="lots" name="lots" type="number" min="1" placeholder="ex.: 24">
-          </div>
-          <div>
-            <label for="parking">Garage ou emplacement</label>
-            <select id="parking" name="parking">
-              <option value="">Sélectionner…</option>
-              <option>Oui</option>
-              <option>Non</option>
-            </select>
-          </div>
-          <div>
-            <label for="syndic">Avez-vous déjà un syndic ?</label>
-            <select id="syndic" name="syndic">
-              <option value="">Sélectionner…</option>
-              <option>Oui</option>
-              <option>Non</option>
-              <option>Je ne sais pas</option>
-            </select>
-          </div>
-        </div>
-      </section>
+      <label>
+        Email :<br>
+        <input type="email" name="email" required>
+      </label><br><br>
 
-      <section class="card">
-        <h2>Message</h2>
-        
-        <textarea id="message" name="message" placeholder="Votre demande, précisions (ascenseur, chauffage, lots, travaux, sinistres, etc.)"></textarea>
-        <div class="actions">
-          <button type="reset" class="btn secondary">Effacer</button>
-          <button type="submit" class="btn">Envoyer</button>
-        </div>
-      </section>
+      <label>
+        Téléphone :<br>
+        <input type="tel" name="telephone">
+      </label><br><br>
+
+      <label>
+        Adresse de la copropriété :<br>
+        <input type="text" name="adresse" required>
+      </label><br><br>
+
+      <label>
+        Message :<br>
+        <textarea name="message" rows="5" required></textarea>
+      </label><br><br>
+
+      <button type="submit" class="btn btn-primary">Envoyer la demande</button>
     </form>
   </main>
 
-  <footer style="text-align:center; color:var(--brand-blue); margin:1rem 0;">
-    © Immo Hoessen
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-line">
+      <span>Horaires: Lun–Ven 9:00–17:00</span>
+      <span>•</span>
+      <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
+    </div>
+    <div class="container legal">
+      <small>© <span id="year"></span> Laurent Hoessen — Tous droits réservés.</small>
+    </div>
   </footer>
+
+  <script>
+    // Ano automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Toggle menu mobile
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-menu');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!open));
+        menu.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>
 

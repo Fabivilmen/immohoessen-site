@@ -1,148 +1,67 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>À propos — Laurent Hoessen</title>
-  <meta name="description" content="À propos de Laurent Hoessen — Gestion immobilière à Bruxelles. Transparence, réactivité et gestion de proximité." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="À propos — Laurent Hoessen" />
-  <meta property="og:description" content="Syndic de copropriété à Bruxelles. Gestion transparente, réactive et professionnelle." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="img/cover-plain2.jpg" />
-  <meta property="og:image:alt" content="Résidence moderne avec espaces verts" />
-
-  <!-- CSS global -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Acento em degradê verde (sem foto) -->
-  <style>
-    .about-accent{
-      margin-top:24px;border-radius:16px;overflow:hidden;
-      background: linear-gradient(135deg, #0f3d2e 0%, #1e4e3d 45%, #557a68 100%);
-      color:#fff;
-    }
-    .about-accent .wrap{
-      padding:36px 18px;max-width:1100px;margin:0 auto;
-      display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;
-    }
-    .about-accent h1{margin:0;font-size:clamp(26px,4.5vw,40px)}
-    .about-accent p{margin:8px 0 0;opacity:.95;max-width:720px}
-
-    .about-grid{
-      display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px
-    }
-    .card{
-      background:#fff;border:1px solid #e3eee7;border-radius:14px;padding:20px;
-      box-shadow:0 6px 24px rgba(0,0,0,.04)
-    }
-    .card h2{margin:0 0 8px;color:var(--green-900)}
-    .list{margin:10px 0 0;padding-left:18px}
-    .list li{margin:6px 0}
-    .contact-block{
-      margin-top:10px;font-size:15px;color:#2b3a33
-    }
-    .contact-block a{color:var(--brand-blue);text-decoration:none}
-    .contact-block a:hover{text-decoration:underline}
-
-    @media (max-width: 860px){
-      .about-grid{grid-template-columns:1fr}
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css?v=11" />
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
+  <meta name="description" content="À propos de Laurent Hoessen — Syndic fondé par Laurent Hoessen, avec le soutien de son co-fondateur, Monsieur André Hoessen, et d’une équipe multiculturelle.">
 </head>
 <body>
+
   <!-- NAV -->
   <header class="site-header">
-    <nav class="navbar container">
-      <a class="brand" href="index.html">Laurent Hoessen</a>
-      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-      <ul class="nav-menu">
-        <li><a href="types.html">Types</a></li>
-        <li><a href="gestion.html">Gestion</a></li>
-        <li><a href="offre.html">Offre</a></li>
-        <li><a href="portail.html">Portail</a></li>
-        <li><a href="apropos.html" class="active">À propos</a></li>
-        <li><a href="contacts.html">Contact</a></li>
-        <li><a href="urgence.html">Urgence</a></li>
-      </ul>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="index.html" aria-label="Accueil">
+        <img src="img/logo.svg" alt="Logo LH" width="28" height="28" />
+        <span>Laurent&nbsp;Hoessen</span>
+      </a>
+      <div class="menu">
+        <a href="index.html">Accueil</a>
+        <a href="types.html">Types de gestion</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="offre.html">Demande d’Offre</a>
+        <a href="plateforme.html">Accès à la plateforme</a>
+      </div>
     </nav>
   </header>
 
-  <!-- ACENTO LIMPO EM VERDE -->
-  <section class="about-accent" aria-label="En-tête de la page À propos">
-    <div class="wrap">
-      <div>
-        <h1>À propos</h1>
-        <p>Gestion immobilière de proximité à Bruxelles, avec transparence, réactivité et un suivi humain au quotidien.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- CONTEÚDO -->
-  <main class="container section">
-    <div class="about-grid">
-      <article class="card">
-        <h2>Notre mission</h2>
-        <p>Accompagner chaque copropriété avec une gestion claire et proactive : comptes à jour, communication régulière et interventions coordonnées pour la sérénité des occupants.</p>
-        <ul class="list">
-          <li>Transparence financière et administrative</li>
-          <li>Réactivité face aux urgences et incidents</li>
-          <li>Planification et suivi des travaux</li>
-          <li>Dialogue constant avec les copropriétaires</li>
-        </ul>
-      </article>
+  <main class="section">
+    <h1 class="page-title">À propos</h1>
 
-      <aside class="card">
-        <h2>Coordonnées</h2>
-        <div class="contact-block">
-          <div><strong>Adresse</strong><br>Avenue Heydenberg 14, 1200 Bruxelles</div>
-          <div style="margin-top:8px"><strong>Email</strong><br>
-            <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
-          </div>
-          <div style="margin-top:8px"><strong>Horaires</strong><br>Lun–Ven · 09:00–17:00</div>
-        </div>
-      </aside>
-    </div>
-
-    <article class="card" style="margin-top:22px">
-      <h2>Nos engagements</h2>
-      <p>Nous mettons l’accent sur la qualité de service et la proximité : visites régulières des immeubles, comptes rendus clairs et réponses rapides aux demandes.</p>
-      <ul class="list">
-        <li>Comptabilité rigoureuse et budgets prévisionnels</li>
-        <li>Contrats fournisseurs optimisés et contrôlés</li>
-        <li>Prévention et maintenance planifiée</li>
-        <li>Respect des obligations légales et des délais</li>
-      </ul>
+    <article class="card">
+      <p>
+        Depuis <strong>2001</strong>, <strong>Laurent Hoessen</strong> a fondé son bureau de syndic, animé par la volonté d’apporter une
+        <strong>gestion claire, exigeante et durable</strong> aux copropriétés.
+      </p>
+      <p>
+        Aujourd’hui, il poursuit cette mission avec le <strong>soutien de son co-fondateur, Monsieur André Hoessen, son père</strong>,
+        et une <strong>équipe multiculturelle</strong> dont la diversité de compétences renforce chaque projet.
+      </p>
+      <p>
+        Notre approche repose sur la <strong>proximité humaine</strong>, la <strong>réactivité quotidienne</strong> et la
+        <strong>transparence technique et financière</strong>, au service des copropriétaires.
+      </p>
     </article>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-line">
-      <span>Horaires: Lun–Ven 9:00–17:00</span>
-      <span>•</span>
-      <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
-    </div>
-    <div class="container legal">
-      <small>© <span id="year"></span> Laurent Hoessen — Tous droits réservés.</small>
+  <!-- RODAPÉS -->
+  <footer class="micro-footer">
+    <div class="wrap micro-footer-row">
+      <span>Horaires : Lun–Ven 09:00–13:00</span>
+      <span class="sep">•</span>
+      <span>Email : <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span>
     </div>
   </footer>
 
-  <script>
-    // Ano automático
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Toggle menu mobile
-    const toggle = document.querySelector('.nav-toggle');
-    const menu = document.querySelector('.nav-menu');
-    if (toggle) {
-      toggle.addEventListener('click', () => {
-        const open = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!open));
-        menu.classList.toggle('open');
-      });
-    }
-  </script>
+  <footer class="legal-footer">
+    <div class="wrap">
+      © 2025 Laurent Hoessen · Gestion Immobilière — Syndic BILH &amp; DUHO · Tous droits réservés ·
+      <a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a>
+    </div>
+  </footer>
 </body>
 </html>

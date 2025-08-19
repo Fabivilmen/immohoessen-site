@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="fr">
 <head>
@@ -6,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Urgence — Immo Hoessen</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .urgence{
+      max-width:800px; margin:3rem auto; padding:2rem 1.5rem; text-align:center;
+      background:#fff; border-radius:16px; border:1px solid #e6efe9;
+      box-shadow:0 10px 28px rgba(2,8,23,.06);
+    }
+    .urgence h1{color:#1756ff; margin-bottom:1rem;}
+    .urgence p{color:#1e4e3d; font-size:1.05rem;}
+    .urgence .num{
+      color:#1756ff; font-weight:700; font-size:1.2rem;
+      display:block; margin:.4rem 0;
+    }
+  </style>
 </head>
 <body>
   <nav class="nav">
@@ -18,19 +30,17 @@
     <a href="urgence.html">Urgence</a>
   </nav>
 
-  <main class="container">
-    <div class="card">
-      <h1>Urgences</h1>
-      <ul>
-        <li><strong>Incendie :</strong> 112</li>
-        <li><strong>Police :</strong> 101</li>
-        <li><strong>Urgence bâtiment :</strong> +32 (0)2 123 45 68</li>
-      </ul>
+  <main>
+    <div class="urgence">
+      <h1>Urgence</h1>
+      <p>En cas d’urgence en dehors des horaires du bureau, merci de contacter&nbsp;:</p>
+      <span class="num">0495 54 38 08</span>
+      <span class="num">0495 26 16 83</span>
     </div>
   </main>
 
   <footer>
-    © Immo Hoessen — syndic@immohoessen.be
+    © Immo Hoessen — <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
   </footer>
 </body>
 </html>

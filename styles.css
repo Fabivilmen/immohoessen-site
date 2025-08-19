@@ -76,3 +76,27 @@ footer{
 .btn{display:inline-block; padding:.6rem .95rem; border-radius:10px; border:1px solid transparent}
 .btn-primary{background:var(--brand); color:#fff; border-color:rgba(0,0,0,.08)}
 .btn-primary:hover{filter:brightness(.95)}
+:root{
+  --brand-blue:#1756ff;
+  --nav-fg:#0b2a5a;
+  --nav-bg:#ffffff;
+  --nav-border:#e6efe9;
+}
+
+/* NAV PADRÃO (todas as páginas internas) */
+.nav{
+  position: sticky; top:0; z-index:100;
+  display:flex; gap:1.25rem; justify-content:center; align-items:center;
+  padding:1rem 1.25rem; background:var(--nav-bg);
+  border-bottom:1px solid var(--nav-border);
+}
+.nav a{
+  color:var(--nav-fg); font-weight:600; text-decoration:none;
+  padding:.1rem .2rem; background:transparent !important;
+}
+.nav a:hover{ text-decoration:underline; }
+.nav .cta{
+  padding:.55rem .9rem; border:1px solid var(--brand-blue);
+  border-radius:10px; color:var(--brand-blue);
+}
+.nav .cta:hover{ background:var(--brand-blue); color:#fff; }

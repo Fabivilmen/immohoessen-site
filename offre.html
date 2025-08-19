@@ -3,45 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Demander une offre — Laurent Hoessen</title>
-  <meta name="description" content="Demander une offre de gestion de copropriété à Bruxelles avec Laurent Hoessen." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Demander une offre — Laurent Hoessen" />
-  <meta property="og:description" content="Syndic de copropriété à Bruxelles. Gestion transparente, réactive et professionnelle." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="img/cover-plain2.jpg" />
-  <meta property="og:image:alt" content="Résidence moderne avec espaces verts" />
-
-  <!-- CSS global (arquivo na raiz) -->
+  <title>Demande d’offre — Immo Hoessen</title>
+  <meta name="description" content="Demander une offre pour la gestion de votre copropriété. Réponse rapide et adaptée à vos besoins." />
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* Estilos leves do formulário para combinar com sua paleta */
-    .form-wrap{max-width:760px;margin:0 auto}
+    /* Estilo leve do formulário para combinar com seu site */
+    .form-wrap{max-width:800px;margin:0 auto}
+    .legend{margin:0 0 12px;color:#2b3a33}
     .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .form-grid .full{grid-column:1 / -1}
-    label{display:block;font-weight:600;margin:6px 0 6px;color:var(--green-900)}
-    input[type="text"], input[type="email"], input[type="tel"], textarea{
-      width:100%;padding:12px;border:1px solid #dfe6e2;border-radius:10px;
-      font:inherit;outline:none;background:#fff
+    .full{grid-column:1 / -1}
+    label{display:block;font-weight:600;margin:6px 0;color:var(--green-900)}
+    input[type="text"],input[type="email"],input[type="tel"],input[type="number"],textarea,select{
+      width:100%;padding:12px;border:1px solid #dfe6e2;border-radius:10px;background:#fff;font:inherit;outline:none
     }
-    input:focus, textarea:focus{border-color:var(--green-500)}
+    input:focus,textarea:focus,select:focus{border-color:var(--green-500)}
     .help{font-size:12px;opacity:.8;margin-top:4px}
     .notice{background:#f5fbf8;border:1px solid #e0efe8;padding:12px 14px;border-radius:12px;margin-bottom:16px}
     .required{color:#b3261e}
+    .actions{margin-top:10px}
   </style>
 </head>
 <body>
   <!-- NAV -->
   <header class="site-header">
     <nav class="navbar container">
-      <a class="brand" href="index.html">Laurent Hoessen</a>
+      <a class="brand" href="index.html">Immo Hoessen</a>
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
       <ul class="nav-menu">
-        <li><a href="types.html">Types</a></li>
-        <li><a href="gestion.html">Gestion</a></li>
-        <li><a href="offre.html" class="active">Offre</a></li>
+        <li><a href="types.html">Notre gestion</a></li>
+        <li><a href="offre.html" class="active">Demande d’offre</a></li>
         <li><a href="portail.html">Portail</a></li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="contacts.html">Contact</a></li>
@@ -53,73 +44,91 @@
   <!-- MAIN -->
   <main class="container section">
     <h1>Demander une offre</h1>
-    <p>Remplissez le formulaire et nous vous répondrons rapidement avec une offre adaptée à votre copropriété à Bruxelles.</p>
+    <p class="legend">Remplissez le formulaire et nous vous répondrons rapidement avec une offre adaptée à votre copropriété.</p>
 
     <div class="form-wrap">
       <div class="notice">
         Les champs marqués d’un <span class="required">*</span> sont obligatoires.
       </div>
 
-      <!-- SUBSTITUA o action abaixo pelo endpoint do seu Formspree -->
-      <form action="https://formspree.io/f/SEU_ENDPOINT_AQUI" method="POST" class="form-offre" id="offreForm">
+      <!-- Substituir o action pelo seu endpoint (Formspree) configurado para syndic@immohoessen.be -->
+      <form action="https://formspree.io/f/SEU_ENDPOINT_AQUI" method="POST" id="offreForm" class="form-offre" novalidate>
         <div class="form-grid">
           <div>
             <label for="nom">Nom et prénom <span class="required">*</span></label>
-            <input type="text" id="nom" name="nom" required autocomplete="name">
-          </div>
-          <div>
-            <label for="email">Email <span class="required">*</span></label>
-            <input type="email" id="email" name="email" required autocomplete="email" inputmode="email">
+            <input type="text" id="nom" name="nom" required autocomplete="name" />
           </div>
 
           <div>
-            <label for="telephone">Téléphone</label>
-            <input type="tel" id="telephone" name="telephone" autocomplete="tel" inputmode="tel" placeholder="+32 ...">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" />
           </div>
+
           <div>
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" name="telephone" placeholder="+32 ..." autocomplete="tel" inputmode="tel" />
+          </div>
+
+          <div>
+            <label for="etages">Nombre d’étages</label>
+            <input type="number" id="etages" name="nombre_etages" min="0" step="1" placeholder="ex. 4" />
+          </div>
+
+          <div class="full">
             <label for="adresse">Adresse de la copropriété <span class="required">*</span></label>
-            <input type="text" id="adresse" name="adresse" required autocomplete="street-address" placeholder="Rue, numéro, code postal, commune">
+            <input type="text" id="adresse" name="adresse" required placeholder="Rue, numéro, code postal, commune" autocomplete="street-address" />
+          </div>
+
+          <div>
+            <label for="syndic">Déjà un syndic ?</label>
+            <select id="syndic" name="deja_syndic">
+              <option value="" selected>— Sélectionner —</option>
+              <option value="oui">Oui</option>
+              <option value="non">Non</option>
+              <option value="ne_sais_pas">Je ne sais pas</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="garage">Garage / emplacement</label>
+            <select id="garage" name="garage_emplacement">
+              <option value="" selected>— Sélectionner —</option>
+              <option value="oui">Oui</option>
+              <option value="non">Non</option>
+            </select>
           </div>
 
           <div class="full">
             <label for="message">Message <span class="required">*</span></label>
-            <textarea id="message" name="message" rows="6" required placeholder="Dites-nous quelques informations (nombre de lots, ascenseur, chauffage, etc.)"></textarea>
-            <div class="help">Plus vous donnez de détails, plus l’offre sera précise.</div>
+            <textarea id="message" name="message" rows="6" required placeholder="Plus vous donnez de détails, plus l’offre sera précise."></textarea>
           </div>
         </div>
 
-        <!-- Campos úteis -->
-        <input type="hidden" name="_subject" value="Nouvelle demande d'offre — Immo Hoessen">
-        <!-- redireciona para a página de merci após envio -->
-        <input type="hidden" name="_redirect" value="https://fabivilmen.github.io/immohoessen-site/merci.html">
-        <!-- Anti-spam (honeypot) -->
-        <input type="text" name="_gotcha" style="display:none">
+        <!-- Metadados úteis -->
+        <input type="hidden" name="_subject" value="Demande d’offre — immohoessen.be" />
+        <!-- (Opcional) redirecionar após envio: descomente se tiver une page merci.html -->
+        <!-- <input type="hidden" name="_redirect" value="https://fabivilmen.github.io/immohoessen-site/merci.html" /> -->
 
-        <br>
-        <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+        </div>
+
+        <p class="help" style="margin-top:10px">Les demandes sont reçues à <strong>syndic@immohoessen.be</strong>.</p>
       </form>
-
-      <p class="help" style="margin-top:10px">Les demandes sont reçues à <strong>syndic@immohoessen.be</strong>.</p>
     </div>
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-line">
-      <span>Horaires: Lun–Ven 9:00–17:00</span>
-      <span>•</span>
-      <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a>
-    </div>
     <div class="container legal">
-      <small>© <span id="year"></span> Laurent Hoessen — Tous droits réservés.</small>
+      <small>© 2025 Immo Hoessen — Tous droits réservés. • 
+        <a href="mentions-legales.html">Mentions légales</a>
+      </small>
     </div>
   </footer>
 
   <script>
-    // Ano automático
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Toggle menu mobile
+    // Toggle du menu mobile (igual ao restante do site)
     const toggle = document.querySelector('.nav-toggle');
     const menu = document.querySelector('.nav-menu');
     if (toggle) {
@@ -130,11 +139,11 @@
       });
     }
 
-    // Previne duplo envio
+    // Evita duplo envio
     const form = document.getElementById('offreForm');
     form.addEventListener('submit', () => {
       const btn = form.querySelector('button[type="submit"]');
-      btn.disabled = true; btn.textContent = 'Envoi...';
+      if (btn) { btn.disabled = true; btn.textContent = 'Envoi...'; }
     });
   </script>
 </body>

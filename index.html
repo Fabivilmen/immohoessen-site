@@ -1,207 +1,70 @@
-/* =========================================================
-   Immo Hoessen — styles.css (versão profissional)
-   - Paleta corporativa QUENTE (neutros elegantes)
-   - Tipografia consistente
-   - Capa (hero) preservada
-   - Menu azul-escuro APENAS nas páginas internas
-   ========================================================= */
 
-/* ---------- Tokens de design (cores & raios) ---------- */
-:root{
-  /* Marca / ações */
-  --brand:#0ea5e9;        /* links, botões (azul da marca) */
-  --brand-hover:#0284c7;
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accueil — Immo Hoessen</title>
+  <link rel="icon" href="favicon.ico" />
+  <!-- CSS com bust de cache para evitar problemas de cache -->
+  <link rel="stylesheet" href="styles.css?v=40" />
+</head>
+<body class="home">
+  <nav class="nav">
+    <a class="active" href="index.html">Accueil</a>
+    <a href="types.html">Nos services</a>
+    <a href="apropos.html">À propos</a>
+    <a href="contacts.html">Contact</a>
+    <a href="portail.html">Portail</a>
+    <a href="offre.html">Demande d’offre</a>
+    <a href="urgence.html">Urgence</a>
+  </nav>
 
-  /* Neutros tipográficos (quentes, legíveis) */
-  --heading:#0f172a;      /* títulos (charcoal) */
-  --text:#334155;         /* parágrafos (slate quente) */
-  --muted:#667085;        /* secundário */
+  <!-- HERO (capa) -->
+  <header class="hero-visual">
+    <!-- usa sua imagem: img/cover-plain.jpg -->
+    <div class="hero-inner">
+      <h1 class="hero-title">
+        Laurent Hoessen
+        <span class="hero-subline">Gestion immobilière — Syndic BILH-DUHO</span>
+      </h1>
+      <p class="hero-sub">Syndic à Bruxelles — gestion transparente, technique et proactive</p>
+    </div>
+  </header>
 
-  /* Base / componentes */
-  --bg:#ffffff;           /* base da CAPA e cartões */
-  --bg-internal:#f7f5f2;  /* base das páginas internas (marfim quente) */
-  --line:#e9e2d9;         /* bordas quentes */
-  --card:#ffffff;
-  --radius:16px;
+  <!-- Rodapé da capa: Coordonnées + Mapa -->
+  <section class="hero-footer">
+    <div class="wrap-hero">
+      <div class="grid-hero">
+        <!-- Coordonnées -->
+        <div>
+          <h3>Coordonnées</h3>
+          <p class="hero-mini"><strong>Adresse:</strong> Bruxelles, Belgique</p>
+          <p class="hero-mini"><strong>Horaires:</strong> Lun–Ven, 9h–17h</p>
+          <p class="hero-mini"><strong>Email:</strong> <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></p>
+          <!-- Se quiser exibir TVA aqui, descomente a linha abaixo -->
+          <!-- <p class="hero-mini"><strong>TVA:</strong> BE 0xxx.xxx.xxx</p> -->
+        </div>
 
-  /* Nav interna (azul-escuro) */
-  --nav-navy-1:#0f2a6b;
-  --nav-navy-2:#13347f;
-  --nav-navy-border:rgba(255,255,255,.10);
-}
+        <!-- Mapa -->
+        <div>
+          <iframe
+            class="hero-map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2518.989907032717!2d4.351721!3d50.850346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c3809b1d62b5%3A0x40099ab2f4d5d30!2sBruxelles!5e0!3m2!1sfr!2sbe!4v1680000000000">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* ---------- Base ---------- */
-*{ box-sizing:border-box; }
-html, body { height: 100%; }
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif;
-  color:var(--text);
-  line-height:1.6;
-  background:var(--bg); /* a CAPA usa este fundo */
-}
-
-/* PÁGINAS INTERNAS: fundo corporativo quente (não afeta a CAPA) */
-body:not(.home){
-  background:
-    radial-gradient(60rem 40rem at 100% 0%, rgba(15,61,46,.12) 0%, rgba(15,61,46,0) 60%),
-    radial-gradient(52rem 36rem at 0% 86%,   rgba(253,232,208,.16) 0%, rgba(253,232,208,0) 60%),
-    var(--bg-internal);
-}
-
-/* ---------- Navegação ---------- */
-.nav{
-  display:flex; gap:18px; align-items:center; justify-content:center;
-  padding:12px 16px; position:sticky; top:0; z-index:10;
-  border-bottom:1px solid var(--line);
-  background:#fff; /* padrão (CAPA) */
-}
-
-/* CAPA (home) — menu claro como na sua versão boa */
-.home .nav{
-  background:#fff !important;
-  border-bottom:1px solid var(--line) !important;
-  box-shadow:none !important;
-}
-.home .nav a{ color:var(--heading) !important; }
-.home .nav a:hover{ color:var(--brand) !important; background:transparent; }
-
-/* PÁGINAS INTERNAS — menu azul-escuro com letras brancas */
-body:not(.home) .nav{
-  background:linear-gradient(180deg, var(--nav-navy-1), var(--nav-navy-2)) !important;
-  border-bottom:1px solid var(--nav-navy-border) !important;
-  box-shadow:0 8px 24px rgba(2,8,23,.18);
-}
-.nav a{
-  text-decoration:none; font-weight:600; border-radius:10px; padding:6px 10px;
-}
-body:not(.home) .nav a{ color:#fff !important; }
-body:not(.home) .nav a:hover{ background:rgba(255,255,255,.14); color:#fff !important; }
-
-/* ---------- CAPA (hero) — preservada ---------- */
-.hero-visual{
-  position:relative; min-height:70vh;
-  display:flex; align-items:center; justify-content:center;
-  text-align:center; padding:2rem 1rem;
-  background:url('img/cover-plain.jpg') center/cover no-repeat;
-}
-.hero-visual::before{
-  content:""; position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.28));
-}
-.hero-inner{
-  position:relative; z-index:1; max-width:900px;
-  background:rgba(0,0,0,.10); backdrop-filter:saturate(1.2) blur(.5px);
-  border-radius:20px; padding:28px 20px;
-}
-.hero-title{ color:#fff; font-size:clamp(28px,5vw,50px); margin:0 0 .5rem; text-shadow:0 1px 2px rgba(0,0,0,.45); }
-.hero-sub{ color:#e8eef6; font-size:clamp(16px,2.2vw,20px); margin:0; text-shadow:0 1px 2px rgba(0,0,0,.35); }
-.hero-subline{ display:block; margin-top:.35rem; font-weight:700; font-size:clamp(18px, 2.6vw, 28px); color:#e8eef6; text-shadow:0 1px 2px rgba(0,0,0,.35); }
-
-/* Rodapé da capa (coordonnées + mapa) — manter claro */
-.hero-footer{ background:#0b1220; color:#cbd5e1; border-top:1px solid rgba(255,255,255,.08) }
-.wrap-hero{ max-width:1100px; margin:auto; padding:2rem 1rem }
-.grid-hero{ display:grid; grid-template-columns:1.2fr .8fr; gap:1rem }
-.hero-footer a{ color:#a7d5ff; text-decoration:none }
-.hero-footer a:hover{ color:#d1e9ff }
-.hero-mini{ color:#e6eef7; font-size:.95rem }
-.hero-map{ width:100%; height:220px; border:0; border-radius:12px }
-@media (max-width:860px){ .grid-hero{ grid-template-columns:1fr } }
-
-/* ---------- Conteúdo interno ---------- */
-.wrap{ max-width:1100px; margin:auto; padding:3rem 1rem }
-.section-head{ display:flex; align-items:center; justify-content:space-between; gap:1rem; margin:0 0 1rem; }
-.section-head h1,.section-head h2{ margin:0; color:var(--heading); }
-@media (max-width:640px){ .section-head{ flex-direction:column; align-items:flex-start } }
-
-.muted{ color:var(--muted); text-align:center }
-
-/* ---------- Cards de serviços ---------- */
-.grid-cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.25rem }
-.card{
-  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
-  padding:1.25rem; transition:.2s
-}
-.card:hover{ box-shadow:0 10px 26px rgba(2,8,23,.06); transform:translateY(-2px) }
-.ico{
-  width:70px; height:70px; margin:-48px auto 8px;
-  display:grid; place-items:center; border-radius:999px;
-  background:#1699a2; box-shadow:0 6px 20px rgba(22,153,162,.25)
-}
-.ico img{ width:36px; height:36px; filter:invert(1) brightness(2) }
-.card h3{ margin:.4rem 0 .4rem; text-align:center; color:var(--heading) }
-.card p{ text-align:center; color:var(--muted); margin:0 }
-
-/* ---------- Contatos ---------- */
-.people{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem }
-.person{ border:1px solid var(--line); border-radius:var(--radius); padding:1rem; background:#fff; }
-.role{ color:var(--muted); font-size:.95rem; margin:.2rem 0 .6rem }
-.person a{ color:var(--brand); text-decoration:none; word-break:break-all }
-.person a:hover{ text-decoration:underline }
-
-/* ---------- Demande d’offre ---------- */
-.box-offre{
-  background:#fff;
-  border:1px solid var(--line); border-radius:20px;
-  padding:2rem 1rem; box-shadow:0 10px 30px rgba(2,8,23,.06);
-}
-.form{ max-width:680px; margin:auto; display:grid; gap:1rem; text-align:left }
-.row{ display:grid; grid-template-columns:1fr 1fr; gap:1rem }
-input, textarea, select{
-  padding:.8rem; border:1px solid var(--line); border-radius:10px; width:100%;
-  color:var(--text); background:#fff;
-}
-select{ appearance:auto; -webkit-appearance:auto; -moz-appearance:auto; }
-.group{ border:1px solid var(--line); border-radius:10px; padding:.8rem }
-.group legend{ font-weight:600; padding:0 .4rem }
-.radio{ display:flex; gap:1rem; align-items:center; flex-wrap:wrap }
-.btn-submit{ background:var(--brand); color:#fff; padding:.9rem 1.2rem; border:none; border-radius:12px; font-weight:600; cursor:pointer }
-.btn-submit:hover{ background:var(--brand-hover) }
-
-/* Botão genérico */
-.btn{
-  display:inline-block; background:var(--brand); color:#fff;
-  padding:.8rem 1.1rem; border-radius:12px; font-weight:600; text-decoration:none
-}
-.btn:hover{ background:var(--brand-hover) }
-
-/* ---------- À PROPOS ---------- */
-.apropos-page .propos-text{
-  max-width: 900px; margin: 0 auto 1rem;
-  text-align: justify; text-justify: inter-word; hyphens: auto; line-height: 1.7; color:var(--text);
-}
-.apropos-page .lead{ font-size: 1.05rem; }
-.apropos-page .pillars{
-  max-width: 1000px; margin: 2rem auto 2rem;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1rem;
-}
-.apropos-page .pillars .card p{ margin-top:.35rem; }
-.apropos-page .signature{ max-width:900px; margin: 1.25rem auto 0; color: var(--muted); font-style: italic; }
-.apropos-page .signature strong{ color: var(--heading); font-style: normal; }
-
-/* ---------- Portail (layout em 1 ou 2 colunas) ---------- */
-.portail-illu{ display:flex; justify-content:center; margin: 1rem auto 1.25rem; }
-.portail-illu img{
-  max-width: 960px; width: 100%; height: auto;
-  border-radius: 16px; box-shadow: 0 12px 32px rgba(2, 8, 23, .18);
-}
-.portail-split{
-  display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; align-items:center; margin: 1.25rem 0 1.75rem;
-}
-.portail-text p{ margin:0; color: var(--text); line-height:1.7; text-align:justify; text-justify:inter-word; }
-.portail-media{ margin:0; padding:0; }
-.portail-media img{
-  width:100%; height:auto; display:block; border-radius:16px;
-  box-shadow:0 12px 32px rgba(2,8,23,.18); object-fit:cover;
-}
-@media (max-width: 960px){
-  .portail-split{ grid-template-columns: 1fr; gap:1rem; }
-  .portail-media{ order:-1; }
-}
-
-/* ---------- Rodapé final ---------- */
-.site-footer{ padding:1.2rem 1rem 2rem; color:#94a3b8; text-align:center }
-
-/* ---------- Qualidade de vida ---------- */
-::placeholder{ color:#8aa0b4; opacity:1; }
-a, a:visited{ color:var(--brand); } /* evita “roxo visitado” */
+  <!-- Conteúdo abaixo da capa (opcional). Pode remover se quiser a home só com a capa. -->
+  <main class="wrap" style="display:none;">
+    <div class="section-head">
+      <h2>Bienvenue</h2>
+    </div>
+    <p class="muted">Contenu d’accueil optionnel…</p>
+  </main>
+</body>
+</html>

@@ -1,138 +1,109 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accueil - Syndic Laurent Hoessen</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
   <style>
-    body {
+    body, html {
       margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: Arial, sans-serif;
+      background-color: white;
       color: white;
-      background-color: #0f3d2e;
     }
-
-    nav {
-      background-color: #0f3d2e;
+    header {
       height: 10vh;
+      background-color: #0f3d2e;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      padding: 0 2rem;
     }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 30px;
-      padding: 0;
-      margin: 0;
-    }
-
     nav a {
       color: white;
       text-decoration: none;
+      margin: 0 1rem;
       font-weight: bold;
-      font-size: 1.1em;
     }
-
     .hero {
-      background-image: url("img/cover-plain2.jpg");
+      height: 75vh;
+      background-image: url('img/cover-plain2.jpg');
       background-size: cover;
       background-position: center;
-      height: 75vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
     }
-
     .hero h1 {
-      font-size: 3em;
+      font-size: 3rem;
       margin: 0;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-    }
-
-    .hero p {
-      font-size: 1.5em;
-      margin-top: 10px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    }
-
-    footer {
-      background-color: #0f3d2e;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      height: 15vh;
       color: white;
     }
-
-    .footer-info {
+    .hero h2 {
+      font-size: 1.5rem;
+      margin: 1rem 0 0;
+      color: white;
+    }
+    footer {
+      height: 15vh;
+      background-color: #0f3d2e;
+      color: white;
       display: flex;
-      flex-direction: column;
-      font-size: 0.95em;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
     }
-
-    iframe {
-      border: none;
-      width: 300px;
-      height: 100%;
+    .footer-info {
+      max-width: 60%;
     }
-
+    .footer-info p {
+      margin: 0.3rem 0;
+    }
+    .footer-map iframe {
+      border: 0;
+    }
     @media (max-width: 768px) {
-      footer {
-        flex-direction: column;
-        height: auto;
-        text-align: center;
+      .footer-info {
+        max-width: 100%;
       }
-
-      iframe {
-        width: 100%;
-        height: 200px;
-        margin-top: 10px;
+      .footer-map {
+        display: none;
       }
     }
   </style>
 </head>
 <body>
+  <header>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="types.html">Types</a>
+      <a href="gestion.html">Gestion</a>
+      <a href="contacts.html">Contact</a>
+      <a href="portail.html">Portail</a>
+      <a href="apropos.html">À propos</a>
+    </nav>
+  </header>
 
-  <!-- Menu -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="types.html">Types</a></li>
-      <li><a href="gestion.html">Gestion</a></li>
-      <li><a href="contacts.html">Contact</a></li>
-      <li><a href="portail.html">Portail</a></li>
-      <li><a href="apropos.html">À propos</a></li>
-    </ul>
-  </nav>
-
-  <!-- Capa -->
   <section class="hero">
-    <h1>Gestion immobilière</h1>
-    <p>Syndic BILH – DUHO</p>
+    <h1>Laurent Hoessen</h1>
+    <h2>Gestion immobilière – Syndic BILH – DUHO</h2>
   </section>
 
-  <!-- Rodapé -->
   <footer>
     <div class="footer-info">
-      <span><strong>Adresse :</strong> Avenue Heydenberg 14, 1200 Bruxelles</span>
-      <span><strong>Email :</strong> syndic@immohoessen.be</span>
-      <span><strong>Téléphone :</strong> 02 772 51 75</span>
-      <span><strong>Entreprise :</strong> BE0462920325</span>
+      <p><strong>Adresse :</strong> Avenue Heydenberg 14, 1200 Bruxelles</p>
+      <p><strong>Email :</strong> syndic@immohoessen.be</p>
+      <p><strong>Téléphone :</strong> 02 772 51 75</p>
+      <p><strong>Numéro d'entreprise :</strong> BE0462920325</p>
     </div>
-
-    <iframe 
-      src="https://www.google.com/maps?q=Avenue+Heydenberg+14,+1200+Bruxelles&output=embed"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+    <div class="footer-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.1292243983067!2d4.429784376831809!3d50.85920757168085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3dbdbba2b8e27%3A0x6f144d7bb3a45d88!2sAvenue%20Heydenberg%2014%2C%201200%20Woluwe-Saint-Lambert!5e0!3m2!1sfr!2sbe!4v1690308371045!5m2!1sfr!2sbe" width="300" height="120" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
   </footer>
-
 </body>
 </html>

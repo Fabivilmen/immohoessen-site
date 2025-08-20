@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>À propos - DUHO Gestion Immobilière</title>
+  <title>À propos - Syndic Laurent Hoessen</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
@@ -14,6 +14,7 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      color: #1e4e3d;
     }
 
     header {
@@ -42,52 +43,59 @@
 
     .content {
       flex: 1;
-      max-width: 1000px;
-      margin: 40px auto;
+      max-width: 1100px;
+      margin: 60px auto;
       padding: 20px;
-      background: linear-gradient(135deg, #eaf4ec, #d2e6dc);
-      border-radius: 10px;
-      color: #1e4e3d;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .content h1, .content h2, .content h3 {
-      color: #0f3d2e;
-    }
-
-    .founder-section {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
-      margin-top: 40px;
       background-color: #ffffff;
-      padding: 30px;
       border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .founder-section h2 {
+      text-align: center;
+      color: #0f3d2e;
+      font-size: 2rem;
       margin-bottom: 40px;
     }
 
-    .founder-photo {
-      flex: 1;
-      min-width: 250px;
-      text-align: center;
+    .founders {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 40px;
     }
 
-    .founder-photo img {
-      max-width: 220px;
+    .founder {
+      text-align: center;
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .founder img {
+      width: 220px;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    .founder-photo p {
-      margin-top: 10px;
+    .founder p {
+      margin-top: 12px;
       font-weight: bold;
-      color: #1e4e3d;
     }
 
-    .founder-text {
-      flex: 2;
-      min-width: 300px;
+    .institutional-text {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .institutional-text p {
+      margin-bottom: 20px;
+    }
+
+    .institutional-text .closing {
+      margin-top: 30px;
+      font-weight: bold;
+      font-style: italic;
     }
 
     footer {
@@ -99,13 +107,9 @@
     }
 
     @media (max-width: 768px) {
-      .founder-section {
+      .founders {
         flex-direction: column;
-        text-align: center;
-      }
-
-      .founder-text {
-        text-align: left;
+        align-items: center;
       }
     }
   </style>
@@ -127,53 +131,55 @@
   </header>
 
   <!-- CONTEÚDO -->
-  <div class="content">
-    <h1>À propos de DUHO Gestion Immobilière</h1>
+  <div class="content founder-section">
+    <h2>Fondateur & Cofondateur</h2>
 
-    <!-- BLOCO LAURENT -->
-    <div class="founder-section">
-      <div class="founder-photo">
-        <img src="./img/fotolaurent1.jpg" alt="Laurent Hoessen">
-        <p>M. Laurent Hoessen<br><small>Fondateur – Titulaire IPI</small></p>
+    <div class="founders">
+      <!-- Laurent -->
+      <div class="founder">
+        <img src="./img/fotolaurent1.jpg" alt="Laurent Hoessen" />
+        <p>Laurent Hoessen<br><small>Fondateur – Titulaire IPI</small></p>
       </div>
-      <div class="founder-text">
-        <h2>Notre histoire</h2>
-        <p>
-          Le syndic BILH a été fondé en 2001 par M. Laurent Hoessen, avec la vision de proposer une gestion rigoureuse,
-          transparente et humaine des copropriétés à Bruxelles. Aujourd’hui, il est soutenu par son cofondateur, M. André Hoessen, ainsi que par une équipe multiculturelle expérimentée.
-        </p>
-        <p>
-          Notre approche repose sur la proximité, l’écoute et la réactivité. Grâce à notre expertise locale et à nos outils numériques,
-          nous accompagnons les copropriétés dans leur développement, leur entretien et leur valorisation à long terme.
-        </p>
-        <p>
-          Chez DUHO Gestion Immobilière Laurent Hoessen, chaque copropriétaire est un partenaire, et chaque immeuble est un patrimoine à faire vivre.
-        </p>
+
+      <!-- André -->
+      <div class="founder">
+        <img src="./img/fotoandre.jpg" alt="André Hoessen" />
+        <p>André Hoessen<br><small>Cofondateur</small></p>
       </div>
     </div>
 
-    <!-- BLOCO ANDRÉ -->
-    <div class="founder-section">
-      <div class="founder-photo">
-        <img src="./img/fotoandre.jpg" alt="André Hoessen">
-        <p>M. André Hoessen<br><small>Cofondateur</small></p>
-      </div>
-      <div class="founder-text">
-        <h2>Une expertise intergénérationnelle</h2>
-        <p>
-          Présent depuis la création de l’entreprise, M. André Hoessen met à profit son savoir-faire dans les domaines technique et immobilier.
-          Il joue un rôle clé dans la gestion quotidienne des copropriétés, tout en apportant une vision stratégique précieuse à l’équipe.
-        </p>
-        <p>
-          Son engagement actif incarne les valeurs fondatrices de DUHO Gestion Immobilière : exigence, intégrité et esprit de transmission.
-        </p>
-      </div>
+    <div class="institutional-text">
+      <p>
+        Le <strong>Syndic Laurent Hoessen</strong> a été fondé en 2001 par M. Laurent Hoessen, gestionnaire agréé à l’IPI (n° 150260).
+        Reconnu pour son sérieux et son intégrité, il assure la gestion des copropriétés avec rigueur technique, clarté dans les décisions
+        et une transparence totale envers les copropriétaires.
+      </p>
+
+      <p>
+        Son implication constante en fait un interlocuteur de confiance pour le suivi des assemblées générales, des travaux
+        et des aspects administratifs du syndic.
+      </p>
+
+      <p>
+        À ses côtés, M. André Hoessen, cofondateur, apporte son expertise technique et une vision stratégique,
+        contribuant au bon fonctionnement des équipes et à la qualité de la gestion au quotidien.
+      </p>
+
+      <p>
+        Le Syndic Laurent Hoessen s’appuie également sur une <strong>équipe multiculturelle</strong>,
+        facilitant une communication de proximité, efficace et respectueuse avec les copropriétaires de tous horizons.
+      </p>
+
+      <p class="closing">
+        Chaque immeuble est un patrimoine à préserver.<br>
+        Chaque copropriétaire, un partenaire à respecter.
+      </p>
     </div>
   </div>
 
   <!-- RODAPÉ -->
   <footer>
-    © 2025 DUHO Gestion Immobilière · Mentions légales
+    © 2025 Laurent Hoessen — IPI 150260 · Mentions légales
   </footer>
 
 </body>

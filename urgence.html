@@ -1,102 +1,113 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Urgence — Laurent Hoessen</title>
-  <meta name="description" content="En cas d’urgence en dehors des horaires du bureau, contactez nos numéros directs." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Urgence — Laurent Hoessen" />
-  <meta property="og:description" content="Numéros d’urgence pour copropriétés gérées par Immo Hoessen à Bruxelles." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="img/cover-plain2.jpg" />
-  <meta property="og:image:alt" content="Résidence moderne avec espaces verts" />
-
-  <!-- CSS global -->
-  <link rel="stylesheet" href="style.css" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urgence - Syndic Laurent Hoessen</title>
   <style>
-    .urgence-block{
-      max-width:700px;margin:0 auto;
-      background:#fff;border:1px solid #e3eee7;border-radius:14px;
-      padding:28px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,.06)
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0f3d2e;
+      color: white;
     }
-    .urgence-block h1{margin:0 0 16px;color:var(--green-900)}
-    .urgence-block p{margin:0 0 14px;color:#2b3a33}
-    .urgence-phones{
-      display:flex;flex-direction:column;gap:10px;margin:18px 0
+
+    header {
+      background-color: #0f3d2e;
+      padding: 10px 20px;
     }
-    .urgence-phones a{
-      display:inline-block;font-size:20px;font-weight:700;
-      padding:12px 18px;border-radius:12px;
-      background:var(--brand-blue);color:#fff;text-decoration:none
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    .urgence-phones a:hover{opacity:.9}
-    .office-hours{
-      margin-top:20px;font-size:15px;color:#4d5a54
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: #1e4e3d;
+      border-radius: 8px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      margin-top: 30px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    footer {
+      background-color: #0f3d2e;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <!-- NAV -->
-  <header class="site-header">
-    <nav class="navbar container">
-      <a class="brand" href="index.html">Laurent Hoessen</a>
-      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-      <ul class="nav-menu">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="types.html">Nos services</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="contacts.html">Contact</a></li>
-        <li><a href="portail.html">Portail</a></li>
-        <li><a href="offre.html">Demande d’offre</a></li>
-        <li><a href="urgence.html" class="active">Urgence</a></li>
-      </ul>
+
+  <!-- MENU -->
+  <header>
+    <nav>
+      <div><a href="index.html">Accueil</a></div>
+      <div>
+        <a href=\"urgence.html\">Urgence</a>
+        <a href="gestion.html">Gestion</a>
+        <a href="contacts.html">Contact</a>
+        <a href="portail.html">Portail</a>
+        <a href="apropos.html">À propos</a>
+      </div>
     </nav>
   </header>
 
-  <!-- MAIN -->
-  <main class="container section">
-    <div class="urgence-block">
-      <h1>Urgence</h1>
-      <p>En cas d’urgence en dehors des horaires du bureau,<br>veuillez contacter: </p>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main>
+    <h1>Urgences techniques</h1>
+    <p>En dehors des horaires de bureau, veuillez contacter directement les services suivants :</p>
 
-      <div class="urgence-phones">
-        <a href="tel:+32495543808">0495 54 38 08</a>
-        <a href="tel:+32495261683">0495 26 16 83</a>
-      </div>
+    <ul>
+      <li><strong>Plomberie :</strong> SOS Plombier Bruxelles – 0495 21 44 44</li>
+      <li><strong>Électricité :</strong> Dépannage Electricité – 0483 55 55 55</li>
+      <li><strong>Vitrerie :</strong> Urgence Vitrage – 0470 88 88 88</li>
+      <li><strong>Porte / Serrure :</strong> Serrurier 24/7 – 0466 33 33 33</li>
+    </ul>
 
-      <div class="office-hours">
-        Horaires du bureau : Lun–Ven, 9h–13h
-      </div>
-    </div>
+    <p>
+      <strong>Important :</strong> Ne contactez ces prestataires qu’en cas de réelle urgence (dégât des eaux, panne électrique générale, problème de sécurité). Toute intervention abusive pourra être facturée au demandeur.
+    </p>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-line">
-    
-    </div>
-    <div class="container legal">
-      <small>© <span id="year"></span> Immo Hoessen — Tous droits réservés.</small>
-    </div>
+  <!-- RODAPÉ -->
+  <footer>
+    © 2025 Laurent Hoessen — IPI 150260 · Mentions légales
   </footer>
 
-  <script>
-    // Ano automático
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Toggle menu mobile
-    const toggle = document.querySelector('.nav-toggle');
-    const menu = document.querySelector('.nav-menu');
-    if (toggle) {
-      toggle.addEventListener('click', () => {
-        const open = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!open));
-        menu.classList.toggle('open');
-      });
-    }
-  </script>
 </body>
 </html>

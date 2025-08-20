@@ -2,18 +2,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>À propos - Syndic Laurent Hoessen</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      color: #ffffff;
+      background-color: #0f3d2e;
+      color: white;
     }
 
     header {
@@ -40,85 +37,53 @@
       text-decoration: underline;
     }
 
-    .content {
-      flex: 1;
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 40px 20px;
-      background-color: #0f3d2e;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 20px;
       text-align: center;
     }
 
-    .content h2 {
-      font-size: 2rem;
-      margin-bottom: 40px;
-      color: #ffffff;
-    }
-
-    .founders {
+    .photos {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 60px;
-      margin-bottom: 40px;
+      gap: 40px;
+      margin-bottom: 30px;
     }
 
-    .founder {
-      width: 250px;
+    .photos figure {
+      margin: 0;
     }
 
-    .founder img {
-      width: 100%;
+    .photos img {
+      width: 200px;
       height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
     }
 
-    .founder p {
+    .photos figcaption {
       margin-top: 10px;
       font-weight: bold;
-      color: #ffffff;
     }
 
-    .text-block {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .text-block p {
-      margin-bottom: 20px;
+    p {
+      text-align: justify;
       line-height: 1.6;
-      font-size: 1rem;
-    }
-
-    .closing {
-      margin-top: 30px;
-      font-weight: bold;
-      font-style: italic;
+      margin-bottom: 15px;
     }
 
     footer {
+      text-align: center;
       background-color: #0f3d2e;
       color: white;
-      text-align: center;
-      padding: 15px;
+      padding: 20px 10px;
       font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      .founders {
-        flex-direction: column;
-        gap: 30px;
-      }
     }
   </style>
 </head>
 <body>
-
-  <!-- MENU GLOBAL -->
   <header>
     <nav>
       <div><a href="index.html">Accueil</a></div>
@@ -132,54 +97,27 @@
     </nav>
   </header>
 
-  <!-- CONTEÚDO -->
-  <div class="content">
-    <h2>Fondateur & Cofondateur</h2>
-
-    <div class="founders">
-      <div class="founder">
-        <img src="./img/fotolaurent1.jpg" alt="Laurent Hoessen" />
-        <p>Laurent Hoessen<br><small>Fondateur – Titulaire IPI</small></p>
-      </div>
-      <div class="founder">
-        <img src="./img/fotoandre.jpg" alt="André Hoessen" />
-        <p>André Hoessen<br><small>Cofondateur</small></p>
-      </div>
+  <main class="container">
+    <div class="photos">
+      <figure>
+        <img src="img/fotolaurent1.jpg" alt="Laurent Hoessen">
+        <figcaption>Laurent Hoessen<br>Fondateur – Titulaire IPI</figcaption>
+      </figure>
+      <figure>
+        <img src="img/fotoandre.jpg" alt="André Hoessen">
+        <figcaption>André Hoessen<br>Cofondateur</figcaption>
+      </figure>
     </div>
 
-    <div class="text-block">
-      <p>
-        Le <strong>Syndic Laurent Hoessen</strong> a été fondé en 2001 par M. Laurent Hoessen, gestionnaire agréé à l’IPI (n° 150260).
-        Reconnu pour son sérieux et son intégrité, il assure la gestion des copropriétés avec rigueur technique, clarté dans les décisions
-        et une transparence totale envers les copropriétaires.
-      </p>
+    <p><strong>Le Syndic Laurent Hoessen</strong> a été fondé en 2001 par M. Laurent Hoessen, gestionnaire agréé à l’IPI (n° 150260). Reconnu pour son sérieux et son intégrité, il assure la gestion des copropriétés avec rigueur technique, clarté dans les décisions et une transparence totale envers les copropriétaires.</p>
 
-      <p>
-        Son implication constante en fait un interlocuteur de confiance pour le suivi des assemblées générales, des travaux
-        et des aspects administratifs du syndic.
-      </p>
+    <p>Son implication constante en fait un interlocuteur de confiance pour le suivi des assemblées générales, des travaux et des aspects administratifs du syndic.</p>
 
-      <p>
-        À ses côtés, M. André Hoessen, cofondateur, apporte son expertise technique et une vision stratégique,
-        contribuant au bon fonctionnement des équipes et à la qualité de la gestion au quotidien.
-      </p>
+    <p>À ses côtés, M. André Hoessen, cofondateur, apporte son expertise technique et une vision stratégique, contribuant au bon fonctionnement des équipes et à la qualité de la gestion au quotidien.</p>
+  </main>
 
-      <p>
-        Le Syndic Laurent Hoessen s’appuie également sur une <strong>équipe multiculturelle</strong>,
-        facilitant une communication de proximité, efficace et respectueuse avec les copropriétaires de tous horizons.
-      </p>
-
-      <p class="closing">
-        Chaque immeuble est un patrimoine à préserver.<br>
-        Chaque copropriétaire, un partenaire à respecter.
-      </p>
-    </div>
-  </div>
-
-  <!-- RODAPÉ -->
   <footer>
-    © 2025 Laurent Hoessen — IPI 150260 · Mentions légales
+    © 2025 Laurent Hoessen · Mentions légales
   </footer>
-
 </body>
 </html>

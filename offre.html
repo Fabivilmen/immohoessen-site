@@ -1,151 +1,115 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Demande d’offre — Immo Hoessen</title>
-  <meta name="description" content="Demander une offre pour la gestion de votre copropriété. Réponse rapide et adaptée à vos besoins." />
-  <link rel="stylesheet" href="style.css" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offre - Syndic Laurent Hoessen</title>
   <style>
-    /* Ajustes visuais da página de oferta */
-    .form-wrap{max-width:800px;margin:0 auto}
-    .page-intro{text-align:center;max-width:800px;margin:0 auto 18px}
-    .legend{margin:6px 0 0;color:#2b3a33}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .full{grid-column:1 / -1}
-    label{display:block;font-weight:600;margin:6px 0;color:var(--green-900)}
-    input[type="text"],input[type="email"],input[type="tel"],input[type="number"],textarea,select{
-      width:100%;padding:12px;border:1px solid #dfe6e2;border-radius:10px;background:#fff;font:inherit;outline:none
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0f3d2e;
+      color: white;
     }
-    input:focus,textarea:focus,select:focus{border-color:var(--green-500)}
-    .notice{background:#f5fbf8;border:1px solid #e0efe8;padding:12px 14px;border-radius:12px;margin-bottom:16px;text-align:center}
-    .required{color:#b3261e}
-    .actions{text-align:center;margin-top:10px}
-    @media (max-width:720px){ .form-grid{grid-template-columns:1fr} }
+
+    header {
+      background-color: #0f3d2e;
+      padding: 10px 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: #1e4e3d;
+      border-radius: 8px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      margin-top: 30px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #0f3d2e;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
-  <!-- NAV -->
-  <header class="site-header">
-    <nav class="navbar container">
-      <a class="brand" href="index.html">Immo Hoessen</a>
-      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-      <ul class="nav-menu">
-        <li><a href="types.html">Notre gestion</a></li>
-        <li><a href="offre.html" class="active">Demande d’offre</a></li>
-        <li><a href="portail.html">Portail</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="contacts.html">Contact</a></li>
-        <li><a href="urgence.html">Urgence</a></li>
-      </ul>
+
+  <!-- MENU -->
+  <header>
+    <nav>
+      <div><a href="index.html">Accueil</a></div>
+      <div>
+        <a href="types.html">Types</a>
+        <a href="gestion.html">Gestion</a>
+        <a href="contacts.html">Contact</a>
+        <a href="portail.html">Portail</a>
+        <a href="apropos.html">À propos</a>
+      </div>
     </nav>
   </header>
 
-  <!-- MAIN -->
-  <main class="container section">
-    <div class="page-intro">
-      <h1>Demander une offre</h1>
-      <p class="legend">Remplissez le formulaire et nous vous répondrons rapidement avec une offre adaptée à votre copropriété.</p>
-    </div>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main>
+    <h1>Notre Offre</h1>
+    <p>
+      Le Syndic Laurent Hoessen propose une gamme complète de services pour accompagner les copropriétés dans leur gestion quotidienne : suivi administratif, gestion financière, entretien technique et accompagnement juridique.
+    </p>
 
-    <div class="form-wrap">
-      <div class="notice">
-        Les champs marqués d’un <span class="required">*</span> sont obligatoires.
-      </div>
+    <h2>Transparence et Réactivité</h2>
+    <p>
+      Nous assurons une communication claire avec les copropriétaires, des rapports réguliers et un accès numérique sécurisé à tous les documents.
+    </p>
 
-      <!-- Substituir o action abaixo pelo endpoint (Formspree) configurado para syndic@immohoessen.be -->
-      <form action="https://formspree.io/f/SEU_ENDPOINT_AQUI" method="POST" id="offreForm" class="form-offre" novalidate>
-        <div class="form-grid">
-          <div>
-            <label for="nom">Nom et prénom <span class="required">*</span></label>
-            <input type="text" id="nom" name="nom" required autocomplete="name" />
-          </div>
+    <h2>Outils Numériques</h2>
+    <p>
+      Grâce à notre portail en ligne, chaque copropriétaire peut consulter les comptes, PV, contrats et documents utiles à tout moment.
+    </p>
 
-          <div>
-            <label for="email">Email <span class="required">*</span></label>
-            <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" />
-          </div>
-
-          <div>
-            <label for="tel">Téléphone</label>
-            <input type="tel" id="tel" name="telephone" placeholder="+32 ..." autocomplete="tel" inputmode="tel" />
-          </div>
-
-          <div>
-            <label for="etages">Nombre d’étages <span class="required">*</span></label>
-            <input type="number" id="etages" name="nombre_etages" min="0" step="1" placeholder="ex. 4" required />
-          </div>
-
-          <div class="full">
-            <label for="adresse">Adresse de la copropriété <span class="required">*</span></label>
-            <input type="text" id="adresse" name="adresse" required placeholder="Rue, numéro, code postal, commune" autocomplete="street-address" />
-          </div>
-
-          <div>
-            <label for="syndic">Avez-vous déjà un syndic ?</label>
-            <select id="syndic" name="deja_syndic">
-              <option value="" selected>— Sélectionner —</option>
-              <option value="oui">Oui</option>
-              <option value="non">Non</option>
-              <option value="ne_sais_pas">Je ne sais pas</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="garage">Garage / emplacement</label>
-            <select id="garage" name="garage_emplacement">
-              <option value="" selected>— Sélectionner —</option>
-              <option value="oui">Oui</option>
-              <option value="non">Non</option>
-            </select>
-          </div>
-
-          <div class="full">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" placeholder="Plus vous donnez de détails, plus l’offre sera précise."></textarea>
-          </div>
-        </div>
-
-        <!-- Metadados úteis -->
-        <input type="hidden" name="_subject" value="Demande d’offre — immohoessen.be" />
-        <!-- (Opcional) redirecionar após envio: descomente se tiver une page merci.html -->
-        <!-- <input type="hidden" name="_redirect" value="https://fabivilmen.github.io/immohoessen-site/merci.html" /> -->
-
-        <div class="actions">
-          <button type="submit" class="btn btn-primary">Envoyer la demande</button>
-        </div>
-      </form>
-    </div>
+    <h2>Accompagnement sur mesure</h2>
+    <p>
+      Chaque immeuble a ses spécificités. Nous proposons une gestion adaptée aux besoins de votre résidence, en partenariat avec les conseils de copropriété.
+    </p>
   </main>
 
-  <!-- FOOTER (sem e-mail) -->
-  <footer class="site-footer">
-    <div class="container legal">
-      <small>© 2025 Immo Hoessen — Tous droits réservés. • 
-        <a href="mentions-legales.html">Mentions légales</a>
-      </small>
-    </div>
+  <!-- RODAPÉ -->
+  <footer>
+    © 2025 Laurent Hoessen — IPI 150260 · Mentions légales
   </footer>
 
-  <script>
-    // Toggle do menu mobile
-    const toggle = document.querySelector('.nav-toggle');
-    const menu = document.querySelector('.nav-menu');
-    if (toggle) {
-      toggle.addEventListener('click', () => {
-        const open = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!open));
-        menu.classList.toggle('open');
-      });
-    }
-
-    // Evita duplo envio
-    const form = document.getElementById('offreForm');
-    form.addEventListener('submit', () => {
-      const btn = form.querySelector('button[type="submit"]');
-      if (btn) { btn.disabled = true; btn.textContent = 'Envoi...'; }
-    });
-  </script>
 </body>
 </html>

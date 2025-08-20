@@ -6,36 +6,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>À propos - Immo Hoessen</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* MENU NAVBAR */
+    header {
+      background-color: #0f3d2e;
+      padding: 10px 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* CONTEÚDO PRINCIPAL */
+    .content {
+      flex: 1;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #eaf4ec, #d2e6dc);
+      border-radius: 10px;
+      color: #1e4e3d;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .content h1 {
+      text-align: center;
+      color: #0f3d2e;
+    }
+
+    /* RODAPÉ */
+    footer {
+      background-color: #0f3d2e;
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Barre de navigation -->
   <header>
-    <nav class="navbar">
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="offre.html">Offre</a></li>
-        <li><a href="portail.html">Portail</a></li>
-        <li><a href="apropos.html" class="active">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <nav>
+      <div><a href="index.html">Accueil</a></div>
+      <div>
+        <a href="type.html">Types</a>
+        <a href="gestion.html">Gestion</a>
+        <a href="contact.html">Contact</a>
+        <a href="portail.html">Portail</a>
+        <a href="apropos.html">À propos</a>
+      </div>
     </nav>
   </header>
 
-  <!-- Section principale -->
-  <main class="apropos">
-    <h1>À propos de nous</h1>
-
+  <div class="content">
+    <h1>À propos d’Immo Hoessen</h1>
     <p>
-      Depuis 2001, <strong>Laurent Hoessen</strong> a fondé le syndic Immo Hoessen.  
-      Aujourd’hui, il travaille aux côtés de son cofondateur, <strong>M. André Hoessen</strong>, son père,  
-      ainsi qu’avec une <strong>équipe multiculturelle</strong> engagée et dynamique, dédiée à la gestion claire et professionnelle de votre patrimoine immobilier.
+      Fondée en 2001, Immo Hoessen est une entreprise familiale spécialisée dans la gestion de copropriétés à Bruxelles. 
+      Aujourd’hui, elle bénéficie du soutien de son cofondateur, M. André Hoessen (père du fondateur), et d’une équipe multiculturelle 
+      engagée à offrir un service rigoureux, transparent et humain.
     </p>
-  </main>
+    <p>
+      Notre approche repose sur la proximité, l’écoute et la réactivité. Grâce à notre expertise locale et à nos outils numériques, 
+      nous accompagnons les copropriétés dans leur développement, leur entretien et leur valorisation à long terme.
+    </p>
+    <p>
+      Chez Immo Hoessen, chaque copropriétaire est un partenaire, et chaque bâtiment est un patrimoine à faire vivre.
+    </p>
+  </div>
 
-  <!-- Pied de page -->
   <footer>
-    <p>© 2025 Immo Hoessen · Avenue Heydenberg 14, 1200 Bruxelles · syndic@immohoessen.be</p>
+    © 2025 Immo Hoessen · Mentions légales
   </footer>
 
 </body>

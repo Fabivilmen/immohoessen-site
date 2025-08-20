@@ -2,74 +2,125 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contacts — Laurent Hoessen</title>
-  <link rel="stylesheet" href="styles.css?v=11" />
-  <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacts - Syndic Laurent Hoessen</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      color: white;
+    }
+
+    header {
+      background-color: #0f3d2e;
+      padding: 10px 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px 20px;
+      background-color: #0f3d2e;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .contact {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .contact strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      background-color: #0f3d2e;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
-  <header class="site-header">
-    <nav class="nav" aria-label="Navigation principale">
-      <a class="brand" href="index.html" aria-label="Accueil">
-        <img src="img/logo.svg" alt="Logo LH" width="28" height="28" />
-        <span>Laurent&nbsp;Hoessen</span>
-      </a>
-      <div class="menu">
-        <a href="index.html">Accueil</a>
-        <a href="types.html">Types de gestion</a>
-        <a href="contacts.html" class="ativo" aria-current="page">Contacts</a>
-        <a href="offre.html">Demande d’Offre</a>
-        <a href="plateforme.html">Accès à la plateforme</a>
+  <!-- MENU -->
+  <header>
+    <nav>
+      <div><a href="index.html">Accueil</a></div>
+      <div>
+        <a href="types.html">Types</a>
+        <a href="gestion.html">Gestion</a>
+        <a href="contacts.html">Contact</a>
+        <a href="portail.html">Portail</a>
+        <a href="apropos.html">À propos</a>
       </div>
     </nav>
   </header>
 
-  <main class="section">
-    <h1 class="page-title">Contacts</h1>
+  <!-- CONTEÚDO -->
+  <div class="content">
+    <h1>Contacts</h1>
 
-    <div class="card-grid">
-      <div class="card contact-card">
-        <p><span class="contact-label">Laurent Hoessen</span> — Gestionnaire IPI titulaire</p>
-        <p class="ic-mail"><a href="mailto:laurent@immohoessen.be">laurent@immohoessen.be</a></p>
-      </div>
-
-      <div class="card contact-card">
-        <p><span class="contact-label">André Hoessen</span> — Gestionnaire général</p>
-        <p class="ic-mail"><a href="mailto:andre@immohoessen.be">andre@immohoessen.be</a></p>
-      </div>
-
-      <div class="card contact-card">
-        <p><span class="contact-label">Bonifacio Patricia</span> — Gestionnaire collaboratrice</p>
-        <p class="ic-mail"><a href="mailto:gestion@immohoessen.be">gestion@immohoessen.be</a></p>
-      </div>
-
-      <div class="card contact-card">
-        <p><span class="contact-label">Ledieu Viviane</span> — Gestionnaire de sinistres — Gestionnaire collaboratrice</p>
-        <p class="ic-mail"><a href="mailto:admin@immohoessen.be">admin@immohoessen.be</a></p>
-      </div>
-
-      <div class="card contact-card" style="grid-column:1/-1">
-        <p><span class="contact-label">Factures</span></p>
-        <p class="ic-mail"><a href="mailto:factures@immohoessen.be">factures@immohoessen.be</a></p>
-      </div>
+    <div class="contact">
+      <strong>Laurent Hoessen — Gestionnaire IPI titulaire</strong>
+      laurent@immohoessen.be
     </div>
-  </main>
 
-  <footer class="micro-footer">
-    <div class="wrap micro-footer-row">
-      <span>Horaires : Lun–Ven 09:00–13:00</span>
-      <span class="sep">•</span>
-      <span>Email : <a href="mailto:syndic@immohoessen.be">syndic@immohoessen.be</a></span>
+    <div class="contact">
+      <strong>André Hoessen — Gestionnaire général</strong>
+      andre@immohoessen.be
     </div>
+
+    <div class="contact">
+      <strong>Bonifacio Patricia — Gestionnaire collaboratrice</strong>
+      gestion@immohoessen.be
+    </div>
+
+    <div class="contact">
+      <strong>Ledieu Viviane — Gestionnaire de sinistres / collaboratrice</strong>
+      admin@immohoessen.be
+    </div>
+
+    <div class="contact">
+      <strong>Factures</strong>
+      factures@immohoessen.be
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer>
+    © 2025 Laurent Hoessen — IPI 150260 · Mentions légales
   </footer>
 
-  <footer class="legal-footer">
-    <div class="wrap">
-      © 2025 Laurent Hoessen · Gestion Immobilière — Syndic BILH &amp; DUHO · Tous droits réservés ·
-      <a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a>
-    </div>
-  </footer>
 </body>
 </html>

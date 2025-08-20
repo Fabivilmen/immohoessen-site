@@ -1,68 +1,96 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portail copropriétaires — Immo Hoessen</title>
-  <meta name="description" content="Accès au portail copropriétaires pour consulter les documents de votre copropriété." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portail - Immo Hoessen</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero {
+      flex: 1;
+      background: url('./img/portail-office.png') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 60px 20px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.4); /* escurece a imagem */
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+
+    .hero a.button {
+      background-color: #0057B7;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .hero a.button:hover {
+      background-color: #0040a0;
+    }
+
+    footer {
+      background-color: #0f3d2e;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <nav class="navbar container">
-      <a class="brand" href="index.html">Immo Hoessen</a>
-      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-      <ul class="nav-menu">
-        <li><a href="types.html">Notre gestion</a></li>
-        <li><a href="offre.html">Demande d’offre</a></li>
-        <li><a href="portail.html" class="active">Portail</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="contacts.html">Contact</a></li>
-        <li><a href="urgence.html">Urgence</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- MAIN -->
-  <main class="container section">
-    <h1>Portail copropriétaires</h1>
-    <p>
-      Pour consulter les documents de votre copropriété (procès-verbaux, documents comptables, ROI, contrats d’assurance, etc.), 
-      veuillez cliquer sur le lien ci-dessous.
-    </p>
-    <p>
-      Si vous n’avez pas encore reçu votre mot de passe ou si vous l’avez perdu, merci de prendre contact avec la gestionnaire 
-      de votre copropriété.
-    </p>
-
-    <div style="margin-top:30px; text-align:center">
-      <a href="http://immohoessen.quickconnect.to" target="_blank" rel="noopener" class="btn btn-primary">
-        Accéder au portail
-      </a>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Portail Copropriétaires</h1>
+      <p>Accédez à tous les documents et informations de votre copropriété en un seul clic.</p>
+      <a class="button" href="https://votreportail.com" target="_blank">Accéder au Portail</a>
     </div>
-  </main>
+  </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container legal">
-      <small>© 2025 Immo Hoessen — Tous droits réservés. • 
-        <a href="mentions-legales.html">Mentions légales</a>
-      </small>
-    </div>
+  <footer>
+    © 2025 Immo Hoessen · Avenue Heydenberg 14, 1200 Bruxelles · syndic@immohoessen.be
   </footer>
 
-  <script>
-    // Toggle du menu mobile
-    const toggle = document.querySelector('.nav-toggle');
-    const menu = document.querySelector('.nav-menu');
-    if (toggle) {
-      toggle.addEventListener('click', () => {
-        const open = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!open));
-        menu.classList.toggle('open');
-      });
-    }
-  </script>
 </body>
 </html>

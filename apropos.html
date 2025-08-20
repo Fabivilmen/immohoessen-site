@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>À propos - Immo Hoessen</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
@@ -16,7 +15,7 @@
       min-height: 100vh;
     }
 
-    /* MENU NAVBAR */
+    /* NAVBAR */
     header {
       background-color: #0f3d2e;
       padding: 10px 20px;
@@ -41,7 +40,7 @@
       text-decoration: underline;
     }
 
-    /* CONTEÚDO PRINCIPAL */
+    /* CONTEÚDO */
     .content {
       flex: 1;
       max-width: 900px;
@@ -53,9 +52,34 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    .content h1 {
+    .content h1, .content h2 {
       text-align: center;
       color: #0f3d2e;
+    }
+
+    /* FOTOS */
+    .photos {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .photos div {
+      text-align: center;
+    }
+
+    .photos img {
+      max-width: 200px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .photos p {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #1e4e3d;
     }
 
     /* RODAPÉ */
@@ -63,13 +87,14 @@
       background-color: #0f3d2e;
       color: white;
       text-align: center;
-      padding: 15px 10px;
+      padding: 15px;
       font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
+  <!-- MENU -->
   <header>
     <nav>
       <div><a href="index.html">Accueil</a></div>
@@ -83,22 +108,39 @@
     </nav>
   </header>
 
+  <!-- CONTEÚDO -->
   <div class="content">
     <h1>À propos d’Immo Hoessen</h1>
+    
+    <h2>Notre histoire</h2>
     <p>
-      Fondée en 2001, Immo Hoessen est une entreprise familiale spécialisée dans la gestion de copropriétés à Bruxelles. 
-      Aujourd’hui, elle bénéficie du soutien de son cofondateur, M. André Hoessen (père du fondateur), et d’une équipe multiculturelle 
-      engagée à offrir un service rigoureux, transparent et humain.
+      Fondée en 2001 par M. Laurent Hoessen, la société est spécialisée dans la gestion de copropriétés à Bruxelles. 
+      Aujourd’hui, elle bénéficie du soutien de son cofondateur, M. André Hoessen (père du fondateur), ainsi que d’une 
+      équipe multiculturelle engagée à offrir un service rigoureux, transparent et humain.
     </p>
+
     <p>
       Notre approche repose sur la proximité, l’écoute et la réactivité. Grâce à notre expertise locale et à nos outils numériques, 
       nous accompagnons les copropriétés dans leur développement, leur entretien et leur valorisation à long terme.
     </p>
+
     <p>
-      Chez Immo Hoessen, chaque copropriétaire est un partenaire, et chaque bâtiment est un patrimoine à faire vivre.
+      Chez Gestion Immobilière Hoessen, chaque copropriétaire est un partenaire, et chaque bâtiment est un patrimoine à faire vivre.
     </p>
+
+    <div class="photos">
+      <div>
+        <img src="./img/fotolaurent1.jpg" alt="Laurent Hoessen" />
+        <p>M. Laurent Hoessen<br><small>Fondateur</small></p>
+      </div>
+      <div>
+        <img src="./img/fotoandre.jpg" alt="André Hoessen" />
+        <p>M. André Hoessen<br><small>Cofondateur</small></p>
+      </div>
+    </div>
   </div>
 
+  <!-- RODAPÉ -->
   <footer>
     © 2025 Immo Hoessen · Mentions légales
   </footer>

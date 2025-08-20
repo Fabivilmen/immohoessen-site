@@ -1,10 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>À propos - Syndic Laurent Hoessen</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
@@ -48,52 +48,53 @@
       background-color: #0f3d2e;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
     }
 
-    .founder-section h2 {
-      text-align: center;
-      color: #ffffff;
+    .content h2 {
       font-size: 2rem;
       margin-bottom: 40px;
+      color: #ffffff;
     }
 
     .founders {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 40px;
+      gap: 60px;
       margin-bottom: 40px;
     }
 
     .founder {
-      text-align: center;
-      flex: 1;
-      min-width: 250px;
+      width: 250px;
     }
 
     .founder img {
-      width: 220px;
+      width: 100%;
+      height: auto;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
     .founder p {
-      margin-top: 12px;
+      margin-top: 10px;
       font-weight: bold;
       color: #ffffff;
     }
 
-    .institutional-text {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #ffffff;
+    .text-block {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
     }
 
-    .institutional-text p {
+    .text-block p {
       margin-bottom: 20px;
+      line-height: 1.6;
+      font-size: 1rem;
     }
 
-    .institutional-text .closing {
+    .closing {
       margin-top: 30px;
       font-weight: bold;
       font-style: italic;
@@ -110,7 +111,7 @@
     @media (max-width: 768px) {
       .founders {
         flex-direction: column;
-        align-items: center;
+        gap: 30px;
       }
     }
   </style>
@@ -132,42 +133,39 @@
   </header>
 
   <!-- CONTEÚDO -->
-  <div class="content founder-section">
+  <div class="content">
     <h2>Fondateur & Cofondateur</h2>
 
     <div class="founders">
-      <!-- Laurent -->
       <div class="founder">
         <img src="./img/fotolaurent1.jpg" alt="Laurent Hoessen" />
         <p>Laurent Hoessen<br><small>Fondateur – Titulaire IPI</small></p>
       </div>
-
-      <!-- André -->
       <div class="founder">
         <img src="./img/fotoandre.jpg" alt="André Hoessen" />
         <p>André Hoessen<br><small>Cofondateur</small></p>
       </div>
     </div>
 
-    <div class="institutional-text">
+    <div class="text-block">
       <p>
-        Le <strong>Syndic Laurent Hoessen</strong> a été fondé en 2001 par M. Laurent Hoessen, gestionnaire agréé à l’IPI (n° 150260).
-        Reconnu pour son sérieux et son intégrité, il assure la gestion des copropriétés avec rigueur technique, clarté dans les décisions
+        Le <strong>Syndic Laurent Hoessen</strong> a été fondé en 2001 par M. Laurent Hoessen, gestionnaire agréé à l’IPI (n° 150260). 
+        Reconnu pour son sérieux et son intégrité, il assure la gestion des copropriétés avec rigueur technique, clarté dans les décisions 
         et une transparence totale envers les copropriétaires.
       </p>
 
       <p>
-        Son implication constante en fait un interlocuteur de confiance pour le suivi des assemblées générales, des travaux
+        Son implication constante en fait un interlocuteur de confiance pour le suivi des assemblées générales, des travaux 
         et des aspects administratifs du syndic.
       </p>
 
       <p>
-        À ses côtés, M. André Hoessen, cofondateur, apporte son expertise technique et une vision stratégique,
+        À ses côtés, M. André Hoessen, cofondateur, apporte son expertise technique et une vision stratégique, 
         contribuant au bon fonctionnement des équipes et à la qualité de la gestion au quotidien.
       </p>
 
       <p>
-        Le Syndic Laurent Hoessen s’appuie également sur une <strong>équipe multiculturelle</strong>,
+        Le Syndic Laurent Hoessen s’appuie également sur une <strong>équipe multiculturelle</strong>, 
         facilitant une communication de proximité, efficace et respectueuse avec les copropriétaires de tous horizons.
       </p>
 

@@ -1,123 +1,109 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>À propos - Syndic Laurent Hoessen</title>
+  <title>Accueil - Syndic Laurent Hoessen</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    body {
+    body, html {
       margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: Arial, sans-serif;
-      background-color: #0f3d2e;
+      background-color: white;
       color: white;
     }
-
     header {
+      height: 10vh;
       background-color: #0f3d2e;
-      padding: 10px 20px;
-    }
-
-    nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
+      justify-content: space-between;
+      padding: 0 2rem;
     }
-
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 1rem;
       font-weight: bold;
     }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: 40px auto;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .photos {
+    .hero {
+      height: 75vh;
+      background-image: url('img/cover-plain2.jpg');
+      background-size: cover;
+      background-position: center;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
-      gap: 40px;
-      margin-bottom: 30px;
-    }
-
-    .photos figure {
-      margin: 0;
-    }
-
-    .photos img {
-      width: 200px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-    }
-
-    .photos figcaption {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    p {
-      text-align: justify;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-
-    footer {
       text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0;
+      color: white;
+    }
+    .hero h2 {
+      font-size: 1.5rem;
+      margin: 1rem 0 0;
+      color: white;
+    }
+    footer {
+      height: 15vh;
       background-color: #0f3d2e;
       color: white;
-      padding: 20px 10px;
-      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+    .footer-info {
+      max-width: 60%;
+    }
+    .footer-info p {
+      margin: 0.3rem 0;
+    }
+    .footer-map iframe {
+      border: 0;
+    }
+    @media (max-width: 768px) {
+      .footer-info {
+        max-width: 100%;
+      }
+      .footer-map {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <div><a href="index.html">Accueil</a></div>
-      <div>
-        <a href="types.html">Types</a>
-        <a href="gestion.html">Gestion</a>
-        <a href="contacts.html">Contact</a>
-        <a href="portail.html">Portail</a>
-        <a href="apropos.html">À propos</a>
-      </div>
+      <a href="index.html">Accueil</a>
+      <a href="types.html">Types</a>
+      <a href="gestion.html">Gestion</a>
+      <a href="contacts.html">Contact</a>
+      <a href="portail.html">Portail</a>
+      <a href="apropos.html">À propos</a>
     </nav>
   </header>
 
-  <main class="container">
-    <div class="photos">
-      <figure>
-        <img src="img/fotolaurent1.jpg" alt="Laurent Hoessen">
-        <figcaption>Laurent Hoessen<br>Fondateur – Titulaire IPI</figcaption>
-      </figure>
-      <figure>
-        <img src="img/fotoandre.jpg" alt="André Hoessen">
-        <figcaption>André Hoessen<br>Cofondateur</figcaption>
-      </figure>
-    </div>
-
-    <p><strong>Le Syndic Laurent Hoessen</strong> a été fondé en 2001 par M. Laurent Hoessen, gestionnaire agréé à l’IPI (n° 150260). Reconnu pour son sérieux et son intégrité, il assure la gestion des copropriétés avec rigueur technique, clarté dans les décisions et une transparence totale envers les copropriétaires.</p>
-
-    <p>Son implication constante en fait un interlocuteur de confiance pour le suivi des assemblées générales, des travaux et des aspects administratifs du syndic.</p>
-
-    <p>À ses côtés, M. André Hoessen, cofondateur, apporte son expertise technique et une vision stratégique, contribuant au bon fonctionnement des équipes et à la qualité de la gestion au quotidien.</p>
-  </main>
+  <section class="hero">
+    <h1>Laurent Hoessen</h1>
+    <h2>Gestion immobilière – Syndic BILH – DUHO</h2>
+  </section>
 
   <footer>
-    © 2025 Laurent Hoessen · Mentions légales
+    <div class="footer-info">
+      <p><strong>Adresse :</strong> Avenue Heydenberg 14, 1200 Bruxelles</p>
+      <p><strong>Email :</strong> syndic@immohoessen.be</p>
+      <p><strong>Téléphone :</strong> 02 772 51 75</p>
+      <p><strong>Numéro d'entreprise :</strong> BE0462920325</p>
+    </div>
+    <div class="footer-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.1292243983067!2d4.429784376831809!3d50.85920757168085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3dbdbba2b8e27%3A0x6f144d7bb3a45d88!2sAvenue%20Heydenberg%2014%2C%201200%20Woluwe-Saint-Lambert!5e0!3m2!1sfr!2sbe!4v1690308371045!5m2!1sfr!2sbe" width="300" height="120" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
   </footer>
 </body>
 </html>

@@ -1,125 +1,145 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contacts - Syndic Laurent Hoessen</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
-      color: white;
-    }
-
-    header {
       background-color: #0f3d2e;
-      padding: 10px 20px;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
     nav {
+      background-color: #0f3d2e;
+      height: 10vh;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
+      justify-content: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      padding: 0;
+      margin: 0;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
       font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .content {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 40px 20px;
-      background-color: #0f3d2e;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      font-size: 1.1em;
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 30px;
+      margin-top: 30px;
+      font-size: 2.5em;
+      color: white;
     }
 
-    .contact {
-      margin-bottom: 20px;
-      line-height: 1.6;
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
     }
 
-    .contact strong {
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 4px;
+    .contact-card {
+      background-color: #1e4e3d;
+      border-radius: 12px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .contact-card h3 {
+      margin: 0;
+      font-size: 1.2em;
+      color: #ffffff;
+    }
+
+    .contact-card p {
+      margin: 8px 0 0;
+      font-size: 0.95em;
+      color: #dddddd;
     }
 
     footer {
       background-color: #0f3d2e;
       color: white;
       text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <!-- MENU -->
-  <header>
-    <nav>
-      <div><a href="index.html">Accueil</a></div>
-      <div>
-        <a href="types.html">Types</a>
-        <a href="gestion.html">Gestion</a>
-        <a href="contacts.html">Contact</a>
-        <a href="portail.html">Portail</a>
-        <a href="apropos.html">À propos</a>
-      </div>
-    </nav>
-  </header>
+  <!-- Menu -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="types.html">Types</a></li>
+      <li><a href="gestion.html">Gestion</a></li>
+      <li><a href="contacts.html">Contact</a></li>
+      <li><a href="portail.html">Portail</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+    </ul>
+  </nav>
 
-  <!-- CONTEÚDO -->
-  <div class="content">
-    <h1>Contacts</h1>
+  <!-- Título -->
+  <h1>Contacts</h1>
 
-    <div class="contact">
-      <strong>Laurent Hoessen — Gestionnaire IPI titulaire</strong>
-      laurent@immohoessen.be
+  <!-- Blocos de contatos -->
+  <section class="contact-container">
+
+    <div class="contact-card">
+      <h3>Laurent Hoessen</h3>
+      <p>Gestionnaire IPI titulaire</p>
+      <p>laurent@immohoessen.be</p>
     </div>
 
-    <div class="contact">
-      <strong>André Hoessen — Gestionnaire général</strong>
-      andre@immohoessen.be
+    <div class="contact-card">
+      <h3>André Hoessen</h3>
+      <p>Gestionnaire général</p>
+      <p>andre@immohoessen.be</p>
     </div>
 
-    <div class="contact">
-      <strong>Bonifacio Patricia — Gestionnaire collaboratrice</strong>
-      gestion@immohoessen.be
+    <div class="contact-card">
+      <h3>Bonifacio Patricia</h3>
+      <p>Gestionnaire collaboratrice</p>
+      <p>gestion@immohoessen.be</p>
     </div>
 
-    <div class="contact">
-      <strong>Ledieu Viviane — Gestionnaire de sinistres / collaboratrice</strong>
-      admin@immohoessen.be
+    <div class="contact-card">
+      <h3>Ledieu Viviane</h3>
+      <p>Gestionnaire de sinistres / collaboratrice</p>
+      <p>admin@immohoessen.be</p>
     </div>
 
-    <div class="contact">
-      <strong>Factures</strong>
-      factures@immohoessen.be
+    <div class="contact-card">
+      <h3>Factures</h3>
+      <p>factures@immohoessen.be</p>
     </div>
-  </div>
 
-  <!-- RODAPÉ -->
+  </section>
+
+  <!-- Rodapé -->
   <footer>
-    © 2025 Laurent Hoessen — IPI 150260 · Mentions légales
+    © 2025 Laurent Hoessen — IPI 150260 · <a href="mentions-legales.html">Mentions légales</a>
   </footer>
 
 </body>

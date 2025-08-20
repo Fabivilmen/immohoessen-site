@@ -1,73 +1,64 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portail - Immo Hoessen</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacts - Syndic Laurent Hoessen</title>
   <style>
-    body, html {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .hero {
-      flex: 1;
-      background: url('./img/portail-office.png') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      background-color: #f8f8f8;
       color: white;
-      padding: 60px 20px;
-      position: relative;
     }
 
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.4);
-      z-index: 1;
+    header {
+      background-color: #0f3d2e;
+      padding: 10px 20px;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
       max-width: 800px;
+      margin: 40px auto;
+      padding: 40px 20px;
+      background-color: #0f3d2e;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.3rem;
+    h1 {
+      text-align: center;
       margin-bottom: 30px;
     }
 
-    .hero a.button {
-      background-color: #0057B7;
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.2rem;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    .contact {
+      margin-bottom: 20px;
+      line-height: 1.6;
     }
 
-    .hero a.button:hover {
-      background-color: #0040a0;
+    .contact strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
     }
 
     footer {
@@ -75,22 +66,59 @@
       color: white;
       text-align: center;
       padding: 15px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Portail Copropriétaires</h1>
-      <p>Accédez à tous les documents et informations de votre copropriété en un seul clic.</p>
-      <a class="button" href="http://immohoessen.quickconnect.to" target="_blank">Accéder au Portail</a>
-    </div>
-  </section>
+  <!-- MENU -->
+  <header>
+    <nav>
+      <div><a href="index.html">Accueil</a></div>
+      <div>
+        <a href="types.html">Types</a>
+        <a href="gestion.html">Gestion</a>
+        <a href="contacts.html">Contact</a>
+        <a href="portail.html">Portail</a>
+        <a href="apropos.html">À propos</a>
+      </div>
+    </nav>
+  </header>
 
+  <!-- CONTEÚDO -->
+  <div class="content">
+    <h1>Contacts</h1>
+
+    <div class="contact">
+      <strong>Laurent Hoessen — Gestionnaire IPI titulaire</strong>
+      laurent@immohoessen.be
+    </div>
+
+    <div class="contact">
+      <strong>André Hoessen — Gestionnaire général</strong>
+      andre@immohoessen.be
+    </div>
+
+    <div class="contact">
+      <strong>Bonifacio Patricia — Gestionnaire collaboratrice</strong>
+      gestion@immohoessen.be
+    </div>
+
+    <div class="contact">
+      <strong>Ledieu Viviane — Gestionnaire de sinistres / collaboratrice</strong>
+      admin@immohoessen.be
+    </div>
+
+    <div class="contact">
+      <strong>Factures</strong>
+      factures@immohoessen.be
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
   <footer>
-    © 2025 Immo Hoessen · Mentions légales
+    © 2025 Laurent Hoessen — IPI 150260 · Mentions légales
   </footer>
 
 </body>

@@ -6,11 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accueil - Syndic Laurent Hoessen</title>
   <style>
-    body {
+    body, html {
       margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
-      background-color: #0f3d2e;
-      color: white;
     }
 
     header {
@@ -38,53 +37,61 @@
     }
 
     .hero {
-      background-image: url('img/hero-bg.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
+      position: relative;
+      height: 85vh;
+      background: url('img/hero-bg.jpg') no-repeat center center/cover;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 0 20px;
+      color: white;
     }
 
     .hero h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-      color: white;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      font-size: 2.5rem;
+      margin: 0;
     }
 
-    .hero p {
-      font-size: 1.3em;
-      margin-bottom: 40px;
-      color: white;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-    }
-
-    .hero a {
-      background-color: #007bff;
-      color: white;
-      padding: 14px 28px;
-      font-size: 1.1em;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .hero a:hover {
-      background-color: #0056b3;
-    }
-
-    footer {
+    .footer {
       background-color: #0f3d2e;
       color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    .footer .info {
+      max-width: 60%;
+    }
+
+    .footer .info p {
+      margin: 5px 0;
+    }
+
+    .footer .map {
+      flex: 1;
+      min-width: 250px;
+      margin-top: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer .info, .footer .map {
+        max-width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -104,16 +111,21 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
   <section class="hero">
-    <h1>Bienvenue chez Syndic Laurent Hoessen</h1>
-    <p>Gestion rigoureuse, transparente et humaine des copropriétés à Bruxelles.</p>
-    <a href="apropos.html">En savoir plus</a>
+    <h1>Gestion immobilière · Syndic BILH – DUHO</h1>
   </section>
 
-  <!-- RODAPÉ -->
-  <footer>
-    © 2025 Laurent Hoessen — IPI 150260 · Mentions légales
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="info">
+      <p><strong>Adresse :</strong> Avenue Heydenberg 14, 1200 Bruxelles</p>
+      <p><strong>Email :</strong> syndic@immohoessen.be</p>
+      <p><strong>Horaires :</strong> Lun–Ven · 09:00–13:00</p>
+    </div>
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.249528177229!2d4.453763115745667!3d50.851286679532424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c49e0c2f4f5f%3A0x7e59b5c61de93e64!2sAvenue%20Heydenberg%2014%2C%201200%20Woluwe-Saint-Lambert!5e0!3m2!1sfr!2sbe!4v1616161616161" allowfullscreen></iframe>
+    </div>
   </footer>
 
 </body>
